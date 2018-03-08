@@ -91,7 +91,9 @@
 
 		console.log(combinedCategories);
 
-		gardenData = loadEverything(combinedCategories);
+		var gardenData;
+
+		loadEverything(combinedCategories);
 
 		console.log("This is garden data",gardenData);
 
@@ -110,11 +112,11 @@ function loadEverything (x) {
 		'dataType': "json",
 		'success': function(data){
 			console.log("This is jquery response",data);
-			json = data;
+			gardenData = data;
 		}
 	});
 	console.log("Returned Value",json);
-	return json;
+	// return json;
 	})();
 }
 
@@ -122,15 +124,15 @@ $(".factbutton").mouseover(function() {
 	console.log("Returned Value", gardenData);
 	var dotName = this.id;
 	if(dotName =="Priority") {
-		document.getElementById("CustomFarmTitle").innerHTML = json.DotTitle1;
+		document.getElementById("CustomFarmTitle").innerHTML = gardenData.DotTitle1;
 	}
 
 	if(dotName =="Scale") {
-		document.getElementById("CustomFarmTitle").innerHTML = json.DotTitle2;
+		document.getElementById("CustomFarmTitle").innerHTML = gardenData.DotTitle2;
 	}
 
 	if(dotName =="Cost") {
-		document.getElementById("CustomFarmTitle").innerHTML = json.DotTitle3;
+		document.getElementById("CustomFarmTitle").innerHTML = gardenData.DotTitle3;
 	}
 });
 
