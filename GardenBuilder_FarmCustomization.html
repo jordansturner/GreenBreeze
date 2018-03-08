@@ -115,7 +115,7 @@ $('#Cost').mouseover(function() {
 });
 
 
-
+var jsonData;
 var json = (function (){
 var json = null;
 $.ajax({
@@ -124,13 +124,17 @@ $.ajax({
 	'url': "EAT1.json",
 	'dataType': "json",
 	'success': function(data){
-		console.log("success");
-
 		json = data;
+		console.log(data);
+		console.log(json);
+		jsonData = data;
 	}
 });
 return json;
 })();
+
+		console.log(jsonData);
+		console.log(json);
 
 
 	 $('input[type="range"]').rangeslider({
