@@ -1,0 +1,2320 @@
+
+/*________________________________________________________________________________________________________________________________________________________________________
+
+Universal Styles
+__________________________________________________________________________________________________________________________________________________________________________*/
+
+body {
+	width: 100%;
+	margin: 0px;
+}
+
+a::after {
+    display: block;
+    content: attr(data-text);
+    font-weight: bold;
+    height: 0;
+    overflow: hidden;
+    visibility: hidden;
+
+}
+
+a:active {
+    font-weight: bold;
+}
+
+#HerbanLogo {
+	background-image: url(Assets/HerbanLogo.png);
+    background-repeat: no-repeat;
+    background-size: 140px;
+    background-position: 140px 15px;
+    padding: 40px;
+    height: 40px;
+    min-height: 80px;
+    width: 160px;
+
+}
+
+
+h1 {
+	margin: 0px;
+	font-size: 90px;
+	font-family: 'Montserrat', sans-serif;
+	font-weight: 700;
+	margin-top: -10px;
+/*	color: #349F91;*/
+	color: #559B98;
+}
+
+h2 {
+	margin: 0px;
+	font-size: 64px;
+	font-family: 'Open Sans', sans-serif;
+	font-weight: 400;
+	color: #4A4A4A;
+
+}
+
+h3 {
+	margin: 0px;
+	font-size: 40px;
+	font-family: 'Montserrat', sans-serif;
+	font-weight: 500;
+	color: #4A4A4A;
+}
+
+h4 {
+	font-family: 'Montserrat', sans-serif;
+	font-weight: 600;
+	color: #4A4A4A;
+	font-size: 20px;
+}
+
+h5 {
+	margin: 5px;
+	font-size: 18px;
+	font-family: 'Open Sans', sans-serif;
+	font-weight: 400;
+	color: #4A4A4A;
+
+}
+
+h6 {
+	margin: 5px;
+	font-size: 16px;
+	font-family: 'Open Sans', sans-serif;
+	font-weight: 400;
+	color: #4A4A4A;
+
+}
+
+#secondaryHeaderText {
+	font-size: 18px;
+	font-family: 'Open Sans', sans-serif;
+	font-weight: 300;
+	color: #559B98;
+}
+
+
+.circleX {
+	position: absolute;
+    display: block;
+    right: 80.7px;
+    top: 322px;
+    width: 40px;
+    height: 40px;
+    border:2px solid #559B98; 
+    border-radius: 100%;
+}
+.x {
+    position: absolute;
+    display: block;
+    right: 90px;
+    top: 331px;
+    width: 25px;
+    height: 25px;
+    transition: transform .25s ease-in-out;
+    border-radius: 10px;
+}
+.x:hover {
+    transform: rotate(180deg);
+}
+.x:before {
+    content: "";
+    position: absolute;
+    display: block;
+    margin: auto;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    width: 25px;
+    height: 0;
+    border-top: 2px solid #559B98;
+    transform: rotate(45deg);
+    transform-origin: center;
+    border-radius: 10px;
+}
+.x:after {
+    content: "";
+    position: absolute;
+    display: block;
+    margin: auto;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    width: 25px;
+    height: 0;
+    border-top: 2px solid #559B98;
+    transform: rotate(-45deg);
+    transform-origin: center;
+    border-radius: 10px;
+}
+
+.back_To_Intro {
+    text-decoration: none;
+}
+
+#SelectedNavItem {
+    font-weight: 700;
+}
+/*________________________________________________________________________________________________________________________________________________________________________
+
+MainHomePage Specific Styles
+__________________________________________________________________________________________________________________________________________________________________________*/
+
+#EntryTitle {
+	position: relative;
+	text-align: center;
+	margin: auto;
+	z-index: 1;
+	margin-top: 130px;
+}
+
+#FutureOfAgro {
+	margin: auto;
+	text-align: center;
+	position: relative;
+	margin-top: 30px;
+	opacity: 0;
+	transition: opacity 3s;
+}
+
+#FutureOfAgro  h3 {
+	color: #559B98;
+}
+
+/*#60A0D0 old color */
+/*#559B98 new color*/
+
+#HighLevelNavigation {
+    overflow: hidden;
+    position:fixed;
+    z-index: 1;
+    height: 59px;
+    width: 100%;
+    top: 92%;
+/*    padding: 60px 0;*/
+    font-family: Montserrat, sans-serif;
+    font-style: normal;
+    font-weight: 300;
+    opacity: 0;
+    font-size: 16px;
+    z-index:101;
+    transition: opacity 3s;
+    background-color: white;
+
+}
+
+
+#HighLevelNavigation a {
+    padding-left: 110px;
+    text-decoration: none;
+    font-size: 16px;
+    color: #559B98;
+    display: inline-block;
+    text-align: center;
+    margin-top: 3px;
+    margin-left: -3px;
+
+}
+
+#HighLevelNavigation a:hover {
+    font-weight: 700;
+}
+
+/*#HighLevelNavigation a:active {
+    border: 3px solid black;
+    background: white;
+}*/
+
+
+.splitview {
+    position: absolute;
+    width: 100vw;
+    min-height: 33vw;
+    overflow: hidden;
+    top: 25%;
+    z-index: 0;
+}
+
+.handle {
+	width: 30px;
+	position: absolute;
+    top:175px;
+    left: 200px;
+    opacity: 0;
+    transition: opacity 3s;
+    z-index: 3;
+}
+
+#topbarhandle {
+    height: 170px;
+    width: 2px;
+    border-radius: 5px;
+    background-color: #559B98;
+    position: absolute;
+    top: 0px;
+    opacity: 0;
+    left: 215px;
+    z-index: 3;
+    transition: opacity 6s;
+}
+
+#bottombarhandle {
+    height: 170px;
+    width: 2px;
+    border-radius: 5px;
+    background-color: #559B98;
+    position: absolute;
+    top: 210px;
+    transition: opacity 3s;
+    opacity: 0;
+    left: 215px;
+    z-index: 3;
+}
+
+.panel {
+    position: absolute;
+    width: 100vw;
+    min-height: 25vw;
+    overflow: hidden;
+    left: 20%;
+}
+
+.Maptop {
+	width: 0vw;
+/*	width: 60%;
+	position: fixed;
+	left: 20%;
+	top: 25%;*/
+	opacity: 0;
+	transition: opacity 3s;
+	overflow: hidden;
+	z-index: 1;
+	transition: opacity 3s;
+}
+
+.Mapbottom {
+	opacity: .15;
+	transition: opacity 3s;
+	overflow: hidden;
+	z-index: 0;
+	transition: opacity 3s;
+}
+
+/* Skewed. */
+
+/*.clicked .Maptop {
+    margin-left: -1000px;
+    width: calc(70vw + 1000px);
+}*/
+
+/*.clicked .Maptop .content {
+    margin-left: 1000px;
+}
+*/
+#FutureMap {
+	width: 864px;
+	
+	/*position: fixed;
+	left: 20%;
+	top: 25%;
+	opacity: 1;
+	transition: opacity 3s;
+	overflow: hidden;*/
+
+}
+
+
+/*#FutureMap {
+	width: 120%;
+	position: fixed;
+	left: -10%;
+	top: -55%;
+	z-index: 0;
+	opacity: .3;
+
+}*/
+#CurrentMap {
+	width: 864px;
+
+	/*position: fixed;
+	left: 20%;
+	top: 25%;
+	opacity: 1;
+	transition: opacity 3s;
+	overflow: hidden;*/
+
+}
+
+#EntryButtonImg {
+	width: 30px;
+	position: absolute;
+    top:490px;
+    left: 0;
+    right: 0;
+	margin: auto;
+
+}
+
+#LeftLine {
+	height: 2px;
+	width: 0px;
+	position: absolute;
+	top: 503px;
+	right: 739px;
+	margin: 0px;
+	background-color: red;
+	border-radius: 100px;
+	transition: width 2s;
+	background-color: #559B98;
+}
+#RightLine {
+	height: 2px;
+	width: 0px;
+	position: absolute;
+	top: 503px;
+	left: 739px;
+	margin: 0px;
+	background-color: red;
+	border-radius: 100px;
+	transition: width 2s;
+	background-color: #559B98;
+
+}
+
+/*#EntryButton:hover #LeftLine{
+  width: 400px;
+}
+
+#EntryButton:hover #RightLine{
+  width: 400px;
+}
+*/
+
+
+
+/*________________________________________________________________________________________________________________________________________________________________________
+
+MainHomePage2 Specific Styles
+__________________________________________________________________________________________________________________________________________________________________________*/
+
+#EntryTitle {
+	position: relative;
+	text-align: center;
+	margin: auto;
+	z-index: 1;
+	margin-top: 130px;
+}
+
+#FutureOfAgro2 {
+	margin: auto;
+	text-align: center;
+	position: relative;
+	margin-top: 30px;
+	opacity: 1;
+	transition: opacity 5s;
+}
+
+#FutureOfAgro2  h3 {
+	color: #559B98;
+}
+
+
+
+#HighLevelNavigation2 {
+    overflow: hidden;
+    position:fixed;
+    z-index: 1;
+    height: 59px;
+    width: 100%;
+    top: 92%;
+/*    padding: 60px 0;*/
+    font-family: Montserrat, sans-serif;
+    font-style: normal;
+    font-weight: 300;
+    opacity: 1;
+    font-size: 16px;
+    z-index:101;
+    transition: opacity 3s;
+    background-color: white;
+
+}
+
+
+#HighLevelNavigation2 a {
+    padding-left: 110px;
+    text-decoration: none;
+    font-size: 16px;
+    color: #559B98;
+    display: inline-block;
+    text-align: center;
+    margin-top: 3px;
+    margin-left: -3px;
+
+}
+
+#HighLevelNavigation2 a:hover {
+    font-weight: 700;
+}
+
+/*#HighLevelNavigation a:active {
+    border: 3px solid black;
+    background: white;
+}*/
+
+
+.splitview2 {
+    position: absolute;
+    width: 100vw;
+    min-height: 33vw;
+    overflow: hidden;
+    top: 25%;
+    z-index: 0;
+}
+
+.handle2 {
+	width: 30px;
+	position: absolute;
+    top:175px;
+    left: 200px;
+    opacity: 1;
+    transition: opacity 6s;
+    z-index: 3;
+    cursor: pointer;
+}
+
+#topbarhandle2 {
+    height: 170px;
+    width: 2px;
+    border-radius: 5px;
+    background-color: #559B98;
+    position: absolute;
+    top: 0px;
+    opacity: 1;
+    left: 215px;
+    z-index: 3;
+    transition: opacity 6s;
+}
+
+#bottombarhandle2 {
+    height: 170px;
+    width: 2px;
+    border-radius: 5px;
+    background-color: #559B98;
+    position: absolute;
+    top: 210px;
+    transition: opacity 6s;
+    opacity: 1;
+    left: 215px;
+    z-index: 3;
+}
+
+ 
+.panel2 {
+    position: absolute;
+    width: 100vw;
+    min-height: 25vw;
+    overflow: hidden;
+    left: 20%;
+}
+
+.Maptop2 {
+	width: 0vw;
+/*	width: 60%;
+	position: fixed;
+	left: 20%;
+	top: 25%;*/
+	opacity: 1;
+	transition: opacity 3s;
+	overflow: hidden;
+	z-index: 2;
+	transition: opacity 3s;
+}
+
+.Mapbottom2 {
+	opacity: 1;
+	transition: opacity 3s;
+	overflow: hidden;
+	z-index: 0;
+	transition: opacity 3s;
+}
+
+/* Skewed. */
+
+
+#FutureMap2 {
+	width: 864px;
+	
+	/*position: fixed;
+	left: 20%;
+	top: 25%;
+	opacity: 1;
+	transition: opacity 3s;
+	overflow: hidden;*/
+
+}
+
+
+/*#FutureMap {
+	width: 120%;
+	position: fixed;
+	left: -10%;
+	top: -55%;
+	z-index: 0;
+	opacity: .3;
+
+}*/
+#CurrentMap2 {
+	width: 864px;
+
+	/*position: fixed;
+	left: 20%;
+	top: 25%;
+	opacity: 1;
+	transition: opacity 3s;
+	overflow: hidden;*/
+
+}
+
+
+/*#factsbuttons {
+	width: 50px;
+	height: 50px;
+
+}*/
+
+
+/*________________________________________________________________________________________________________________________________________________________________________
+
+MainHomePage3 Specific Styles
+__________________________________________________________________________________________________________________________________________________________________________*/
+
+#slide-2 {
+	width: 100%;
+	position: absolute;
+	top: 737px;
+}
+#slide-1 {
+	width: 100%;
+	position: absolute;
+	top: 0px;
+}
+
+#slide-3 {
+	width: 100%;
+	position: absolute;
+	top: 785px;
+}
+
+#FutureOfAgro3 {
+	margin: auto;
+	text-align: center;
+	position: relative;
+	margin-top: 30px;
+	opacity: 1;
+	transition: opacity 5s;
+}
+
+.splitview3 {
+    position: absolute;
+    width: 100vw;
+    min-height: 33vw;
+    overflow: hidden;
+    top: 185px;
+    z-index: 0;
+}
+
+#HighLevelNavigation3 {
+    overflow: hidden;
+    position: absolute;
+    z-index: 1;
+    height: 59px;
+    width: 100%;
+    top: 678px;
+/*    padding: 60px 0;*/
+    font-family: Montserrat, sans-serif;
+    font-style: normal;
+    font-weight: 300;
+    opacity: 1;
+    font-size: 16px;
+    z-index:101;
+    transition: opacity 3s, top 1s, box-shadow 1s;
+    background-color: white;
+
+}
+
+
+#HighLevelNavigation3 a {
+    padding-left: 110px;
+    text-decoration: none;
+    font-size: 16px;
+    color: #559B98;
+    display: inline-block;
+    text-align: center;
+    margin-top: 3px;
+    margin-left: -3px;
+
+}
+
+#HighLevelNavigation3 a:hover {
+    font-weight: 700;
+}
+
+/*________________________________________________________________________________________________________________________________________________________________________
+
+MainHomePage4 Specific Styles
+__________________________________________________________________________________________________________________________________________________________________________*/
+
+
+.stop-scrolling {
+	height: 100%;
+	overflow:hidden;
+}
+
+::-webkit-scrollbar {
+    width: 0px;  /* remove scrollbar space */
+    background: transparent;  /* optional: just make scrollbar invisible */
+}
+
+#headerWrapper {
+	width: 100%;
+	position: absolute;
+	top: 0px;
+	transition: top 2s;
+	
+}
+
+#introWrapper {
+	width: 100%;
+	position: absolute;
+	top: 705px;
+
+}
+#introContentWrapper {
+	width: 100%;
+	position: absolute;
+	top: -60px;
+
+}
+
+#FutureOfAgro4 {
+	margin: auto;
+	text-align: center;
+	position: relative;
+	margin-top: 30px;
+	opacity: 1;
+	transition: opacity 5s;
+}
+
+#whitebackground {
+    position: absolute;
+    width: 1000px;
+    height: 100%;
+    background-color: white;
+    z-index: 1;
+    opacity: 1;
+    left: -800px;
+}
+
+#FutureOfAgro4 h3 {
+	color: #559B98;
+}
+
+
+.splitview4 {
+    position: absolute;
+    width: 100vw;
+    min-height: 33vw;
+    overflow: hidden;
+    top: 185px;
+    z-index: 0;
+}
+
+#HighLevelNavigation4 {
+    overflow: hidden;
+    position: absolute;
+    z-index: 1;
+    height: 59px;
+    width: 100%;
+    top: 678px;
+/*    padding: 60px 0;*/
+    font-family: Montserrat, sans-serif;
+    font-style: normal;
+    font-weight: 300;
+    opacity: 1;
+    font-size: 16px;
+    z-index:101;
+    transition: opacity 3s, top 2s, box-shadow 2s;
+    background-color: white;
+
+}
+
+
+#HighLevelNavigation4 span {
+    padding-left: 70px;
+    text-decoration: none;
+    font-size: 16px;
+    color: #559B98;
+    display: inline-block;
+    text-align: center;
+    margin-top: -15px;
+    margin-left: -3px;
+    cursor: pointer;
+
+}
+
+#HighLevelNavigation4 a {
+   text-decoration: none;
+    font-size: 16px;
+    color: #559B98;
+    display: inline-block;
+    text-align: center;
+    margin-top: -15px;
+    padding-left: 70px;
+    cursor: pointer;
+
+}
+
+#HighLevelNavigationStart {
+    overflow: hidden;
+    position: absolute;
+    z-index: 1;
+    height: 59px;
+    width: 100%;
+    top: 678px;
+/*    padding: 60px 0;*/
+    font-family: Montserrat, sans-serif;
+    font-style: normal;
+    font-weight: 300;
+    opacity: 0;
+    font-size: 16px;
+    z-index:101;
+    transition: opacity 3s, top 2s, box-shadow 2s;
+    background-color: white;
+
+}
+
+
+#HighLevelNavigationStart span {
+    padding-left: 70px;
+    text-decoration: none;
+    font-size: 16px;
+    color: #559B98;
+    display: inline-block;
+    text-align: center;
+    margin-top: -15px;
+    margin-left: -3px;
+    cursor: pointer;
+
+}
+
+#HighLevelNavigationStart a {
+   text-decoration: none;
+    font-size: 16px;
+    color: #559B98;
+    display: inline-block;
+    text-align: center;
+    margin-top: -15px;
+    padding-left: 70px;
+    cursor: pointer;
+
+}
+#HerbanLogo4 {
+	background-image: url(Assets/HerbanLogo.png);
+    background-repeat: no-repeat;
+    background-size: 140px;
+    background-position: center;
+    /* padding: 40px; */
+    height: 40px;
+    /* min-height: 80px; */
+    width: 140px;
+    padding-left: 30px;
+    padding-bottom: -30px;
+    padding-top: 70px;
+    margin-left: 30px;
+    cursor: pointer;
+
+}
+
+   
+
+#HighLevelNavigation4 a:hover {
+    font-weight: 700;
+}
+
+
+#gardenBuilder:hover {
+    font-weight: 700;
+
+}
+
+#gardenBuilder::after {
+    display: block;
+    content: attr(data-text);
+    font-weight: bold;
+    height: 0;
+    overflow: hidden;
+    visibility: hidden;
+
+}
+
+#FirstFact {
+    position: absolute;
+    left: 90px;
+    z-index: 3;
+    top: 100px;
+}
+/*#FirstFactPop {
+    position: absolute;
+    left: 90px;
+    z-index: 3;
+    top: 80px;
+    color: white;
+}*/
+
+#SecondFact {
+    position: absolute;
+    left: 140px;
+    z-index: 3;
+    top: 65px;
+}
+
+#ThirdFact {
+    position: absolute;
+    left: 60px;
+    z-index: 3;
+    top: 150px;
+}
+
+#FourthFact {
+    position: absolute;
+    left: 100px;
+    z-index: 3;
+    top: 180px;
+}
+
+#FifthFact {
+    position: absolute;
+    left: 170px;
+    z-index: 3;
+    top: 160px;
+}
+
+#SixthFact {
+    position: absolute;
+    left: 225px;
+    z-index: 3;
+    top: 115px;
+}
+
+#SeventhFact {
+    position: absolute;
+    left: 380px;
+    z-index: 3;
+    top: 210px;
+}
+
+#EighthFact {
+    position: absolute;
+    left: 540px;
+    z-index: 3;
+    top: 245px;
+}
+
+#NinthFact {
+    position: absolute;
+    left: 595px;
+    z-index: 3;
+    top: 215px;
+}
+
+#TenthFact {
+    position: absolute;
+    left: 553px;
+    z-index: 3;
+    top: 153px;
+}
+
+#EleventhFact {
+    position: absolute;
+    left: 755px;
+    z-index: 3;
+    top: 125px;
+}
+
+#TwelfthFact {
+    position: absolute;
+    left: 90px;
+    z-index: 3;
+    top: 60px;
+}
+#ThirteenthFact {
+    position: absolute;
+    left: 105px;
+    z-index: 3;
+    top: 125px;
+}
+
+#FourteenthFact {
+    position: absolute;
+    left: 420px;
+    z-index: 3;
+    top: 145px;
+}
+
+#FifteenthFact {
+    position: absolute;
+    left: 370px;
+    z-index: 3;
+    top: 245px;
+}
+
+#SixteenthFact {
+    position: absolute;
+    left: 540px;
+    z-index: 3;
+    top: 245px;
+}
+
+#SeventeenthFact {
+    position: absolute;
+    left: 610px;
+    z-index: 3;
+    top: 220px;
+}
+
+#EighteenthFact {
+    position: absolute;
+    left: 660px;
+    z-index: 3;
+    top: 160px;
+}
+
+#NineteenthFact {
+    position: absolute;
+    left: 750px;
+    z-index: 3;
+    top: 60px;
+}
+
+#TwentiethFact {
+    position: absolute;
+    left: 790px;
+    z-index: 3;
+    top: 20px;
+}
+.factbutton {
+    width: 25px;
+    height: 25px;
+    transition: width .5s, height .5s,
+    transform-origin: center;
+    z-index: 10px;
+    cursor: pointer;
+}
+.factbutton:hover {
+    width: 30px;
+    height: 30px;
+    transform: translate(-10%, -10%);
+}
+
+.speech-bubble:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 80%;
+    width: 0;
+    height: 0;
+    border: 16px solid transparent;
+    border-top-color: white;
+    border-bottom: 0;
+    margin-left: -16px;
+    margin-bottom: -16px;
+    z-index: 4;
+
+}
+
+.speech-bubble {
+    position: absolute;
+    background: white;
+    border-radius: .4em;
+    width: 300px;
+    height: 30px;
+    padding: 60px 20px;
+    margin: 1em 0;
+    text-align: left;
+    color: white;
+    font-weight: bold;
+    font-size: 16px;
+    z-index: 4;
+    box-shadow: 0px 0px 8px #DFEAEF;
+    transition: opacity .5s;
+    opacity: 0;
+  
+}
+
+#firstBubble {
+    left: 120px;
+    top: 95px;
+}
+
+#secondBubble {
+    left: 170px;
+    top: 60px;
+}
+
+#thirdBubble {
+    left: 90px;
+    top: 145px;
+
+}
+
+#fourthBubble {
+    left: 130px;
+    top: 175px;
+
+}
+
+#fifthBubble {
+    left: 200px;
+    top: 150px;
+
+}
+
+#sixthBubble {
+    left: 255px;
+    top: 110px;
+
+}
+
+#seventhBubble {
+    left: 410px;
+    top: 205px;
+
+}
+
+#eighthBubble {
+    left: 565px;
+    top: 235px;
+
+}
+#ninthBubble {
+    left: 622px;
+    top: 205px;
+
+}
+
+#tenthBubble {
+    left: 580px;
+    top: 143px;
+
+}
+
+#eleventhBubble {
+    left: 785px;
+    top: 120px;
+
+}
+
+#twelfthBubble {
+    left: 123px;
+    top: 55px;
+}
+
+#thirteenthBubble {
+    left: 135px;
+    top: 115px;
+}
+
+#fourteenthBubble {
+    left: 448px;
+    top: 140px;
+
+}
+
+#fifteenthBubble {
+    left: 398px;
+    top: 235px;
+
+}
+
+#sixteenthBubble {
+    left: 568px;
+    top: 238px;
+
+}
+
+#seventeenthBubble {
+    left: 638px;
+    top: 210px;
+
+}
+
+#eighteenthBubble {
+    left: 687px;
+    top: 152px;
+
+}
+
+#nineteenthBubble {
+    left: 778px;
+    top: 55px;
+
+}
+
+#twentiethBubble {
+    left: 817px;
+    top: 15px;
+
+}
+
+.titleInfo {
+    font-size: 18px;
+    color: #559B98;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 500;
+    margin-top: -42px;
+}
+
+.titleBody {
+    font-size: 14px;
+    color: black;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 300;
+    margin-top: -10px;
+}
+
+/*________________________________________________________________________________________________________________________________________________________________________
+
+GardenBuilder Introduction Styles
+__________________________________________________________________________________________________________________________________________________________________________*/
+
+
+
+#IntroHeaderWrapper {
+	position: absolute;
+	top: 100px;
+	left: 150px;
+}
+
+#IntroHeaderWrapper h6{
+	color: #559B98;
+}
+
+#infoWrapper {
+	width: 750px;
+	height: 230px;
+	position: absolute;
+	top: 600px;
+	left: 150px;
+	background-color: white;
+	margin-bottom: 120px;
+	border-radius: 5px;
+	box-shadow: 2px 2px 10px #DFEAEF;
+	opacity: 0;
+	transition: opacity 6s;
+}
+#facts {
+	padding-left: 130px;
+	padding-top: 20px;
+	position: relative;
+
+}
+#blueNodeTextBlurb {
+	font-size: 14px;
+	font-family: 'Open Sans', sans-serif;
+	font-weight: 300;
+	color: #559B98;
+}
+
+#ChooseGardenIllustration {
+	position: absolute;
+	width: 1000px;
+	left: -110px;
+	top: 250px;
+}
+
+#ChooseAGardenWrapper {
+	position: absolute;
+	left: 750px;
+	top: 475px;
+	width: 600px;
+}
+
+#ChooseAGardenWrapper h3 {
+	color: #559B98;
+}
+
+#CustomizeDetailsWrapper {
+	position: absolute;
+	left: 150px;
+	top: 1075px;
+	width: 500px;
+/*	text-align: right;*/
+}
+
+#CustomizeDetailsWrapper h3 {
+	color: #559B98;
+}
+
+#CustomizeGardenIllustration {
+	position: absolute;
+	width: 900px;
+	left: 550px;
+	top: 900px;
+}
+
+#JoinCommunityIllustration {
+	position: absolute;
+	width: 730px;
+	left: 40px;
+	top: 1525px;
+}
+#JoinCommunityWrapper {
+	position: absolute;
+	left: 750px;
+	top: 1675px;
+	width: 600px;
+}
+
+#JoinCommunityWrapper h3 {
+	color: #559B98;
+}
+
+
+#EnterGardenBuilder {
+	width: 200px;
+	height: 50px;
+	border-radius: 100px;
+	position: absolute;
+	top: 2050px;
+	left: 46%;
+	border-color: #559B98;
+	border-width: 2px;
+	outline-style: none;
+	font-size: 18px;
+	font-family: 'Open Sans', sans-serif;
+	font-weight: 700;
+	color: #559B98;
+	margin-bottom: 50px;
+
+}
+
+#EnterGardenBuilder:hover {
+	width: 200px;
+	height: 50px;
+	border-radius: 100px;
+	position: absolute;
+	top: 2050px;
+	left: 46%;
+	margin-bottom: 50px;
+	border-color: #559B98;
+	border-width: 2px;
+	outline-style: none;
+	font-size: 18px;
+	font-family: 'Open Sans', sans-serif;
+	font-weight: 700;
+	color: white;
+	background-color: #559B98;
+
+
+}
+
+#backToMap {
+    cursor: pointer;
+}
+/*________________________________________________________________________________________________________________________________________________________________________
+
+GardenBuilder_GrowingPriorities Styles
+__________________________________________________________________________________________________________________________________________________________________________*/
+
+
+
+#GardenBuilderHeaderWrapper {
+	top: 160px;
+	left: 150px;
+	position: absolute;
+}
+
+#GardenBuilderHeaderWrapper h6 {
+	color: #559B98;
+}
+
+
+
+#HighLevelNavigationTop {
+    overflow: hidden;
+    position: fixed;
+    z-index: 1;
+    height: 59px;
+    width: 100%;
+/*    padding: 60px 0;*/
+    font-family: Montserrat, sans-serif;
+    font-style: normal;
+    font-weight: 300;
+    opacity: 1;
+    font-size: 16px;
+    z-index:101;
+    box-shadow: rgb(223, 234, 239) 0px 1px 10px;
+    background-color: white;
+
+}
+
+
+#HighLevelNavigationTop span {
+    padding-left: 55px;
+    text-decoration: none;
+    font-size: 16px;
+    color: #559B98;
+    display: inline-block;
+    text-align: center;
+    margin-top: -13px;
+    margin-left: 4px;
+    cursor: pointer;
+
+}
+
+#HighLevelNavigationTop a {
+   text-decoration: none;
+    font-size: 16px;
+    color: #559B98;
+    display: inline-block;
+    text-align: center;
+    margin-top: -14px;
+    padding-left: 73px;
+/*    margin-left: 10px;*/
+    cursor: pointer;
+
+}
+
+#HighLevelNavigationTop span:hover {
+    font-weight: 700;
+}
+
+/*#HighLevelNavigationTop {
+   overflow: hidden;
+    position: fixed;
+    z-index: 1;
+    height: 59px;
+    width: 100%;
+    top: 0px;
+    font-family: Montserrat, sans-serif;
+    font-style: normal;
+    font-weight: 300;
+    opacity: 1;
+    font-size: 16px;
+    z-index: 101;
+    box-shadow: rgb(223, 234, 239) 0px 1px 10px;
+    background-color: white;
+
+}
+
+
+#HighLevelNavigationTop span {
+    padding-left: 70px;
+    text-decoration: none;
+    font-size: 16px;
+    color: #559B98;
+    display: inline-block;
+    text-align: center;
+    margin-left: -3px;
+    cursor: pointer;
+    margin-top: -12px;
+
+}
+
+#HighLevelNavigationTop a {
+       text-decoration: none;
+    font-size: 16px;
+    color: #559B98;
+    display: inline-block;
+    text-align: center;
+    margin-top: -15px;
+    padding-left: 70px;
+    cursor: pointer;
+
+}*/
+
+
+#GardenBuilderNavigationTop {
+    overflow: hidden;
+    position:fixed;
+    z-index: 100;
+    height: 40px;
+    top: 59px;
+    width: 100%;
+    font-family: Montserrat, sans-serif;
+    font-style: normal;
+    font-weight: 300;
+    opacity: 1;
+    font-size: 14px;
+    background-color: #FBFCFC;
+	box-shadow: 0px 1px 10px #DFEAEF;
+
+
+}
+
+#GardenBuilderNavigationTop #SelectedNav {
+	font-weight: 500;
+}
+#GardenBuilderNavigationTop a {
+    padding-left: 110px;
+    text-decoration: none;
+    font-size: 12px;
+    color: #559B98;
+    display: inline-block;
+    text-align: center;
+    margin-top: 13px;
+/*    margin-top: 3px;
+    margin-left: -3px;
+*/
+}
+
+#GardenBuilderNavigationTop a:hover {
+    font-weight: 600;
+}
+
+
+/*.secondaryNav {
+	position: relative;
+	display: inline-block;
+	margin: 10px;
+	font-size: 14px;
+	font-family: 'Open Sans', sans-serif;
+	font-weight: 300;
+	color: #60A0D0;
+}
+.secondaryNav:hover {
+	font-weight: 600;
+
+}
+
+.secondaryNav:after {
+	display: block;
+    content: attr(data-text);
+    font-weight: 600;
+    height: 0;
+    overflow: hidden;
+    text-align: center;
+    visibility: hidden;
+}
+*/
+#Underline {
+	position: absolute;
+    left: 705px;
+    width: 200px;
+    top: 255px;
+    height: 1px;
+    background-color: #559B98;
+    border-radius: 5px;
+}
+
+dl {
+
+	color: #559B98;
+	font-size: 14px;
+	font-weight: 300;
+	font-family: 'Open Sans', sans-serif;
+}
+
+dt {
+
+	color: #559B98;
+	font-size: 14px;
+	font-weight: 300;
+	font-family: 'Open Sans', sans-serif;
+	padding-top: 5px;
+}
+
+.Title_Extra_Stats {
+	color: #559B98;
+	font-size: 16px;
+	font-weight: 400;
+	font-family: 'Open Sans', sans-serif;
+}
+.Choose {
+	width: 200px;
+	height: 50px;
+	border-radius: 100px;
+	border-color: #559B98;
+	border-width: 2px;
+	outline-style: none;
+	font-size: 18px;
+	font-family: 'Open Sans', sans-serif;
+	font-weight: 700;
+	color: #559B98;
+	margin-bottom: 50px;
+/*	margin-top: 20px;*/
+    position: absolute;
+    top: 320px;
+}
+.Choose:hover {
+	width: 200px;
+	height: 50px;
+	border-radius: 100px;
+	margin-bottom: 50px;
+	border-color: #559B98;
+	border-width: 2px;
+	outline-style: none;
+	font-size: 18px;
+	font-family: 'Open Sans', sans-serif;
+	font-weight: 700;
+	color: white;
+	background-color: #559B98;
+}
+
+/*Environmental Grower*/
+
+
+#Environmental_Grower_PageWrapper {
+	position: absolute;
+	top: 400px;
+
+}
+
+#EnvironmentalGrower_TextWrapper {
+	position: absolute;
+	left: 700px;
+    width: 600px;
+    top: 130px;
+    transition: top 1s;
+}
+#Environmental_Grower_Img {
+	position: absolute;
+	width: 900px;
+	left: -80px;
+	top: -60px;
+}
+
+#Expand_Stats_EnvironmentalGrowing {
+	opacity: 1;
+	transition: opacity .3s;
+	z-index: 10;
+}
+#Expand_Stats_EnvironmentalGrowing h6 {
+	position: absolute;
+	left: 700px;
+    width: 600px;
+    top: 258px;
+	color: #559B98;
+	font-size: 14px;
+	font-weight: 300;
+
+}
+
+#Expand_Stats_EnvironmentalGrowing h6:Hover {
+	font-weight: 400;
+}
+#Expand_Stats_EnvironmentalGrowing h6:Hover + #Underline {
+	height: 1.5px;
+}
+
+
+#Extra_Stats_Environmental_Wrapper {
+	position: absolute;
+	left: 708px;
+	top: 300px;
+	opacity: 0;
+	transition: opacity 1s, top 1s;
+	z-index: 0;
+
+}
+
+
+/*Profitability Grower*/
+
+#Profitability_Grower_PageWrapper {
+	position: absolute;
+	top: 1150px;
+
+}
+
+#ProfitabilityGrower_TextWrapper {
+	position: absolute;
+	left: 700px;
+    width: 600px;
+    top: 130px;
+    transition: top 1s;
+}
+#Profitability_Grower_Img {
+	position: absolute;
+	width: 900px;
+	left: -80px;
+	top: -60px;
+}
+
+#Expand_Stats_ProfitabilityGrowing {
+	opacity: 1;
+	transition: opacity .3s;
+	z-index: 10;
+}
+#Expand_Stats_ProfitabilityGrowing h6 {
+	position: absolute;
+	left: 700px;
+    width: 600px;
+    top: 258px;
+	color: #559B98;
+	font-size: 14px;
+	font-weight: 300;
+
+}
+
+#Expand_Stats_ProfitabilityGrowing h6:Hover {
+	font-weight: 400;
+}
+#Expand_Stats_ProfitabilityGrowing h6:Hover + #Underline {
+	height: 1.5px;
+}
+
+
+#Extra_Stats_Profitability_Wrapper {
+	position: absolute;
+	left: 708px;
+	top: 300px;
+	opacity: 0;
+	transition: opacity 1s, top 1s;
+	z-index: 0;
+
+}
+
+
+/*Consumption Grower*/
+
+
+#Consumption_Grower_PageWrapper {
+	position: absolute;
+	top: 1900px;
+
+}
+
+#ConsumptionGrower_TextWrapper {
+	position: absolute;
+	left: 700px;
+    width: 600px;
+    top: 130px;
+    transition: top 1s;
+}
+#Consumption_Grower_Img {
+	position: absolute;
+	width: 900px;
+	left: -80px;
+	top: -60px;
+}
+
+#Expand_Stats_ConsumptionGrowing {
+	opacity: 1;
+	transition: opacity .3s;
+	z-index: 10;
+}
+#Expand_Stats_ConsumptionGrowing h6 {
+	position: absolute;
+	left: 700px;
+    width: 600px;
+    top: 258px;
+	color: #559B98;
+	font-size: 14px;
+	font-weight: 300;
+
+}
+
+#Expand_Stats_ConsumptionGrowing h6:Hover {
+	font-weight: 400;
+}
+#Expand_Stats_ConsumptionGrowing h6:Hover + #Underline {
+	height: 1.5px;
+}
+
+
+#Extra_Stats_Consumption_Wrapper {
+	position: absolute;
+	left: 708px;
+	top: 300px;
+	opacity: 0;
+	transition: opacity 1s, top 1s;
+	z-index: 0;
+
+}
+
+
+
+
+.Line_Extra_Stats {
+	width: 350px;
+    height: 1px;
+    background-color: #559B98;
+    border-radius: 5px;
+    margin-top: 8px;
+
+}
+/*________________________________________________________________________________________________________________________________________________________________________
+
+GardenBuilder_UrbanSpaces_Styles
+__________________________________________________________________________________________________________________________________________________________________________*/
+
+
+/*Apartment Living*/
+
+
+#Apartment_Living_PageWrapper {
+	position: absolute;
+	top: 400px;
+
+}
+
+#ApartmentLiving_TextWrapper {
+	position: absolute;
+	left: 700px;
+    width: 600px;
+    top: 130px;
+    transition: top 1s;
+}
+#Apartment_Living_Img {
+	position: absolute;
+	width: 900px;
+	left: -80px;
+	top: -60px;
+}
+
+#Expand_Stats_ApartmentLiving {
+	opacity: 1;
+	transition: opacity .3s;
+	z-index: 10;
+}
+#Expand_Stats_ApartmentLiving h6 {
+	position: absolute;
+	left: 700px;
+    width: 600px;
+    top: 258px;
+	color: #559B98;
+	font-size: 14px;
+	font-weight: 300;
+
+}
+
+#Expand_Stats_ApartmentLiving h6:Hover {
+	font-weight: 400;
+}
+#Expand_Stats_ApartmentLiving h6:Hover + #Underline {
+	height: 1.5px;
+}
+
+
+#Extra_Stats_Apartment_Wrapper {
+	position: absolute;
+	left: 708px;
+	top: 300px;
+	opacity: 0;
+	transition: opacity 1s, top 1s;
+	z-index: 0;
+
+}
+
+
+/*Residential Living*/
+
+#Residential_Living_PageWrapper {
+	position: absolute;
+	top: 1150px;
+
+}
+
+#ResidentialLiving_TextWrapper {
+	position: absolute;
+	left: 700px;
+    width: 600px;
+    top: 130px;
+    transition: top 1s;
+}
+#Residential_Living_Img {
+	position: absolute;
+	width: 900px;
+	left: -80px;
+	top: -60px;
+}
+
+#Expand_Stats_ResidentialLiving {
+	opacity: 1;
+	transition: opacity .3s;
+	z-index: 10;
+}
+#Expand_Stats_ResidentialLiving h6 {
+	position: absolute;
+	left: 700px;
+    width: 600px;
+    top: 258px;
+	color: #559B98;
+	font-size: 14px;
+	font-weight: 300;
+
+}
+
+#Expand_Stats_ResidentialLiving h6:Hover {
+	font-weight: 400;
+}
+#Expand_Stats_ResidentialLiving h6:Hover + #Underline {
+	height: 1.5px;
+}
+
+
+#Extra_Stats_Residential_Wrapper {
+	position: absolute;
+	left: 708px;
+	top: 300px;
+	opacity: 0;
+	transition: opacity 1s, top 1s;
+	z-index: 0;
+
+}
+
+
+/*Vertical Farming Facility*/
+
+
+#Vertical_Farming_Facility_PageWrapper {
+	position: absolute;
+	top: 1900px;
+
+}
+
+#VerticalFarmingFacility_TextWrapper {
+	position: absolute;
+	left: 700px;
+    width: 600px;
+    top: 130px;
+    transition: top 1s;
+}
+#Vertical_Farming_Img {
+	position: absolute;
+	width: 900px;
+	left: -80px;
+	top: -60px;
+}
+
+#Expand_Stats_VerticalFarmingFacility {
+	opacity: 1;
+	transition: opacity .3s;
+	z-index: 10;
+}
+#Expand_Stats_VerticalFarmingFacility h6 {
+	position: absolute;
+	left: 700px;
+    width: 600px;
+    top: 258px;
+	color: #559B98;
+	font-size: 14px;
+	font-weight: 300;
+
+}
+
+#Expand_Stats_VerticalFarmingFacility h6:Hover {
+	font-weight: 400;
+}
+#Expand_Stats_VerticalFarmingFacility h6:Hover + #Underline {
+	height: 1.5px;
+}
+
+
+#Extra_Stats_VerticalFarming_Wrapper {
+	position: absolute;
+	left: 708px;
+	top: 300px;
+	opacity: 0;
+	transition: opacity 1s, top 1s;
+	z-index: 0;
+
+}
+
+
+/*________________________________________________________________________________________________________________________________________________________________________
+
+GardenBuilder_FarmSystems_Styles
+__________________________________________________________________________________________________________________________________________________________________________*/
+
+
+/*Grow Shelves*/
+
+
+#Grow_Shelves_PageWrapper {
+	position: absolute;
+	top: 400px;
+
+}
+
+#GrowShelves_TextWrapper {
+	position: absolute;
+	left: 700px;
+    width: 600px;
+    top: 130px;
+    transition: top 1s;
+}
+#Grow_Shelves_Img {
+	position: absolute;
+	width: 900px;
+	left: -80px;
+	top: -30px;
+}
+
+#Expand_Stats_GrowShelves {
+	opacity: 1;
+	transition: opacity .3s;
+	z-index: 10;
+}
+#Expand_Stats_GrowShelves h6 {
+	position: absolute;
+	left: 700px;
+    width: 600px;
+    top: 258px;
+	color: #559B98;
+	font-size: 14px;
+	font-weight: 300;
+
+}
+
+#Expand_Stats_GrowShelves h6:Hover {
+	font-weight: 400;
+}
+#Expand_Stats_GrowShelves h6:Hover + #Underline {
+	height: 1.5px;
+}
+
+
+#Extra_Stats_GrowShelves_Wrapper {
+	position: absolute;
+	left: 708px;
+	top: 300px;
+	opacity: 0;
+	transition: opacity 1s, top 1s;
+	z-index: 0;
+
+}
+
+
+/*Grow Towers*/
+
+#Grow_Towers_PageWrapper {
+	position: absolute;
+	top: 1150px;
+
+}
+
+#GrowTowers_TextWrapper {
+	position: absolute;
+	left: 700px;
+    width: 600px;
+    top: 130px;
+    transition: top 1s;
+}
+#Grow_Towers_Img {
+	position: absolute;
+	width: 900px;
+	left: -80px;
+	top: -60px;
+}
+
+#Expand_Stats_GrowTowers {
+	opacity: 1;
+	transition: opacity .3s;
+	z-index: 10;
+}
+#Expand_Stats_GrowTowers h6 {
+	position: absolute;
+	left: 700px;
+    width: 600px;
+    top: 258px;
+	color: #559B98;
+	font-size: 14px;
+	font-weight: 300;
+
+}
+
+#Expand_Stats_GrowTowers h6:Hover {
+	font-weight: 400;
+}
+#Expand_Stats_GrowTowers h6:Hover + #Underline {
+	height: 1.5px;
+}
+
+
+#Extra_Stats_GrowTowers_Wrapper {
+	position: absolute;
+	left: 708px;
+	top: 300px;
+	opacity: 0;
+	transition: opacity 1s, top 1s;
+	z-index: 0;
+
+}
+
+
+/*Grow Walls*/
+
+
+#Grow_Walls_PageWrapper {
+	position: absolute;
+	top: 1900px;
+
+}
+
+#GrowWalls_TextWrapper {
+	position: absolute;
+	left: 700px;
+    width: 600px;
+    top: 130px;
+    transition: top 1s;
+}
+#Grow_Walls_Img {
+	position: absolute;
+	width: 900px;
+	left: -80px;
+	top: -60px;
+}
+
+#Expand_Stats_GrowWalls {
+	opacity: 1;
+	transition: opacity .3s;
+	z-index: 10;
+}
+#Expand_Stats_GrowWalls h6 {
+	position: absolute;
+	left: 700px;
+    width: 600px;
+    top: 258px;
+	color: #559B98;
+	font-size: 14px;
+	font-weight: 300;
+
+}
+
+#Expand_Stats_GrowWalls h6:Hover {
+	font-weight: 400;
+}
+#Expand_Stats_GrowWalls h6:Hover + #Underline {
+	height: 1.5px;
+}
+
+
+#Extra_Stats_GrowWalls_Wrapper {
+	position: absolute;
+	left: 708px;
+	top: 300px;
+	opacity: 0;
+	transition: opacity 1s, top 1s;
+	z-index: 0;
+
+}
+/*________________________________________________________________________________________________________________________________________________________________________
+
+Farm Customization Styles
+__________________________________________________________________________________________________________________________________________________________________________*/
+#CustomFarmWrapper {
+	position: absolute;
+	top: 100px;
+	width: 100%;
+
+}
+
+#CustomFarmImgWrapper {
+	position: relative;
+	margin: auto;
+	height: 500px;
+	width: 100%;
+
+}
+.CustomFarmImg {
+	position: absolute;
+	height: 350px;
+	width: 600px;
+	left: 400px;
+	top: 100px;
+	background-color: red;
+}
+#CustomFarmTitle {
+	position: relative;
+	margin: auto;
+	text-align: center;
+	margin-top: 20px;
+/*    color: #559B98;*/
+    opacity: .3;
+}
+
+#CustomStatsTweakingWrapper {
+	position: relative;
+	margin: auto;
+	width: 100%;
+	margin-top: 70px;
+}
+
+#firstTraitWrapper {
+	position: relative;
+	display: inline-block;
+	width: 300px;
+}
+#secondTraitWrapper {
+	position: relative;
+	display: inline-block;
+	width: 300px;
+}
+#thirdTraitWrapper {
+	position: relative;
+	display: inline-block;
+	width: 300px;
+}
+.Traits {
+	padding-left:140px;
+}
+
+.TraitBody {
+	margin-bottom: 20px;
+}
+.Results {
+	padding-left:120px;
+	margin-bottom: 70px;
+}
+#resultStatsWrapper {
+	margin-top: 70px;
+}
+#resultWrapper1 {
+	position: relative;
+	display: inline-block;
+}
+#resultWrapper2 {
+	position: relative;
+	display: inline-block;
+}
+#resultWrapper3 {
+	position: relative;
+	display: inline-block;
+}
+#resultWrapper4 {
+	position: relative;
+	display: inline-block;
+}
+
+
+#EnterCommunityButton {
+	width: 200px;
+	height: 50px;
+	border-radius: 100px;
+	position: relative;
+	border-color: #559B98;
+	border-width: 2px;
+	outline-style: none;
+	font-size: 18px;
+	font-family: 'Open Sans', sans-serif;
+	font-weight: 700;
+	color: #559B98;
+	margin-bottom: 30px;
+	margin-top: 50px;
+	margin-left: 50%;
+	transform: translate(-50%, -50%);
+
+}
+
+#EnterCommunityButton:hover {
+	width: 200px;
+	height: 50px;
+	border-radius: 100px;
+	margin-bottom: 50px;
+	border-color: #559B98;
+	border-width: 2px;
+	outline-style: none;
+	font-size: 18px;
+	font-family: 'Open Sans', sans-serif;
+	font-weight: 700;
+	color: white;
+	background-color: #559B98;
+
+
+}
+
+#ERTImg {
+    position: absolute;
+    height: 600px;
+    left: 170px;
+    top: -20px;
+}
+
+#Priority {
+    position: absolute;
+    top: 250px;
+    left:550px;
+}
+
+#Scale {
+    position: absolute;
+    top: 180px;
+    left:800px;
+}
+#Cost {
+    position: absolute;
+    top: 300px;
+    left:700px;
+}
+/*________________________________________________________________________________________________________________________________________________________________________
+
+MissionStatement Styles
+__________________________________________________________________________________________________________________________________________________________________________*/
+
+#MissionStatementImg {
+	position: absolute;
+	width: 900px;
+	left: -100px;
+	top: 100px;
+}
+
+#MissionStatementWrapper {
+	position: relative;
+    /* margin-top: 400px; */
+    /* margin: auto; */
+    padding-top: 160px;
+    width: 700px;
+    /* height: 500px; */
+    /*margin: auto;*/
+    text-align: left;
+    padding-left: 600px;
+}
+#MissionStatementTitle {
+	text-align: left;
+	color: #559B98;
+
+}
+
+#MissionStatementBody {
+	/*font-size: 20px;
+	font-family: 'Open Sans', sans-serif;
+	font-weight: 300;*/
+	line-height: 1.5;
+	padding-top: 20px;
+	/*margin: auto;*/
+	width: 700px;
+	text-align: left;
+
+}
+
+#MissionStatementExitButton {
+	position: relative;
+	/*margin: auto;*/
+	width: 200px;
+	height: 50px;
+	border-radius: 300px;
+	border-color: #559B98;
+	border-width: 2px;
+	outline-style: none;
+	font-size: 18px;
+	font-family: 'Open Sans', sans-serif;
+	font-weight: 700;
+	color: #559B98;
+	margin-bottom: 50px;
+	margin-top: 50px;
+
+}
+
+#MissionStatementExitButton:hover {
+	border-color: #559B98;
+	border-width: 2px;
+	color: white;
+	background-color: #559B98;
+}
+

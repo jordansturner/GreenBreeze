@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="MainPageStyles.css">
+	<link href="https://fonts.googleapis.com/css?family=Montserrat:300i,300,400,500,600,700|Open+Sans:300,400,400i" rel="stylesheet">
+	<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/skrollr/0.6.30/skrollr.min.js"></script>
+	<!--font-family: 'Open Sans', sans-serif;
+		font-family: 'Montserrat', sans-serif; -->
+</head>
+<body id = "Page">
+	<div id="FutureOfAgro">
+		<h3>The Future of Agriculture</h3>
+		<h6>Slide to uncover a future with <i>Green Breeze</i>. </br> Hover over facts to learn more about each feature.</h6>
+	</div>
+	<!-- <div id="LoadingMap">
+		<img id="FutureMap" src="Assets/Asset_1.png" alt="Future_Farm">
+	</div> -->
+
+	<div class="splitview">
+	        <div class="panel Mapbottom">
+	        	<div class="content">
+	        		<img id="FutureMap" src="Assets/Asset_1.png" alt="Future_Farm">
+
+	        	</div>
+	        </div>
+	        <div class="panel Maptop">
+	        	<div class="content">
+	        		<img id="CurrentMap" src="Assets/Asset_2.png" alt="Current_Farm">
+	        		<div id="factsbuttons">
+		        		<img id="FirstFact" class="factbutton" src="Assets/info_button.png" alt="info_button">
+		        		<img id="SecondFact" class="factbutton" src="Assets/info_button.png" alt="info_button">
+		        		<img id="ThirdFact" class="factbutton" src="Assets/info_button.png" alt="info_button">
+		        		<img id="FourthFact" class="factbutton" src="Assets/info_button.png" alt="info_button">
+		        		<img id="FifthFact" class="factbutton" src="Assets/info_button.png" alt="info_button">
+		        		<img id="SixthFact" class="factbutton" src="Assets/info_button.png" alt="info_button">
+		        		<img id="SeventhFact" class="factbutton" src="Assets/info_button.png" alt="info_button">
+		        		<img id="EighthFact" class="factbutton" src="Assets/info_button.png" alt="info_button">
+		        		<img id="NinthFact" class="factbutton" src="Assets/info_button.png" alt="info_button">
+		        		<img id="TenthFact" class="factbutton" src="Assets/info_button.png" alt="info_button">
+		        		<img id="EleventhFact" class="factbutton" src="Assets/info_button.png" alt="info_button">
+
+	        		</div>
+	        	</div>
+	         	
+	        </div>
+
+	        	<img class="handle" src="Assets/Slider.png" alt="slider"> 
+	        	<div id="topbarhandle"></div>
+	        	<div id="bottombarhandle"></div>
+		
+	</div>
+
+	<div id="EntryTitle">
+		<h2> Welcome to</h2>
+		<h1> Project.Herban</h1>
+		<h5> <i>The worlds first fully autonomous and modular local farming solution</i></h5>
+	</div>
+	<div id="EntryButton">
+		<img id="EntryButtonImg" src="Assets/StartButton.png" alt="Enter Here">
+		<div id="LeftLine"></div>
+		<div id="RightLine"></div>
+	</div>
+
+	<div id="HighLevelNavigationStart">
+		    <span id="gardenBuilder">GARDEN BUILDER></span>
+		    <span> <a href="MissionStatement.html " data-text="OUR MISSION">OUR MISSION</a></span>
+		    <span> <a  data-text="HERBAN LOGO" id="HerbanLogo4" class="slideUp"></a></span>
+		    <span><a href="____" data-text="FURTHER READINGS">FURTHER READINGS</a></span>
+		    <span><a href="_____" data-text="THE COMMUNITY" >THE COMMUNITY</a></span>
+		</div> 
+
+	<!-- <div id="infoWrapper">
+		<div id="FactWrapper">
+			<div id="buttonicon">
+				
+			</div>
+			<div id="facts">
+				<h4>Welcome to the Exhibition</h4>
+				<p id="BlueNodeTextBlurb"> Select a blue node and discover the world from our point of view.</p>
+			</div>
+		</div>
+	</div> -->
+	<script type="text/javascript">
+
+	
+// 	$(document).ready(function () {
+// 		var hoverClick = $('#EntryButtonImg');
+// 		var rightLine = $('#RightLine');
+// 		var leftLine = $('#LeftLine');
+// 		var RightLineWidth = $('#RightLine').css('width');
+
+//     	if (RightLineWidth == '30px'){
+// 		alert("runScript");
+// 	};
+// });
+
+	$(document).ready(function () {
+			// var RightLineWidth = $('#RightLine').css('width');
+			var HoverOff;
+			var HoverOff2;
+			var HoverOff3;
+
+		  $('#EntryButtonImg').mouseover(function() {
+		    $('#RightLine').css("width", "400px");
+		    $('#LeftLine').css("width", "400px");
+		    
+		    HoverOff = setTimeout(function(){
+		    	$('#EntryTitle, #EntryButton').stop(true).fadeTo("slow", 0);
+		    	$('.Mapbottom').stop(true).fadeTo("slow", 1);
+		    	$('.handle').stop(true).fadeTo("slow", 1);
+		    	$('#topbarhandle').stop(true).fadeTo("slow", 1);
+		    	$('#bottombarhandle').stop(true).fadeTo("slow", 1);
+		    	$('#FutureOfAgro').stop(true).fadeTo("slow", 1);
+		    	$('#HighLevelNavigationStart').stop(true).fadeTo("slow", 1);
+		    	$('#buttonContainer').stop(true).fadeTo("slow", 1);
+		    	$('.Maptop').stop(true).fadeTo("fast", 1);
+		    	$('#infoWrapper').stop(true).fadeTo("slow", 1);
+
+		    }, 2000);
+
+		    // setTimeout(function(){
+		    // 	$('#Page').append($('#Navigation'));
+		    // 	$('#Navigation').stop(true).fadeTo("slow", 1);
+		    // }, 2100);
+		    
+		    
+		    HoverOff2 = setTimeout(function(){
+
+		    	
+		    	$('#EntryTitle').remove();
+		  		$('#EntryButton').remove();
+
+		    }, 2500);
+		 
+
+		  HoverOff3 = setTimeout(function(){
+		  		window.location.href='MainHomePage4.html'
+		    }, 4000);
+
+		   });
+
+		  $('#EntryButtonImg').mouseout(function(){
+
+		  	$('#RightLine').css("width", "0px");
+		    $('#LeftLine').css("width", "0px");
+		    clearTimeout(HoverOff);
+          	clearTimeout(HoverOff2);
+          	clearTimeout(HoverOff3);
+		   
+		  });       
+		  
+});
+
+
+		  // document.addEventListener('DOMContentLoaded', function() {
+				//     var parent = document.querySelector('.splitview'),
+				//         topPanel = parent.querySelector('.Maptop'),
+				//         handle = parent.querySelector('.handle'),
+				//         clickHack = 0,
+				//         delta = 0;
+
+				//     // If the parent has .skewed class, set the skewHack var.
+				//     if (parent.className.indexOf('.clicked') != -1) {
+				//         clickHack = 1000;
+				//     }
+
+				//     parent.addEventListener('mousemove', function(event) {
+				//         // Get the delta between the mouse position and center point.
+				//         delta = (event.clientX - window.innerWidth / 2) * 0.5;
+
+				//         // Move the handle.
+				//         handle.style.left = event.clientX + delta + 'px';
+
+				//         // Adjust the top panel width.
+				//         topPanel.style.width = event.clientX + clickHack + delta + 'px';
+				//     });
+				// });
+
+		  // document.addEventListener('DOMContentLoaded', function(){
+		  // 		let wrapper = document.querySelector('.splitview');
+		  // 		let toplayer = wrapper.querySelector('.Maptop');
+		  // 		let handle = wrapper.querySelector('.handle');
+		  // 		// let straight = 0;
+		  // 		// let delta = 0;
+
+		  // 		// if(wrapper.className.indexOf('clicked') != -1){
+		  // 		// 	clicked = 1000;
+		  // 		// }()
+		  		
+		  // 		$(".handle").on('mousedown', function(event){
+		  // 			// if (event.type == "mousedown"){
+		  // 				wrapper.addEventListener('mousemove', function(event){
+			 //  			// delta = (event.clientX - window.innerWidth / 2) * 0.5;
+				//   			handle.style.left = event.clientX - 20 + 'px';
+				//   			toplayer.style.width = event.clientX - 287 + 'px';
+		  // 				});
+		  // 			// }
+		  			
+
+		  // 		});
+
+		  // 		$(".handle").on("mouseup",function(event){
+
+		  // 			$(".handle")[0].releaseCapture();
+		  // 				// handle.style.left = event.clientX - 20 + 'px';
+				//   		// toplayer.style.width = event.clientX - 287 + 'px';
+				// 	});
+		  		
+		  // });
+
+	 $(function(){
+
+		var dragging = false;
+		var iX;
+		$(".handle").mousedown(function(e) {
+			dragging = true;
+			iX = e.clientX - this.offsetLeft;
+			this.setCapture && this.setCapture();
+			return false;
+		});
+		document.onmousemove = function(e) {
+			if (dragging) {
+				var e = e || window.event;
+				var oX = e.clientX - iX;
+				$(".handle").css({"left":oX + "px"});
+				$(".Maptop").css({"width":oX - 273 + "px"});
+				$("#topbarhandle").css({"left":oX + 15 + "px"});
+				$("#bottombarhandle").css({"left":oX + 15 + "px"});
+				return false;
+			}
+		};
+		$(document).mouseup(function(e) {
+			dragging = false;
+			// $(".handle")[0].releaseCapture();
+			// $(".Maptop")[0].releaseCapture();
+			// $("#topbarhandle")[0].releaseCapture();
+			e.cancelBubble = true;
+		})
+	});
+
+		  
+			// $(function() {
+
+			// 	$( "#handle" ).click(function(e) {
+
+			// 	  var offset = $(this).offset();
+			// 	  var relativeX = (e.pageX - offset.left);
+			// 	  // var relativeY = (e.pageY - offset.top);
+
+  	// 				$( "#handle" ).css('left', relativeX - "1000px");
+			// 	});
+
+			// 	// $(".splitview").click(function(e) {
+
+			// 	//   alert("X: " + relativeX + "  Y: " + relativeY);
+
+			// 	// });
+			// });
+
+		
+	
+
+	</script>
+</body>
+</html>

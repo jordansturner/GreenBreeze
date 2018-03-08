@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="MainPageStyles.css">
+	<link rel="stylesheet" type="text/css" href="rangeslider.css">
+	<link href="https://fonts.googleapis.com/css?family=Montserrat:300i,300,400,500,600,700|Open+Sans:300,400,400i" rel="stylesheet">
+	<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/skrollr/0.6.30/skrollr.min.js"></script>
+	<script src='rangeslider.min.js'></script>
+	<!--font-family: 'Open Sans', sans-serif;
+		font-family: 'Montserrat', sans-serif; -->
+</head>
+
+<body>
+	<div id="HighLevelNavigationTop">
+		    <a href="MainHomePage4.html#introWrapper" data-text="GARDEN BUILDER" id="SelectedNavItem">GARDEN BUILDER</a>
+		    <span> <a href="MissionStatement.html " data-text="OUR MISSION">OUR MISSION</a></span>
+		    <span> <a href="MainHomePage4.html" data-text="HERBAN LOGO" id="HerbanLogo4"></a></span>
+		    <span><a href="____" data-text="FURTHER READINGS">FURTHER READINGS</a></span>
+		    <span><a href="_____" data-text="THE COMMUNITY" >THE COMMUNITY</a></span>
+		</div> 
+	<div id="GardenBuilderNavigationTop">
+	    <a href="GardenBuilder_GrowingPriorities.html" data-text="Growing Priorities" >Growing Priorities</a>
+	    <a href="GardenBuilder_UrbanSpaces.html" data-text="Urban Spaces">Urban Spaces</a>
+	    <a href="GardenBuilder_FarmSystems.html" data-text="Farm Systems" >Farm Systems</a>
+	    <a href="GardenBuilder_FarmCustomization.html" data-text="Farm Customization" id="SelectedNav">Farm Customization</a>
+	</div> 
+	<div id="CustomFarmWrapper">
+		<div id="CustomFarmImgWrapper">
+			<div class="CustomFarmImg">
+				
+			</div>
+			<img id="Priority" class="factbutton" src="Assets/info_button2.png" alt="info_button">
+			<img id="Scale" class="factbutton" src="Assets/info_button2.png" alt="info_button">
+			<img id="Cost" class="factbutton" src="Assets/info_button2.png" alt="info_button">
+
+		</div>
+		<h3 id="CustomFarmTitle"> SELECT ANY DOT TO BEGIN </h3>
+
+		<div id="CustomStatsTweakingWrapper">
+			<div class="Traits" id="firstTraitWrapper">
+				<h4 id="firstTraitTitle">Trait Title</h4>
+				<h6 class="TraitBody" id="firstTraitBody">Cheaper than aeroponics and slower in production, but much less routinely upkeep</h6>
+				<input type="range" min="0" max="30" data-rangeslider="" style="position: absolute; width: 1px; height: 1px; overflow: hidden; opacity: 0;">
+			</div>
+			<div class="Traits" id="secondTraitWrapper">
+				<h4 id="secondTraitTitle">Trait Title</h4>
+				<h6 class="TraitBody" id="secondTraitBody">Cheaper than aeroponics and slower in production, but much less routinely upkeep</h6>
+				<input type="range" min="0" max="30" data-rangeslider="" style="position: absolute; width: 1px; height: 1px; overflow: hidden; opacity: 0;">
+			</div>
+			<div class="Traits" id="thirdTraitWrapper">
+				<h4 id="thirdTraitTitle">Trait Title</h4>
+				<h6 class="TraitBody" id="thirdTraitBody">Cheaper than aeroponics and slower in production, but much less routinely upkeep</h6>
+				<input type="range" min="0" max="30" data-rangeslider="" style="position: absolute; width: 1px; height: 1px; overflow: hidden; opacity: 0;">
+			</div>
+
+		</div>
+
+		<div id="resultStatsWrapper">
+			<div class="Results" id="resultWrapper1">
+				<div id="resultMedalImg1"></div>
+				<div id="resultText1">Grocery Budget Decreased  By<span id="filledInResult1">_________</span>.</div>
+			</div>
+			<div class="Results" id="resultWrapper2">
+				<div id="resultMedalImg2"></div>
+				<div id="resultText2">Meals Created<span id="filledInResult2">_________</span>.</div>
+			</div>
+			<div class="Results" id="resultWrapper3">
+				<div id="resultMedalImg3"></div>
+				<div id="resultText3">Water Saved<span id="filledInResult3">_________</span>.</div>
+			</div>
+			<div class="Results" id="resultWrapper4">
+				<div id="resultMedalImg4"></div>
+				<div id="resultText4">Farmland Rejuvinated<span id="filledInResult4">_________</span>.</div>
+			</div>
+			
+		</div>
+		<a href="#"><button id="EnterCommunityButton">
+		Finalize Garden
+		</button></a>
+	</div>
+
+<script type="text/javascript">
+	$( document ).ready(function() {
+  //   	console.log(localStorage.getItem("first"));
+		// console.log(localStorage.getItem("second"));
+		// console.log(localStorage.getItem("third"));
+
+		var combinedCategories = localStorage.getItem("Priority") + localStorage.getItem("Scale") + localStorage.getItem("Cost");
+
+		console.log(combinedCategories);
+
+		loadEverything(combinedCategories);
+
+
+	});
+
+function loadEverything (x) {
+	$("#CustomFarmImgWrapper").prepend("<img id='ERTImg' src='Assets/PNG_72ppi/" + x +".png'/>");
+	$(".CustomFarmImg").remove();
+
+}
+
+$('#Priority').mouseover(function() {
+    // $("#CustomFarmTitle").innerhtml().replace('Environmental Growing Priorities');
+    document.getElementById("CustomFarmTitle").innerHTML = "Environmental Growing Priorities";
+});
+
+$('#Scale').mouseover(function() {
+    // $("#CustomFarmTitle").innerhtml().replace('Environmental Growing Priorities');
+    document.getElementById("CustomFarmTitle").innerHTML = "Residential Living Space";
+});
+$('#Cost').mouseover(function() {
+    // $("#CustomFarmTitle").innerhtml().replace('Environmental Growing Priorities');
+    document.getElementById("CustomFarmTitle").innerHTML = "Herban Grow Towers";
+});
+
+
+
+var json = (function (){
+var json = null;
+$.ajax({
+	'sync': false,
+	'global': false,
+	'url': "EAT.json",
+	'dataType': "json",
+	'success': function(data){
+		json = data;
+	}
+});
+return json;
+})();
+
+console.log(json);
+
+
+	 $('input[type="range"]').rangeslider({
+
+
+
+    // Feature detection the default is `true`.
+    // Set this to `false` if you want to use
+    // the polyfill also in Browsers which support
+    // the native <input type="range"> element.
+    polyfill: false,
+
+    // Default CSS classes
+    rangeClass: 'rangeslider',
+    disabledClass: 'rangeslider--disabled',
+    horizontalClass: 'rangeslider--horizontal',
+    verticalClass: 'rangeslider--vertical',
+    fillClass: 'rangeslider__fill',
+    handleClass: 'rangeslider__handle',
+
+    // Callback function
+    onInit: function() {},
+
+    // Callback function
+    onSlide: function(position, value) {},
+
+    // Callback function
+    onSlideEnd: function(position, value) {}
+});
+
+			
+		
+</script>
+</body>
+</html>
