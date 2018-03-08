@@ -115,26 +115,21 @@ $('#Cost').mouseover(function() {
 });
 
 
-var jsonData;
 var json = (function (){
 var json = null;
 $.ajax({
 	'async': false,
 	'global': false,
-	'url': "EAT1.json",
+	'url': "EAT.json",
 	'dataType': "json",
 	'success': function(data){
 		json = data;
-		console.log(data);
-		console.log(json);
-		jsonData = data;
 	}
 });
 return json;
 })();
 
-		console.log(jsonData);
-		console.log(json);
+console.log(json);
 
 
 	 $('input[type="range"]').rangeslider({
