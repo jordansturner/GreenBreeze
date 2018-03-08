@@ -91,8 +91,9 @@
 
 		console.log(combinedCategories);
 
-		json = loadEverything(combinedCategories);
+		gardenData = loadEverything(combinedCategories);
 
+		console.log("This is garden data",gardenData);
 
 function loadEverything (x) {
 	$("#CustomFarmImgWrapper").prepend("<img id='ERTImg' src='Assets/PNG_72ppi/" + x +".png'/>");
@@ -108,14 +109,17 @@ function loadEverything (x) {
 		'url': url,
 		'dataType': "json",
 		'success': function(data){
+			console.log("This is jquery response",data);
 			json = data;
 		}
 	});
+	console.log("Returned Value",json);
 	return json;
 	})();
 }
 
 $(".factbutton").mouseover(function() {
+	console.log("Returned Value", gardenData);
 	var dotName = this.id;
 	if(dotName =="Priority") {
 		document.getElementById("CustomFarmTitle").innerHTML = json.DotTitle1;
