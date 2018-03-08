@@ -98,6 +98,21 @@ function loadEverything (x) {
 	$("#CustomFarmImgWrapper").prepend("<img id='ERTImg' src='Assets/PNG_72ppi/" + x +".png'/>");
 	$(".CustomFarmImg").remove();
 
+	var url = x + ".json";
+
+	var json = (function (){
+	var json = null;
+	$.ajax({
+		'async': false,
+		'global': false,
+		'url': url,
+		'dataType': "json",
+		'success': function(data){
+			json = data;
+		}
+	});
+	return json;
+	})();
 }
 
 $(".factbutton").mouseover(function() {
@@ -118,24 +133,6 @@ $(".factbutton").mouseover(function() {
 $(".factbutton").mouseleave(function() {
 	document.getElementById("CustomFarmTitle").innerHTML = "Select any dot to begin";
 });
-
-
-var json = (function (){
-var json = null;
-$.ajax({
-	'async': false,
-	'global': false,
-	'url': "EAT.json",
-	'dataType': "json",
-	'success': function(data){
-		json = data;
-	}
-});
-return json;
-})();
-
-console.log(json.DotTitle1);
-console.log(json.DotTitle2);
 
 
 	 $('input[type="range"]').rangeslider({
