@@ -100,18 +100,23 @@ function loadEverything (x) {
 
 }
 
-$('#Priority').mouseover(function() {
-    // $("#CustomFarmTitle").innerhtml().replace('Environmental Growing Priorities');
-    document.getElementById("CustomFarmTitle").innerHTML = "Environmental Growing Priorities";
+$(".factbutton").mouseover(function() {
+	var dotName = this.id;
+	if(dotName =="Priority") {
+		document.getElementById("CustomFarmTitle").innerHTML = json.DotTitle1;
+	}
+
+	if(dotName =="Scale") {
+		document.getElementById("CustomFarmTitle").innerHTML = json.DotTitle2;
+	}
+
+	if(dotName =="Cost") {
+		document.getElementById("CustomFarmTitle").innerHTML = json.DotTitle3;
+	}
 });
 
-$('#Scale').mouseover(function() {
-    // $("#CustomFarmTitle").innerhtml().replace('Environmental Growing Priorities');
-    document.getElementById("CustomFarmTitle").innerHTML = "Residential Living Space";
-});
-$('#Cost').mouseover(function() {
-    // $("#CustomFarmTitle").innerhtml().replace('Environmental Growing Priorities');
-    document.getElementById("CustomFarmTitle").innerHTML = "Herban Grow Towers";
+$(".factbutton").mouseleave(function() {
+	document.getElementById("CustomFarmTitle").innerHTML = "Select any dot to begin";
 });
 
 
