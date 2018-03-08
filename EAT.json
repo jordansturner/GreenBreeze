@@ -1,11 +1,11 @@
 {
 	"DotTitle1": "Environmental Grower Priorities",
-	"Main Dot Title 2": "Apartment Living Space",
-	"Main Dot Title 3": "Herban Grow Towers",
-	"Trait Title 1": "Template First Fact",
-	"Trait Title 2": "Template Two Fact",
-	"Trait Title 3": "Template Three Fact",
-	"Body Text 1":"Cheaper than aeroponics and slower in production, but much less routinely upkeep",
-	"Body Text 2":"Cheaper than aeroponics and slower in production, but much less routinely upkeep",
-	"Body Text 3":"Cheaper than aeroponics and slower in production, but much less routinely upkeep"
+	"DotTitle2": "Apartment Living Space",
+	"DotTitle3": "Herban Grow Towers",
+	"TraitTitle1": "Template First Fact",
+	"TraitTitle2": "Template Two Fact",
+	"TraitTitle3": "Template Three Fact",
+	"BodyText1":"Cheaper than aeroponics and slower in production, but much less routinely upkeep",
+	"BodyText2":"Cheaper than aeroponics and slower in production, but much less routinely upkeep",
+	"BodyText3":"Cheaper than aeroponics and slower in production, but much less routinely upkeep"
 }
