@@ -115,7 +115,7 @@ function loadEverything (x) {
 	})();
 }
 
-$(".factbutton").mouseover(function() {
+$(".factbutton").mouseover(function(loadEverything) {
 	var dotName = this.id;
 	if(dotName =="Priority") {
 		document.getElementById("CustomFarmTitle").innerHTML = json.DotTitle1;
@@ -130,7 +130,7 @@ $(".factbutton").mouseover(function() {
 	}
 });
 
-$(".factbutton").mouseleave(function() {
+$(".factbutton").mouseleave(function(loadEverything) {
 	document.getElementById("CustomFarmTitle").innerHTML = "Select any dot to begin";
 });
 
