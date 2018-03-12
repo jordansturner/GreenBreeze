@@ -2108,9 +2108,27 @@ ________________________________________________________________________________
 
 Farm Customization Styles
 __________________________________________________________________________________________________________________________________________________________________________*/
+#CongratulationsFineTuneIllustration {
+    position: absolute;
+    width: 900px;
+    left: -110px;
+    top: 190px;
+}
+
+#CongratulationsFineTuneWrapper {
+    position: absolute;
+    left: 750px;
+    top: 340px;
+    width: 600px;
+}
+
+#CongratulationsFineTuneWrapper h3 {
+    color: #559B98;
+}
+
 #CustomFarmWrapper {
 	position: absolute;
-	top: 100px;
+	top: 800px;
 	width: 100%;
 
 }
