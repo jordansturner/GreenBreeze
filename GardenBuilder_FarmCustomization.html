@@ -17,7 +17,7 @@
 		    <a href="MainHomePage4.html#introWrapper" data-text="GARDEN BUILDER" id="SelectedNavItem">GARDEN BUILDER</a>
 		    <span> <a href="MissionStatement.html " data-text="OUR MISSION">OUR MISSION</a></span>
 		    <span> <a href="MainHomePage4.html" data-text="HERBAN LOGO" id="HerbanLogo4"></a></span>
-		    <span><a href="____" data-text="FURTHER READINGS">FURTHER READINGS</a></span>
+		    <span><a href="Further_Reading.html" data-text="FURTHER READINGS">FURTHER READINGS</a></span>
 		    <span><a href="_____" data-text="THE COMMUNITY" >THE COMMUNITY</a></span>
 		</div> 
 	<div id="GardenBuilderNavigationTop">
@@ -32,6 +32,10 @@
 		<h3>Great choices! Now its time to customize your garden.</h3>
 		<h5>Scroll to access our dashboard where you will have the chance to personalize your previous choices and see the impact of your garden.</h5>
 	</div>
+	<a class="arrow-wrap" href="#content">
+		<span class="arrow"></span>
+	<!--<span class="hint">scroll</span>-->
+	</a>
 	<div id="CustomFarmWrapper">
 		<div id="CustomFarmImgWrapper">
 			<div class="CustomFarmImg">
@@ -206,7 +210,37 @@ $(".factbutton").click(function() {
     onSlideEnd: function(position, value) {}
 });
 
-});		
+});	
+
+$(window).scroll( function(){
+
+  //get scroll position
+  var topWindow = $(window).scrollTop();
+  //multipl by 1.5 so the arrow will become transparent half-way up the page
+  var topWindow = topWindow * 1.5;
+  
+  //get height of window
+  var windowHeight = $(window).height();
+      
+  //set position as percentage of how far the user has scrolled 
+  var position = topWindow / windowHeight;
+  //invert the percentage
+  position = 1 - position;
+
+  //define arrow opacity as based on how far up the page the user has scrolled
+  //no scrolling = 1, half-way up the page = 0
+  $('.arrow-wrap').css('opacity', position);
+
+});
+
+$(".arrow-wrap").click(function()  // When arrow is clicked
+	    {
+	        $("body,html").animate(
+	        {
+	            scrollTop : 670                       // Scroll 500px from top of body
+	        }, 1000);  //how fast the scrolling animation will be in miliseconds
+	    });
+
 		
 </script>
 </body>
