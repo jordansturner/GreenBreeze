@@ -3,7 +3,6 @@
 <head>
 	<title></title>
 	<link rel="stylesheet" type="text/css" href="MainPageStyles.css">
-	<link rel="preload" type="text/css" href="MainPageStyles.css">
 	<link href="https://fonts.googleapis.com/css?family=Montserrat:300i,300,400,500,600,700|Open+Sans:300,400,400i" rel="stylesheet">
 	<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/skrollr/0.6.30/skrollr.min.js"></script>
@@ -16,19 +15,23 @@
 		    <a href="MainHomePage4.html#introWrapper" data-text="GARDEN BUILDER">GARDEN BUILDER</a>
 		    <span> <a href="MissionStatement.html " data-text="OUR MISSION" id="SelectedNavItem">OUR MISSION</a></span>
 		    <span> <a href="MainHomePage4.html" data-text="HERBAN LOGO" id="HerbanLogo4"></a></span>
-		    <span><a href="____" data-text="FURTHER READINGS">FURTHER READINGS</a></span>
+		    <span><a href="Further_Reading.html" data-text="FURTHER READINGS">FURTHER READINGS</a></span>
 		    <span><a href="_____" data-text="THE COMMUNITY" >THE COMMUNITY</a></span>
-		</div>  
-	<img id="MissionStatementImg" src="Assets/PNG_72ppi/MissionStatement.png">
+		</div> 
+<div id="content">
+	<img id="MissionStatementImg" src="Assets/PNG_72ppi/Mission_Statement.png">
 	<div id="MissionStatementWrapper">
 		<h3 id="MissionStatementTitle">Mission Statement</h3>
 		<h5 id="MissionStatementBody">
-			Herban is not just a company, we are a green-based lifestyle brand. Traditionally, city spaces and the lack of integration between cities and environments have forced agriculture to remote parts of the country. Through a fully automated supply chain, Project Green Breeze is our solution to bridge the gap between the production and consumption of nutrient rich foods. By taking advantage of a digital marketplace, autonomous gardening, and drone delivery, our system will sell and deliver locally sourced produce directly to and from our customers doorstops. Our mission is to drive the change required for a sustainable future. By limiting the amount of traditional farmland needed to feed a growing population and by integrating green spaces into every facet of city life, our Green Breeze system will foster environmental rejuvination and healthier city ecosystems.
+			Herban is not just a company, we are a green-based lifestyle brand. By </br>taking advantage of a digital marketplace, autonomous gardening, and drone delivery system, Herban will sell and deliver locally sourced produce directly to and from our customers doorstops. Our mission is to drive the change required for a sustainable future. By limiting the amount of traditional farmland needed to feed a growing population and by integrating green spaces into every facet of city life, our Green Breeze system will foster environmental rejuvination and healthier city ecosystems.
 		</h5>
-		<button id="MissionStatementExitButton">Close</button>
+<!-- 		<button id="MissionStatementExitButton">Close</button> -->
+		<div class="circleXm"></div>
+		<button class="xm" id="missionX"></button>
 	</div>
+</div> 
 <script type="text/javascript">
-	$( "#MissionStatementExitButton" ).on( "click", function() {
+	$( "#missionX" ).on( "click", function() {
   		window.history.go(-1);
 	});
 </script>

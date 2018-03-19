@@ -12,8 +12,8 @@
 <body id = "Page4">
 	<div class="sections" id="headerWrapper">
 		<div id="FutureOfAgro4">
-			<h3>The Future of Agriculture</h3>
-			<h6>Slide to uncover a future with <i>Green Breeze</i>. </br> Hover over facts to learn more about each feature.</h6>
+			<h3>The Future of Farming is Vertical</h3>
+			<h6>Explore the current problems with agriculture and move </br> our slider to uncover a future with <i>Herban</i>.</h6>
 		</div>
 		<!-- <div id="LoadingMap">
 			<img id="FutureMap" src="Assets/Asset_1.png" alt="Future_Farm">
@@ -76,9 +76,9 @@
 		</div>
 		<div id="HighLevelNavigation4">
 		    <span href="" data-text="GARDEN BUILDER" id="gardenBuilder">GARDEN BUILDER</span>
-		    <span> <a href="MissionStatement.html " data-text="OUR MISSION">OUR MISSION</a></span>
+		    <span> <a href="MissionStatement.html" data-text="OUR MISSION" id="mission_Statement">OUR MISSION</a></span>
 		    <span> <a  data-text="HERBAN LOGO" id="HerbanLogo4" class="slideUp"></a></span>
-		    <span><a href="____" data-text="FURTHER READINGS">FURTHER READINGS</a></span>
+		    <span><a href="Further_Reading.html" data-text="FURTHER READINGS">FURTHER READINGS</a></span>
 		    <span><a href="_____" data-text="THE COMMUNITY" >THE COMMUNITY</a></span>
 		</div> 
 
@@ -236,6 +236,27 @@ $(document).ready(function(){
 		$(".Maptop2").animate({width: "1px"}, 240, "linear", function(){
 			$(".Maptop2").animate({width: "1430px"}, 1300, "linear");	
 		});
+
+	// Error trying to load popup. Potentially need to run this server side?//
+	
+		$('#mission_Statement').each(function() {
+		var $link = $(this);
+		var $dialog = $('<div></div>')
+			.load($link.attr('href') + ' #content')
+			.dialog({
+				autoOpen: false,
+				title: $link.attr('title'),
+				width: 500,
+				height: 300
+			});
+ 
+		$link.click(function() {
+			$dialog.dialog('open');
+ 
+			return false;
+		});
+	});
+
 });
 /*Pink Buttons */
 

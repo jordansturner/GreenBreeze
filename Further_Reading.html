@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="MainPageStyles.css">
+	<link rel="stylesheet" type="text/css" href="rangeslider.css">
+	<link href="https://fonts.googleapis.com/css?family=Montserrat:300i,300,400,500,600,700|Open+Sans:300,400,400i" rel="stylesheet">
+	<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/skrollr/0.6.30/skrollr.min.js"></script>
+	<script src='rangeslider.min.js'></script>
+	<!--font-family: 'Open Sans', sans-serif;
+		font-family: 'Montserrat', sans-serif; -->
+</head>
+
+<body>
+	<div id="HighLevelNavigationTop">
+		    <a href="MainHomePage4.html#introWrapper" data-text="GARDEN BUILDER">GARDEN BUILDER</a>
+		    <span> <a href="MissionStatement.html " data-text="OUR MISSION">OUR MISSION</a></span>
+		    <span> <a href="MainHomePage4.html" data-text="HERBAN LOGO" id="HerbanLogo4"></a></span>
+		    <span><a href="Further_Reading.html" data-text="FURTHER READINGS" id="SelectedNavItem">FURTHER READINGS</a></span>
+		    <span><a href="_____" data-text="THE COMMUNITY" >THE COMMUNITY</a></span>
+		</div> 
+		<img id="FurtherReadingImg" src="Assets/PNG_72ppi/Further_Reading.png">
+		<div id="ReadingTitle">
+			<h3>Browse Our Repository of Sources to Learn More</h3>
+			<h6>Click on any of the titles to explore the article.</h6>
+		</div>
+
+		<a class="arrow-wrap2" >
+		<span class="arrow2"></span>
+	<!--<span class="hint">scroll</span>-->
+		</a>
+	
+	<div class="sources" id="Source1">
+		<a href="https://foodtank.com/news/2015/07/urban-farms-and-gardens-are-feeding-cities-around-the-world/"><h3 class="sourceTitle">28 Inspiring Urban Agriculture Projects</h3></a>
+		<h5 class="sourceBody">Around 15 percent of the world’s food is now grown in urban areas. According to the U.N. Food and Agriculture Organization (FAO), urban farms already supply food to about 700 million residents of cities, representing about a quarter of the world’s urban population. By 2030, 60 percent of people in developing countries will likely live in cities.</h5>
+	</div>
+	<div id="space"></div>
+	<div class="sources" id="Source2">
+		<a href="https://www.smallfootprintfamily.com/how-much-land-is-needed-to-be-self-sufficient"><h3 class="sourceTitle">How much land do you really need ot be self sufficient?</h3></a>
+		<h5 class="sourceBody">Despommier explained that plants consist of water, mineral nutrients like potassium and magnesium taken from the soil (or, in the case of a vertical farm, from the nutrients added to the water their roots are sprayed with), and carbon, an element plants get from the CO2 in the air and then convert by photosynthesis into sucrose, which feeds the plant, and cellulose, which provides its structure.</h5>
+	</div>
+	<div class="sources" id="Source3">
+		<a href="https://www.bloomberg.com/news/features/2017-09-06/this-high-tech-vertical-farm-promises-whole-foods-quality-at-walmart-prices"><h3 class="sourceTitle">This High-Tech Vertical Farm Promises Whole Foods Quality at Walmart Prices</h3></a>
+		<h5 class="sourceBody">The U.S. imports some 35 percent of fruits and vegetables, according to Bain & Co., and even leafy greens, most of which are produced in California or Arizona, travel an average of 2,000 miles before reaching a retailer. In other words, vegetables that are going to be appealing and edible for two weeks or less spend an awful lot of that time in transit.</h5>
+	</div>
+
+	<div class="sources" id="Source4">
+		<a href="https://www.nrcs.usda.gov/wps/portal/nrcs/detail/soils/use/?cid=nrcs142p2_054028"><h3 class="sourceTitle">Land Degradation: An overview</h3></a>
+		<h5 class="sourceBody">It is estimated that the total annual cost of erosion from agriculture in the USA is about US$44 billion per year, i.e. about US$247 per ha of cropland and pasture. Only about 3% of the global land surface can be considered as prime or Class I land and this is not found in the tropics. Another 8% of land is in Classes II and III. This 11% of land must feed the six billion people today and the 7.6 billion expected in 2020.
+</h5>
+	</div>
+	
+
+<script type="text/javascript">
+	
+
+$(document).ready(function()  //When the page is ready, load function
+	{
+
+			$(".arrow-wrap2").click(function()  // When arrow is clicked
+	    {
+	        $("body,html").animate(
+	        {
+	            scrollTop : 700                       // Scroll 500px from top of body
+	        }, 1000);  //how fast the scrolling animation will be in miliseconds
+	    });
+
+
+		$(window).scroll( function(){
+
+	  //get scroll position
+	  var topWindow = $(window).scrollTop();
+	  //multipl by 1.5 so the arrow will become transparent half-way up the page
+	  var topWindow = topWindow * 1.5;
+	  
+	  //get height of window
+	  var windowHeight = $(window).height();
+	      
+	  //set position as percentage of how far the user has scrolled 
+	  var position = topWindow / windowHeight;
+	  //invert the percentage
+	  position = 1 - position;
+
+	  //define arrow opacity as based on how far up the page the user has scrolled
+	  //no scrolling = 1, half-way up the page = 0
+	  $('.arrow-wrap2').css('opacity', position);
+
+		});
+	});
+    
+		
+</script>
+</body>
+</html>
