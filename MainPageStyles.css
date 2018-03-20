@@ -19,9 +19,9 @@ a::after {
 
 }
 
-a:active {
+/*a:active {
     font-weight: bold;
-}
+}*/
 
 #HerbanLogo {
 	background-image: url(Assets/HerbanLogo.png);
@@ -1462,8 +1462,176 @@ ________________________________________________________________________________
 
 }
 
+#line1 {
+    position: absolute;
+    width: 0px;
+    height: 2px;
+    left: 633px;
+    background-color: #559B98;
+    opacity: .5;
+    border-radius: 10px;
+    top: 21px;
+}
+#line2 {
+    position: absolute;
+    width: 0px;
+    height: 2px;
+    left: 700px;
+    background-color: #559B98;
+    opacity: .5;
+    border-radius: 10px;
+    top: 21px;
+}
+#line3 {
+    position: absolute;
+    width: 31px;
+    height: 2px;
+    left: 431px;
+    background-color: #559B98;
+    opacity: .5;
+    border-radius: 10px;
+    top: 21px;
+}
+#line4 {
+    position: absolute;
+    width: 31px;
+    height: 2px;
+    left: 498px;
+    background-color: #559B98;
+    opacity: .5;
+    border-radius: 10px;
+    top: 21px;
+}
+
+#line3_1 {
+    position: absolute;
+    width: 0px;
+    height: 2px;
+    left: 431px;
+    background-color: #559B98;
+    opacity: .5;
+    border-radius: 10px;
+    top: 21px;
+}
+#line4_1 {
+    position: absolute;
+    width:0px;
+    height: 2px;
+    left: 498px;
+    background-color: #559B98;
+    opacity: .5;
+    border-radius: 10px;
+    top: 21px;
+}
+
+#line5 {
+    position: absolute;
+    width: 31px;
+    height: 2px;
+    left: 228px;
+    background-color: #559B98;
+    opacity: .5;
+    border-radius: 10px;
+    top: 21px;
+}
+#line6 {
+    position: absolute;
+    width: 31px;
+    height: 2px;
+    left: 295px;
+    background-color: #559B98;
+    opacity: .5;
+    border-radius: 10px;
+    top: 21px;
+}
+#line5_1 {
+    position: absolute;
+    width: 0px;
+    height: 2px;
+    left: 228px;
+    background-color: #559B98;
+    opacity: .5;
+    border-radius: 10px;
+    top: 21px;
+}
+#line6_1 {
+    position: absolute;
+    width: 0px;
+    height: 2px;
+    left: 295px;
+    background-color: #559B98;
+    opacity: .5;
+    border-radius: 10px;
+    top: 21px;
+}
+
+/*.dot_1 {
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    background-color: #559B98;
+    top: 17px;
+    left: 640px;
+    border-radius: 10px;
+    opacity: .8;
+}
+.dot_2 {
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    background-color: #559B98;
+    top: 17px;
+    left: 690px;
+    border-radius: 10px;
+    opacity: .8;
+}*/
+.check {
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    left: 670px;
+    top: 10px;
+    opacity: 0;
+}
+.check2 {
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    left: 468px;
+    top: 10px;
+    opacity: 1;
+}
+.check2_1 {
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    left: 468px;
+    top: 10px;
+    opacity: 0;
+}
+.check3 {
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    left: 265px;
+    top: 10px;
+    opacity: 1;
+}
+.check3_1 {
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    left: 265px;
+    top: 10px;
+    opacity: 0;
+}
 #GardenBuilderNavigationTop #SelectedNav {
 	font-weight: 500;
+}
+
+#GardenBuilderNavigationTop .UnselectedNav {
+    color: grey;
+    opacity: .4;
 }
 #GardenBuilderNavigationTop a {
     padding-left: 110px;
@@ -1478,7 +1646,7 @@ ________________________________________________________________________________
 */
 }
 
-#GardenBuilderNavigationTop a:hover {
+#GardenBuilderNavigationTop .GreenNav:hover {
     font-weight: 600;
 }
 

@@ -21,10 +21,21 @@
 		    <span><a href="_____" data-text="THE COMMUNITY" >THE COMMUNITY</a></span>
 		</div> 
 	<div id="GardenBuilderNavigationTop">
-	    <a href="GardenBuilder_GrowingPriorities.html" data-text="Growing Priorities" >Growing Priorities</a>
-	    <a href="GardenBuilder_UrbanSpaces.html" data-text="Urban Spaces">Urban Spaces</a>
-	    <a href="GardenBuilder_FarmSystems.html" data-text="Farm Systems" >Farm Systems</a>
-	    <a href="GardenBuilder_FarmCustomization.html" data-text="Farm Customization" id="SelectedNav">Farm Customization</a>
+	    <a href="GardenBuilder_GrowingPriorities.html" data-text="Growing Priorities" class="GreenNav">Growing Priorities</a>
+	    <img src="Assets/checkButton.png" class="check">
+	    <div class="line" id="line1"></div>
+	    <div class="line" id="line2"></div>
+	    <img src="Assets/checkButton.png" class="check2">
+	    <div class="line" id="line3"></div>
+	    <div class="line" id="line4"></div>
+	     <img src="Assets/checkButton.png" class="check3">
+	    <div class="line" id="line5"></div>
+	    <div class="line" id="line6"></div>
+	    <!-- <div class="dot_1"></div>
+	    <div class="dot_2"></div> -->
+	    <a href="GardenBuilder_UrbanSpaces.html" data-text="Urban Spaces" class="GreenNav">Urban Spaces</a>
+	    <a href="GardenBuilder_FarmSystems.html" data-text="Farm Systems" class="GreenNav">Farm Systems</a>
+	    <a href="GardenBuilder_FarmCustomization.html" data-text="Farm Customization" id="SelectedNav" class="GreenNav">Farm Customization</a>
 	</div> 
 	<img id="CongratulationsFineTuneIllustration" src="Assets/PNG_72ppi/Introduction_Customize_Garden.png">
 	
@@ -96,7 +107,22 @@
   //   	console.log(localStorage.getItem("first"));
 		// console.log(localStorage.getItem("second"));
 		// console.log(localStorage.getItem("third"));
+		$(".check").delay(400).animate({
+			opacity: 1
+		}, 400,function(){
 
+		});
+		$("#line1").animate({
+			width: "31px"
+		}, 400,function(){
+
+		});
+
+		$("#line2").delay(800).animate({
+			width: "31px"
+		}, 400, function(){
+
+		});
 		var combinedCategories = localStorage.getItem("Priority") + localStorage.getItem("Scale") + localStorage.getItem("Cost");
 
 		console.log(combinedCategories);

@@ -11,8 +11,8 @@
 </head>
 <body id = "Page">
 	<div id="FutureOfAgro">
-		<h3>The Future of Agriculture</h3>
-		<h6>Slide to uncover a future with <i>Green Breeze</i>. </br> Hover over facts to learn more about each feature.</h6>
+		<h3>The Future of Farming is Vertical</h3>
+		<h6>Explore the current problems with agriculture and move </br> our slider to uncover a future with <i>Herban</i>.</h6>
 	</div>
 	<!-- <div id="LoadingMap">
 		<img id="FutureMap" src="Assets/Asset_1.png" alt="Future_Farm">
@@ -54,8 +54,8 @@
 
 	<div id="EntryTitle">
 		<h2> Welcome to</h2>
-		<h1> Project.Herban</h1>
-		<h5> <i>The worlds first fully autonomous and modular local farming solution</i></h5>
+		<h1> Herban</h1>
+		<h5> <i>The worlds first fully integrated communal & modular urban farming system</i></h5>
 	</div>
 	<div id="EntryButton">
 		<img id="EntryButtonImg" src="Assets/StartButton.png" alt="Enter Here">
@@ -97,14 +97,18 @@
 // });
 
 	$(document).ready(function () {
-			// var RightLineWidth = $('#RightLine').css('width');
+
 			var HoverOff;
-			var HoverOff2;
+			// var HoverOff2;
 			var HoverOff3;
 
-		  $('#EntryButtonImg').mouseover(function() {
-		    $('#RightLine').css("width", "400px");
-		    $('#LeftLine').css("width", "400px");
+		setTimeout(function(){
+				$('#RightLine').css("width", "400px");
+		    	$('#LeftLine').css("width", "400px");
+		    }, 2500);
+		  // $('#EntryButtonImg').mouseover(function() {
+		  //   $('#RightLine').css("width", "400px");
+		  //   $('#LeftLine').css("width", "400px");
 		    
 		    HoverOff = setTimeout(function(){
 		    	$('#EntryTitle, #EntryButton').stop(true).fadeTo("slow", 0);
@@ -118,7 +122,7 @@
 		    	$('.Maptop').stop(true).fadeTo("fast", 1);
 		    	$('#infoWrapper').stop(true).fadeTo("slow", 1);
 
-		    }, 2000);
+		    }, 4500);
 
 		    // setTimeout(function(){
 		    // 	$('#Page').append($('#Navigation'));
@@ -126,30 +130,30 @@
 		    // }, 2100);
 		    
 		    
-		    HoverOff2 = setTimeout(function(){
+		  //   HoverOff2 = setTimeout(function(){
 
 		    	
-		    	$('#EntryTitle').remove();
-		  		$('#EntryButton').remove();
+		  //   	$('#EntryTitle').remove();
+		  // 		$('#EntryButton').remove();
 
-		    }, 2500);
+		  //   }, 2500);
 		 
 
 		  HoverOff3 = setTimeout(function(){
 		  		window.location.href='MainHomePage4.html'
-		    }, 4000);
+		    }, 6500);
 
-		   });
+		   // });
 
-		  $('#EntryButtonImg').mouseout(function(){
+		  // $('#EntryButtonImg').mouseout(function(){
 
-		  	$('#RightLine').css("width", "0px");
-		    $('#LeftLine').css("width", "0px");
-		    clearTimeout(HoverOff);
-          	clearTimeout(HoverOff2);
-          	clearTimeout(HoverOff3);
+		  // 	$('#RightLine').css("width", "0px");
+		  //   $('#LeftLine').css("width", "0px");
+		  //   clearTimeout(HoverOff);
+    //       	clearTimeout(HoverOff2);
+    //       	clearTimeout(HoverOff3);
 		   
-		  });       
+		  // });       
 		  
 });
 
