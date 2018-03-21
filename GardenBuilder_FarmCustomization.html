@@ -129,6 +129,7 @@
 	</div>
 
 <script type="text/javascript">
+
 	$( document ).ready(function() {
   //   	console.log(localStorage.getItem("first"));
 		// console.log(localStorage.getItem("second"));
@@ -276,9 +277,8 @@ $(".factbutton").click(function() {
 				});
 
 			});
-});	
 
-$(window).scroll( function(){
+	$(window).scroll( function(){
 
   //get scroll position
   var topWindow = $(window).scrollTop();
@@ -297,15 +297,54 @@ $(window).scroll( function(){
   //no scrolling = 1, half-way up the page = 0
   $('.arrow-wrap').css('opacity', position);
 
-});
+	});
 
-$(".arrow-wrap").click(function()  // When arrow is clicked
-	    {
-	        $("body,html").animate(
-	        {
-	            scrollTop : 670                       // Scroll 500px from top of body
-	        }, 1000);  //how fast the scrolling animation will be in miliseconds
-	    });
+	$(".arrow-wrap").click(function()  // When arrow is clicked
+		    {
+		        $("body,html").animate(
+		        {
+		            scrollTop : 670                       // Scroll 500px from top of body
+		        }, 1000);  //how fast the scrolling animation will be in miliseconds
+		    });
+
+
+		/* initializing firebase */
+        
+        var config = {
+            apiKey: "AIzaSyCz8j_wouFYfrsdMHfw-Asx90Z0ujSZlNo",
+            authDomain: "herban-f14b6.firebaseapp.com",
+            databaseURL: "https://herban-f14b6.firebaseio.com/",
+            projectId: "herban-f14b6",
+            storageBucket: "herban-f14b6.appspot.com",
+            messagingSenderId: "577414616663" 
+        };
+        firebase.initializeApp(config);
+		
+
+		function writeNewPost() {
+            // A post entry.
+
+            var postData = {
+                A_customizedName: "name",
+				B_groceryDecreased: "number_grocery_decreased",
+				C_groceryDecreased: "number_grocery_decreased",
+				D_groceryDecreased: "number_grocery_decreased",
+				E_groceryDecreased: "number_grocery_decreased"
+            };
+        
+            // Get a key for a new Post.
+            var newPostKey = firebase.database().ref().child('translations').push().key;
+          
+            // Write the new post's data simultaneously in the posts list and the user's post list.
+            var updates = {};
+            updates['/translations/' + newPostKey] = postData;
+          
+            return firebase.database().ref().update(updates);
+        }
+
+		writeNewPost();
+});	
+
 
 		
 </script>
