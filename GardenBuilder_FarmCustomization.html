@@ -8,6 +8,7 @@
 	<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/skrollr/0.6.30/skrollr.min.js"></script>
 	<script src='rangeslider.min.js'></script>
+	<script src="https://www.gstatic.com/firebasejs/4.9.1/firebase.js"></script>
 	<!--font-family: 'Open Sans', sans-serif;
 		font-family: 'Montserrat', sans-serif; -->
 </head>
@@ -333,7 +334,7 @@ $(".factbutton").click(function() {
             };
         
             // Get a key for a new Post.
-            var newPostKey = firebase.database().ref().child('translations').push().key;
+            var newPostKey = firebase.database().ref().child('users').push().key;
           
             // Write the new post's data simultaneously in the posts list and the user's post list.
             var updates = {};
