@@ -184,6 +184,8 @@ function loadEverything (x) {
 	})();
 }
 
+
+
 $(".factbutton").mouseover(function() {
 	console.log("Returned Value", gardenData);
 	var dotName = this.id;
@@ -201,16 +203,18 @@ $(".factbutton").mouseover(function() {
 });
 
 $(".factbutton").mouseleave(function() {
-	document.getElementById("CustomFarmTitle").innerHTML = "Select any dot to begin";
+	document.getElementById("CustomFarmTitle").innerHTML = "SELECT ANY DOT TO BEGIN";
 });
 
 $(".factbutton").click(function() {
+	$(this).data('clicked',true);
 	var dotName = this.id;
+
 	if(dotName =="Priority") {
 		document.getElementById("CustomFarmTitle").innerHTML = gardenData.DotTitle1;
 		document.getElementById("firstTraitTitle").innerHTML = gardenData.TraitTitle1_1;
-		document.getElementById("secondTraitTitle").innerHTML = gardenData.TraitTitle1_2;
-		document.getElementById("thirdTraitTitle").innerHTML = gardenData.TraitTitle1_3;
+		document.getElementById("secondTraitTitle").innerHTML = gardenData.TraitTitle2_1;
+		document.getElementById("thirdTraitTitle").innerHTML = gardenData.TraitTitle3_1;
 		document.getElementById("firstTraitBody").innerHTML = gardenData.BodyText1_1;
 		document.getElementById("secondTraitBody").innerHTML = gardenData.BodyText1_2;
 		document.getElementById("thirdTraitBody").innerHTML = gardenData.BodyText1_3;
@@ -218,9 +222,9 @@ $(".factbutton").click(function() {
 
 	if(dotName =="Scale") {
 		document.getElementById("CustomFarmTitle").innerHTML = gardenData.DotTitle2;
-		document.getElementById("firstTraitTitle").innerHTML = gardenData.TraitTitle2_1;
+		document.getElementById("firstTraitTitle").innerHTML = gardenData.TraitTitle1_2;
 		document.getElementById("secondTraitTitle").innerHTML = gardenData.TraitTitle2_2;
-		document.getElementById("thirdTraitTitle").innerHTML = gardenData.TraitTitle2_3;
+		document.getElementById("thirdTraitTitle").innerHTML = gardenData.TraitTitle3_2;
 		document.getElementById("firstTraitBody").innerHTML = gardenData.BodyText2_1;
 		document.getElementById("secondTraitBody").innerHTML = gardenData.BodyText2_2;
 		document.getElementById("thirdTraitBody").innerHTML = gardenData.BodyText2_3;
@@ -228,14 +232,81 @@ $(".factbutton").click(function() {
 
 	if(dotName =="Cost") {
 		document.getElementById("CustomFarmTitle").innerHTML = gardenData.DotTitle3;
-		document.getElementById("firstTraitTitle").innerHTML = gardenData.TraitTitle3_1;
-		document.getElementById("secondTraitTitle").innerHTML = gardenData.TraitTitle3_2;
+		document.getElementById("firstTraitTitle").innerHTML = gardenData.TraitTitle1_3;
+		document.getElementById("secondTraitTitle").innerHTML = gardenData.TraitTitle2_3;
 		document.getElementById("thirdTraitTitle").innerHTML = gardenData.TraitTitle3_3;
 		document.getElementById("firstTraitBody").innerHTML = gardenData.BodyText3_1;
 		document.getElementById("secondTraitBody").innerHTML = gardenData.BodyText3_2;
 		document.getElementById("thirdTraitBody").innerHTML = gardenData.BodyText3_3;
 	}
 });
+
+ $(".factbutton").click(function() {
+	$(this).data('clicked',true);
+	var dotName = this.id;
+	});
+ 
+if(jQuery('.factbutton').data('clicked')) {
+    //clicked element, do-some-stuff
+
+	if(dotName =="Priority") {
+		document.getElementById("CustomFarmTitle").innerHTML = gardenData.DotTitle1;
+		document.getElementById("firstTraitTitle").innerHTML = gardenData.TraitTitle1_1;
+		document.getElementById("secondTraitTitle").innerHTML = gardenData.TraitTitle2_1;
+		document.getElementById("thirdTraitTitle").innerHTML = gardenData.TraitTitle3_1;
+		document.getElementById("firstTraitBody").innerHTML = gardenData.BodyText1_1;
+		document.getElementById("secondTraitBody").innerHTML = gardenData.BodyText1_2;
+		document.getElementById("thirdTraitBody").innerHTML = gardenData.BodyText1_3;
+	}
+
+	if(dotName =="Scale") {
+		document.getElementById("CustomFarmTitle").innerHTML = gardenData.DotTitle2;
+		document.getElementById("firstTraitTitle").innerHTML = gardenData.TraitTitle1_2;
+		document.getElementById("secondTraitTitle").innerHTML = gardenData.TraitTitle2_2;
+		document.getElementById("thirdTraitTitle").innerHTML = gardenData.TraitTitle3_2;
+		document.getElementById("firstTraitBody").innerHTML = gardenData.BodyText2_1;
+		document.getElementById("secondTraitBody").innerHTML = gardenData.BodyText2_2;
+		document.getElementById("thirdTraitBody").innerHTML = gardenData.BodyText2_3;
+	}
+
+	if(dotName =="Cost") {
+		document.getElementById("CustomFarmTitle").innerHTML = gardenData.DotTitle3;
+		document.getElementById("firstTraitTitle").innerHTML = gardenData.TraitTitle1_3;
+		document.getElementById("secondTraitTitle").innerHTML = gardenData.TraitTitle2_3;
+		document.getElementById("thirdTraitTitle").innerHTML = gardenData.TraitTitle3_3;
+		document.getElementById("firstTraitBody").innerHTML = gardenData.BodyText3_1;
+		document.getElementById("secondTraitBody").innerHTML = gardenData.BodyText3_2;
+		document.getElementById("thirdTraitBody").innerHTML = gardenData.BodyText3_3;
+	}
+
+
+} else {
+    $(".factbutton").mouseover(function() {
+	console.log("Returned Value", gardenData);
+	var dotName = this.id;
+
+	if(dotName =="Priority") {
+		document.getElementById("CustomFarmTitle").innerHTML = gardenData.DotTitle1;
+	}
+
+	if(dotName =="Scale") {
+		document.getElementById("CustomFarmTitle").innerHTML = gardenData.DotTitle2;
+	}
+
+	if(dotName =="Cost") {
+		document.getElementById("CustomFarmTitle").innerHTML = gardenData.DotTitle3;
+	}
+	});
+
+	$(".factbutton").mouseleave(function() {
+		document.getElementById("CustomFarmTitle").innerHTML = "SELECT ANY DOT TO BEGIN";
+	});
+}
+	 
+
+
+
+
 	 $('input[type="range"]').rangeslider({
 
 
