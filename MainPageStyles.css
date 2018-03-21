@@ -739,6 +739,11 @@ ________________________________________________________________________________
     z-index: 0;
 }
 
+
+#HighLevelNavigation4 span:hover {
+    font-weight: 700;
+}
+
 #HighLevelNavigation4 {
     overflow: hidden;
     position: absolute;
@@ -760,14 +765,17 @@ ________________________________________________________________________________
 
 
 #HighLevelNavigation4 span {
-    padding-left: 70px;
+    padding-left: 55px;
+/*    padding-left: 70px;*/ /*old measures*/
     text-decoration: none;
     font-size: 16px;
     color: #559B98;
     display: inline-block;
     text-align: center;
-    margin-top: -15px;
-    margin-left: -3px;
+    margin-top: -13px;
+    margin-left: 4px;
+    /*margin-top: -15px;
+    margin-left: -3px;*/
     cursor: pointer;
 
 }
@@ -778,10 +786,30 @@ ________________________________________________________________________________
     color: #559B98;
     display: inline-block;
     text-align: center;
-    margin-top: -15px;
-    padding-left: 70px;
+    margin-top: -14px;
+    padding-left: 73px;
+  /*  margin-top: -15px;
+    padding-left: 70px;*/
     cursor: pointer;
 
+}
+
+ #HighLevelNavigation4 #Span1 {
+    padding-left: 0px;
+}
+
+#HighLevelNavigation4  #Span2 {
+    margin-left: 0px; 
+}
+
+#HighLevelNavigation4  #Span3 {
+    padding-left: 90px;
+}
+#HighLevelNavigation4  #Span4 {
+    padding-left: 10px;
+}
+#HighLevelNavigation4  #Span5 {
+    
 }
 
 #HighLevelNavigationStart {
@@ -846,11 +874,11 @@ ________________________________________________________________________________
 }
 
    
-
+/*
 #HighLevelNavigation4 a:hover {
     font-weight: 700;
 }
-
+*/
 
 #gardenBuilder:hover {
     font-weight: 700;
@@ -1382,6 +1410,26 @@ ________________________________________________________________________________
 
 }
 
+ #HighLevelNavigationTop #Span1 {
+    padding-left: 0px;
+}
+
+#HighLevelNavigationTop  #Span2 {
+    margin-left: 0px; 
+}
+
+#HighLevelNavigationTop  #Span3 {
+    padding-left: 90px;
+}
+#HighLevelNavigationTop  #Span4 {
+    padding-left: 10px;
+}
+#HighLevelNavigationTop  #Span5 {
+    
+}
+
+
+
 #HighLevelNavigationTop a {
    text-decoration: none;
     font-size: 16px;
@@ -1632,6 +1680,7 @@ ________________________________________________________________________________
 #GardenBuilderNavigationTop .UnselectedNav {
     color: grey;
     opacity: .4;
+    cursor: not-allowed;
 }
 #GardenBuilderNavigationTop a {
     padding-left: 110px;
@@ -2680,6 +2729,153 @@ border-color: white transparent transparent transparent;
 
 MissionStatement Styles
 __________________________________________________________________________________________________________________________________________________________________________*/
+
+#missionStatementContentWrapper {
+    position: fixed;
+    z-index: 0;
+    height: 110%;
+    width: 100%;
+    opacity: 0;
+    transition: opacity .8s;
+}
+#darkBackground {
+    position: fixed;
+    height: 110%;
+    width: 100%;
+    background-color: #00131a;
+    opacity: .85;
+    /*z-index: 102;*/
+}
+
+#modalBackground {
+    position: fixed;
+    width: 1300px;
+    height: 600px;
+    background-color: white;
+    box-shadow: 5px;
+   /* z-index: 102;*/
+    left: 50%;
+    top: 51%; 
+    transform:translate(-50%, -50%);
+    border-radius: 5px;
+    opacity: 1;
+}
+
+#MissionStatementImg2 {
+    position: absolute;
+    width: 900px;
+    left: -150px;
+    top: 40px;
+    z-index: 102;
+}
+
+#MissionStatementWrapper2 {
+    position: relative;
+    /* margin-top: 400px; */
+    /* margin: auto; */
+    padding-top: 140px;
+    width: 700px;
+    /* height: 500px; */
+    /*margin: auto;*/
+    text-align: left;
+    padding-left: 600px;
+   /* z-index: 102;*/
+}
+#MissionStatementTitle2 {
+    text-align: left;
+    color: #559B98;
+    padding-left: 5px;
+/*    z-index: 102;*/
+
+}
+
+#MissionStatementBody2 {
+    /*font-size: 20px;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 300;*/
+    line-height: 1.5;
+    padding-top: 20px;
+    /*margin: auto;*/
+    width: 580px;
+    text-align: left;
+    padding-left: 5px;
+/*    z-index: 102;*/
+
+}
+
+.circleXm2 {
+    position: absolute;
+    display: block;
+    right: -20.7px;
+    top: -19px;
+    width: 40px;
+    height: 40px;
+    border:2px solid #559B98; 
+    border-radius: 100%;
+    background-color: white;
+}
+
+.xm2 {
+    position: absolute;
+    display: block;
+    right: -12px;
+    top: -10px;
+    width: 25px;
+    height: 25px;
+    transition: transform .25s ease-in-out;
+    border-radius: 10px;
+    border: none;
+}
+.xm2:hover {
+    transform: rotate(180deg);
+}
+.xm2:before {
+    content: "";
+    position: absolute;
+    display: block;
+    margin: auto;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    width: 25px;
+    height: 0;
+    border-top: 2px solid #559B98;
+    transform: rotate(45deg);
+    transform-origin: center;
+    border-radius: 10px;
+}
+.xm2:after {
+    content: "";
+    position: absolute;
+    display: block;
+    margin: auto;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    width: 25px;
+    height: 0;
+    border-top: 2px solid #559B98;
+    transform: rotate(-45deg);
+    transform-origin: center;
+    border-radius: 10px;
+}
+
+.xm2:focus {
+  color: #467D7B;
+  outline: none;
+}
+
+.circleXm2:focus {
+  color: #467D7B;
+  outline: none;
+}
+
+
+
+
+/*old Mission Statement*/
 
 #MissionStatementImg {
 	position: absolute;

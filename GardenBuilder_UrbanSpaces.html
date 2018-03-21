@@ -8,12 +8,33 @@
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/skrollr/0.6.30/skrollr.min.js"></script>
 </head>
 <body>
+	<div id="missionStatementContentWrapper">
+		<div id="darkBackground">
+			
+		</div>
+		<div id="modalBackground">
+			<div id="content2">
+				<img id="MissionStatementImg2" src="Assets/PNG_72ppi/Mission_Statement.png">
+				<div id="MissionStatementWrapper2">
+					<h3 id="MissionStatementTitle2">Mission Statement</h3>
+					<h5 id="MissionStatementBody2">
+					Herban is not just a company, we are a green-based lifestyle </br>brand. By taking advantage of a digital marketplace, autonomous gardening, and drone delivery system, Herban will sell and deliver locally sourced produce directly to and from our customers doorstops. Our mission is to drive the change required for a sustainable future. By limiting the amount of traditional farmland needed to feed a growing population and by integrating green spaces into every facet of city life, our Green Breeze system will foster environmental rejuvination and healthier city ecosystems.
+					</h5>
+					<div class="circleXm2">
+					</div>
+					<button class="xm2" id="missionX2">
+					</button>
+				</div>
+			</div>
+		</div> 
+	</div>
+
 	<div id="HighLevelNavigationTop">
-		    <a href="MainHomePage4.html#introWrapper" data-text="GARDEN BUILDER" id="SelectedNavItem">GARDEN BUILDER</a>
-		    <span> <a href="MissionStatement.html " data-text="OUR MISSION">OUR MISSION</a></span>
-		    <span> <a href="MainHomePage4.html" data-text="HERBAN LOGO" id="HerbanLogo4"></a></span>
-		    <span><a href="Further_Reading.html" data-text="FURTHER READINGS">FURTHER READINGS</a></span>
-		    <span><a href="_____" data-text="THE COMMUNITY" >THE COMMUNITY</a></span>
+		    <span id="Span1"> <a data-text="OUR MISSION" id="mission_Statement">OUR MISSION</a></span>
+		    <span id="Span2"><a href="MainHomePage4.html#introWrapper" data-text="GARDEN BUILDER" id="SelectedNavItem">GARDEN BUILDER</a></span>
+		    <span id="Span3"> <a href="MainHomePage4.html" data-text="HERBAN LOGO" id="HerbanLogo4"></a></span>
+		    <span id="Span4"><a href="Further_Reading.html" data-text="FURTHER READINGS">FURTHER READINGS</a></span>
+		    <span id="Span5"><a href="_____" data-text="THE COMMUNITY" >THE COMMUNITY</a></span>
 		</div> 
 	<div id="GardenBuilderNavigationTop">
 	    <a href="GardenBuilder_GrowingPriorities.html" data-text="Growing Priorities" class="GreenNav">Growing Priorities</a>
@@ -246,6 +267,21 @@
 				$("#Extra_Stats_VerticalFarming_Wrapper").css("opacity","");
 				$("#Extra_Stats_VerticalFarming_Wrapper").css("top","");
 		    });
+
+			$('#mission_Statement').click(function(){
+				$("#missionStatementContentWrapper").css("z-index", "102");
+				$("#missionStatementContentWrapper").css("opacity", "1");
+
+			});
+
+			$('.xm2').click(function(){
+				$("#missionStatementContentWrapper").css("opacity", "");
+				$("#missionStatementContentWrapper").delay(800).queue(function(next) {
+					$(this).css("z-index", "");
+					next();
+				});
+
+			});
 
   });
 		console.log(localStorage.getItem("Priority"));

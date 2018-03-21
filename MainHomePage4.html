@@ -11,6 +11,28 @@
 		font-family: 'Montserrat', sans-serif; -->
 </head>
 <body id = "Page4">
+
+	<div id="missionStatementContentWrapper">
+		<div id="darkBackground">
+			
+		</div>
+		<div id="modalBackground">
+			<div id="content2">
+				<img id="MissionStatementImg2" src="Assets/PNG_72ppi/Mission_Statement.png">
+				<div id="MissionStatementWrapper2">
+					<h3 id="MissionStatementTitle2">Mission Statement</h3>
+					<h5 id="MissionStatementBody2">
+					Herban is not just a company, we are a green-based lifestyle </br>brand. By taking advantage of a digital marketplace, autonomous gardening, and drone delivery system, Herban will sell and deliver locally sourced produce directly to and from our customers doorstops. Our mission is to drive the change required for a sustainable future. By limiting the amount of traditional farmland needed to feed a growing population and by integrating green spaces into every facet of city life, our Green Breeze system will foster environmental rejuvination and healthier city ecosystems.
+					</h5>
+					<div class="circleXm2">
+					</div>
+					<button class="xm2" id="missionX2">
+					</button>
+				</div>
+			</div>
+		</div> 
+	</div>
+
 	<div class="sections" id="headerWrapper">
 		<div id="FutureOfAgro4">
 			<h3>The Future of Farming is Vertical</h3>
@@ -76,14 +98,17 @@
 			
 		</div>
 		<div id="HighLevelNavigation4">
+			<!-- <span> <a  data-text="OUR MISSION" id="mission_Statement">OUR MISSION</a></span>
 		    <span href="" data-text="GARDEN BUILDER" id="gardenBuilder">GARDEN BUILDER</span>
-		    <span> <a href="MissionStatement.html" data-text="OUR MISSION" id="mission_Statement">OUR MISSION</a></span>
 		    <span> <a  data-text="HERBAN LOGO" id="HerbanLogo4" class="slideUp"></a></span>
 		    <span><a href="Further_Reading.html" data-text="FURTHER READINGS">FURTHER READINGS</a></span>
-		    <span><a href="_____" data-text="THE COMMUNITY" >THE COMMUNITY</a></span>
+		    <span><a href="_____" data-text="THE COMMUNITY" >THE COMMUNITY</a></span> -->
+		    <span id="Span1"> <a data-text="OUR MISSION" id="mission_Statement">OUR MISSION</a></span>
+		    <span id="Span2"><a data-text="GARDEN BUILDER" id="gardenBuilder">GARDEN BUILDER</a></span>
+		    <span id="Span3"> <a data-text="HERBAN LOGO" id="HerbanLogo4" class="slideUp"></a></span>
+		    <span id="Span4"><a href="Further_Reading.html" data-text="FURTHER READINGS">FURTHER READINGS</a></span>
+		    <span id="Span5"><a href="_____" data-text="THE COMMUNITY" >THE COMMUNITY</a></span>
 		</div> 
-
-
 	
 
 		<div class="sections" id="introWrapper">
@@ -134,551 +159,487 @@
 	</div> -->
 	<script type="text/javascript">
 
-		// $('#Page4').css('opacity', '1');
-		$('#Page4').addClass('stop-scrolling');
+	$('#Page4').addClass('stop-scrolling');
+	$(document).ready(function(){
+
+
+
+			//  drag functionality//
+		$('.factbutton').on('dragstart', function(event) { event.preventDefault(); });
 
 	
-// 	$(document).ready(function () {
-// 		var hoverClick = $('#EntryButtonImg');
-// 		var rightLine = $('#RightLine');
-// 		var leftLine = $('#LeftLine');
-// 		var RightLineWidth = $('#RightLine').css('width');
+		  $(function(){
 
-//     	if (RightLineWidth == '30px'){
-// 		alert("runScript");
-// 	};
-// });
+			  	var dragging = false;
+			  	var iX;
+			  	$(".handle2").mousedown(function(e) {
+			  		dragging = true;
+			  		iX = e.clientX - this.offsetLeft;
+			  		this.setCapture && this.setCapture();
+			  		return false;
+			  	});
+			  	document.onmousemove = function(e) {
+			  		if (dragging) {
+			  			var e = e || window.event;
+			  			var oX = e.clientX - iX;
+			  			$(".handle2").css({"left":oX + "px"});
+			  			$(".Maptop2").css({"width":oX - 273 + "px"});
+					// $("#whitebackground").css("z-index", "2");
+					$("#whitebackground").css({"width":oX - 205 + "px"});
+					// $("#whitebackground").css("opacity", "1");
+					$("#topbarhandle2").css({"left":oX + 15 + "px"});
+					$("#bottombarhandle2").css({"left":oX + 15 + "px"});
+					return false;
+				}
+				};
+				$(document).mouseup(function(e) {
+					dragging = false;
+					// $(".handle")[0].releaseCapture();
+					// $(".Maptop")[0].releaseCapture();
+					// $("#topbarhandle")[0].releaseCapture();
+					e.cancelBubble = true;
+				})
+			});
 
-			// var RightLineWidth = $('#RightLine').css('width');
 
+	  	$(".handle2").animate({left: "1200px"}, 1300);
+	  	$("#topbarhandle2").animate({left: "1214px"}, 1300);
+	  	$("#bottombarhandle2").animate({left: "1214px"}, 1300);
+	  	$("#whitebackground").animate({left: "220px"}, 1300);
+	  	$(".Maptop2").animate({width: "1px"}, 240, "linear", function(){
+	  		$(".Maptop2").animate({width: "1430px"}, 1300, "linear");	
+	  	});
 
-		  // document.addEventListener('DOMContentLoaded', function() {
-				//     var parent = document.querySelector('.splitview'),
-				//         topPanel = parent.querySelector('.Maptop'),
-				//         handle = parent.querySelector('#handle'),
-				//         clickHack = 0,
-				//         delta = 0;
+	//mission statement modal //
+		$('#mission_Statement').click(function(){
+			$("#missionStatementContentWrapper").css("z-index", "102");
+			$("#missionStatementContentWrapper").css("opacity", "1");
 
-				//     // If the parent has .skewed class, set the skewHack var.
-				//     if (parent.className.indexOf('.clicked') != -1) {
-				//         clickHack = 1000;
-				//     }
-
-				//     parent.addEventListener('mousemove', function(event) {
-				//         // Get the delta between the mouse position and center point.
-				//         delta = (event.clientX - window.innerWidth / 2) * 0.5;
-
-				//         // Move the handle.
-				//         handle.style.left = event.clientX + delta + 'px';
-
-				//         // Adjust the top panel width.
-				//         topPanel.style.width = event.clientX + clickHack + delta + 'px';
-				//     });
-				// });
-
-		  // document.addEventListener('DOMContentLoaded', function(){
-		  // 		let wrapper = document.getElementbyId('splitview2');
-		  // 		let toplayer = wrapper.querySelector('.clicked2 .Maptop2');
-		  // 		let handle = wrapper.querySelector('#handle');
-		  // 		let straight = 0;
-		  // 		let delta = 0;
-
-		  // 		if(wrapper.className.indexOf('.clicked2') != -1){
-		  // 			clicked = 1000;
-		  // 		}
-
-		  // 		wrapper.addEventListener('mousemove', function(e){
-		  // 			delta = (e.clientX - window.innerWidth / 2) * 0.5;
-		  // 			handle.style.left = e.clientX + delta + 'px';
-		  // 			topLayer.style.width = e.clientX + clicked + delta + 'px';
-		  // 		});
-		  // });
-
-$('.factbutton').on('dragstart', function(event) { event.preventDefault(); });
-
-$(function(){
-
-		var dragging = false;
-		var iX;
-		$(".handle2").mousedown(function(e) {
-			dragging = true;
-			iX = e.clientX - this.offsetLeft;
-			this.setCapture && this.setCapture();
-			return false;
-		});
-		document.onmousemove = function(e) {
-			if (dragging) {
-				var e = e || window.event;
-				var oX = e.clientX - iX;
-				$(".handle2").css({"left":oX + "px"});
-				$(".Maptop2").css({"width":oX - 273 + "px"});
-				// $("#whitebackground").css("z-index", "2");
-				$("#whitebackground").css({"width":oX - 205 + "px"});
-				// $("#whitebackground").css("opacity", "1");
-				$("#topbarhandle2").css({"left":oX + 15 + "px"});
-				$("#bottombarhandle2").css({"left":oX + 15 + "px"});
-				return false;
-			}
-		};
-		$(document).mouseup(function(e) {
-			dragging = false;
-			// $(".handle")[0].releaseCapture();
-			// $(".Maptop")[0].releaseCapture();
-			// $("#topbarhandle")[0].releaseCapture();
-			e.cancelBubble = true;
-		})
-	});
-
-$(document).ready(function(){
-		$(".handle2").animate({left: "1200px"}, 1300);
-		$("#topbarhandle2").animate({left: "1214px"}, 1300);
-		$("#bottombarhandle2").animate({left: "1214px"}, 1300);
-		$("#whitebackground").animate({left: "220px"}, 1300);
-		$(".Maptop2").animate({width: "1px"}, 240, "linear", function(){
-			$(".Maptop2").animate({width: "1430px"}, 1300, "linear");	
 		});
 
-	// Error trying to load popup. Potentially need to run this server side?//
-	
-	// $('#mission_Statement').bPopup({
- //            content:'ajax', //'ajax', 'iframe' or 'image'
- //            contentContainer:'.content',
- //            loadUrl:'https://jordansturner.github.io/Herban/MissionStatement.html' //Uses jQuery.load()
- //        });
+		$('.xm2').click(function(){
+			$("#missionStatementContentWrapper").css("opacity", "");
+			$("#missionStatementContentWrapper").delay(800).queue(function(next) {
+				$(this).css("z-index", "");
+				next();
+			});
 
- 
-	// 	$('#mission_Statement').each(function() {
-	// 	var $link = $(this);
-	// 	var $dialog = $('<div></div>')
-	// 		.load($link.attr('href') + ' #content')
-	// 		.dialog({
-	// 			autoOpen: false,
-	// 			title: $link.attr('title'),
-	// 			width: 500,
-	// 			height: 300
-	// 		});
- 
-	// 	$link.click(function() {
-	// 		$dialog.dialog('open');
- 
-	// 		return false;
-	// 	});
-	// });
-
-});
-/*Pink Buttons */
-
-$(function(){
-	
-	var firstBubble = $( "<hgroup class='speech-bubble' id='firstBubble'><p class='titleInfo'>Scale of Modern US Farming Operations</p><p class='titleBody'>Agriculture is an important sector of the U.S economy contributing about $300 billion per year.</p></hgroup>" );
-
-	$("#FirstFact").mouseenter(function() {
-
-			$("#Page4").append(firstBubble);
-
-			if($("#firstBubble").css("opacity") == 0) {
-			    $("#firstBubble").css("opacity", "1");
-			};
 		});
 
-	$("#FirstFact").mouseleave(function() {
 
-			if($("#firstBubble").css("opacity") == 1) {
-			    $("#firstBubble").css("opacity", "0");
-			};
+		/*Pink Buttons */
 
-			firstBubble.remove();
-		});
-	
-	var secondBubble = $( "<hgroup class='speech-bubble' id='secondBubble'><p class='titleInfo'>Growing Produce in Soil Requires Tons of Water</p><p class='titleBody'>It takes about 5 gallons of water to grow a single head of lettuce</p></hgroup>" );
 
-	$("#SecondFact").mouseenter(function() {
+		$(function(){
 
-			$("#Page4").append(secondBubble);
+			var firstBubble = $( "<hgroup class='speech-bubble' id='firstBubble'><p class='titleInfo'>Scale of Modern US Farming Operations</p><p class='titleBody'>Agriculture is an important sector of the U.S economy contributing about $300 billion per year.</p></hgroup>" );
 
-			if($("#secondBubble").css("opacity") == 0) {
-			    $("#secondBubble").css("opacity", "1");
-			};
-		});
+			$("#FirstFact").mouseenter(function() {
 
-	$("#SecondFact").mouseleave(function() {
+				$("#Page4").append(firstBubble);
 
-			if($("#secondBubble").css("opacity") == 1) {
-			    $("#secondBubble").css("opacity", "0");
-			};
+				if($("#firstBubble").css("opacity") == 0) {
+					$("#firstBubble").css("opacity", "1");
+				};
+			});
 
-			secondBubble.remove();
-		});
+			$("#FirstFact").mouseleave(function() {
 
-	var thirdBubble = $( "<hgroup class='speech-bubble' id='thirdBubble'><p class='titleInfo'>Limited Growing Distributions</p><p class='titleBody'>California grows: 90% of all US Tomatoes, 95% of all US Broccoli, 74% of all US Lettuce, 99% of all almonds, walnuts, and pistachios.</p></hgroup>" );
+				if($("#firstBubble").css("opacity") == 1) {
+					$("#firstBubble").css("opacity", "0");
+				};
 
-	$("#ThirdFact").mouseenter(function() {
+				firstBubble.remove();
+			});
 
-			$("#Page4").append(thirdBubble);
+			var secondBubble = $( "<hgroup class='speech-bubble' id='secondBubble'><p class='titleInfo'>Growing Produce in Soil Requires Tons of Water</p><p class='titleBody'>It takes about 5 gallons of water to grow a single head of lettuce</p></hgroup>" );
 
-			if($("#thirdBubble").css("opacity") == 0) {
-			    $("#thirdBubble").css("opacity", "1");
-			};
-		});
+			$("#SecondFact").mouseenter(function() {
 
-	$("#ThirdFact").mouseleave(function() {
+				$("#Page4").append(secondBubble);
 
-			if($("#thirdBubble").css("opacity") == 1) {
-			    $("#thirdBubble").css("opacity", "0");
-			};
+				if($("#secondBubble").css("opacity") == 0) {
+					$("#secondBubble").css("opacity", "1");
+				};
+			});
 
-			thirdBubble.remove();
-		});
+			$("#SecondFact").mouseleave(function() {
 
-	var fourthBubble = $( "<hgroup class='speech-bubble' id='fourthBubble'><p class='titleInfo'>Agricultural Waste</p><p class='titleBody'>Traditional farming practices in California use about 80% of the state's 'developed water.'</p></hgroup>" );
+				if($("#secondBubble").css("opacity") == 1) {
+					$("#secondBubble").css("opacity", "0");
+				};
 
-	$("#FourthFact").mouseenter(function() {
+				secondBubble.remove();
+			});
 
-			$("#Page4").append(fourthBubble);
+			var thirdBubble = $( "<hgroup class='speech-bubble' id='thirdBubble'><p class='titleInfo'>Limited Growing Distributions</p><p class='titleBody'>California grows: 90% of all US Tomatoes, 95% of all US Broccoli, 74% of all US Lettuce, 99% of all almonds, walnuts, and pistachios.</p></hgroup>" );
 
-			if($("#fourthBubble").css("opacity") == 0) {
-			    $("#fourthBubble").css("opacity", "1");
-			};
-		});
+			$("#ThirdFact").mouseenter(function() {
 
-	$("#FourthFact").mouseleave(function() {
+				$("#Page4").append(thirdBubble);
 
-			if($("#fourthBubble").css("opacity") == 1) {
-			    $("#fourthBubble").css("opacity", "0");
-			};
+				if($("#thirdBubble").css("opacity") == 0) {
+					$("#thirdBubble").css("opacity", "1");
+				};
+			});
 
-			fourthBubble.remove();
-		});
-	
-	var fifthBubble = $( "<hgroup class='speech-bubble' id='fifthBubble'><p class='titleInfo'>Soil Erosion</p><p class='titleBody'>Traditional Farming can lead to soil erosion and lead to Sedimentation of rivers, lakes, and coastal areas. Pesticides and Fertilizers are carried off into waterways.</p></hgroup>" );
+			$("#ThirdFact").mouseleave(function() {
 
-	$("#FifthFact").mouseenter(function() {
+				if($("#thirdBubble").css("opacity") == 1) {
+					$("#thirdBubble").css("opacity", "0");
+				};
 
-			$("#Page4").append(fifthBubble);
+				thirdBubble.remove();
+			});
 
-			if($("#fifthBubble").css("opacity") == 0) {
-			    $("#fifthBubble").css("opacity", "1");
-			};
-		});
+			var fourthBubble = $( "<hgroup class='speech-bubble' id='fourthBubble'><p class='titleInfo'>Agricultural Waste</p><p class='titleBody'>Traditional farming practices in California use about 80% of the state's 'developed water.'</p></hgroup>" );
 
-	$("#FifthFact").mouseleave(function() {
+			$("#FourthFact").mouseenter(function() {
 
-			if($("#fifthBubble").css("opacity") == 1) {
-			    $("#fifthBubble").css("opacity", "0");
-			};
+				$("#Page4").append(fourthBubble);
 
-			fifthBubble.remove();
-		});
+				if($("#fourthBubble").css("opacity") == 0) {
+					$("#fourthBubble").css("opacity", "1");
+				};
+			});
 
-	var sixthBubble = $( "<hgroup class='speech-bubble' id='sixthBubble'><p class='titleInfo'>Rampant Deforestation</p><p class='titleBody'>260 million acres of forest have been cleared to make room for cropfields.</p></hgroup>" );
+			$("#FourthFact").mouseleave(function() {
 
-	$("#SixthFact").mouseenter(function() {
+				if($("#fourthBubble").css("opacity") == 1) {
+					$("#fourthBubble").css("opacity", "0");
+				};
 
-			$("#Page4").append(sixthBubble);
+				fourthBubble.remove();
+			});
 
-			if($("#sixthBubble").css("opacity") == 0) {
-			    $("#sixthBubble").css("opacity", "1");
-			};
-		});
+			var fifthBubble = $( "<hgroup class='speech-bubble' id='fifthBubble'><p class='titleInfo'>Soil Erosion</p><p class='titleBody'>Traditional Farming can lead to soil erosion and lead to Sedimentation of rivers, lakes, and coastal areas. Pesticides and Fertilizers are carried off into waterways.</p></hgroup>" );
 
-	$("#SixthFact").mouseleave(function() {
+			$("#FifthFact").mouseenter(function() {
 
-			if($("#sixthBubble").css("opacity") == 1) {
-			    $("#sixthBubble").css("opacity", "0");
-			};
+				$("#Page4").append(fifthBubble);
 
-			sixthBubble.remove();
-		});
+				if($("#fifthBubble").css("opacity") == 0) {
+					$("#fifthBubble").css("opacity", "1");
+				};
+			});
 
-	var seventhBubble = $( "<hgroup class='speech-bubble' id='seventhBubble'><p class='titleInfo'>Pesticides in Our Water</p><p class='titleBody'>10 times as much soil erodes from American Agriculture than can naturally recover. With limited samplings, 23 states have reported at least one of 22 pesticides in groundwater. </p></hgroup>" );
+			$("#FifthFact").mouseleave(function() {
 
-	$("#SeventhFact").mouseenter(function() {
+				if($("#fifthBubble").css("opacity") == 1) {
+					$("#fifthBubble").css("opacity", "0");
+				};
 
-			$("#Page4").append(seventhBubble);
+				fifthBubble.remove();
+			});
 
-			if($("#seventhBubble").css("opacity") == 0) {
-			    $("#seventhBubble").css("opacity", "1");
-			};
-		});
+			var sixthBubble = $( "<hgroup class='speech-bubble' id='sixthBubble'><p class='titleInfo'>Rampant Deforestation</p><p class='titleBody'>260 million acres of forest have been cleared to make room for cropfields.</p></hgroup>" );
 
-	$("#SeventhFact").mouseleave(function() {
+			$("#SixthFact").mouseenter(function() {
 
-			if($("#seventhBubble").css("opacity") == 1) {
-			    $("#seventhBubble").css("opacity", "0");
-			};
+				$("#Page4").append(sixthBubble);
 
-			seventhBubble.remove();
-		});
+				if($("#sixthBubble").css("opacity") == 0) {
+					$("#sixthBubble").css("opacity", "1");
+				};
+			});
 
-	var eighthBubble = $( "<hgroup class='speech-bubble' id='eighthBubble'><p class='titleInfo'>Rising Co2 Levels</p><p class='titleBody'>Fossil Fuels used in energy, transportation, and synthetic pesticides emits 90 million tons of Co2 every year. </p></hgroup>" );
+			$("#SixthFact").mouseleave(function() {
 
-	$("#EighthFact").mouseenter(function() {
+				if($("#sixthBubble").css("opacity") == 1) {
+					$("#sixthBubble").css("opacity", "0");
+				};
 
-			$("#Page4").append(eighthBubble);
+				sixthBubble.remove();
+			});
 
-			if($("#eighthBubble").css("opacity") == 0) {
-			    $("#eighthBubble").css("opacity", "1");
-			};
-		});
+			var seventhBubble = $( "<hgroup class='speech-bubble' id='seventhBubble'><p class='titleInfo'>Pesticides in Our Water</p><p class='titleBody'>10 times as much soil erodes from American Agriculture than can naturally recover. With limited samplings, 23 states have reported at least one of 22 pesticides in groundwater. </p></hgroup>" );
 
-	$("#EighthFact").mouseleave(function() {
+			$("#SeventhFact").mouseenter(function() {
 
-			if($("#eighthBubble").css("opacity") == 1) {
-			    $("#eighthBubble").css("opacity", "0");
-			};
+				$("#Page4").append(seventhBubble);
 
-			eighthBubble.remove();
-		});
+				if($("#seventhBubble").css("opacity") == 0) {
+					$("#seventhBubble").css("opacity", "1");
+				};
+			});
 
-	var ninthBubble = $( "<hgroup class='speech-bubble' id='ninthBubble'><p class='titleInfo'>The Food Mile</p><p class='titleBody'>Most produce doesn’t reach the shelves until five to seven days after it’s harvested, because it’s grown on farms or greenhouses hundreds of miles outside urban areas. [or 1500 miles]</p></hgroup>" );
+			$("#SeventhFact").mouseleave(function() {
 
-	$("#NinthFact").mouseenter(function() {
+				if($("#seventhBubble").css("opacity") == 1) {
+					$("#seventhBubble").css("opacity", "0");
+				};
 
-			$("#Page4").append(ninthBubble);
+				seventhBubble.remove();
+			});
 
-			if($("#ninthBubble").css("opacity") == 0) {
-			    $("#ninthBubble").css("opacity", "1");
-			};
-		});
+			var eighthBubble = $( "<hgroup class='speech-bubble' id='eighthBubble'><p class='titleInfo'>Rising Co2 Levels</p><p class='titleBody'>Fossil Fuels used in energy, transportation, and synthetic pesticides emits 90 million tons of Co2 every year. </p></hgroup>" );
 
-	$("#NinthFact").mouseleave(function() {
+			$("#EighthFact").mouseenter(function() {
 
-			if($("#ninthBubble").css("opacity") == 1) {
-			    $("#ninthBubble").css("opacity", "0");
-			};
+				$("#Page4").append(eighthBubble);
 
-			ninthBubble.remove();
-		});
+				if($("#eighthBubble").css("opacity") == 0) {
+					$("#eighthBubble").css("opacity", "1");
+				};
+			});
 
-	var tenthBubble = $( "<hgroup class='speech-bubble' id='tenthBubble'><p class='titleInfo'>Running Out of Land</p><p class='titleBody'>Land Degradation Stretches to about 30% of total land area globally.</p></hgroup>" );
+			$("#EighthFact").mouseleave(function() {
 
-	$("#TenthFact").mouseenter(function() {
+				if($("#eighthBubble").css("opacity") == 1) {
+					$("#eighthBubble").css("opacity", "0");
+				};
 
-			$("#Page4").append(tenthBubble);
+				eighthBubble.remove();
+			});
 
-			if($("#tenthBubble").css("opacity") == 0) {
-			    $("#tenthBubble").css("opacity", "1");
-			};
-		});
+			var ninthBubble = $( "<hgroup class='speech-bubble' id='ninthBubble'><p class='titleInfo'>The Food Mile</p><p class='titleBody'>Most produce doesn’t reach the shelves until five to seven days after it’s harvested, because it’s grown on farms or greenhouses hundreds of miles outside urban areas. [or 1500 miles]</p></hgroup>" );
 
-	$("#TenthFact").mouseleave(function() {
+			$("#NinthFact").mouseenter(function() {
 
-			if($("#tenthBubble").css("opacity") == 1) {
-			    $("#tenthBubble").css("opacity", "0");
-			};
+				$("#Page4").append(ninthBubble);
 
-			tenthBubble.remove();
-		});
+				if($("#ninthBubble").css("opacity") == 0) {
+					$("#ninthBubble").css("opacity", "1");
+				};
+			});
 
-	var eleventhBubble = $( "<hgroup class='speech-bubble' id='eleventhBubble'><p class='titleInfo'>Shrinking Produce</p><p class='titleBody'>The typical 5-10 day transportation process for fresh produce from farm to consumer can result in significant weight loss, culminating in a 30-50% reduction of nutrient quantity.</p></hgroup>" );
+			$("#NinthFact").mouseleave(function() {
 
-	$("#EleventhFact").mouseenter(function() {
+				if($("#ninthBubble").css("opacity") == 1) {
+					$("#ninthBubble").css("opacity", "0");
+				};
 
-			$("#Page4").append(eleventhBubble);
+				ninthBubble.remove();
+			});
 
-			if($("#eleventhBubble").css("opacity") == 0) {
-			    $("#eleventhBubble").css("opacity", "1");
-			};
-		});
+			var tenthBubble = $( "<hgroup class='speech-bubble' id='tenthBubble'><p class='titleInfo'>Running Out of Land</p><p class='titleBody'>Land Degradation Stretches to about 30% of total land area globally.</p></hgroup>" );
 
-	$("#EleventhFact").mouseleave(function() {
+			$("#TenthFact").mouseenter(function() {
 
-			if($("#eleventhBubble").css("opacity") == 1) {
-			    $("#eleventhBubble").css("opacity", "0");
-			};
+				$("#Page4").append(tenthBubble);
 
-			eleventhBubble.remove();
-		});
-	});
+				if($("#tenthBubble").css("opacity") == 0) {
+					$("#tenthBubble").css("opacity", "1");
+				};
+			});
 
-/* Purple Buttons */
-	
-	$(function(){
-	
-	var twelfthBubble = $( "<hgroup class='speech-bubble' id='twelfthBubble'><p class='titleInfo'>The Benefits of Aeroponic Growing</p><p class='titleBody'>Aeroponics systems can reduce water usage by 98 percent, fertilizer usage by 60 percent, and pesticide usage by 100 percent, all while maximizing crop yields.</p></hgroup>" );
+			$("#TenthFact").mouseleave(function() {
 
-	$("#TwelfthFact").mouseenter(function() {
+				if($("#tenthBubble").css("opacity") == 1) {
+					$("#tenthBubble").css("opacity", "0");
+				};
 
-			$("#Page4").append(twelfthBubble);
+				tenthBubble.remove();
+			});
 
-			if($("#twelfthBubble").css("opacity") == 0) {
-			    $("#twelfthBubble").css("opacity", "1");
-			};
-		});
+			var eleventhBubble = $( "<hgroup class='speech-bubble' id='eleventhBubble'><p class='titleInfo'>Shrinking Produce</p><p class='titleBody'>The typical 5-10 day transportation process for fresh produce from farm to consumer can result in significant weight loss, culminating in a 30-50% reduction of nutrient quantity.</p></hgroup>" );
 
-	$("#TwelfthFact").mouseleave(function() {
+			$("#EleventhFact").mouseenter(function() {
 
-			if($("#twelfthBubble").css("opacity") == 1) {
-			    $("#twelfthBubble").css("opacity", "0");
-			};
+				$("#Page4").append(eleventhBubble);
 
-			twelfthBubble.remove();
-		});
-	
-	var thirteenthBubble = $( "<hgroup class='speech-bubble' id='thirteenthBubble'><p class='titleInfo'>Aeroponics & Healthier Plant Life</p><p class='titleBody'>Plants grown in the aeroponic systems have also been shown to uptake more minerals and vitamins, making the plants healthier and potentially more nutritious.</p></hgroup>" );
+				if($("#eleventhBubble").css("opacity") == 0) {
+					$("#eleventhBubble").css("opacity", "1");
+				};
+			});
 
-	$("#ThirteenthFact").mouseenter(function() {
+			$("#EleventhFact").mouseleave(function() {
 
-			$("#Page4").append(thirteenthBubble);
+				if($("#eleventhBubble").css("opacity") == 1) {
+					$("#eleventhBubble").css("opacity", "0");
+				};
 
-			if($("#thirteenthBubble").css("opacity") == 0) {
-			    $("#thirteenthBubble").css("opacity", "1");
-			};
+				eleventhBubble.remove();
+			});
 		});
 
-	$("#ThirteenthFact").mouseleave(function() {
+		/* Purple Buttons */
 
-			if($("#thirteenthBubble").css("opacity") == 1) {
-			    $("#thirteenthBubble").css("opacity", "0");
-			};
+		$(function(){
+			
+			var twelfthBubble = $( "<hgroup class='speech-bubble' id='twelfthBubble'><p class='titleInfo'>The Benefits of Aeroponic Growing</p><p class='titleBody'>Aeroponics systems can reduce water usage by 98 percent, fertilizer usage by 60 percent, and pesticide usage by 100 percent, all while maximizing crop yields.</p></hgroup>" );
 
-			thirteenthBubble.remove();
-		});
+			$("#TwelfthFact").mouseenter(function() {
 
-	var fourteenthBubble = $( "<hgroup class='speech-bubble' id='fourteenthBubble'><p class='titleInfo'>Indoor Growing is More Profitable</p><p class='titleBody'>In comparison, on a revenue basis alone, indoor horticulture is about 4,000x more productive than conventional outdoor commodity farming</p></hgroup>" );
+				$("#Page4").append(twelfthBubble);
 
-	$("#FourteenthFact").mouseenter(function() {
+				if($("#twelfthBubble").css("opacity") == 0) {
+					$("#twelfthBubble").css("opacity", "1");
+				};
+			});
 
-			$("#Page4").append(fourteenthBubble);
+			$("#TwelfthFact").mouseleave(function() {
 
-			if($("#fourteenthBubble").css("opacity") == 0) {
-			    $("#fourteenthBubble").css("opacity", "1");
-			};
-		});
+				if($("#twelfthBubble").css("opacity") == 1) {
+					$("#twelfthBubble").css("opacity", "0");
+				};
 
-	$("#FourteenthFact").mouseleave(function() {
+				twelfthBubble.remove();
+			});
+			
+			var thirteenthBubble = $( "<hgroup class='speech-bubble' id='thirteenthBubble'><p class='titleInfo'>Aeroponics & Healthier Plant Life</p><p class='titleBody'>Plants grown in the aeroponic systems have also been shown to uptake more minerals and vitamins, making the plants healthier and potentially more nutritious.</p></hgroup>" );
 
-			if($("#fourteenthBubble").css("opacity") == 1) {
-			    $("#fourteenthBubble").css("opacity", "0");
-			};
+			$("#ThirteenthFact").mouseenter(function() {
 
-			fourteenthBubble.remove();
-		});
+				$("#Page4").append(thirteenthBubble);
 
-	var fifteenthBubble = $( "<hgroup class='speech-bubble' id='fifteenthBubble'><p class='titleInfo'>Agricultural Waste</p><p class='titleBody'>Traditional farming practices in California use about 80% of the state's 'developed water.'</p></hgroup>" );
+				if($("#thirteenthBubble").css("opacity") == 0) {
+					$("#thirteenthBubble").css("opacity", "1");
+				};
+			});
 
-	$("#FifteenthFact").mouseenter(function() {
+			$("#ThirteenthFact").mouseleave(function() {
 
-			$("#Page4").append(fifteenthBubble);
+				if($("#thirteenthBubble").css("opacity") == 1) {
+					$("#thirteenthBubble").css("opacity", "0");
+				};
 
-			if($("#fifteenthBubble").css("opacity") == 0) {
-			    $("#fifteenthBubble").css("opacity", "1");
-			};
-		});
+				thirteenthBubble.remove();
+			});
 
-	$("#FifteenthFact").mouseleave(function() {
+			var fourteenthBubble = $( "<hgroup class='speech-bubble' id='fourteenthBubble'><p class='titleInfo'>Indoor Growing is More Profitable</p><p class='titleBody'>In comparison, on a revenue basis alone, indoor horticulture is about 4,000x more productive than conventional outdoor commodity farming</p></hgroup>" );
 
-			if($("#fifteenthBubble").css("opacity") == 1) {
-			    $("#fifteenthBubble").css("opacity", "0");
-			};
+			$("#FourteenthFact").mouseenter(function() {
 
-			fifteenthBubble.remove();
-		});
-	
-	var sixteenthBubble = $( "<hgroup class='speech-bubble' id='sixteenthBubble'><p class='titleInfo'>Increased Production</p><p class='titleBody'>The average yield for outdoor conventional lettuce production in 2015 was about 30,000 pounds per acre. Indoor greens growers reported growing an average of 340,000.</p></hgroup>" );
+				$("#Page4").append(fourteenthBubble);
 
-	$("#SixteenthFact").mouseenter(function() {
+				if($("#fourteenthBubble").css("opacity") == 0) {
+					$("#fourteenthBubble").css("opacity", "1");
+				};
+			});
 
-			$("#Page4").append(sixteenthBubble);
+			$("#FourteenthFact").mouseleave(function() {
 
-			if($("#sixteenthBubble").css("opacity") == 0) {
-			    $("#sixteenthBubble").css("opacity", "1");
-			};
-		});
+				if($("#fourteenthBubble").css("opacity") == 1) {
+					$("#fourteenthBubble").css("opacity", "0");
+				};
 
-	$("#SixteenthFact").mouseleave(function() {
+				fourteenthBubble.remove();
+			});
 
-			if($("#sixteenthBubble").css("opacity") == 1) {
-			    $("#sixteenthBubble").css("opacity", "0");
-			};
+			var fifteenthBubble = $( "<hgroup class='speech-bubble' id='fifteenthBubble'><p class='titleInfo'>Agricultural Waste</p><p class='titleBody'>Traditional farming practices in California use about 80% of the state's 'developed water.'</p></hgroup>" );
 
-			sixteenthBubble.remove();
-		});
+			$("#FifteenthFact").mouseenter(function() {
 
-	var seventeenthBubble = $( "<hgroup class='speech-bubble' id='seventeenthBubble'><p class='titleInfo'>Solving a Food Crisis</p><p class='titleBody'>The average American city on average needs to dedicate just 10% of its city limit area to urban farming to produce the entire recommended vegetable intake of its population.</p></hgroup>" );
+				$("#Page4").append(fifteenthBubble);
 
-	$("#SeventeenthFact").mouseenter(function() {
+				if($("#fifteenthBubble").css("opacity") == 0) {
+					$("#fifteenthBubble").css("opacity", "1");
+				};
+			});
 
-			$("#Page4").append(seventeenthBubble);
+			$("#FifteenthFact").mouseleave(function() {
 
-			if($("#seventeenthBubble").css("opacity") == 0) {
-			    $("#seventeenthBubble").css("opacity", "1");
-			};
-		});
+				if($("#fifteenthBubble").css("opacity") == 1) {
+					$("#fifteenthBubble").css("opacity", "0");
+				};
 
-	$("#SeventeenthFact").mouseleave(function() {
+				fifteenthBubble.remove();
+			});
+			
+			var sixteenthBubble = $( "<hgroup class='speech-bubble' id='sixteenthBubble'><p class='titleInfo'>Increased Production</p><p class='titleBody'>The average yield for outdoor conventional lettuce production in 2015 was about 30,000 pounds per acre. Indoor greens growers reported growing an average of 340,000.</p></hgroup>" );
 
-			if($("#seventeenthBubble").css("opacity") == 1) {
-			    $("#seventeenthBubble").css("opacity", "0");
-			};
+			$("#SixteenthFact").mouseenter(function() {
 
-			seventeenthBubble.remove();
-		});
+				$("#Page4").append(sixteenthBubble);
 
-	var eighteenthBubble = $( "<hgroup class='speech-bubble' id='eighteenthBubble'><p class='titleInfo'>Green Roofs Reduce Carbon Emissions</p><p class='titleBody'>One square meter of green agricultural rooftop space in a city can offset the annual carbon emissions of one automobile.</p></hgroup>" );
+				if($("#sixteenthBubble").css("opacity") == 0) {
+					$("#sixteenthBubble").css("opacity", "1");
+				};
+			});
 
-	$("#EighteenthFact").mouseenter(function() {
+			$("#SixteenthFact").mouseleave(function() {
 
-			$("#Page4").append(eighteenthBubble);
+				if($("#sixteenthBubble").css("opacity") == 1) {
+					$("#sixteenthBubble").css("opacity", "0");
+				};
 
-			if($("#eighteenthBubble").css("opacity") == 0) {
-			    $("#eighteenthBubble").css("opacity", "1");
-			};
-		});
+				sixteenthBubble.remove();
+			});
 
-	$("#EighteenthFact").mouseleave(function() {
+			var seventeenthBubble = $( "<hgroup class='speech-bubble' id='seventeenthBubble'><p class='titleInfo'>Solving a Food Crisis</p><p class='titleBody'>The average American city on average needs to dedicate just 10% of its city limit area to urban farming to produce the entire recommended vegetable intake of its population.</p></hgroup>" );
 
-			if($("#eighteenthBubble").css("opacity") == 1) {
-			    $("#eighteenthBubble").css("opacity", "0");
-			};
+			$("#SeventeenthFact").mouseenter(function() {
 
-			eighteenthBubble.remove();
-		});
+				$("#Page4").append(seventeenthBubble);
 
-	var nineteenthBubble = $( "<hgroup class='speech-bubble' id='nineteenthBubble'><p class='titleInfo'>Urban Farming & Real Estate Value</p><p class='titleBody'>Urban farming projects have been positively correlated in real-estate studies to increase the value of surrounding property.</p></hgroup>" );
+				if($("#seventeenthBubble").css("opacity") == 0) {
+					$("#seventeenthBubble").css("opacity", "1");
+				};
+			});
 
-	$("#NineteenthFact").mouseenter(function() {
+			$("#SeventeenthFact").mouseleave(function() {
 
-			$("#Page4").append(nineteenthBubble);
+				if($("#seventeenthBubble").css("opacity") == 1) {
+					$("#seventeenthBubble").css("opacity", "0");
+				};
 
-			if($("#nineteenthBubble").css("opacity") == 0) {
-			    $("#nineteenthBubble").css("opacity", "1");
-			};
-		});
+				seventeenthBubble.remove();
+			});
 
-	$("#NineteenthFact").mouseleave(function() {
+			var eighteenthBubble = $( "<hgroup class='speech-bubble' id='eighteenthBubble'><p class='titleInfo'>Green Roofs Reduce Carbon Emissions</p><p class='titleBody'>One square meter of green agricultural rooftop space in a city can offset the annual carbon emissions of one automobile.</p></hgroup>" );
 
-			if($("#nineteenthBubble").css("opacity") == 1) {
-			    $("#nineteenthBubble").css("opacity", "0");
-			};
+			$("#EighteenthFact").mouseenter(function() {
 
-			nineteenthBubble.remove();
-		});
+				$("#Page4").append(eighteenthBubble);
 
-	var twentiethBubble = $( "<hgroup class='speech-bubble' id='twentiethBubble'><p class='titleInfo'>Herban's Digital Marketplace</p><p class='titleBody'>Herban's online marketplace will encourage bartering and selling between other growers who are looking for the perfect ingredients to any meal.</p></hgroup>" );
+				if($("#eighteenthBubble").css("opacity") == 0) {
+					$("#eighteenthBubble").css("opacity", "1");
+				};
+			});
 
-	$("#TwentiethFact").mouseenter(function() {
+			$("#EighteenthFact").mouseleave(function() {
 
-			$("#Page4").append(twentiethBubble);
+				if($("#eighteenthBubble").css("opacity") == 1) {
+					$("#eighteenthBubble").css("opacity", "0");
+				};
 
-			if($("#twentiethBubble").css("opacity") == 0) {
-			    $("#twentiethBubble").css("opacity", "1");
-			};
-		});
+				eighteenthBubble.remove();
+			});
 
-	$("#TwentiethFact").mouseleave(function() {
+			var nineteenthBubble = $( "<hgroup class='speech-bubble' id='nineteenthBubble'><p class='titleInfo'>Urban Farming & Real Estate Value</p><p class='titleBody'>Urban farming projects have been positively correlated in real-estate studies to increase the value of surrounding property.</p></hgroup>" );
 
-			if($("#twentiethBubble").css("opacity") == 1) {
-			    $("#twentiethBubble").css("opacity", "0");
-			};
+			$("#NineteenthFact").mouseenter(function() {
 
-			twentiethBubble.remove();
+				$("#Page4").append(nineteenthBubble);
+
+				if($("#nineteenthBubble").css("opacity") == 0) {
+					$("#nineteenthBubble").css("opacity", "1");
+				};
+			});
+
+			$("#NineteenthFact").mouseleave(function() {
+
+				if($("#nineteenthBubble").css("opacity") == 1) {
+					$("#nineteenthBubble").css("opacity", "0");
+				};
+
+				nineteenthBubble.remove();
+			});
+
+			var twentiethBubble = $( "<hgroup class='speech-bubble' id='twentiethBubble'><p class='titleInfo'>Herban's Digital Marketplace</p><p class='titleBody'>Herban's online marketplace will encourage bartering and selling between other growers who are looking for the perfect ingredients to any meal.</p></hgroup>" );
+
+			$("#TwentiethFact").mouseenter(function() {
+
+				$("#Page4").append(twentiethBubble);
+
+				if($("#twentiethBubble").css("opacity") == 0) {
+					$("#twentiethBubble").css("opacity", "1");
+				};
+			});
+
+			$("#TwentiethFact").mouseleave(function() {
+
+				if($("#twentiethBubble").css("opacity") == 1) {
+					$("#twentiethBubble").css("opacity", "0");
+				};
+
+				twentiethBubble.remove();
+			});
 		});
 	});
-
 
 	$("#gardenBuilder").on("click", function(){
-
 		$("#headerWrapper").css("top", "-680px");
 		$("#HighLevelNavigation4").css("position", "fixed");
 		$("#HighLevelNavigation4").css("box-shadow", "0px 1px 10px #DFEAEF");
@@ -697,33 +658,33 @@ $(function(){
 		$("#HighLevelNavigation4 span").css("margin-top", "");
 		$("#gardenBuilder").css("font-weight", "");
 		$('#Page4').addClass('stop-scrolling');
-		
+
 	});
 
 	if(window.location.href.indexOf("#introWrapper") > -1) {
-	       $("#headerWrapper").css("transition", "top 0s");
-	       $("#headerWrapper").css("top", "-678px");
-	       $("#HighLevelNavigation4").css("transition", "top 0s")
-			$("#HighLevelNavigation4").css("position", "fixed");
-			$("#HighLevelNavigation4").css("box-shadow", "0px 1px 10px #DFEAEF");
-			$("#HighLevelNavigation4").css("top", "0px");
-			$("#HighLevelNavigation4 span").css("margin-top", "-12px");
-			$("#gardenBuilder").css("font-weight", "700");
-			$("#Page4").removeClass("stop-scrolling");
+		$("#headerWrapper").css("transition", "top 0s");
+		$("#headerWrapper").css("top", "-678px");
+		$("#HighLevelNavigation4").css("transition", "top 0s")
+		$("#HighLevelNavigation4").css("position", "fixed");
+		$("#HighLevelNavigation4").css("box-shadow", "0px 1px 10px #DFEAEF");
+		$("#HighLevelNavigation4").css("top", "0px");
+		$("#HighLevelNavigation4 span").css("margin-top", "-12px");
+		$("#gardenBuilder").css("font-weight", "700");
+		$("#Page4").removeClass("stop-scrolling");
 
-			$('.slideUp').on("click", function(){
-				$("#headerWrapper").css("top", "");
-				$("#headerWrapper").css("transition", "");
-				$("#HighLevelNavigation4").css("transition", "")
-				$("#HighLevelNavigation4").css("position", "fixed");
-				$("#HighLevelNavigation4").css("box-shadow", "");
-				$("#HighLevelNavigation4").css("top", "680px");
-				$("#HighLevelNavigation4 span").css("margin-top", "");
-				$("#gardenBuilder").css("font-weight", "");
-				$('#Page4').addClass('stop-scrolling');
-			
+		$('.slideUp').on("click", function(){
+			$("#headerWrapper").css("top", "");
+			$("#headerWrapper").css("transition", "");
+			$("#HighLevelNavigation4").css("transition", "")
+			$("#HighLevelNavigation4").css("position", "fixed");
+			$("#HighLevelNavigation4").css("box-shadow", "");
+			$("#HighLevelNavigation4").css("top", "680px");
+			$("#HighLevelNavigation4 span").css("margin-top", "");
+			$("#gardenBuilder").css("font-weight", "");
+			$('#Page4').addClass('stop-scrolling');
+
 			});
-	    }	
+	}	
 
 
 	</script>
