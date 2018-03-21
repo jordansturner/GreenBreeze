@@ -338,7 +338,7 @@ $(".factbutton").click(function() {
           
             // Write the new post's data simultaneously in the posts list and the user's post list.
             var updates = {};
-            updates['/translations/' + newPostKey] = postData;
+            updates['/users/' + newPostKey] = postData;
           
             return firebase.database().ref().update(updates);
         }
