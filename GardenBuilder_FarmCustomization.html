@@ -14,6 +14,26 @@
 </head>
 
 <body>
+	<div id="nameGardenContentWrapper">
+		<div id="darkBackground">
+			
+		</div>
+		<div id="modalBackgroundnameGarden">
+			<div id="content2">
+				<img id="MissionStatementImg2" src="Assets/PNG_72ppi/Mission_Statement.png">
+				<div id="MissionStatementWrapper2">
+					<h3 id="MissionStatementTitle2">Mission Statement</h3>
+					<h5 id="MissionStatementBody2">
+					Herban is not just a company, we are a green-based lifestyle </br>brand. By taking advantage of a digital marketplace, autonomous gardening, and drone delivery system, Herban will sell and deliver locally sourced produce directly to and from our customers doorstops. Our mission is to drive the change required for a sustainable future. By limiting the amount of traditional farmland needed to feed a growing population and by integrating green spaces into every facet of city life, our Green Breeze system will foster environmental rejuvination and healthier city ecosystems.
+					</h5>
+					<div class="circleXm2">
+					</div>
+					<button class="xm2" id="missionX2">
+					</button>
+				</div>
+			</div>
+		</div> 
+	</div>
 	<div id="missionStatementContentWrapper">
 		<div id="darkBackground">
 			
@@ -185,6 +205,7 @@ function loadEverything (x) {
 }
 
 
+var prevDot = "SELECT ANY DOT TO BEGIN";
 
 $(".factbutton").mouseover(function() {
 	console.log("Returned Value", gardenData);
@@ -203,14 +224,15 @@ $(".factbutton").mouseover(function() {
 });
 
 $(".factbutton").mouseleave(function() {
-	document.getElementById("CustomFarmTitle").innerHTML = "SELECT ANY DOT TO BEGIN";
+	document.getElementById("CustomFarmTitle").innerHTML = prevDot;
 });
 
 $(".factbutton").click(function() {
+	prevDot = this.id;
 	var dotName = this.id;
 	// $(".factbutton").off('mouseover');
-	$(".factbutton").off('mouseleave');
-	
+	// $(".factbutton").off('mouseleave');
+
 	if(dotName =="Priority") {
 		document.getElementById("CustomFarmTitle").innerHTML = gardenData.DotTitle1;
 		document.getElementById("firstTraitTitle").innerHTML = gardenData.TraitTitle1_1;
