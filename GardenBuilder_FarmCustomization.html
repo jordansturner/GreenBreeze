@@ -228,12 +228,12 @@ $(".factbutton").mouseleave(function() {
 });
 
 $(".factbutton").click(function() {
-	prevDot = this.innerHTML;
 	var dotName = this.id;
 	// $(".factbutton").off('mouseover');
 	// $(".factbutton").off('mouseleave');
 
 	if(dotName =="Priority") {
+		prevDot = gardenData.DotTitle1;
 		document.getElementById("CustomFarmTitle").innerHTML = gardenData.DotTitle1;
 		document.getElementById("firstTraitTitle").innerHTML = gardenData.TraitTitle1_1;
 		document.getElementById("secondTraitTitle").innerHTML = gardenData.TraitTitle2_1;
@@ -244,6 +244,7 @@ $(".factbutton").click(function() {
 	}
 
 	if(dotName =="Scale") {
+		prevDot = gardenData.DotTitle2;
 		document.getElementById("CustomFarmTitle").innerHTML = gardenData.DotTitle2;
 		document.getElementById("firstTraitTitle").innerHTML = gardenData.TraitTitle1_2;
 		document.getElementById("secondTraitTitle").innerHTML = gardenData.TraitTitle2_2;
@@ -254,6 +255,7 @@ $(".factbutton").click(function() {
 	}
 
 	if(dotName =="Cost") {
+		prevDot = gardenData.DotTitle3;
 		document.getElementById("CustomFarmTitle").innerHTML = gardenData.DotTitle3;
 		document.getElementById("firstTraitTitle").innerHTML = gardenData.TraitTitle1_3;
 		document.getElementById("secondTraitTitle").innerHTML = gardenData.TraitTitle2_3;
