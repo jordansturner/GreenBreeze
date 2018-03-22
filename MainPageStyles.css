@@ -2523,7 +2523,6 @@ ________________________________________________________________________________
     width: 400px;
     left: 205px;
     top: 30px;
-    background-color: red;
 }
 
 input {
@@ -2912,8 +2911,8 @@ border-color: white transparent transparent transparent;
 #SecondImg {
     position: absolute;
     height: 400px;
-    left: 0px;
-    top: -20px;
+    left: -160px;
+    top: -70px;
 }
 
 #Priority {
