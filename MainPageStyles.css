@@ -2903,10 +2903,16 @@ border-color: white transparent transparent transparent;
 
 }
 
-#ERTImg {
+#FirstImg {
     position: absolute;
     height: 600px;
     left: 170px;
+    top: -20px;
+}
+#SecondImg {
+    position: absolute;
+    height: 300px;
+    left: 100px;
     top: -20px;
 }
 

@@ -184,10 +184,9 @@
 		console.log("This is garden data",gardenData);
 
 function loadEverything (x) {
-	$("#CustomFarmImgWrapper").prepend("<img id='ERTImg' src='Assets/PNG_72ppi/" + x +".png'/>");
-	$("#CustomFarmImg2Wrapper").prepend("<img id='ERTImg' src='Assets/PNG_72ppi/" + x +".png'/>");
+	$("#CustomFarmImgWrapper").prepend("<img id='FirstImg' src='Assets/PNG_72ppi/" + x +".png'/>");
+	$("#CustomFarmImg2Wrapper").prepend("<img id='SecondImg' src='Assets/PNG_72ppi/" + x +".png'/>");
 	$(".CustomFarmImg").remove();
-	$(".CustomFarmImg2").remove();
 	var url = x + ".json";
 
 	var json = (function (){
