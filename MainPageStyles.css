@@ -2911,8 +2911,8 @@ border-color: white transparent transparent transparent;
 }
 #SecondImg {
     position: absolute;
-    height: 300px;
-    left: 100px;
+    height: 400px;
+    left: 0px;
     top: -20px;
 }
 
