@@ -2517,7 +2517,7 @@ ________________________________________________________________________________
     opacity: 1;
 }
 
-.CustomFarmImg2Wrapper {
+#CustomFarmImg2Wrapper {
     position: absolute;
     height: 250px;
     width: 400px;
