@@ -14,26 +14,29 @@
 </head>
 
 <body>
-	<!-- <div id="nameGardenContentWrapper">
+	<div id="nameGardenContentWrapper">
 		<div id="darkBackground">
 			
 		</div>
 		<div id="modalBackgroundnameGarden">
-			<div id="content2">
-				<img id="MissionStatementImg2" src="Assets/PNG_72ppi/Mission_Statement.png">
-				<div id="MissionStatementWrapper2">
-					<h3 id="MissionStatementTitle2">Mission Statement</h3>
-					<h5 id="MissionStatementBody2">
-					Herban is not just a company, we are a green-based lifestyle </br>brand. By taking advantage of a digital marketplace, autonomous gardening, and drone delivery system, Herban will sell and deliver locally sourced produce directly to and from our customers doorstops. Our mission is to drive the change required for a sustainable future. By limiting the amount of traditional farmland needed to feed a growing population and by integrating green spaces into every facet of city life, our Green Breeze system will foster environmental rejuvination and healthier city ecosystems.
-					</h5>
-					<div class="circleXm2">
+			<div id="content3">
+				<div id="nameGardenWrapper">
+					<div class="CustomFarmImg2Wrapper">
+						<div class="CustomFarmImg2">
+						</div>
 					</div>
-					<button class="xm2" id="missionX2">
+					<h4 id="congratulations">Congratulations!</h4>
+					<h6 id="congratulationsText">Lorem ipsum dolor sit amet, consectetur adipiscing elit</h6>
+					<form id="user"><input type="text" name="user"></form>
+					<button id="SubmitNameButton">Join</button>
+					<div class="circleXm3">
+					</div>
+					<button class="xm3" id="missionX3">
 					</button>
 				</div>
 			</div>
 		</div> 
-	</div> -->
+	</div>
 	<div id="missionStatementContentWrapper">
 		<div id="darkBackground">
 			
@@ -144,7 +147,7 @@
 			</div>
 			
 		</div>
-		<a href="#"><button id="EnterCommunityButton">
+		<a><button id="EnterCommunityButton">
 		Finalize Garden
 		</button></a>
 	</div>
@@ -183,8 +186,9 @@
 
 function loadEverything (x) {
 	$("#CustomFarmImgWrapper").prepend("<img id='ERTImg' src='Assets/PNG_72ppi/" + x +".png'/>");
+	$("#CustomFarmImg2Wrapper").prepend("<img id='ERTImg' src='Assets/PNG_72ppi/" + x +".png'/>");
 	$(".CustomFarmImg").remove();
-
+	$(".CustomFarmImg2").remove();
 	var url = x + ".json";
 
 	var json = (function (){
@@ -231,7 +235,7 @@ $(".factbutton").click(function() {
 	var dotName = this.id;
 	// $(".factbutton").off('mouseover');
 	// $(".factbutton").off('mouseleave');
-
+	$(".factbutton").css("opacity", 1);
 	if(dotName =="Priority") {
 		prevDot = gardenData.DotTitle1;
 		document.getElementById("CustomFarmTitle").innerHTML = gardenData.DotTitle1;
@@ -310,6 +314,21 @@ $(".factbutton").click(function() {
 			$('.xm2').click(function(){
 				$("#missionStatementContentWrapper").css("opacity", "");
 				$("#missionStatementContentWrapper").delay(800).queue(function(next) {
+					$(this).css("z-index", "");
+					next();
+				});
+
+			});
+
+	$('#EnterCommunityButton').click(function(){
+				$("#nameGardenContentWrapper").css("z-index", "102");
+				$("#nameGardenContentWrapper").css("opacity", "1");
+
+			});
+
+			$('.xm3').click(function(){
+				$("#nameGardenContentWrapper").css("opacity", "");
+				$("#nameGardenContentWrapper").delay(800).queue(function(next) {
 					$(this).css("z-index", "");
 					next();
 				});
