@@ -215,14 +215,23 @@ $(".factbutton").mouseover(function() {
 	var dotName = this.id;
 	if(dotName =="Priority") {
 		document.getElementById("CustomFarmTitle").innerHTML = gardenData.DotTitle1;
+		document.getElementById("firstTraitTitle").innerHTML = gardenData.TraitTitle1_1;
+		document.getElementById("secondTraitTitle").innerHTML = gardenData.TraitTitle2_1;
+		document.getElementById("thirdTraitTitle").innerHTML = gardenData.TraitTitle3_1;
 	}
 
 	if(dotName =="Scale") {
 		document.getElementById("CustomFarmTitle").innerHTML = gardenData.DotTitle2;
+		document.getElementById("firstTraitTitle").innerHTML = gardenData.TraitTitle1_2;
+		document.getElementById("secondTraitTitle").innerHTML = gardenData.TraitTitle2_2;
+		document.getElementById("thirdTraitTitle").innerHTML = gardenData.TraitTitle3_2;
 	}
 
 	if(dotName =="Cost") {
 		document.getElementById("CustomFarmTitle").innerHTML = gardenData.DotTitle3;
+		document.getElementById("firstTraitTitle").innerHTML = gardenData.TraitTitle1_3;
+		document.getElementById("secondTraitTitle").innerHTML = gardenData.TraitTitle2_3;
+		document.getElementById("thirdTraitTitle").innerHTML = gardenData.TraitTitle3_3;
 	}
 });
 
