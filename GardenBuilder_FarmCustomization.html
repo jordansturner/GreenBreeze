@@ -237,6 +237,9 @@ $(".factbutton").mouseover(function() {
 
 $(".factbutton").mouseleave(function() {
 	document.getElementById("CustomFarmTitle").innerHTML = prevDot;
+	document.getElementById("firstTraitTitle").innerHTML = prevTraitTitle1;
+	document.getElementById("secondTraitTitle").innerHTML = prevTraitTitle2;
+	document.getElementById("thirdTraitTitle").innerHTML = prevTraitTitle3;
 });
 
 $(".factbutton").click(function() {
@@ -246,6 +249,9 @@ $(".factbutton").click(function() {
 	$(".factbutton").css("opacity", 1);
 	if(dotName =="Priority") {
 		prevDot = gardenData.DotTitle1;
+		prevTraitTitle1 = gardenData.TraitTitle1_1;
+		prevTraitTitle2 = gardenData.TraitTitle2_1;
+		prevTraitTitle3 = gardenData.TraitTitle3_1;
 		document.getElementById("CustomFarmTitle").innerHTML = gardenData.DotTitle1;
 		document.getElementById("firstTraitTitle").innerHTML = gardenData.TraitTitle1_1;
 		document.getElementById("secondTraitTitle").innerHTML = gardenData.TraitTitle2_1;
@@ -257,6 +263,9 @@ $(".factbutton").click(function() {
 
 	if(dotName =="Scale") {
 		prevDot = gardenData.DotTitle2;
+		prevTraitTitle1 = gardenData.TraitTitle1_1;
+		prevTraitTitle2 = gardenData.TraitTitle2_1;
+		prevTraitTitle3 = gardenData.TraitTitle3_1;
 		document.getElementById("CustomFarmTitle").innerHTML = gardenData.DotTitle2;
 		document.getElementById("firstTraitTitle").innerHTML = gardenData.TraitTitle1_2;
 		document.getElementById("secondTraitTitle").innerHTML = gardenData.TraitTitle2_2;
@@ -268,6 +277,9 @@ $(".factbutton").click(function() {
 
 	if(dotName =="Cost") {
 		prevDot = gardenData.DotTitle3;
+		prevTraitTitle1 = gardenData.TraitTitle1_1;
+		prevTraitTitle2 = gardenData.TraitTitle2_1;
+		prevTraitTitle3 = gardenData.TraitTitle3_1;
 		document.getElementById("CustomFarmTitle").innerHTML = gardenData.DotTitle3;
 		document.getElementById("firstTraitTitle").innerHTML = gardenData.TraitTitle1_3;
 		document.getElementById("secondTraitTitle").innerHTML = gardenData.TraitTitle2_3;
