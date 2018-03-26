@@ -2868,6 +2868,10 @@ border-color: white transparent transparent transparent;
 	padding-left:140px;
 }
 
+.Traits h4 {
+    color: #559B98;
+}
+
 .TraitBody {
 	margin-bottom: 20px;
 }
