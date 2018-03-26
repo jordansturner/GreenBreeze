@@ -112,17 +112,17 @@
 			<div class="Traits" id="firstTraitWrapper">
 				<h4 id="firstTraitTitle">Trait Title</h4>
 				<h6 class="TraitBody" id="firstTraitBody">Cheaper than aeroponics and slower in production, but much less routinely upkeep</h6>
-				<input type="range" min="0" max="30" data-rangeslider="" style="position: absolute; width: 1px; height: 1px; overflow: hidden; opacity: 0;">
+				<input id="firstSlider" type="range" min="0" max="30" data-rangeslider="" style="position: absolute; width: 1px; height: 1px; overflow: hidden; opacity: 0;">
 			</div>
 			<div class="Traits" id="secondTraitWrapper">
 				<h4 id="secondTraitTitle">Trait Title</h4>
 				<h6 class="TraitBody" id="secondTraitBody">Cheaper than aeroponics and slower in production, but much less routinely upkeep</h6>
-				<input type="range" min="0" max="30" data-rangeslider="" style="position: absolute; width: 1px; height: 1px; overflow: hidden; opacity: 0;">
+				<input id="secondSlider" type="range" min="0" max="30" data-rangeslider="" style="position: absolute; width: 1px; height: 1px; overflow: hidden; opacity: 0;">
 			</div>
 			<div class="Traits" id="thirdTraitWrapper">
 				<h4 id="thirdTraitTitle">Trait Title</h4>
 				<h6 class="TraitBody" id="thirdTraitBody">Cheaper than aeroponics and slower in production, but much less routinely upkeep</h6>
-				<input type="range" min="0" max="30" data-rangeslider="" style="position: absolute; width: 1px; height: 1px; overflow: hidden; opacity: 0;">
+				<input id="thirdSlider" type="range" min="0" max="30" data-rangeslider="" style="position: absolute; width: 1px; height: 1px; overflow: hidden; opacity: 0;">
 			</div>
 
 		</div>
@@ -262,6 +262,9 @@ $(".factbutton").click(function() {
 		document.getElementById("firstTraitBody").innerHTML = gardenData.BodyText1_1;
 		document.getElementById("secondTraitBody").innerHTML = gardenData.BodyText1_2;
 		document.getElementById("thirdTraitBody").innerHTML = gardenData.BodyText1_3;
+		$('#firstSlider').max(100).change();
+
+		
 	}
 
 	if(dotName =="Scale") {
@@ -276,6 +279,7 @@ $(".factbutton").click(function() {
 		document.getElementById("firstTraitBody").innerHTML = gardenData.BodyText2_1;
 		document.getElementById("secondTraitBody").innerHTML = gardenData.BodyText2_2;
 		document.getElementById("thirdTraitBody").innerHTML = gardenData.BodyText2_3;
+
 	}
 
 	if(dotName =="Cost") {
@@ -290,44 +294,42 @@ $(".factbutton").click(function() {
 		document.getElementById("firstTraitBody").innerHTML = gardenData.BodyText3_1;
 		document.getElementById("secondTraitBody").innerHTML = gardenData.BodyText3_2;
 		document.getElementById("thirdTraitBody").innerHTML = gardenData.BodyText3_3;
+
 	}
 });
 
 
 
+	$('input[ type="range"]').rangeslider({
+			  // Feature detection the default is `true`.
+		    // Set this to `false` if you want to use
+		    // the polyfill also in Browsers which support
+		    // the native <input type="range"> element.
+		    polyfill: false,
+
+		    // Callback function
+		    onInit: function() {
+
+			$('#firstSlider').max(100).change();
+	
+		    },
+
+		    // Callback function
+		    onSlide: function(position, value) {
+
+		    },
+
+		    // Callback function
+		    onSlideEnd: function(position, value) {
+		    	console.log(value);
+		    }
+		});
+
+
+
+
+
 	 
-
-
-
-
-	 $('input[type="range"]').rangeslider({
-
-
-
-    // Feature detection the default is `true`.
-    // Set this to `false` if you want to use
-    // the polyfill also in Browsers which support
-    // the native <input type="range"> element.
-    polyfill: false,
-
-    // Default CSS classes
-    rangeClass: 'rangeslider',
-    disabledClass: 'rangeslider--disabled',
-    horizontalClass: 'rangeslider--horizontal',
-    verticalClass: 'rangeslider--vertical',
-    fillClass: 'rangeslider__fill',
-    handleClass: 'rangeslider__handle',
-
-    // Callback function
-    onInit: function() {},
-
-    // Callback function
-    onSlide: function(position, value) {},
-
-    // Callback function
-    onSlideEnd: function(position, value) {}
-});
-
 	 $('#mission_Statement').click(function(){
 				$("#missionStatementContentWrapper").css("z-index", "102");
 				$("#missionStatementContentWrapper").css("opacity", "1");

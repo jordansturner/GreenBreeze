@@ -189,6 +189,7 @@ ________________________________________________________________________________
 	margin-top: 30px;
 	opacity: 0;
 	transition: opacity 3s;
+
 }
 
 #FutureOfAgro  h3 {
@@ -245,8 +246,9 @@ ________________________________________________________________________________
     width: 100vw;
     min-height: 33vw;
     overflow: hidden;
-    top: 25%;
+    top: 185px;
     z-index: 0;
+
 }
 
 .handle {
@@ -714,6 +716,9 @@ ________________________________________________________________________________
 	opacity: 1;
 	transition: opacity 5s;
 }
+#FutureOfAgro4 h3 {
+    color: #559B98;
+}
 
 #whitebackground {
     position: absolute;
@@ -725,9 +730,7 @@ ________________________________________________________________________________
     left: -800px;
 }
 
-#FutureOfAgro4 h3 {
-	color: #559B98;
-}
+
 
 
 .splitview4 {
