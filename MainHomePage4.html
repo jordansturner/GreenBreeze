@@ -11,7 +11,7 @@
 		font-family: 'Montserrat', sans-serif; -->
 </head>
 <body id = "Page4">
-
+	<audio id="Intro_Herban" src="Assets/Intro_To_Herban.mp3"></audio>
 	<div id="missionStatementContentWrapper">
 		<div id="darkBackground">
 			
@@ -22,7 +22,7 @@
 				<div id="MissionStatementWrapper2">
 					<h3 id="MissionStatementTitle2">Mission Statement</h3>
 					<h5 id="MissionStatementBody2">
-					Herban is not just a company, we are a green-based lifestyle </br>brand. By taking advantage of a digital marketplace, autonomous gardening, and drone delivery system, Herban will sell and deliver locally sourced produce directly to and from our customers doorstops. Our mission is to drive the change required for a sustainable future. By limiting the amount of traditional farmland needed to feed a growing population and by integrating green spaces into every facet of city life, our Green Breeze system will foster environmental rejuvination and healthier city ecosystems.
+					Herban is not just a company, we are a green-based lifestyle </br>brand. By taking advantage of a digital marketplace, autonomous gardening, and drone delivery system, Herban will sell and deliver locally sourced produce directly to and from our customers' doorsteps.  Our mission is to drive the change required for a sustainable future. By limiting the amount of traditional farmland needed to feed a growing population and by integrating green spaces into every facet of city life, our Green Breeze system will foster environmental rejuvination and healthier city ecosystems.
 					</h5>
 					<div class="circleXm2">
 					</div>
@@ -160,8 +160,10 @@
 	<script type="text/javascript">
 
 	$('#Page4').addClass('stop-scrolling');
+	var vid = document.getElementById("Intro_Herban");
+	vid.currentTime = 5;
 	$(document).ready(function(){
-
+		// $("#Intro_Herban").play();
 
 
 			//  drag functionality//
