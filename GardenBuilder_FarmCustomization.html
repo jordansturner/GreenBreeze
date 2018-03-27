@@ -129,19 +129,19 @@
 
 		<div id="resultStatsWrapper">
 			<div class="ResultsWrapper" id="resultWrapper1">
-				<div id="resultMedalImg1"></div>
+				<img src="Assets/award2.png" class="award" id="resultMedalImg1">
 				<h6 id="resultText1" class="results">Grocery Budget Decreased  By<span id="filledInResult1">_________</span>.</h6>
 			</div>
 			<div class="ResultsWrapper" id="resultWrapper2">
-				<div id="resultMedalImg2"></div>
+				<img src="Assets/award2.png" class="award" id="resultMedalImg2">
 				<h6 id="resultText2" class="results">Meals Created<span id="filledInResult2">_________</span>.</h6>
 			</div>
 			<div class="ResultsWrapper" id="resultWrapper3">
-				<div id="resultMedalImg3"></div>
+				<img src="Assets/award2.png"  class="award" id="resultMedalImg3">
 				<h6 id="resultText3" class="results">Water Saved<span id="filledInResult3">_________</span>.</h6>
 			</div>
 			<div class="ResultsWrapper" id="resultWrapper4">
-				<div id="resultMedalImg4"></div>
+				<img src="Assets/award2.png" class="award" id="resultMedalImg4">
 				<h6 id="resultText4" class="results">Farmland Rejuvinated<span id="filledInResult4">_________</span>.</h6>
 			</div>
 			
@@ -250,6 +250,11 @@ $(".factbutton").click(function() {
 	// $(".factbutton").off('mouseover');
 	// $(".factbutton").off('mouseleave');
 	$("#CustomFarmTitle").css("opacity", 1);
+	$(".Traits").css("opacity", 1);
+	$("body,html").animate(
+		        {
+		            scrollTop : 1240                       // Scroll 500px from top of body
+		        }, 2000); 
 	if(dotName =="Priority") {
 		prevDot = gardenData.DotTitle1;
 		prevTraitTitle1 = gardenData.TraitTitle1_1;
@@ -386,40 +391,37 @@ $(".factbutton").click(function() {
 		        }, 1000);  //how fast the scrolling animation will be in miliseconds
 		    });
 
-
 		/* initializing firebase */
-        
-        var config = {
-            apiKey: "AIzaSyCz8j_wouFYfrsdMHfw-Asx90Z0ujSZlNo",
-            authDomain: "herban-f14b6.firebaseapp.com",
-            databaseURL: "https://herban-f14b6.firebaseio.com/",
-            projectId: "herban-f14b6",
-            storageBucket: "herban-f14b6.appspot.com",
-            messagingSenderId: "577414616663" 
-        };
-        firebase.initializeApp(config);
+		var config = {
+			apiKey: "AIzaSyCz8j_wouFYfrsdMHfw-Asx90Z0ujSZlNo",
+			authDomain: "herban-f14b6.firebaseapp.com",
+			databaseURL: "https://herban-f14b6.firebaseio.com/",
+			projectId: "herban-f14b6",
+			storageBucket: "herban-f14b6.appspot.com",
+			messagingSenderId: "577414616663" 
+		};
+		firebase.initializeApp(config);
 		
 
 		function writeNewPost() {
-            // A post entry.
+			// A post entry.
 
-            var postData = {
-                A_customizedName: "name",
+			var postData = {
+				A_customizedName: "name",
 				B_groceryDecreased: "number_grocery_decreased",
 				C_groceryDecreased: "number_grocery_decreased",
 				D_groceryDecreased: "number_grocery_decreased",
 				E_groceryDecreased: "number_grocery_decreased"
-            };
-        
-            // Get a key for a new Post.
-            var newPostKey = firebase.database().ref().child('users').push().key;
-          
-            // Write the new post's data simultaneously in the posts list and the user's post list.
-            var updates = {};
-            updates['/users/' + newPostKey] = postData;
-          
-            return firebase.database().ref().update(updates);
-        }
+			};
+		
+			// Get a key for a new Post.
+			var newPostKey = firebase.database().ref().child('users').push().key;
+		
+			// Write the new post's data simultaneously in the posts list and the user's post list.
+			var updates = {};
+			updates['/users/' + newPostKey] = postData;
+			return firebase.database().ref().update(updates);
+		}
 
 		// writeNewPost();
 });	

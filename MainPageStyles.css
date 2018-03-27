@@ -2021,9 +2021,9 @@ ________________________________________________________________________________
 }
 #Apartment_Living_Img {
 	position: absolute;
-	width: 900px;
-	left: -80px;
-	top: -60px;
+	width: 1000px;
+    left: -130px;
+    top: -100px;
 }
 
 #Expand_Stats_ApartmentLiving {
@@ -2078,9 +2078,9 @@ ________________________________________________________________________________
 }
 #Residential_Living_Img {
 	position: absolute;
-	width: 900px;
-	left: -80px;
-	top: -60px;
+	width: 1200px;
+	left: -220px;
+	top: -170px;
 }
 
 #Expand_Stats_ResidentialLiving {
@@ -2136,9 +2136,9 @@ ________________________________________________________________________________
 }
 #Vertical_Farming_Img {
 	position: absolute;
-	width: 900px;
-	left: -80px;
-	top: -60px;
+	width: 1200px;
+    left: -220px;
+    top: -140px;
 }
 
 #Expand_Stats_VerticalFarmingFacility {
@@ -2840,6 +2840,7 @@ border-color: white transparent transparent transparent;
 	margin-top: 20px;
 /*    color: #559B98;*/
     opacity: .3;
+    transition: opacity 2s;
 }
 
 #CustomStatsTweakingWrapper {
@@ -2866,6 +2867,8 @@ border-color: white transparent transparent transparent;
 }
 .Traits {
 	padding-left:140px;
+    opacity: .3;
+    transition: opacity 2s;
 }
 
 .Traits h4 {
@@ -2876,11 +2879,20 @@ border-color: white transparent transparent transparent;
 	margin-bottom: 20px;
 }
 .results {
-	padding-left:120px;
+	padding-left:100px;
 	margin-bottom: 70px;
 }
+.award {
+    position: absolute;
+    top: -22px;
+    width: 70px;
+    left: 25px;
+}
+
 #resultStatsWrapper {
-	margin-top: 70px;
+	margin-top: 90px;
+    padding-left: 50px;
+    position: relative;
 }
 #resultWrapper1 {
 	position: relative;
@@ -2912,7 +2924,7 @@ border-color: white transparent transparent transparent;
 	font-family: 'Open Sans', sans-serif;
 	font-weight: 700;
 	color: #559B98;
-	margin-bottom: 30px;
+	margin-bottom: 20px;
 	margin-top: 50px;
 	margin-left: 50%;
 	transform: translate(-50%, -50%);

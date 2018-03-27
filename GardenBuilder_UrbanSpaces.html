@@ -89,7 +89,7 @@
 			<h3>Residential Living</h3>
 			<h5>Most of us always assumed the garden in the backyard was limited to the patch on the side of your home.</h5>
 		</div>
-		<img id="Residential_Living_Img" src="Assets/PNG_72ppi/Residential_Living.png">
+		<img id="Residential_Living_Img" src="Assets/PNG_72ppi/Residential_Living3.png">
 		<div id="Expand_Stats_ResidentialLiving">
 			<h6>EXPAND STATISTICS</h6>
 			<div id="Underline"></div>
@@ -180,7 +180,7 @@
 
 		$(function(){
 
-		    $("#Expand_Stats_ApartmentLiving h6").on("click", function(){
+		$("#Expand_Stats_ApartmentLiving h6").on("click", function(){
 		//       document.getElementById("Expand_Stats_EnvironmentalGrowing h6").innerHTML = "";
 				$("#ApartmentLiving_TextWrapper").css( "top", "0px" );
 				$("#Expand_Stats_ApartmentLiving").css("opacity", "0");
@@ -196,7 +196,7 @@
 				$("#Expand_Stats_VerticalFarmingFacility").css("opacity", "");
 				$("#Extra_Stats_VerticalFarming_Wrapper").css("opacity","");
 				$("#Extra_Stats_VerticalFarming_Wrapper").css("top","");
-		    });
+			});
 
 			$("#apartmentX").on("click", function(){
 		//       document.getElementById("Expand_Stats_EnvironmentalGrowing h6").innerHTML = "";
@@ -204,7 +204,7 @@
 				$("#Expand_Stats_ApartmentLiving").css("opacity", "");
 				$("#Extra_Stats_Apartment_Wrapper").css("opacity","");
 				$("#Extra_Stats_Apartment_Wrapper").css("top","");
-		    });
+			});
 			// $("#EnvironmentalGrowingButtonX").click(function(){
 			
 		// 	$("#EnvironmentalGrower_TextWrapper").css( "top", "0px" );
@@ -230,7 +230,7 @@
 				$("#Extra_Stats_VerticalFarming_Wrapper").css("opacity","");
 				$("#Extra_Stats_VerticalFarming_Wrapper").css("top","");
 
-		    });
+			});
 
 			$("#residentialX").on("click", function(){
 		//       document.getElementById("Expand_Stats_EnvironmentalGrowing h6").innerHTML = "";
@@ -238,7 +238,7 @@
 				$("#Expand_Stats_ResidentialLiving").css("opacity", "");
 				$("#Extra_Stats_Residential_Wrapper").css("opacity","");
 				$("#Extra_Stats_Residential_Wrapper").css("top","");
-		    });
+			});
 
 
 			$("#Expand_Stats_VerticalFarmingFacility h6").on("click", function(){
@@ -258,7 +258,7 @@
 				$("#Extra_Stats_Apartment_Wrapper").css("opacity","");
 				$("#Extra_Stats_Apartment_Wrapper").css("top","");
 
-		    });
+			});
 
 			$("#verticalX").on("click", function(){
 		//       document.getElementById("Expand_Stats_EnvironmentalGrowing h6").innerHTML = "";
@@ -266,7 +266,7 @@
 				$("#Expand_Stats_VerticalFarmingFacility").css("opacity", "");
 				$("#Extra_Stats_VerticalFarming_Wrapper").css("opacity","");
 				$("#Extra_Stats_VerticalFarming_Wrapper").css("top","");
-		    });
+			});
 
 			$('#mission_Statement').click(function(){
 				$("#missionStatementContentWrapper").css("z-index", "102");
@@ -282,8 +282,7 @@
 				});
 
 			});
-
-  });
+	});
 		console.log(localStorage.getItem("Priority"));
 		
 		$(".Choose").on("click", function(){
