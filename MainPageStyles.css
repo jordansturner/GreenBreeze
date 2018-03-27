@@ -2951,7 +2951,7 @@ border-color: white transparent transparent transparent;
 #FirstImg {
     position: absolute;
     height: 600px;
-    left: 170px;
+    left: 200px;
     top: -20px;
 }
 #SecondImg {
@@ -2970,7 +2970,7 @@ border-color: white transparent transparent transparent;
 #Scale {
     position: absolute;
     top: 180px;
-    left:800px;
+    left:850px;
 }
 #Cost {
     position: absolute;
