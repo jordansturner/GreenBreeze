@@ -19,5 +19,9 @@
 	"TraitTitle3_3": "Aquaponic System",
 	"BodyText3_1":"Cheaper than aeroponics and slower in production, but much less routinely upkeep C",
 	"BodyText3_2":"Cheaper than aeroponics and slower in production, but much less routinely upkeep C",
-	"BodyText3_3":"Cheaper than aeroponics and slower in production, but much less routinely upkeep C"
+	"BodyText3_3":"Cheaper than aeroponics and slower in production, but much less routinely upkeep C",
+	"VegetableValue":"$325,875/yr",
+	"WaterSavedValue":"277,448 Gallons/yr",
+	"GasolineValue":"1,763 Gallons of Gasoline/yr",
+	"MealsCreatedValue":"1,650 Meals/yr"
 }

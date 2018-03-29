@@ -10,6 +10,7 @@
 		font-family: 'Montserrat', sans-serif; -->
 </head>
 <body id = "Page">
+	<audio id="Intro_Herban" src="Assets/Intro_To_Herban.mp3"></audio>
 	<div id="FutureOfAgro">
 		<h3>The Future of Farming is Vertical</h3>
 		<h6>Explore the current problems with agriculture and move </br> our slider to uncover a future with <i>Herban</i>.</h6>
@@ -21,13 +22,13 @@
 	<div class="splitview">
 	        <div class="panel Mapbottom">
 	        	<div class="content">
-	        		<img id="FutureMap" src="Assets/Asset_1.png" alt="Future_Farm">
+	        		<img id="FutureMap2" src="Assets/Asset_1.2.png" alt="Future_Farm">
 
 	        	</div>
 	        </div>
 	        <div class="panel Maptop">
 	        	<div class="content">
-	        		<img id="CurrentMap" src="Assets/Asset_2.png" alt="Current_Farm">
+	        		<img id="CurrentMap2" src="Assets/Asset_2.2.png" alt="Current_Farm">
 	        		<div id="factsbuttons">
 		        		<img id="FirstFact" class="factbutton" src="Assets/info_button.png" alt="info_button">
 		        		<img id="SecondFact" class="factbutton" src="Assets/info_button.png" alt="info_button">
@@ -102,7 +103,7 @@
 // });
 
 	$(document).ready(function () {
-
+			$("#Intro_Herban").get(0).play();
 			var HoverOff;
 			// var HoverOff2;
 			var HoverOff3;

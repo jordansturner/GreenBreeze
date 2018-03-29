@@ -2532,7 +2532,7 @@ ________________________________________________________________________________
 #modalBackgroundnameGarden {
     position: fixed;
     width: 800px;
-    height: 600px;
+    height: 650px;
     background-color: white;
     box-shadow: 5px;
    /* z-index: 102;*/
@@ -2548,7 +2548,7 @@ ________________________________________________________________________________
     height: 250px;
     width: 400px;
     left: 205px;
-    top: 30px;
+    top: 60px;
 }
 
 input {
@@ -2583,7 +2583,7 @@ input {
     position: relative;
     /* margin-top: 400px; */
     /* margin: auto; */
-    padding-top: 280px;
+    padding-top: 300px;
     /* height: 500px; */
     /*margin: auto;*/
     text-align: center;
@@ -3255,4 +3255,57 @@ ________________________________________________________________________________
 .circleXm:focus {
   color: #467D7B;
   outline: none;
+}
+
+
+/*________________________________________________________________________________________________________________________________________________________________________
+
+Community Page Styles
+__________________________________________________________________________________________________________________________________________________________________________*/
+
+
+
+#community_Header_Wrapper {
+    top: 160px;
+    left: 150px;
+    position: absolute;
+    width: 650px;
+}
+
+#scroll_Hint_Wrapper {
+    top: 500px;
+    left: 165px;
+    width: 70px;
+    position: absolute;
+    opacity: 0;
+    cursor: w-resize;
+    transition: opacity 6s;
+
+}
+
+#community_Illustrations_Wrapper {
+    top: 200px;
+    left: 1000px;
+    position: absolute;
+    background-color: red;
+}
+
+#community_Arrow {
+ width: 25px;
+
+}
+
+#mouse_Icon {
+position: absolute;
+width: 25px;
+top: -12px;
+left: 40px;
+}
+
+#scroll_Text {
+position: absolute;
+top: -5px;
+left: 75px;
+width: 200px;
+font-size: 15px;
 }

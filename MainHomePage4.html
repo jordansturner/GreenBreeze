@@ -11,7 +11,7 @@
 		font-family: 'Montserrat', sans-serif; -->
 </head>
 <body id = "Page4">
-	<audio id="Intro_Herban" src="Assets/Intro_To_Herban.mp3"></audio>
+	<audio id="Intro_Herban2" src="Assets/Intro_To_Herban2.mp3"></audio>
 	<div id="missionStatementContentWrapper">
 		<div id="darkBackground">
 			
@@ -55,7 +55,7 @@
 		<div class="splitview4">
 		        <div class="panel2 Mapbottom2">
 		        	<div class="content">
-		        		<img id="FutureMap2" src="Assets/Asset_1.png" alt="Future_Farm">
+		        		<img id="FutureMap2" src="Assets/Asset_1.2.png" alt="Future_Farm">
 		        		<div id="factsbuttons">
 			        		<img id="TwelfthFact" class="factbutton" src="Assets/info_button3.png" alt="info_button">
 			        		<img id="ThirteenthFact" class="factbutton" src="Assets/info_button3.png" alt="info_button">
@@ -72,7 +72,7 @@
 		        <div id="whitebackground"></div>
 		        <div class="panel2 Maptop2">
 		        	<div class="content">
-		        		<img id="CurrentMap2" src="Assets/Asset_2.png" alt="Current_Farm">
+		        		<img id="CurrentMap2" src="Assets/Asset_2.2.png" alt="Current_Farm">
 		        		<div id="factsbuttons">
 			        		<img id="FirstFact" class="factbutton" src="Assets/info_button2.png" alt="info_button">
 			        		<img id="SecondFact" class="factbutton" src="Assets/info_button2.png" alt="info_button">
@@ -160,10 +160,8 @@
 	<script type="text/javascript">
 
 	$('#Page4').addClass('stop-scrolling');
-	var vid = document.getElementById("Intro_Herban");
-	vid.currentTime = 5;
 	$(document).ready(function(){
-		// $("#Intro_Herban").play();
+		$("#Intro_Herban2").get(0).play();
 
 
 			//  drag functionality//
@@ -394,7 +392,7 @@
 				eighthBubble.remove();
 			});
 
-			var ninthBubble = $( "<hgroup class='speech-bubble' id='ninthBubble'><p class='titleInfo'>The Food Mile</p><p class='titleBody'>Most produce doesn’t reach the shelves until five to seven days after it’s harvested, because it’s grown on farms or greenhouses hundreds of miles outside urban areas. [or 1500 miles]</p></hgroup>" );
+			var ninthBubble = $( "<hgroup class='speech-bubble' id='ninthBubble'><p class='titleInfo'>The Food Mile</p><p class='titleBody'>Most produce doesn"+"'"+"t reach the shelves until five to seven days after it"+"'"+"s harvested, because it"+"'"+"s grown on farms or greenhouses hundreds of miles outside urban areas. [or 1500 miles]</p></hgroup>" );
 
 			$("#NinthFact").mouseenter(function() {
 
