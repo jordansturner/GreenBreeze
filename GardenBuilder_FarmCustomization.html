@@ -3,12 +3,15 @@
 <head>
 	<title></title>
 	<link rel="stylesheet" type="text/css" href="MainPageStyles.css">
-	<link rel="stylesheet" type="text/css" href="rangeslider.css">
+<!-- 	<link rel="stylesheet" type="text/css" href="rangeslider.css"> -->
+	<link rel="stylesheet" type="text/css" href="nouislider.css">
 	<link href="https://fonts.googleapis.com/css?family=Montserrat:300i,300,400,500,600,700|Open+Sans:300,400,400i" rel="stylesheet">
 	<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/skrollr/0.6.30/skrollr.min.js"></script>
-	<script src='rangeslider.min.js'></script>
+	<!-- <script src='rangeslider.min.js'></script> -->
 	<script src="https://www.gstatic.com/firebasejs/4.9.1/firebase.js"></script>
+	<script type="text/javascript" src="nouislider.js"></script>
+
 	<!--font-family: 'Open Sans', sans-serif;
 		font-family: 'Montserrat', sans-serif; -->
 </head>
@@ -97,54 +100,74 @@
 	<!--<span class="hint">scroll</span>-->
 	</a>
 	<div id="CustomFarmWrapper">
-		<div id="CustomFarmImgWrapper">
-			<div class="CustomFarmImg">
+		
+		<h3 id="choice_Catalog"> Personalize Your Choices</h3>
+		<div id="catalog_Wrapper" >
+			<div id="priorityWrapper" class="catalogItemWrap">
+				<div id="priorityHeader" class="titleHeader"></div>
+			</div>
+			<div id="scaleWrapper" class="catalogItemWrap">
+				<div id="scaleHeader" class="titleHeader"></div>
+			</div>
+			<div id="costWrapper" class="catalogItemWrap">
+				<div id="costHeader" class="titleHeader"></div>
+			</div>
+		</div>
+		<div id="fineTuneSectionWrapper">
+			<div id="excerciseWrapper">
 				
 			</div>
-			<img id="Priority" class="factbutton" src="Assets/info_button2.png" alt="info_button">
-			<img id="Scale" class="factbutton" src="Assets/info_button2.png" alt="info_button">
-			<img id="Cost" class="factbutton" src="Assets/info_button2.png" alt="info_button">
-
-		</div>
-		<h3 id="CustomFarmTitle"> SELECT ANY DOT TO BEGIN </h3>
-
-		<div id="CustomStatsTweakingWrapper">
-			<div class="Traits" id="firstTraitWrapper">
-				<h4 id="firstTraitTitle">Trait Title</h4>
-				<h6 class="TraitBody" id="firstTraitBody">Cheaper than aeroponics and slower in production, but much less routinely upkeep</h6>
-				<input id="firstSlider" type="range" min="0" max="30" data-rangeslider="" style="position: absolute; width: 1px; height: 1px; overflow: hidden; opacity: 0;">
+			<div id="resultsHeader">
+				
 			</div>
-			<div class="Traits" id="secondTraitWrapper">
-				<h4 id="secondTraitTitle">Trait Title</h4>
-				<h6 class="TraitBody" id="secondTraitBody">Cheaper than aeroponics and slower in production, but much less routinely upkeep</h6>
-				<input id="secondSlider" type="range" min="0" max="30" data-rangeslider="" style="position: absolute; width: 1px; height: 1px; overflow: hidden; opacity: 0;">
+			<div id="resultsSectionWrapper">
+				<div id="resultsbackground">
+					
+				</div>
+				<table id="final_Results" border="0" cellpadding="12" cellspacing="0" style="border-collapse: collapse; width: 90%; margin: 1.5em; font-family: 'Open Sans', sans-serif;">
+					
+				<tbody>
+					<th style="text-align: left; font-family: 'Montserrat', sans-serif; font-size: 20px; font-weight: 600; color: #559B98;border-spacing: 25px; padding-bottom: 30px;">Urban Farm Results</th>
+				    <tr style="border-bottom: 1px solid rgba(85, 155, 152, .4); border-top: 1px solid rgba(85, 155, 152, .4); line-height: 1.8em; font-size: 16px;">
+				    	
+				      <td style="width: 55%; color: #4A4A4A;">The Value of Crops Grown:</td>
+				      <td id="result1" style="width: 45%; font-weight: bold; text-align: right; color: #559B98;">result1</td></tr>
+				    <tr style="border-bottom: 1px solid rgba(85, 155, 152, .4); line-height: 1.8em;font-size: 16px"">
+				      <td style="width: 55%;  color: #4A4A4A;">The Amount of Water Saved:</td>
+				      <td id="result2" style="width: 45%; font-weight: bold;text-align: right; color: #559B98;">result2</td></tr>
+				    <tr style="border-bottom: 1px solid rgba(85, 155, 152, .4); line-height: 1.8em;font-size: 16px"">
+				      <td style="width: 55%;  color: #4A4A4A;">CO2 Emissions Removed:</td>
+				      <td id="result3" style="width: 45%; text-align: right;font-weight: bold; color: #559B98;">result3</td>
+				    </tr>
+				    <tr style="border-bottom: 1px solid rgba(85, 155, 152, .4); line-height: 1.8em;font-size: 16px"">
+				      <td style="width: 55%;  color: #4A4A4A;">Amount of Meals Created:</td>
+				      <td id="result4" style="width: 45%; text-align: right; font-weight: bold;color: #559B98;">result4</td>
+				    </tr>
+				  </tbody>
+				</table>
 			</div>
-			<div class="Traits" id="thirdTraitWrapper">
-				<h4 id="thirdTraitTitle">Trait Title</h4>
-				<h6 class="TraitBody" id="thirdTraitBody">Cheaper than aeroponics and slower in production, but much less routinely upkeep</h6>
-				<input id="thirdSlider" type="range" min="0" max="30" data-rangeslider="" style="position: absolute; width: 1px; height: 1px; overflow: hidden; opacity: 0;">
-			</div>
-
-		</div>
-
-		<div id="resultStatsWrapper">
-			<div class="ResultsWrapper" id="resultWrapper1">
-				<img src="Assets/award2.png" class="award" id="resultMedalImg1">
-				<h6 id="resultText1" class="results">Grocery Budget Decreased  By<span id="filledInResult1">_________</span>.</h6>
-			</div>
-			<div class="ResultsWrapper" id="resultWrapper2">
-				<img src="Assets/award2.png" class="award" id="resultMedalImg2">
-				<h6 id="resultText2" class="results">Meals Created<span id="filledInResult2">_________</span>.</h6>
-			</div>
-			<div class="ResultsWrapper" id="resultWrapper3">
-				<img src="Assets/award2.png"  class="award" id="resultMedalImg3">
-				<h6 id="resultText3" class="results">Water Saved<span id="filledInResult3">_________</span>.</h6>
-			</div>
-			<div class="ResultsWrapper" id="resultWrapper4">
-				<img src="Assets/award2.png" class="award" id="resultMedalImg4">
-				<h6 id="resultText4" class="results">Farmland Rejuvinated<span id="filledInResult4">_________</span>.</h6>
-			</div>
+			<div id="excerciseWrapper">
+				<div id="excercise_Priority">
+					<h3 id="priority_ExcerciseTitle">Customize Your Priorities</h3>
+					<h5 id="priority_ExcerciseBody">Change the default settings for your farm choices to see how each shift influences your overall performance.</h5>
+					<div id="priority_Example_Wrapper">
+						<div id="example">
+							<div id="slider-connect2" class="noUi-target noUi-ltr noUi-horizontal">
+							</div>
+							<div class="Priority-Label">Environmental Priority:<span id="environmental-value"></span>%</div>
+							<div class="Priority-Label">Profitability Priority:<span id="profitability-value"></span>%</div>
+							<div class="Priority-Label">Consumability Priority:<span id="consumability-value"></span>%</div>
 			
+						</div>
+					</div>
+				</div>
+				<div id="excercise_Scale">
+					
+				</div>
+				<div id="excercise_Cost">
+					
+				</div>
+			</div>
 		</div>
 		<a><button id="EnterCommunityButton">
 		Finalize Garden
@@ -173,8 +196,10 @@
 		}, 400, function(){
 
 		});
+
 		var combinedCategories = localStorage.getItem("Priority") + localStorage.getItem("Scale") + localStorage.getItem("Cost");
 
+	
 		console.log(combinedCategories);
 
 		var gardenData;
@@ -182,151 +207,294 @@
 		loadEverything(combinedCategories);
 
 		console.log("This is garden data",gardenData);
-
-function loadEverything (x) {
-	$("#CustomFarmImgWrapper").prepend("<img id='FirstImg' src='Assets/PNG_72ppi/" + x +".png'/>");
-	$("#CustomFarmImg2Wrapper").prepend("<img id='SecondImg' src='Assets/PNG_72ppi/" + x +".png'/>");
-	$(".CustomFarmImg").remove();
-	$(".CustomFarmImg2").remove();
-	var url = x + ".json";
-
-	var json = (function (){
-	var json = null;
-	$.ajax({
-		'async': false,
-		'global': false,
-		'url': url,
-		'dataType': "json",
-		'success': function(data){
-			console.log("This is jquery response",data);
-			gardenData = data;
-		}
-	});
-	console.log("Returned Value",json);
-	// return json;
-	})();
-}
-
-
-var prevDot = "SELECT ANY DOT TO BEGIN";
-var prevTraitTitle1 = "Trait Title";
-var	prevTraitTitle2 = "Trait Title";
-var	prevTraitTitle3 = "Trait Title";
-
-$(".factbutton").mouseover(function() {
-	console.log("Returned Value", gardenData);
-	var dotName = this.id;
-	if(dotName =="Priority") {
-		document.getElementById("CustomFarmTitle").innerHTML = gardenData.DotTitle1;
-		document.getElementById("firstTraitTitle").innerHTML = gardenData.TraitTitle1_1;
-		document.getElementById("secondTraitTitle").innerHTML = gardenData.TraitTitle2_1;
-		document.getElementById("thirdTraitTitle").innerHTML = gardenData.TraitTitle3_1;
-	}
-
-	if(dotName =="Scale") {
-		document.getElementById("CustomFarmTitle").innerHTML = gardenData.DotTitle2;
-		document.getElementById("firstTraitTitle").innerHTML = gardenData.TraitTitle1_2;
-		document.getElementById("secondTraitTitle").innerHTML = gardenData.TraitTitle2_2;
-		document.getElementById("thirdTraitTitle").innerHTML = gardenData.TraitTitle3_2;
-	}
-
-	if(dotName =="Cost") {
-		document.getElementById("CustomFarmTitle").innerHTML = gardenData.DotTitle3;
-		document.getElementById("firstTraitTitle").innerHTML = gardenData.TraitTitle1_3;
-		document.getElementById("secondTraitTitle").innerHTML = gardenData.TraitTitle2_3;
-		document.getElementById("thirdTraitTitle").innerHTML = gardenData.TraitTitle3_3;
-	}
-});
-
-$(".factbutton").mouseleave(function() {
-	document.getElementById("CustomFarmTitle").innerHTML = prevDot;
-	document.getElementById("firstTraitTitle").innerHTML = prevTraitTitle1;
-	document.getElementById("secondTraitTitle").innerHTML = prevTraitTitle2;
-	document.getElementById("thirdTraitTitle").innerHTML = prevTraitTitle3;
-});
-
-$(".factbutton").click(function() {
-	var dotName = this.id;
-	// $(".factbutton").off('mouseover');
-	// $(".factbutton").off('mouseleave');
-	$("#CustomFarmTitle").css("opacity", 1);
-	$(".Traits").css("opacity", 1);
-	$("body,html").animate(
-		        {
-		            scrollTop : 1240                       // Scroll 500px from top of body
-		        }, 2000); 
-	if(dotName =="Priority") {
-		prevDot = gardenData.DotTitle1;
-		prevTraitTitle1 = gardenData.TraitTitle1_1;
-		prevTraitTitle2 = gardenData.TraitTitle2_1;
-		prevTraitTitle3 = gardenData.TraitTitle3_1;
-		document.getElementById("CustomFarmTitle").innerHTML = gardenData.DotTitle1;
-		document.getElementById("firstTraitTitle").innerHTML = gardenData.TraitTitle1_1;
-		document.getElementById("secondTraitTitle").innerHTML = gardenData.TraitTitle2_1;
-		document.getElementById("thirdTraitTitle").innerHTML = gardenData.TraitTitle3_1;
-		document.getElementById("firstTraitBody").innerHTML = gardenData.BodyText1_1;
-		document.getElementById("secondTraitBody").innerHTML = gardenData.BodyText1_2;
-		document.getElementById("thirdTraitBody").innerHTML = gardenData.BodyText1_3;
-		// document.getElementById(thereward).innerHTML = vegetables.tomato.growthrate + ... + ... ;
-
-		
-	}
-
-	if(dotName =="Scale") {
-		prevDot = gardenData.DotTitle2;
-		prevTraitTitle1 = gardenData.TraitTitle1_2;
-		prevTraitTitle2 = gardenData.TraitTitle2_2;
-		prevTraitTitle3 = gardenData.TraitTitle3_2;
-		document.getElementById("CustomFarmTitle").innerHTML = gardenData.DotTitle2;
-		document.getElementById("firstTraitTitle").innerHTML = gardenData.TraitTitle1_2;
-		document.getElementById("secondTraitTitle").innerHTML = gardenData.TraitTitle2_2;
-		document.getElementById("thirdTraitTitle").innerHTML = gardenData.TraitTitle3_2;
-		document.getElementById("firstTraitBody").innerHTML = gardenData.BodyText2_1;
-		document.getElementById("secondTraitBody").innerHTML = gardenData.BodyText2_2;
-		document.getElementById("thirdTraitBody").innerHTML = gardenData.BodyText2_3;
-
-	}
-
-	if(dotName =="Cost") {
-		prevDot = gardenData.DotTitle3;
-		prevTraitTitle1 = gardenData.TraitTitle1_3;
-		prevTraitTitle2 = gardenData.TraitTitle2_3;
-		prevTraitTitle3 = gardenData.TraitTitle3_3;
-		document.getElementById("CustomFarmTitle").innerHTML = gardenData.DotTitle3;
-		document.getElementById("firstTraitTitle").innerHTML = gardenData.TraitTitle1_3;
-		document.getElementById("secondTraitTitle").innerHTML = gardenData.TraitTitle2_3;
-		document.getElementById("thirdTraitTitle").innerHTML = gardenData.TraitTitle3_3;
-		document.getElementById("firstTraitBody").innerHTML = gardenData.BodyText3_1;
-		document.getElementById("secondTraitBody").innerHTML = gardenData.BodyText3_2;
-		document.getElementById("thirdTraitBody").innerHTML = gardenData.BodyText3_3;
-
-	}
-});
-
-
-
-	$('input[ type="range"]').rangeslider({
-			  // Feature detection the default is `true`.
-		    // Set this to `false` if you want to use
-		    // the polyfill also in Browsers which support
-		    // the native <input type="range"> element.
-		    polyfill: false,
-
-		    // Callback function
-		    onInit: function() {
 	
-		    },
 
-		    // Callback function
-		    onSlide: function(position, value) {
 
-		    },
+		function loadEverything (x) {
 
-		    // Callback function
-		    onSlideEnd: function(position, value) {
-		    	console.log(value);
-		    }
+			$("#CustomFarmImg2Wrapper").prepend("<img id='SecondImg' src='Assets/PNG_72ppi/" + x +".png'/>");
+			// $(".CustomFarmImg").remove();
+			$(".CustomFarmImg2").remove();
+			var url = x + ".json";
+
+			var json = (function (){
+			var json = null;
+			$.ajax({
+				'async': false,
+				'global': false,
+				'url': url,
+				'dataType': "json",
+				'success': function(data){
+					console.log("This is jquery response",data);
+					gardenData = data;
+				}
+			});
+			console.log("Returned Value",json);
+			// return json;
+			})();
+		}
+
+		document.getElementById("priorityHeader").innerHTML = gardenData.DotTitle1;
+		document.getElementById("scaleHeader").innerHTML = gardenData.DotTitle2;
+		document.getElementById("costHeader").innerHTML = gardenData.DotTitle3;
+
+
+
+		var priority = localStorage.getItem("Priority");
+		var scale = localStorage.getItem("Scale");
+		var cost = localStorage.getItem("Cost");
+
+		prependCatalog(priority, scale, cost);
+
+		function prependCatalog (a, b, c) {
+				$("#priorityWrapper").prepend("<img id='priorityImg' class='catalogItem' src='Assets/individual_Choices/" + a +".png'/>");
+				$("#scaleWrapper").prepend("<img id='scaleImg' class='catalogItem' src='Assets/individual_Choices/" + b +".png'/>");
+				$("#costWrapper").prepend("<img id='costImg' class='catalogItem' src='Assets/individual_Choices/" + c +".png'/>");
+			}
+
+		document.getElementById("result1").innerHTML = gardenData.VegetableValue;
+		document.getElementById("result2").innerHTML = gardenData.WaterSavedValue;
+		document.getElementById("result3").innerHTML = gardenData.GasolineValue;
+		document.getElementById("result4").innerHTML = gardenData.MealsCreatedValue;
+
+		$(".catalogItem").mouseover(function(){
+			console.log("Returned Value", gardenData);
+			var itemName = this.id;
+			if(itemName =="priorityImg") {
+				$("#priorityWrapper").css("opacity", "1");
+			}
+			if(itemName =="scaleImg") {
+				$("#scaleWrapper").css("opacity", "1");
+			}
+			if(itemName =="costImg") {
+				$("#costWrapper").css("opacity", "1");
+			}
 		});
+		$(".catalogItem").mouseleave(function(){
+			if(!opacityBoolean.priorityImg) $("#priorityWrapper").css("opacity", "");
+			if(!opacityBoolean.scaleImg) $("#scaleWrapper").css("opacity", "");
+			if(!opacityBoolean.costImg) $("#costWrapper").css("opacity", "");
+
+		});
+
+		// this is our global opacity boolean that will keep track of which image should stay opaque
+		var opacityBoolean = {priorityImg:false, scaleImg:false, costImg:false};
+
+		$(".catalogItem").click(function(){
+			var itemName = this.id;
+			$("body,html").animate(
+		        {
+		            scrollTop : 1260                       // Scroll 500px from top of body
+		        }, 2000); 
+
+			if(itemName =="priorityImg") {
+				$("#priorityWrapper").css("opacity", "1");
+				opacityBoolean.priorityImg = true;
+				opacityBoolean.scaleImg = false;
+				opacityBoolean.costImg = false;
+				//append excercise 1//
+				//if priority = 
+			}
+
+			if(itemName =="scaleImg") {
+				$("#scaleWrapper").css("opacity", "1");
+				opacityBoolean.priorityImg = false;
+				opacityBoolean.scaleImg = true;
+				opacityBoolean.costImg = false;
+				//append excercise 2//
+			}
+
+			if(itemName =="costImg") {
+				$("#costWrapper").css("opacity", "1");
+				opacityBoolean.priorityImg = false;
+				opacityBoolean.scaleImg = false;
+				opacityBoolean.costImg = true;
+				//append excercise 3//
+			}
+			
+		});
+
+		var globalZ = 120; //TODO: set this global variable to change the size of the 'farm'
+
+		// setting slider constants for connectSlider2
+		var connectSlider2 = document.getElementById('slider-connect2');
+		var maxSliderValue = 100;
+		var minSliderValue = 0;
+		var minSliderLimit = 60;
+		var maxSliderLimit = 100;
+
+		noUiSlider.create(connectSlider2, {
+			start: [minSliderLimit, minSliderLimit + (maxSliderLimit - minSliderLimit)/2],
+			connect: [true, true, true],
+			// padding: [ 10, 15 ],
+			range: {
+			  'min': minSliderValue,
+			  'max': maxSliderValue
+			},
+			pips: {
+				mode: 'values',
+				values: [], //TODO: Add values and format in CSS
+				density: 4
+			},
+			margin:5
+		});
+
+		var connect = connectSlider2.querySelectorAll('.noUi-connect');
+		var classes = ['c-1-color', 'c-2-color', 'c-3-color'];
+
+		for ( var i = 0; i < connect.length; i++ ) {
+		    connect[i].classList.add(classes[i]);
+		}
+
+		// 20% soft slider bounce code
+		connectSlider2.noUiSlider.on('change', function ( values, handle ) {
+			if ( values[handle] < minSliderLimit ) {
+				connectSlider2.noUiSlider.set(minSliderLimit);
+			} else if ( values[handle] > maxSliderLimit ) {
+				connectSlider2.noUiSlider.set(maxSliderLimit);
+			}
+		});
+
+		var calcConst = {
+			//z values need to be updated by user choices
+			c:{ //consumability
+				A:0.171, B:12, X:0.83, Y:5.7
+			},
+			p:{ //profitability
+				A:2.133, B:22.4, X:3.33, Y:0.2
+			},
+			e:{ //environmental
+				A:0.147, B:5.16, X:0.83, Y:29.35
+			},
+			z:globalZ
+		};
+
+		// console.log(calcConst.consumability.A);
+		// grabbing slider values
+		// Display the slider value and how far the handle moved
+		// from the left edge of the slider.
+		connectSlider2.noUiSlider.on('update', function ( values, handle, unencoded, isTap, positions ) {
+			
+			var connectorTagID = {}
+			console.log(priority);
+			var values = connectSlider2.noUiSlider.get();
+			var connector1 = values[0];
+			var connector2 = values[1] - values[0];
+			var connector3 = maxSliderValue - values[1];
+			var pConnect, eConnect, cConnect = null;
+			switch(priority){
+				case("E"):
+					eConnect = connector1;
+					pConnect = connector2;
+					cConnect = connector3;
+					break;
+				case("P"):
+					pConnect = connector1;
+					eConnect = connector2;
+					cConnect = connector3;
+					break;
+				case("C"):
+					cConnect = connector1;
+					pConnect = connector2;
+					eConnect = connector3;
+					break
+				default:
+				break;
+			}
+			
+			// connector order dictated by which of the three -value attributes was preferenced
+			document.getElementById('environmental-value').innerHTML = Math.round(eConnect);
+			document.getElementById('profitability-value').innerHTML = Math.round(pConnect);
+			document.getElementById('consumability-value').innerHTML = Math.round(cConnect);			
+			var weightedCalcConst = calcAvgWeighted(calcConst, eConnect, pConnect, cConnect);
+			var tableValues = calcOutputValues(weightedCalcConst, calcConst);
+			
+			document.getElementById("result1").innerHTML = "$" + Math.round(tableValues.cropVal) + " /Year"; 
+			document.getElementById("result2").innerHTML = Math.round(tableValues.waterUse) + " Gallons/Year"; 
+			document.getElementById("result3").innerHTML = Math.round(tableValues.co2Emit) + " Gallons of Gas";
+			document.getElementById("result4").innerHTML = Math.round(tableValues.meals) + " Meals/Year";
+			// Jordan's senior year math thesis:
+
+		});
+
+
+		/**
+		Determine the values to be output into final table based on user choices and slider values
+		inputs: weighted calculation constants as wcc, calculation constants for z values
+		output: JSON of {}
+		**/
+		function calcOutputValues(wcc, cc){
+			var cropVal = cc.z * wcc.X * wcc.B * wcc.A;
+			var waterUse = cc.z * wcc.X * wcc.Y;
+			var co2Emit = (cc.z * 100 / 4536) * 4;
+			var meals = (cc.z / 10) * wcc.B;
+			var output = {cropVal:cropVal, waterUse:waterUse, co2Emit:co2Emit, meals:meals};
+			return output;
+
+		}
+
+
+
+		/**
+		Takes weighted average of cc values with weights eV, pV, and cV
+		as determined by Jordan's 'special' formula
+		**/
+		function calcAvgWeighted(cc, eV, pV, cV){
+			var output = {
+				A:0,
+				B:0,
+				X:0,
+				Y:0
+			}
+			for (var k in cc.c) {
+				if(output.hasOwnProperty(k)){
+					output[k] += cc.c[k]*cV/100;
+				}				
+			}
+			for (var k in cc.p) {
+				if(output.hasOwnProperty(k)){
+					output[k] += cc.p[k]*pV/100;
+				}				
+			}
+			for (var k in cc.e) {
+				if(output.hasOwnProperty(k)){
+					output[k] += cc.e[k]*eV/100;
+				}				
+			}
+			// for(var k in output){
+			// 	output[k] = Math.round(output[k]);
+			// }
+			return output;
+
+		}
+
+			// <text id="enviromental-value"></text>
+			// 				<text id="profitability-value"></text>
+			// 				<text id="consumability-value"></text>
+
+
+	// $('input[ type="range"]').rangeslider({
+	// 		  // Feature detection the default is `true`.
+	// 	    // Set this to `false` if you want to use
+	// 	    // the polyfill also in Browsers which support
+	// 	    // the native <input type="range"> element.
+	// 	    polyfill: false,
+
+	// 	    // Callback function
+	// 	    onInit: function() {
+	
+	// 	    },
+
+	// 	    // Callback function
+	// 	    onSlide: function(position, value) {
+
+	// 	    },
+
+	// 	    // Callback function
+	// 	    onSlideEnd: function(position, value) {
+	// 	    	console.log(value);
+	// 	    }
+	// 	});
 
 
 

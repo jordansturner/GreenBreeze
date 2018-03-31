@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="MainPageStyles.css">
+	<link rel="stylesheet" type="text/css" href="rangeslider.css">
+	<link href="https://fonts.googleapis.com/css?family=Montserrat:300i,300,400,500,600,700|Open+Sans:300,400,400i" rel="stylesheet">
+	<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/skrollr/0.6.30/skrollr.min.js"></script>
+	<script src='rangeslider.min.js'></script>
+	<script src="https://www.gstatic.com/firebasejs/4.9.1/firebase.js"></script>
+	<!--font-family: 'Open Sans', sans-serif;
+		font-family: 'Montserrat', sans-serif; -->
+</head>
+
+<body>
+	<div id="nameGardenContentWrapper">
+		<div id="darkBackground">
+			
+		</div>
+		<div id="modalBackgroundnameGarden">
+			<div id="content3">
+				<div id="nameGardenWrapper">
+					<div id="CustomFarmImg2Wrapper">
+						
+					</div>
+					<h4 id="congratulations">Congratulations!</h4>
+					<h6 id="congratulationsText">Lorem ipsum dolor sit amet, consectetur adipiscing elit</h6>
+					<form id="user"><input type="text" name="user" placeholder="NAME YOUR FARM"></form>
+					<button id="SubmitNameButton">Join</button>
+					<div class="circleXm3">
+					</div>
+					<button class="xm3" id="missionX3">
+					</button>
+				</div>
+			</div>
+		</div> 
+	</div>
+	<div id="missionStatementContentWrapper">
+		<div id="darkBackground">
+			
+		</div>
+		<div id="modalBackground">
+			<div id="content2">
+				<img id="MissionStatementImg2" src="Assets/PNG_72ppi/Mission_Statement.png">
+				<div id="MissionStatementWrapper2">
+					<h3 id="MissionStatementTitle2">Mission Statement</h3>
+					<h5 id="MissionStatementBody2">
+					Herban is not just a company, we are a green-based lifestyle </br>brand. By taking advantage of a digital marketplace, autonomous gardening, and drone delivery system, Herban will sell and deliver locally sourced produce directly to and from our customers' doorsteps.  Our mission is to drive the change required for a sustainable future. By limiting the amount of traditional farmland needed to feed a growing population and by integrating green spaces into every facet of city life, our Green Breeze system will foster environmental rejuvination and healthier city ecosystems.
+					</h5>
+					<div class="circleXm2">
+					</div>
+					<button class="xm2" id="missionX2">
+					</button>
+				</div>
+			</div>
+		</div> 
+	</div>
+
+	<div id="HighLevelNavigationTop">
+			<span id="Span1"> <a data-text="OUR MISSION" id="mission_Statement">OUR MISSION</a></span>
+		    <span id="Span2"><a href="MainHomePage4.html#introWrapper" data-text="GARDEN BUILDER" id="SelectedNavItem">GARDEN BUILDER</a></span>
+		    <span id="Span3"> <a href="MainHomePage4.html" data-text="HERBAN LOGO" id="HerbanLogo4"></a></span>
+		    <span id="Span4"><a href="Further_Reading.html" data-text="FURTHER READINGS" ">FURTHER READINGS</a></span>
+		    <span id="Span5"><a href="_____" data-text="THE COMMUNITY" >THE COMMUNITY</a></span>
+		    <!-- <a href="MainHomePage4.html#introWrapper" data-text="GARDEN BUILDER" id="SelectedNavItem">GARDEN BUILDER</a>
+		    <span> <a data-text="OUR MISSION" id="mission_Statement">OUR MISSION </a></span>
+		    <span> <a href="MainHomePage4.html" data-text="HERBAN LOGO" id="HerbanLogo4"></a></span>
+		    <span><a href="Further_Reading.html" data-text="FURTHER READINGS">FURTHER READINGS</a></span>
+		    <span><a href="_____" data-text="THE COMMUNITY" >THE COMMUNITY</a></span> -->
+		</div> 
+	<div id="GardenBuilderNavigationTop">
+	    <a href="GardenBuilder_GrowingPriorities.html" data-text="Growing Priorities" class="GreenNav">Growing Priorities</a>
+	    <img src="Assets/checkButton.png" class="check">
+	    <div class="line" id="line1"></div>
+	    <div class="line" id="line2"></div>
+	    <img src="Assets/checkButton.png" class="check2">
+	    <div class="line" id="line3"></div>
+	    <div class="line" id="line4"></div>
+	     <img src="Assets/checkButton.png" class="check3">
+	    <div class="line" id="line5"></div>
+	    <div class="line" id="line6"></div>
+	    <!-- <div class="dot_1"></div>
+	    <div class="dot_2"></div> -->
+	    <a href="GardenBuilder_UrbanSpaces.html" data-text="Urban Spaces" class="GreenNav">Urban Spaces</a>
+	    <a href="GardenBuilder_FarmSystems.html" data-text="Farm Systems" class="GreenNav">Farm Systems</a>
+	    <a href="GardenBuilder_FarmCustomization.html" data-text="Farm Customization" id="SelectedNav" class="GreenNav">Farm Customization</a>
+	</div> 
+	<img id="CongratulationsFineTuneIllustration" src="Assets/PNG_72ppi/Introduction_Customize_Garden.png">
+	
+	<div id="CongratulationsFineTuneWrapper">
+		<h3>Great choices! Now its time to customize your garden.</h3>
+		<h5>Scroll to access our dashboard where you will have the chance to personalize your previous choices and see the impact of your garden.</h5>
+	</div>
+	<a class="arrow-wrap" href="#content">
+		<span class="arrow"></span>
+	<!--<span class="hint">scroll</span>-->
+	</a>
+	<div id="CustomFarmWrapper">
+		<div id="CustomFarmImgWrapper">
+			<div class="CustomFarmImg">
+				
+			</div>
+			<img id="Priority" class="factbutton" src="Assets/info_button2.png" alt="info_button">
+			<img id="Scale" class="factbutton" src="Assets/info_button2.png" alt="info_button">
+			<img id="Cost" class="factbutton" src="Assets/info_button2.png" alt="info_button">
+
+		</div>
+		<h3 id="CustomFarmTitle"> SELECT ANY DOT TO BEGIN </h3>
+
+		<div id="CustomStatsTweakingWrapper">
+			<div class="Traits" id="firstTraitWrapper">
+				<h4 id="firstTraitTitle">Trait Title</h4>
+				<h6 class="TraitBody" id="firstTraitBody">Cheaper than aeroponics and slower in production, but much less routinely upkeep</h6>
+				<input id="firstSlider" type="range" min="0" max="30" data-rangeslider="" style="position: absolute; width: 1px; height: 1px; overflow: hidden; opacity: 0;">
+			</div>
+			<div class="Traits" id="secondTraitWrapper">
+				<h4 id="secondTraitTitle">Trait Title</h4>
+				<h6 class="TraitBody" id="secondTraitBody">Cheaper than aeroponics and slower in production, but much less routinely upkeep</h6>
+				<input id="secondSlider" type="range" min="0" max="30" data-rangeslider="" style="position: absolute; width: 1px; height: 1px; overflow: hidden; opacity: 0;">
+			</div>
+			<div class="Traits" id="thirdTraitWrapper">
+				<h4 id="thirdTraitTitle">Trait Title</h4>
+				<h6 class="TraitBody" id="thirdTraitBody">Cheaper than aeroponics and slower in production, but much less routinely upkeep</h6>
+				<input id="thirdSlider" type="range" min="0" max="30" data-rangeslider="" style="position: absolute; width: 1px; height: 1px; overflow: hidden; opacity: 0;">
+			</div>
+
+		</div>
+
+		<div id="resultStatsWrapper">
+			<div class="ResultsWrapper" id="resultWrapper1">
+				<img src="Assets/award2.png" class="award" id="resultMedalImg1">
+				<h6 id="resultText1" class="results">Grocery Budget Decreased  By<span id="filledInResult1">_________</span>.</h6>
+			</div>
+			<div class="ResultsWrapper" id="resultWrapper2">
+				<img src="Assets/award2.png" class="award" id="resultMedalImg2">
+				<h6 id="resultText2" class="results">Meals Created<span id="filledInResult2">_________</span>.</h6>
+			</div>
+			<div class="ResultsWrapper" id="resultWrapper3">
+				<img src="Assets/award2.png"  class="award" id="resultMedalImg3">
+				<h6 id="resultText3" class="results">Water Saved<span id="filledInResult3">_________</span>.</h6>
+			</div>
+			<div class="ResultsWrapper" id="resultWrapper4">
+				<img src="Assets/award2.png" class="award" id="resultMedalImg4">
+				<h6 id="resultText4" class="results">Farmland Rejuvinated<span id="filledInResult4">_________</span>.</h6>
+			</div>
+			
+		</div>
+		<a><button id="EnterCommunityButton">
+		Finalize Garden
+		</button></a>
+	</div>
+
+<script type="text/javascript">
+
+	$( document ).ready(function() {
+  //   	console.log(localStorage.getItem("first"));
+		// console.log(localStorage.getItem("second"));
+		// console.log(localStorage.getItem("third"));
+		$(".check").delay(400).animate({
+			opacity: 1
+		}, 400,function(){
+
+		});
+		$("#line1").animate({
+			width: "31px"
+		}, 400,function(){
+
+		});
+
+		$("#line2").delay(800).animate({
+			width: "31px"
+		}, 400, function(){
+
+		});
+		var combinedCategories = localStorage.getItem("Priority") + localStorage.getItem("Scale") + localStorage.getItem("Cost");
+
+		console.log(combinedCategories);
+
+		var gardenData;
+
+		loadEverything(combinedCategories);
+
+		console.log("This is garden data",gardenData);
+
+function loadEverything (x) {
+	$("#CustomFarmImgWrapper").prepend("<img id='FirstImg' src='Assets/PNG_72ppi/" + x +".png'/>");
+	$("#CustomFarmImg2Wrapper").prepend("<img id='SecondImg' src='Assets/PNG_72ppi/" + x +".png'/>");
+	$(".CustomFarmImg").remove();
+	$(".CustomFarmImg2").remove();
+	var url = x + ".json";
+
+	var json = (function (){
+	var json = null;
+	$.ajax({
+		'async': false,
+		'global': false,
+		'url': url,
+		'dataType': "json",
+		'success': function(data){
+			console.log("This is jquery response",data);
+			gardenData = data;
+		}
+	});
+	console.log("Returned Value",json);
+	// return json;
+	})();
+}
+
+
+var prevDot = "SELECT ANY DOT TO BEGIN";
+var prevTraitTitle1 = "Trait Title";
+var	prevTraitTitle2 = "Trait Title";
+var	prevTraitTitle3 = "Trait Title";
+
+$(".factbutton").mouseover(function() {
+	console.log("Returned Value", gardenData);
+	var dotName = this.id;
+	if(dotName =="Priority") {
+		document.getElementById("CustomFarmTitle").innerHTML = gardenData.DotTitle1;
+		document.getElementById("firstTraitTitle").innerHTML = gardenData.TraitTitle1_1;
+		document.getElementById("secondTraitTitle").innerHTML = gardenData.TraitTitle2_1;
+		document.getElementById("thirdTraitTitle").innerHTML = gardenData.TraitTitle3_1;
+	}
+
+	if(dotName =="Scale") {
+		document.getElementById("CustomFarmTitle").innerHTML = gardenData.DotTitle2;
+		document.getElementById("firstTraitTitle").innerHTML = gardenData.TraitTitle1_2;
+		document.getElementById("secondTraitTitle").innerHTML = gardenData.TraitTitle2_2;
+		document.getElementById("thirdTraitTitle").innerHTML = gardenData.TraitTitle3_2;
+	}
+
+	if(dotName =="Cost") {
+		document.getElementById("CustomFarmTitle").innerHTML = gardenData.DotTitle3;
+		document.getElementById("firstTraitTitle").innerHTML = gardenData.TraitTitle1_3;
+		document.getElementById("secondTraitTitle").innerHTML = gardenData.TraitTitle2_3;
+		document.getElementById("thirdTraitTitle").innerHTML = gardenData.TraitTitle3_3;
+	}
+});
+
+$(".factbutton").mouseleave(function() {
+	document.getElementById("CustomFarmTitle").innerHTML = prevDot;
+	document.getElementById("firstTraitTitle").innerHTML = prevTraitTitle1;
+	document.getElementById("secondTraitTitle").innerHTML = prevTraitTitle2;
+	document.getElementById("thirdTraitTitle").innerHTML = prevTraitTitle3;
+});
+
+$(".factbutton").click(function() {
+	var dotName = this.id;
+	// $(".factbutton").off('mouseover');
+	// $(".factbutton").off('mouseleave');
+	$("#CustomFarmTitle").css("opacity", 1);
+	$(".Traits").css("opacity", 1);
+	$("body,html").animate(
+		        {
+		            scrollTop : 1240                       // Scroll 500px from top of body
+		        }, 2000); 
+	if(dotName =="Priority") {
+		prevDot = gardenData.DotTitle1;
+		prevTraitTitle1 = gardenData.TraitTitle1_1;
+		prevTraitTitle2 = gardenData.TraitTitle2_1;
+		prevTraitTitle3 = gardenData.TraitTitle3_1;
+		document.getElementById("CustomFarmTitle").innerHTML = gardenData.DotTitle1;
+		document.getElementById("firstTraitTitle").innerHTML = gardenData.TraitTitle1_1;
+		document.getElementById("secondTraitTitle").innerHTML = gardenData.TraitTitle2_1;
+		document.getElementById("thirdTraitTitle").innerHTML = gardenData.TraitTitle3_1;
+		document.getElementById("firstTraitBody").innerHTML = gardenData.BodyText1_1;
+		document.getElementById("secondTraitBody").innerHTML = gardenData.BodyText1_2;
+		document.getElementById("thirdTraitBody").innerHTML = gardenData.BodyText1_3;
+		// document.getElementById(thereward).innerHTML = vegetables.tomato.growthrate + ... + ... ;
+
+		
+	}
+
+	if(dotName =="Scale") {
+		prevDot = gardenData.DotTitle2;
+		prevTraitTitle1 = gardenData.TraitTitle1_2;
+		prevTraitTitle2 = gardenData.TraitTitle2_2;
+		prevTraitTitle3 = gardenData.TraitTitle3_2;
+		document.getElementById("CustomFarmTitle").innerHTML = gardenData.DotTitle2;
+		document.getElementById("firstTraitTitle").innerHTML = gardenData.TraitTitle1_2;
+		document.getElementById("secondTraitTitle").innerHTML = gardenData.TraitTitle2_2;
+		document.getElementById("thirdTraitTitle").innerHTML = gardenData.TraitTitle3_2;
+		document.getElementById("firstTraitBody").innerHTML = gardenData.BodyText2_1;
+		document.getElementById("secondTraitBody").innerHTML = gardenData.BodyText2_2;
+		document.getElementById("thirdTraitBody").innerHTML = gardenData.BodyText2_3;
+
+	}
+
+	if(dotName =="Cost") {
+		prevDot = gardenData.DotTitle3;
+		prevTraitTitle1 = gardenData.TraitTitle1_3;
+		prevTraitTitle2 = gardenData.TraitTitle2_3;
+		prevTraitTitle3 = gardenData.TraitTitle3_3;
+		document.getElementById("CustomFarmTitle").innerHTML = gardenData.DotTitle3;
+		document.getElementById("firstTraitTitle").innerHTML = gardenData.TraitTitle1_3;
+		document.getElementById("secondTraitTitle").innerHTML = gardenData.TraitTitle2_3;
+		document.getElementById("thirdTraitTitle").innerHTML = gardenData.TraitTitle3_3;
+		document.getElementById("firstTraitBody").innerHTML = gardenData.BodyText3_1;
+		document.getElementById("secondTraitBody").innerHTML = gardenData.BodyText3_2;
+		document.getElementById("thirdTraitBody").innerHTML = gardenData.BodyText3_3;
+
+	}
+});
+
+
+
+	$('input[ type="range"]').rangeslider({
+			  // Feature detection the default is `true`.
+		    // Set this to `false` if you want to use
+		    // the polyfill also in Browsers which support
+		    // the native <input type="range"> element.
+		    polyfill: false,
+
+		    // Callback function
+		    onInit: function() {
+	
+		    },
+
+		    // Callback function
+		    onSlide: function(position, value) {
+
+		    },
+
+		    // Callback function
+		    onSlideEnd: function(position, value) {
+		    	console.log(value);
+		    }
+		});
+
+
+
+
+
+	 
+	 $('#mission_Statement').click(function(){
+				$("#missionStatementContentWrapper").css("z-index", "102");
+				$("#missionStatementContentWrapper").css("opacity", "1");
+
+			});
+
+			$('.xm2').click(function(){
+				$("#missionStatementContentWrapper").css("opacity", "");
+				$("#missionStatementContentWrapper").delay(800).queue(function(next) {
+					$(this).css("z-index", "");
+					next();
+				});
+
+			});
+
+	$('#EnterCommunityButton').click(function(){
+				$("#nameGardenContentWrapper").css("z-index", "102");
+				$("#nameGardenContentWrapper").css("opacity", "1");
+
+			});
+
+			$('.xm3').click(function(){
+				$("#nameGardenContentWrapper").css("opacity", "");
+				$("#nameGardenContentWrapper").delay(800).queue(function(next) {
+					$(this).css("z-index", "");
+					next();
+				});
+
+			});
+
+	$(window).scroll( function(){
+
+  //get scroll position
+  var topWindow = $(window).scrollTop();
+  //multipl by 1.5 so the arrow will become transparent half-way up the page
+  var topWindow = topWindow * 1.5;
+  
+  //get height of window
+  var windowHeight = $(window).height();
+      
+  //set position as percentage of how far the user has scrolled 
+  var position = topWindow / windowHeight;
+  //invert the percentage
+  position = 1 - position;
+
+  //define arrow opacity as based on how far up the page the user has scrolled
+  //no scrolling = 1, half-way up the page = 0
+  $('.arrow-wrap').css('opacity', position);
+
+	});
+
+	$(".arrow-wrap").click(function()  // When arrow is clicked
+		    {
+		        $("body,html").animate(
+		        {
+		            scrollTop : 670                       // Scroll 500px from top of body
+		        }, 1000);  //how fast the scrolling animation will be in miliseconds
+		    });
+
+		/* initializing firebase */
+		var config = {
+			apiKey: "AIzaSyCz8j_wouFYfrsdMHfw-Asx90Z0ujSZlNo",
+			authDomain: "herban-f14b6.firebaseapp.com",
+			databaseURL: "https://herban-f14b6.firebaseio.com/",
+			projectId: "herban-f14b6",
+			storageBucket: "herban-f14b6.appspot.com",
+			messagingSenderId: "577414616663" 
+		};
+		firebase.initializeApp(config);
+		
+
+		function writeNewPost() {
+			// A post entry.
+
+			var postData = {
+				// A_customizedName: value1,
+				B_groceryDecreased: "number_grocery_decreased",
+				C_groceryDecreased: "number_grocery_decreased",
+				D_groceryDecreased: "number_grocery_decreased",
+				E_groceryDecreased: "number_grocery_decreased"
+			};
+		
+			// Get a key for a new Post.
+			var newPostKey = firebase.database().ref().child('users').push().key;
+		
+			// Write the new post's data simultaneously in the posts list and the user's post list.
+			var updates = {};
+			updates['/users/' + newPostKey] = postData;
+			return firebase.database().ref().update(updates);
+		}
+
+		// writeNewPost();
+});	
+
+
+		
+</script>
+</body>
+</html>
