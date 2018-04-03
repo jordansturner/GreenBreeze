@@ -19,7 +19,7 @@
 		</div>
 		<div id="modalBackground">
 			<div id="content2">
-				<img id="MissionStatementImg2" src="Assets/PNG_72ppi/Mission_Statement.png">
+				<img id="MissionStatementImg2" src="Assets/PNG_72ppi/Mission_Statement2.png">
 				<div id="MissionStatementWrapper2">
 					<h3 id="MissionStatementTitle2">Mission Statement</h3>
 					<h5 id="MissionStatementBody2">
@@ -39,9 +39,9 @@
 		    <span id="Span2"><a href="MainHomePage4.html#introWrapper" data-text="GARDEN BUILDER">GARDEN BUILDER</a></span>
 		    <span id="Span3"> <a href="MainHomePage4.html" data-text="HERBAN LOGO" id="HerbanLogo4"></a></span>
 		    <span id="Span4"><a href="Further_Reading.html" data-text="FURTHER READINGS" id="SelectedNavItem">FURTHER READINGS</a></span>
-		    <span id="Span5"><a href="_____" data-text="THE COMMUNITY" >THE COMMUNITY</a></span>
+		    <span id="Span5"><a href="GardenBuilder_Community.html" data-text="THE COMMUNITY" >THE COMMUNITY</a></span>
 		</div> 
-		<img id="FurtherReadingImg" src="Assets/PNG_72ppi/Further_Reading.png">
+		<img id="FurtherReadingImg" src="Assets/PNG_72ppi/Further_Reading2.png">
 		<div id="ReadingTitle">
 			<h3>Browse Our Repository of Sources to Learn More</h3>
 			<h6>Click on any of the titles to explore the article.</h6>
@@ -52,27 +52,37 @@
 	<!--<span class="hint">scroll</span>-->
 		</a>
 	
+	
+	<div id="SourceModal">
+		<div class="darkBackgroundSources">
+			
+		</div>
+		<div class="lightBackgroundSources">
+			<iframe height="100%" width="100%" src=""></iframe>
+		</div>
+		<div class="circleXs2">
+		</div>
+		<button class="xs2" id="missionX2">
+		</button>
+	</div>
+	
 	<div class="sources" id="Source1">
-		<!-- <a target="Source1"> --><h3 class="sourceTitle">28 Inspiring Urban Agriculture Projects</h3><!-- </a> -->
-		<h5 class="sourceBody">Around 15 percent of the world’s food is now grown in urban areas. According to the U.N. Food and Agriculture Organization (FAO), urban farms already supply food to about 700 million residents of cities, representing about a quarter of the world’s urban population. By 2030, 60 percent of people in developing countries will likely live in cities.</h5>
-		<iframe height="300px" width="100%" src="http://www.hanahan.works"></iframe>
+		<!-- <a target="Source1"> --><h3 class="sourceTitle" id="sourceTitle1">28 Inspiring Urban Agriculture Projects</h3><!-- </a> -->
+		<h5 class="sourceBody">Around 15 percent of the world's food is now grown in urban areas. According to the U.N. Food and Agriculture Organization (FAO), urban farms already supply food to about 700 million residents of cities, representing about a quarter of the world's urban population. By 2030, 60 percent of people in developing countries will likely live in cities.</h5>
 		<!-- <iframe name="Source1" height="300px" width="100%" src="https://foodtank.com/news/2015/07/urban-farms-and-gardens-are-feeding-cities-around-the-world/"></iframe> -->
 	</div>
-
-	
-
 	<div id="space"></div>
 	<div class="sources" id="Source2">
-		<a href="https://www.smallfootprintfamily.com/how-much-land-is-needed-to-be-self-sufficient"><h3 class="sourceTitle">How much land do you really need ot be self sufficient?</h3></a>
+		<!-- <a href="https://www.smallfootprintfamily.com/how-much-land-is-needed-to-be-self-sufficient"> --><h3 class="sourceTitle" id="sourceTitle2">How much land do you really need ot be self sufficient?</h3><!-- </a> -->
 		<h5 class="sourceBody">Despommier explained that plants consist of water, mineral nutrients like potassium and magnesium taken from the soil (or, in the case of a vertical farm, from the nutrients added to the water their roots are sprayed with), and carbon, an element plants get from the CO2 in the air and then convert by photosynthesis into sucrose, which feeds the plant, and cellulose, which provides its structure.</h5>
 	</div>
 	<div class="sources" id="Source3">
-		<a href="https://www.bloomberg.com/news/features/2017-09-06/this-high-tech-vertical-farm-promises-whole-foods-quality-at-walmart-prices"><h3 class="sourceTitle">This High-Tech Vertical Farm Promises Whole Foods Quality at Walmart Prices</h3></a>
+		<!-- <a href="https://www.bloomberg.com/news/features/2017-09-06/this-high-tech-vertical-farm-promises-whole-foods-quality-at-walmart-prices"> --><h3 class="sourceTitle" id="sourceTitle3">This High-Tech Vertical Farm Promises Whole Foods Quality at Walmart Prices</h3><!-- </a> -->
 		<h5 class="sourceBody">The U.S. imports some 35 percent of fruits and vegetables, according to Bain & Co., and even leafy greens, most of which are produced in California or Arizona, travel an average of 2,000 miles before reaching a retailer. In other words, vegetables that are going to be appealing and edible for two weeks or less spend an awful lot of that time in transit.</h5>
 	</div>
 
 	<div class="sources" id="Source4">
-		<a href="https://www.nrcs.usda.gov/wps/portal/nrcs/detail/soils/use/?cid=nrcs142p2_054028"><h3 class="sourceTitle">Land Degradation: An overview</h3></a>
+		<!-- <a href="https://www.nrcs.usda.gov/wps/portal/nrcs/detail/soils/use/?cid=nrcs142p2_054028"> --><h3 class="sourceTitle" id="sourceTitle4">Land Degradation: An overview</h3><!-- </a> -->
 		<h5 class="sourceBody">It is estimated that the total annual cost of erosion from agriculture in the USA is about US$44 billion per year, i.e. about US$247 per ha of cropland and pasture. Only about 3% of the global land surface can be considered as prime or Class I land and this is not found in the tropics. Another 8% of land is in Classes II and III. This 11% of land must feed the six billion people today and the 7.6 billion expected in 2020.
 </h5>
 	</div>
@@ -121,14 +131,44 @@ $(document).ready(function()  //When the page is ready, load function
 
 			});
 
-			$('.xm2').click(function(){
-				$("#missionStatementContentWrapper").css("opacity", "");
-				$("#missionStatementContentWrapper").delay(800).queue(function(next) {
+		$('.xm2').click(function(){
+			$("#missionStatementContentWrapper").css("opacity", "");
+			$("#missionStatementContentWrapper").delay(800).queue(function(next) {
+				$(this).css("z-index", "");
+				next();
+			});
+
+		});
+
+		$(".sourceTitle").click(function(){
+			var linkName = this.id;
+
+			$("#SourceModal").css("opacity","1");
+			$("#SourceModal").css("z-index", "105");
+
+			if (linkName == "sourceTitle1") {
+				$('iframe').attr("src","http://www.hanahan.works");
+			}
+			if (linkName == "sourceTitle2") {
+				$('iframe').attr("src","https://www.smallfootprintfamily.com/how-much-land-is-needed-to-be-self-sufficient");
+			}
+			if (linkName == "sourceTitle3") {
+				$('iframe').attr("src","https://www.bloomberg.com/news/features/2017-09-06/this-high-tech-vertical-farm-promises-whole-foods-quality-at-walmart-prices");
+			}
+			if (linkName == "sourceTitle4") {
+				$('iframe').attr("src","https://www.nrcs.usda.gov/wps/portal/nrcs/detail/soils/use/?cid=nrcs142p2_054028");
+			}
+		});
+
+		$('.xs2').click(function(){
+				$("#SourceModal").css("opacity", "");
+				$("#SourceModal").delay(800).queue(function(next) {
 					$(this).css("z-index", "");
 					next();
 				});
 
 			});
+
 	});
     
 		

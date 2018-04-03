@@ -29,7 +29,7 @@
 					</div>
 					<h4 id="congratulations">Congratulations!</h4>
 					<h6 id="congratulationsText">Lorem ipsum dolor sit amet, consectetur adipiscing elit</h6>
-					<form id="user"><input type="text" name="user" placeholder="NAME YOUR FARM"></form>
+					<form><input type="text" id="userid" name="user" placeholder="NAME YOUR FARM"></form>
 					<button id="SubmitNameButton">Join</button>
 					<div class="circleXm3">
 					</div>
@@ -45,7 +45,7 @@
 		</div>
 		<div id="modalBackground">
 			<div id="content2">
-				<img id="MissionStatementImg2" src="Assets/PNG_72ppi/Mission_Statement.png">
+				<img id="MissionStatementImg2" src="Assets/PNG_72ppi/Mission_Statement2.png">
 				<div id="MissionStatementWrapper2">
 					<h3 id="MissionStatementTitle2">Mission Statement</h3>
 					<h5 id="MissionStatementBody2">
@@ -65,7 +65,7 @@
 		    <span id="Span2"><a href="MainHomePage4.html#introWrapper" data-text="GARDEN BUILDER" id="SelectedNavItem">GARDEN BUILDER</a></span>
 		    <span id="Span3"> <a href="MainHomePage4.html" data-text="HERBAN LOGO" id="HerbanLogo4"></a></span>
 		    <span id="Span4"><a href="Further_Reading.html" data-text="FURTHER READINGS" ">FURTHER READINGS</a></span>
-		    <span id="Span5"><a href="_____" data-text="THE COMMUNITY" >THE COMMUNITY</a></span>
+		    <span id="Span5"><a href="GardenBuilder_Community.html" data-text="THE COMMUNITY" >THE COMMUNITY</a></span>
 		    <!-- <a href="MainHomePage4.html#introWrapper" data-text="GARDEN BUILDER" id="SelectedNavItem">GARDEN BUILDER</a>
 		    <span> <a data-text="OUR MISSION" id="mission_Statement">OUR MISSION </a></span>
 		    <span> <a href="MainHomePage4.html" data-text="HERBAN LOGO" id="HerbanLogo4"></a></span>
@@ -162,10 +162,53 @@
 					</div>
 				</div>
 				<div id="excercise_Scale">
-					
+					<h3 id="scale_ExcerciseTitle">Tell Us How Large Your Ideal Farm Would Be</h3>
+					<h5 id="scale_ExcerciseBody">Change the default settings for your farm choices to see how each shift influences your overall performance.</h5>
+					<h4 id="totalSqft">Total Square Footage:</h4>
+					<div id="totalSqftLine"></div>
+					<div id="scale_Example_Wrapper">
+						<div id="Layout"></div>
+						<div id="Layoutshadow"></div>
+						<h3 id="levelNumber">1</h3>
+						<button id="upLevel">Add a Level</button>
+						<button id="downLevel">Subtract a Level</button>
+						<div id="example3">
+							<div id="slider-connectZ-Axis" class="noUi-target noUi-ltr noUi-vertical">
+								
+							</div>
+						</div>
+						<div id="example1">
+							<div id="slider-connectX-Axis" class="noUi-target noUi-ltr noUi-horizontal">
+							</div>
+						</div>
+						
+						<!-- <div id="example2">
+							<div id="slider-connectY-Axis" class="noUi-target noUi-ltr noUi-horizontal">
+								
+							</div>
+						</div> -->
+						
+					</div>
 				</div>
 				<div id="excercise_Cost">
-					
+					<h3 id="scale_ExcerciseTitle">Customize the Color of Your <span id="SystemType"></span></h3>
+					<h5 id="scale_ExcerciseBody">Drag the RGB sliders to create your own unique color. The color of your farm does not influence your results.</h5>
+					<div id="result"></div>
+					<div id="example4">
+						<div id="red" class="noUi-target noUi-ltr noUi-vertical sliders">
+							
+						</div>
+					</div>
+					<div id="example5">
+						<div id="green" class="noUi-target noUi-ltr noUi-vertical sliders">
+							
+						</div>
+					</div>
+					<div id="example6">
+						<div id="blue" class="noUi-target noUi-ltr noUi-vertical sliders">
+							
+						</div>
+					</div>
 				</div>
 			</div>
 		</div>
@@ -175,6 +218,7 @@
 	</div>
 
 <script type="text/javascript">
+	
 
 	$( document ).ready(function() {
   //   	console.log(localStorage.getItem("first"));
@@ -200,13 +244,13 @@
 		var combinedCategories = localStorage.getItem("Priority") + localStorage.getItem("Scale") + localStorage.getItem("Cost");
 
 	
-		console.log(combinedCategories);
+		// console.log(combinedCategories);
 
 		var gardenData;
 
 		loadEverything(combinedCategories);
 
-		console.log("This is garden data",gardenData);
+		// console.log("This is garden data",gardenData);
 	
 
 
@@ -225,11 +269,11 @@
 				'url': url,
 				'dataType': "json",
 				'success': function(data){
-					console.log("This is jquery response",data);
+					// console.log("This is jquery response",data);
 					gardenData = data;
 				}
 			});
-			console.log("Returned Value",json);
+			// console.log("Returned Value",json);
 			// return json;
 			})();
 		}
@@ -256,9 +300,10 @@
 		document.getElementById("result2").innerHTML = gardenData.WaterSavedValue;
 		document.getElementById("result3").innerHTML = gardenData.GasolineValue;
 		document.getElementById("result4").innerHTML = gardenData.MealsCreatedValue;
+		
 
 		$(".catalogItem").mouseover(function(){
-			console.log("Returned Value", gardenData);
+			// console.log("Returned Value", gardenData);
 			var itemName = this.id;
 			if(itemName =="priorityImg") {
 				$("#priorityWrapper").css("opacity", "1");
@@ -314,8 +359,176 @@
 			
 		});
 
-		var globalZ = 120; //TODO: set this global variable to change the size of the 'farm'
 
+		// Excercise 3 color picker
+
+			if (cost == "S") {
+				document.getElementById("SystemType").innerHTML = "Grow Shelves";
+			}
+			if (cost == "T") {
+				document.getElementById("SystemType").innerHTML = "Grow Towers";
+			}
+			
+			if (scale == "W") {
+				document.getElementById("SystemType").innerHTML = "Grow Walls";
+			}
+			
+
+
+
+			// var resultElement = document.getElementById('result');
+			// var sliders = document.getElementsByClassName('sliders');
+			// var colors = [0,0,0];
+
+
+			// var color_slider = sliders.querySelectorAll('.noUi-connect');
+			// var classes = ['c-2-color'];
+			// console.log(color_slider);
+			// for ( var i = 0; i < color_slider.length; i++ ) {
+			//     color_slider[i].classList.add(classes[i]);
+			// }
+
+			// [].slice.call(sliders).forEach(function( slider, index ){
+
+			// 	noUiSlider.create(slider, {
+			// 		start: 127,
+			// 		connect: [true, false],
+			// 		orientation: "vertical",
+			// 		range: {
+			// 			'min': 0,
+			// 			'max': 255
+			// 		},
+			// 		format: wNumb({
+			// 			decimals: 0
+			// 		})
+			// 	});
+				
+			// 	// Bind the color changing function to the update event.
+			// 	slider.noUiSlider.on('update', function ( ) {
+					
+			// 		colors[index] = slider.noUiSlider.get();
+					
+			// 		var color = 'rgb(' + colors.join(',') + ')';
+
+			// 		resultElement.style.background = color;
+			// 		resultElement.style.color = color;
+			// 	});
+			// });
+
+
+		 //TODO: set this global variable to change the size of the 'farm'
+
+		// setting slider constants for sliderconnectAxis
+		var sliderconnectZ = document.getElementById('slider-connectZ-Axis');
+		var sliderconnectX = document.getElementById('slider-connectX-Axis');
+		// var sliderconnectY = document.getElementById('slider-connectY-Axis');
+		var minZValue = null;
+		var maxZValue = null;
+		var minXValue = null;
+		var maxXValue = null;
+
+		if (scale == "A") {
+			var minZValue =5;
+			var maxZValue =30;
+			var minXValue =5;
+			var maxXValue =30;
+		}
+		if (scale == "R") {
+			var minZValue = 30;
+			var maxZValue = 100;
+			var minXValue = 30;
+			var maxXValue = 100;
+		}
+		
+		if (scale == "V") {
+			var minZValue =100;
+			var maxZValue =300;
+			var minXValue =100;
+			var maxXValue =300;
+		}
+		
+		// var minYValue = 10;
+		// var maxYValue = 100;
+		noUiSlider.create(sliderconnectZ, {
+			start: [ (minZValue + maxZValue)/2 ],
+			orientation: 'vertical',
+			connect: [false, true],
+			pips: {
+				mode: 'values',
+				values: [], //TODO: Add values and format in CSS
+				density: 9
+			},
+			range: {
+				'min': [  minZValue ],
+				'max': [ maxZValue ]
+			}
+			
+		});
+		noUiSlider.create(sliderconnectX, {
+			start: [ (minXValue + maxXValue)/2 ],
+			connect: [true, false],
+			pips: {
+				mode: 'values',
+				values: [], //TODO: Add values and format in CSS
+				density: 9
+			},
+			range: {
+				'min': [  minXValue ],
+				'max': [ maxXValue ]
+			}
+		});
+
+		var valueZ = sliderconnectZ.noUiSlider.get();
+		var valueX = sliderconnectX.noUiSlider.get();
+
+		sliderconnectZ.noUiSlider.on('slide', function(){
+			var findZ = sliderconnectZ.noUiSlider.get();
+			valueZ = maxZValue - parseInt(findZ);
+			globalZ = valueX * valueZ;
+			// console.log(connectSlider2.noUiSlider.get())
+			updateTable(connectSlider2.noUiSlider.get());
+		});
+
+		sliderconnectX.noUiSlider.on('slide', function(){
+			var findX = sliderconnectX.noUiSlider.get();
+			valueX = parseInt(findX);
+			globalZ = valueX * valueZ;
+			// console.log(globalZ)
+			updateTable(connectSlider2.noUiSlider.get());
+		});
+			
+		
+		// noUiSlider.create(sliderconnectY, {
+		// 	start: [ (minYValue + maxYValue)/2 ],
+		// 	connect: [false, true],
+		// 	pips: {
+		// 		mode: 'values',
+		// 		values: [], //TODO: Add values and format in CSS
+		// 		density: 9
+		// 	},
+		// 	range: {
+		// 		'min': [  minYValue ],
+		// 		'max': [ maxYValue ]
+		// 	}
+		// });
+			var globalZ = valueZ * valueX;
+		// var globalZ = (valueZ * valueX); //TO DO: FIXXX
+		// console.log(globalZ);
+		var connectsquareFootZ = sliderconnectZ.querySelectorAll('.noUi-connect');
+		var connectsquareFootX = sliderconnectX.querySelectorAll('.noUi-connect');
+		// var connectsquareFootY = sliderconnectY.querySelectorAll('.noUi-connect');
+		var classes = ['c-2-color'];
+
+		for ( var i = 0; i < connectsquareFootZ.length; i++ ) {
+		    connectsquareFootZ[i].classList.add(classes[i]);
+		}
+
+		for ( var i = 0; i < connectsquareFootX.length; i++ ) {
+		    connectsquareFootX[i].classList.add(classes[i]);
+		}
+		// for ( var i = 0; i < connectsquareFootY.length; i++ ) {
+		//     connectsquareFootY[i].classList.add(classes[i]);
+		// }
 		// setting slider constants for connectSlider2
 		var connectSlider2 = document.getElementById('slider-connect2');
 		var maxSliderValue = 100;
@@ -366,17 +579,57 @@
 			e:{ //environmental
 				A:0.147, B:5.16, X:0.83, Y:29.35
 			},
-			z:globalZ
+			z:globalZ,
+			multiplier: 1
 		};
+
+		var weightedCalcConst = null;
 
 		// console.log(calcConst.consumability.A);
 		// grabbing slider values
 		// Display the slider value and how far the handle moved
 		// from the left edge of the slider.
 		connectSlider2.noUiSlider.on('update', function ( values, handle, unencoded, isTap, positions ) {
-			
+			updateTable(values);
+		});
+
+		$("#upLevel").click(function(){
+			updateLevels(1);
+		});
+
+		$("#downLevel").click(function(){
+			updateLevels(-1);
+		});
+
+		function updateLevels(increment){
+			calcConst.multiplier += increment;
+			if(calcConst.multiplier < 1) calcConst.multiplier = 1;
+			// console.log(calcConst.multiplier);
+			document.getElementById("levelNumber").innerHTML = calcConst.multiplier;
+			// <h3 id="levelNumber">1</h3>
+			updateTable(connectSlider2.noUiSlider.get());
+
+		}
+
+		//maxXValue is the total slider
+		//maxZValue is the total up slider
+
+		
+		function updateTable(values){
 			var connectorTagID = {}
-			console.log(priority);
+			calcConst.z = globalZ; //need to push this value in because we use cc.z below in calcoutputvalues();
+			document.getElementById("totalSqft").innerHTML = "Total Square Footage: " + Math.round(calcConst.z * calcConst.multiplier);
+			document.getElementById('Layout').style.width = (180*(Math.round(valueX)/Math.round(maxXValue))) + "px";
+			document.getElementById('Layout').style.height = (150*(Math.round(valueZ)/Math.round(maxZValue))) + "px";
+			document.getElementById('Layoutshadow').style.width = (180*(Math.round(valueX)/Math.round(maxXValue))) + "px";
+			document.getElementById('Layoutshadow').style.height = (150*(Math.round(valueZ)/Math.round(maxZValue))) + "px";
+			// widthChange(-1);
+			// document.getElementById('mygraph').style.width = my_width + "px";
+			// $("#Layout").css("width", '"'+ 180 - (Math.round(connectsquareFootZ)) + 'px"');  //TO DO
+			// $("#Layoutshadow").css("width", "'" + 180 - (Math.round(sliderconnectX.noUiSlider.get())) +"px'");
+			// console.log(sliderconnectX.noUiSlider.get());
+			// <h4 id="totalSqft">Total Square Footage:</h4>
+			console.log(180*(valueX/maxXValue));
 			var values = connectSlider2.noUiSlider.get();
 			var connector1 = values[0];
 			var connector2 = values[1] - values[0];
@@ -399,6 +652,7 @@
 					eConnect = connector3;
 					break
 				default:
+					alert("Growing priority not set, please go back!")
 				break;
 			}
 			
@@ -406,16 +660,14 @@
 			document.getElementById('environmental-value').innerHTML = Math.round(eConnect);
 			document.getElementById('profitability-value').innerHTML = Math.round(pConnect);
 			document.getElementById('consumability-value').innerHTML = Math.round(cConnect);			
-			var weightedCalcConst = calcAvgWeighted(calcConst, eConnect, pConnect, cConnect);
+			weightedCalcConst = calcAvgWeighted(calcConst, eConnect, pConnect, cConnect);
 			var tableValues = calcOutputValues(weightedCalcConst, calcConst);
 			
 			document.getElementById("result1").innerHTML = "$" + Math.round(tableValues.cropVal) + " /Year"; 
 			document.getElementById("result2").innerHTML = Math.round(tableValues.waterUse) + " Gallons/Year"; 
 			document.getElementById("result3").innerHTML = Math.round(tableValues.co2Emit) + " Gallons of Gas";
 			document.getElementById("result4").innerHTML = Math.round(tableValues.meals) + " Meals/Year";
-			// Jordan's senior year math thesis:
-
-		});
+		}
 
 
 		/**
@@ -424,10 +676,10 @@
 		output: JSON of {}
 		**/
 		function calcOutputValues(wcc, cc){
-			var cropVal = cc.z * wcc.X * wcc.B * wcc.A;
-			var waterUse = cc.z * wcc.X * wcc.Y;
-			var co2Emit = (cc.z * 100 / 4536) * 4;
-			var meals = (cc.z / 10) * wcc.B;
+			var cropVal = cc.z * cc.multiplier * wcc.X * wcc.B * wcc.A;
+			var waterUse = cc.z * cc.multiplier * wcc.X * wcc.Y;
+			var co2Emit = (cc.z * cc.multiplier * 100 / 4536) * 4;
+			var meals = (cc.z * cc.multiplier / 10) * wcc.B;
 			var output = {cropVal:cropVal, waterUse:waterUse, co2Emit:co2Emit, meals:meals};
 			return output;
 
@@ -558,7 +810,7 @@
 		        {
 		            scrollTop : 670                       // Scroll 500px from top of body
 		        }, 1000);  //how fast the scrolling animation will be in miliseconds
-		    });
+	});
 
 		/* initializing firebase */
 		var config = {
@@ -570,21 +822,31 @@
 			messagingSenderId: "577414616663" 
 		};
 		firebase.initializeApp(config);
+
 		
+		$("#SubmitNameButton").click(function(){		
+			writeNewPost();
+			setTimeout(function(){
+				window.location.href = "GardenBuilder_Community.html";
+			}, 100);
+			// redirectCommunity();
+		});
 
 		function writeNewPost() {
 			// A post entry.
 
 			var postData = {
-				// A_customizedName: value1,
-				B_groceryDecreased: "number_grocery_decreased",
-				C_groceryDecreased: "number_grocery_decreased",
-				D_groceryDecreased: "number_grocery_decreased",
-				E_groceryDecreased: "number_grocery_decreased"
+				A_customizedName: $("#userid").val(),
+				B_vegetableValue: document.getElementById("result1").innerHTML,
+				C_waterUsage: document.getElementById("result2").innerHTML,
+				D_gasValue: document.getElementById("result3").innerHTML,
+				E_mealsCreatedValue: document.getElementById("result4").innerHTML,
+				F_livingSpace: localStorage.getItem("Scale"),
+				G_headerImage: combinedCategories
 			};
 		
 			// Get a key for a new Post.
-			var newPostKey = firebase.database().ref().child('users').push().key;
+			var newPostKey = firebase.database().ref().child('users').push().key;			
 		
 			// Write the new post's data simultaneously in the posts list and the user's post list.
 			var updates = {};
@@ -592,7 +854,102 @@
 			return firebase.database().ref().update(updates);
 		}
 
-		// writeNewPost();
+		// var ref = firebase.database().ref('/users/');
+
+		// //function that loads what's in the database
+		// var data = [];
+		// function loadDatabase(keys) {
+		    
+		//     //array [ ] used for saving each 'post'
+		//     // console.log('outer1')
+		//     ref.on('value',function(snap) {
+
+		//         snap.forEach(function(item) {
+		            
+		//             //getting the post from database
+		//             var itemVal = item.val();
+		//             // console.log('allenLog: ' + itemVal);
+		//             //saving each post to keys [ ]
+		//             keys.push(itemVal);
+		//             // console.log(keys.length)
+		//         });
+
+		//         //displaying what's in keys [ ]		        
+		//     });	
+		// }
+		// loadDatabase(data);
+		
+		// var manipData = {};
+		// setTimeout(function(){
+		// 		// console.log(data)
+		// 		var i = 0;
+		// 		for(var k in data){
+		// 			if(data.hasOwnProperty(k)){
+		// 				manipData[i] = {
+		// 					A_customizedName : data[k].A_customizedName,
+		// 					B_vegetableValue : data[k].B_vegetableValue,
+		// 					C_waterUsage : data[k].C_waterUsage,
+		// 					D_gasValue : data[k].D_gasValue,
+		// 					E_mealsCreatedValue : data[k].E_mealsCreatedValue,
+		// 					F_livingSpace : data[k].F_livingSpace,
+		// 					G_headerImage : data[k].G_headerImage
+		// 				};
+		// 				i++;
+						
+		// 			}
+		// 		}
+		// 		//@Jordan: all code involving data from database must go in here
+		// 		// OR figure out how to wait for return of 
+		// 		console.log(manipData[0].A_customizedName);
+		// 	}, 1000);
+
+
+		
+
+		// // console.log(keys.length)
+		// // console.log('jordan: ' + ref);
+		// // var dataKeys = {
+		// // 	A_customizedName:"A_customizedName",
+		// // 	B_vegetableValue:"B_vegetableValue",
+		// // 	C_waterUsage: "C_waterUsage",
+		// // 	D_gasValue: "D_gasValue",
+		// // 	E_mealsCreatedValue: "E_mealsCreatedValue",
+		// // 	F_livingSpace: "F_livingSpace",
+		// // 	G_headerImage: "G_headerImage"
+		// // };
+
+		// // function pullData(ref, response){
+		// // 	ref.once('value').then(function(snapshot){
+		// // 		var out = snapshot.val();
+		// // 		for(var k in out){
+
+		// // 			if(out.hasOwnProperty(k)){
+		// // 				// console.log(out[k].A_customizedName);
+		// // 				// console.log('k: ' + k);
+		// // 				for(var j in dataKeys){
+		// // 					// console.log(k.A_customizedName);
+		// // 					// console.log('j: ' + j);
+		// // 					console.log("response: " + out[k].B_vegetableValue + "." + j);
+		// // 					if(k.hasOwnProperty(j)){
+		// // 						// console.log('j: ' + j);
+		// // 						// console.log("response: " + out[k]);
+		// // 					}							
+		// // 				}
+		// // 			}
+					
+					
+		// // 			response.push(({key: k, value: out[k]}))
+		// // 		}			
+		// // 	});
+		// // }
+		// // var response = [];
+		// // pullData(ref, response);
+		// // console.log("output: " + response);
+		// // for (var k in response){
+		// // 	console.log(response[k]);
+		// // }
+		
+		// // writeNewPost(); //TODO: move this somewhere else!
 });	
 
 

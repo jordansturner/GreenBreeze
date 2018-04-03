@@ -20,7 +20,7 @@
 		</div>
 		<div id="modalBackground">
 			<div id="content2">
-				<img id="MissionStatementImg2" src="Assets/PNG_72ppi/Mission_Statement.png">
+				<img id="MissionStatementImg2" src="Assets/PNG_72ppi/Mission_Statement2.png">
 				<div id="MissionStatementWrapper2">
 					<h3 id="MissionStatementTitle2">Mission Statement</h3>
 					<h5 id="MissionStatementBody2">
@@ -47,210 +47,66 @@
 		    <span><a href="Further_Reading.html" data-text="FURTHER READINGS">FURTHER READINGS</a></span>
 		    <span><a href="_____" data-text="THE COMMUNITY" >THE COMMUNITY</a></span> -->
 	</div> 
-	<div id="community_Header_Wrapper">
+	<div id="community_Header_Wrapper"
+		data-0="opacity: 1; left: 150px;",
+		data-40p="opacity: 0; left: 30px;"
+		data-50p="left: 0px;"
+	>
 		<h3 id="welcome_To_Community">Welcome to The Community</h3>
 		<h5 id="welcome_To_Community_Body">Enjoy exploring our collection of member farms. See each member's farm preferences and how their custom grow plots are changing the world one crop at a time. You may even find your own! </h5>
 	</div>
-	<div id="scroll_Hint_Wrapper">
+	<div id="scroll_Hint_Wrapper"
+		data-0="opacity: .5;",
+		data-8p="opacity: 0;"
+	>
 		<img src="Assets/Arrow_Community.png" id="community_Arrow">
 		<img src="Assets/Mouse_Community.png" id="mouse_Icon">
 		<h5 id="scroll_Text">Scroll Your Mouse</h5>
 	</div>
 	<div id="community_Illustrations_Wrapper">
+		<!-- <img class="factbutton" src="Assets/info_button3.png" alt="info_button"> -->
 		<!-- In this wrapper I will be appending: hedge cluster images after every 4 farms created, farms (saved on the server), purple dots towards the center left side of every farm, and a text bubble 10px above every dot (with the farm choices: name, choices, environmental effects) -->
-		<img src="" name="frontRowHedge">
-		<div id="platform"></div>
+
+		<div id="IllustrationToppers"
+			data-0="left: 900px;",
+			data-100p=" left: -140px;"
+		>
+			<img src="Assets/community_Pages/Asset_6.png" name="frontRowHedge" id="firstGrass">
+		</div>
+		<div id="IllustrationToppersGrass"
+			data-0="left: 1150px;",
+			data-100p=" left: 110px;"
+		>
+			<!-- <img src="Assets/community_Pages/Asset_4.png" name="hedges" class="grassSpecs"> -->
+		</div>
+		<div id="IllustrationToppersBuildingsOdd"
+			data-0="left: 980px;",
+			data-100p=" left: -60px;"
+		>
+			<!-- <img src="Assets/community_Pages/Asset_4.png" name="hedges" class="grassSpecs"> -->
+		</div>
+
+		<div id="IllustrationToppersBuildingsEven"
+			data-0="left: 870px;",
+			data-100p=" left: -170px;"
+		>
+		</div>
+
+		<img id="Platform" src="Assets/community_Pages/Asset_5.png"
+			data-0="left: 900px;",
+		    data-100p="left: -140px;"
+		>
+
 	</div>
 
 <script type="text/javascript">
 
 	$( document ).ready(function() {
-  //   	console.log(localStorage.getItem("first"));
-		// console.log(localStorage.getItem("second"));
-		// console.log(localStorage.getItem("third"));
-		$("#scroll_Hint_Wrapper").delay(400).animate({
-			opacity: .6
-		}, 400,function(){
-
-		});
+  //   
+  	var s = skrollr.init();
 
 
-		$(".check").delay(400).animate({
-			opacity: 1
-		}, 400,function(){
-
-		});
-		$("#line1").animate({
-			width: "31px"
-		}, 400,function(){
-
-		});
-
-		$("#line2").delay(800).animate({
-			width: "31px"
-		}, 400, function(){
-
-		});
-		var combinedCategories = localStorage.getItem("Priority") + localStorage.getItem("Scale") + localStorage.getItem("Cost");
-
-		console.log(combinedCategories);
-
-		var gardenData;
-
-		loadEverything(combinedCategories);
-
-		console.log("This is garden data",gardenData);
-
-function loadEverything (x) {
-	$("#CustomFarmImgWrapper").prepend("<img id='FirstImg' src='Assets/PNG_72ppi/" + x +".png'/>");
-	$("#CustomFarmImg2Wrapper").prepend("<img id='SecondImg' src='Assets/PNG_72ppi/" + x +".png'/>");
-	$(".CustomFarmImg").remove();
-	$(".CustomFarmImg2").remove();
-	var url = x + ".json";
-
-	var json = (function (){
-	var json = null;
-	$.ajax({
-		'async': false,
-		'global': false,
-		'url': url,
-		'dataType': "json",
-		'success': function(data){
-			console.log("This is jquery response",data);
-			gardenData = data;
-		}
-	});
-	console.log("Returned Value",json);
-	// return json;
-	})();
-}
-
-
-var prevDot = "SELECT ANY DOT TO BEGIN";
-var prevTraitTitle1 = "Trait Title";
-var	prevTraitTitle2 = "Trait Title";
-var	prevTraitTitle3 = "Trait Title";
-
-$(".factbutton").mouseover(function() {
-	console.log("Returned Value", gardenData);
-	var dotName = this.id;
-	if(dotName =="Priority") {
-		document.getElementById("CustomFarmTitle").innerHTML = gardenData.DotTitle1;
-		document.getElementById("firstTraitTitle").innerHTML = gardenData.TraitTitle1_1;
-		document.getElementById("secondTraitTitle").innerHTML = gardenData.TraitTitle2_1;
-		document.getElementById("thirdTraitTitle").innerHTML = gardenData.TraitTitle3_1;
-	}
-
-	if(dotName =="Scale") {
-		document.getElementById("CustomFarmTitle").innerHTML = gardenData.DotTitle2;
-		document.getElementById("firstTraitTitle").innerHTML = gardenData.TraitTitle1_2;
-		document.getElementById("secondTraitTitle").innerHTML = gardenData.TraitTitle2_2;
-		document.getElementById("thirdTraitTitle").innerHTML = gardenData.TraitTitle3_2;
-	}
-
-	if(dotName =="Cost") {
-		document.getElementById("CustomFarmTitle").innerHTML = gardenData.DotTitle3;
-		document.getElementById("firstTraitTitle").innerHTML = gardenData.TraitTitle1_3;
-		document.getElementById("secondTraitTitle").innerHTML = gardenData.TraitTitle2_3;
-		document.getElementById("thirdTraitTitle").innerHTML = gardenData.TraitTitle3_3;
-	}
-});
-
-$(".factbutton").mouseleave(function() {
-	document.getElementById("CustomFarmTitle").innerHTML = prevDot;
-	document.getElementById("firstTraitTitle").innerHTML = prevTraitTitle1;
-	document.getElementById("secondTraitTitle").innerHTML = prevTraitTitle2;
-	document.getElementById("thirdTraitTitle").innerHTML = prevTraitTitle3;
-});
-
-$(".factbutton").click(function() {
-	var dotName = this.id;
-	// $(".factbutton").off('mouseover');
-	// $(".factbutton").off('mouseleave');
-	$("#CustomFarmTitle").css("opacity", 1);
-	$(".Traits").css("opacity", 1);
-	$("body,html").animate(
-		        {
-		            scrollTop : 1240                       // Scroll 500px from top of body
-		        }, 2000); 
-	if(dotName =="Priority") {
-		prevDot = gardenData.DotTitle1;
-		prevTraitTitle1 = gardenData.TraitTitle1_1;
-		prevTraitTitle2 = gardenData.TraitTitle2_1;
-		prevTraitTitle3 = gardenData.TraitTitle3_1;
-		document.getElementById("CustomFarmTitle").innerHTML = gardenData.DotTitle1;
-		document.getElementById("firstTraitTitle").innerHTML = gardenData.TraitTitle1_1;
-		document.getElementById("secondTraitTitle").innerHTML = gardenData.TraitTitle2_1;
-		document.getElementById("thirdTraitTitle").innerHTML = gardenData.TraitTitle3_1;
-		document.getElementById("firstTraitBody").innerHTML = gardenData.BodyText1_1;
-		document.getElementById("secondTraitBody").innerHTML = gardenData.BodyText1_2;
-		document.getElementById("thirdTraitBody").innerHTML = gardenData.BodyText1_3;
-
-		
-	}
-
-	if(dotName =="Scale") {
-		prevDot = gardenData.DotTitle2;
-		prevTraitTitle1 = gardenData.TraitTitle1_2;
-		prevTraitTitle2 = gardenData.TraitTitle2_2;
-		prevTraitTitle3 = gardenData.TraitTitle3_2;
-		document.getElementById("CustomFarmTitle").innerHTML = gardenData.DotTitle2;
-		document.getElementById("firstTraitTitle").innerHTML = gardenData.TraitTitle1_2;
-		document.getElementById("secondTraitTitle").innerHTML = gardenData.TraitTitle2_2;
-		document.getElementById("thirdTraitTitle").innerHTML = gardenData.TraitTitle3_2;
-		document.getElementById("firstTraitBody").innerHTML = gardenData.BodyText2_1;
-		document.getElementById("secondTraitBody").innerHTML = gardenData.BodyText2_2;
-		document.getElementById("thirdTraitBody").innerHTML = gardenData.BodyText2_3;
-
-	}
-
-	if(dotName =="Cost") {
-		prevDot = gardenData.DotTitle3;
-		prevTraitTitle1 = gardenData.TraitTitle1_3;
-		prevTraitTitle2 = gardenData.TraitTitle2_3;
-		prevTraitTitle3 = gardenData.TraitTitle3_3;
-		document.getElementById("CustomFarmTitle").innerHTML = gardenData.DotTitle3;
-		document.getElementById("firstTraitTitle").innerHTML = gardenData.TraitTitle1_3;
-		document.getElementById("secondTraitTitle").innerHTML = gardenData.TraitTitle2_3;
-		document.getElementById("thirdTraitTitle").innerHTML = gardenData.TraitTitle3_3;
-		document.getElementById("firstTraitBody").innerHTML = gardenData.BodyText3_1;
-		document.getElementById("secondTraitBody").innerHTML = gardenData.BodyText3_2;
-		document.getElementById("thirdTraitBody").innerHTML = gardenData.BodyText3_3;
-
-	}
-});
-
-
-
-	$('input[ type="range"]').rangeslider({
-			  // Feature detection the default is `true`.
-		    // Set this to `false` if you want to use
-		    // the polyfill also in Browsers which support
-		    // the native <input type="range"> element.
-		    polyfill: false,
-
-		    // Callback function
-		    onInit: function() {
-	
-		    },
-
-		    // Callback function
-		    onSlide: function(position, value) {
-
-		    },
-
-		    // Callback function
-		    onSlideEnd: function(position, value) {
-		    	console.log(value);
-		    }
-		});
-
-
-
-
-
-	 
-	 $('#mission_Statement').click(function(){
+			$('#mission_Statement').click(function(){
 				$("#missionStatementContentWrapper").css("z-index", "102");
 				$("#missionStatementContentWrapper").css("opacity", "1");
 
@@ -265,49 +121,42 @@ $(".factbutton").click(function() {
 
 			});
 
-	$('#EnterCommunityButton').click(function(){
-				$("#nameGardenContentWrapper").css("z-index", "102");
-				$("#nameGardenContentWrapper").css("opacity", "1");
+  	
 
+
+		var combinedCategories = localStorage.getItem("Priority") + localStorage.getItem("Scale") + localStorage.getItem("Cost");
+
+		console.log(combinedCategories);
+
+		var gardenData;
+
+		loadEverything(combinedCategories);
+
+		console.log("This is garden data",gardenData);
+
+		function loadEverything (x) {
+			$("#CustomFarmImgWrapper").prepend("<img id='FirstImg' src='Assets/PNG_72ppi/" + x +".png'/>");
+			$("#CustomFarmImg2Wrapper").prepend("<img id='SecondImg' src='Assets/PNG_72ppi/" + x +".png'/>");
+			$(".CustomFarmImg").remove();
+			$(".CustomFarmImg2").remove();
+			var url = x + ".json";
+
+			var json = (function (){
+			var json = null;
+			$.ajax({
+				'async': false,
+				'global': false,
+				'url': url,
+				'dataType': "json",
+				'success': function(data){
+					console.log("This is jquery response",data);
+					gardenData = data;
+				}
 			});
-
-			$('.xm3').click(function(){
-				$("#nameGardenContentWrapper").css("opacity", "");
-				$("#nameGardenContentWrapper").delay(800).queue(function(next) {
-					$(this).css("z-index", "");
-					next();
-				});
-
-			});
-
-	$(window).scroll( function(){
-
-  //get scroll position
-  var topWindow = $(window).scrollTop();
-  //multipl by 1.5 so the arrow will become transparent half-way up the page
-  var topWindow = topWindow * 1.5;
-  
-  //get height of window
-  var windowHeight = $(window).height();
-      
-  //set position as percentage of how far the user has scrolled 
-  var position = topWindow / windowHeight;
-  //invert the percentage
-  position = 1 - position;
-
-  //define arrow opacity as based on how far up the page the user has scrolled
-  //no scrolling = 1, half-way up the page = 0
-  $('.arrow-wrap').css('opacity', position);
-
-	});
-
-	$(".arrow-wrap").click(function()  // When arrow is clicked
-		    {
-		        $("body,html").animate(
-		        {
-		            scrollTop : 670                       // Scroll 500px from top of body
-		        }, 1000);  //how fast the scrolling animation will be in miliseconds
-		    });
+			console.log("Returned Value",json);
+			// return json;
+			})();
+		}
 
 		/* initializing firebase */
 		var config = {
@@ -319,29 +168,156 @@ $(".factbutton").click(function() {
 			messagingSenderId: "577414616663" 
 		};
 		firebase.initializeApp(config);
-		
 
-		function writeNewPost() {
-			// A post entry.
 
-			var postData = {
-				A_customizedName: "name",
-				B_groceryDecreased: "number_grocery_decreased",
-				C_groceryDecreased: "number_grocery_decreased",
-				D_groceryDecreased: "number_grocery_decreased",
-				E_groceryDecreased: "number_grocery_decreased"
-			};
-		
-			// Get a key for a new Post.
-			var newPostKey = firebase.database().ref().child('users').push().key;
-		
-			// Write the new post's data simultaneously in the posts list and the user's post list.
-			var updates = {};
-			updates['/users/' + newPostKey] = postData;
-			return firebase.database().ref().update(updates);
+
+		var ref = firebase.database().ref('/users/');
+
+		//function that loads what's in the database
+		var data = [];
+		function loadDatabase(keys) {
+		    
+		    //array [ ] used for saving each 'post'
+		    // console.log('outer1')
+		    ref.on('value',function(snap) {
+
+		        snap.forEach(function(item) {
+		            
+		            //getting the post from database
+		            var itemVal = item.val();
+		            // console.log('allenLog: ' + itemVal);
+		            //saving each post to keys [ ]
+		            keys.push(itemVal);
+		            // console.log(keys.length)
+		        });
+
+		        //displaying what's in keys [ ]		        
+		    });	
 		}
 
-		// writeNewPost();
+		loadDatabase(data);
+		var dataLength;
+
+
+		
+		var manipData = {};
+		
+
+		setTimeout(function(){
+				// console.log(data)
+				dataLength = data.length;
+				var i = 0;
+				for(var k in data){
+					if(data.hasOwnProperty(k)){
+						manipData[i] = {
+							A_customizedName : data[k].A_customizedName,
+							B_vegetableValue : data[k].B_vegetableValue,
+							C_waterUsage : data[k].C_waterUsage,
+							D_gasValue : data[k].D_gasValue,
+							E_mealsCreatedValue : data[k].E_mealsCreatedValue,
+							F_livingSpace : data[k].F_livingSpace,
+							G_headerImage : data[k].G_headerImage
+						};
+
+						var buildingTypeStored = manipData[i].F_livingSpace;
+						var x = i + 1;
+
+						console.log("type: " + buildingTypeStored + ", x: " + x);
+						
+						addBuildings(buildingTypeStored,x);
+
+						i++;
+						
+					}
+				}
+
+				//@Jordan: all code involving data from database must go in here
+				// OR figure out how to wait for return of 
+
+				addGrass();
+				console.log("building type" + buildingTypeStored);
+			}, 1000);
+
+
+		function addGrass(){			
+			for(var i = 0; i <= (Math.round(dataLength/4)+1); i++) {
+				if (dataLength > 4*i) {
+					$("#IllustrationToppersGrass").append("<img src='Assets/community_Pages/Asset_4.png' name='hedges' class='grassSpecs'>");
+				}
+			}
+		}
+
+
+		function addBuildings(buildingType,i){
+			//for(var i = 0; i <= dataLength; i++) {
+				if ((i%2) === 0) {
+					$("#IllustrationToppersBuildingsEven").append("<img src='Assets/community_Pages/same_Size/" + buildingType + ".png' name='buildings' class='appendedBuildingsEven'>");
+				}
+				else {
+					$("#IllustrationToppersBuildingsOdd").append("<img src='Assets/community_Pages/same_Size/" + buildingType + ".png' name='buildings' class='appendedBuildingsOdd'>");
+				}
+			//}
+		}
+
+		// console.log(keys.length)
+		// console.log('jordan: ' + ref);
+		// var dataKeys = {
+		// 	A_customizedName:"A_customizedName",
+		// 	B_vegetableValue:"B_vegetableValue",
+		// 	C_waterUsage: "C_waterUsage",
+		// 	D_gasValue: "D_gasValue",
+		// 	E_mealsCreatedValue: "E_mealsCreatedValue",
+		// 	F_livingSpace: "F_livingSpace",
+		// 	G_headerImage: "G_headerImage"
+		// };
+
+		// function pullData(ref, response){
+		// 	ref.once('value').then(function(snapshot){
+		// 		var out = snapshot.val();
+		// 		for(var k in out){
+
+		// 			if(out.hasOwnProperty(k)){
+		// 				// console.log(out[k].A_customizedName);
+		// 				// console.log('k: ' + k);
+		// 				for(var j in dataKeys){
+		// 					// console.log(k.A_customizedName);
+		// 					// console.log('j: ' + j);
+		// 					console.log("response: " + out[k].B_vegetableValue + "." + j);
+		// 					if(k.hasOwnProperty(j)){
+		// 						// console.log('j: ' + j);
+		// 						// console.log("response: " + out[k]);
+		// 					}							
+		// 				}
+		// 			}
+					
+					
+		// 			response.push(({key: k, value: out[k]}))
+		// 		}			
+		// 	});
+		// }
+		// var response = [];
+		// pullData(ref, response);
+		// console.log("output: " + response);
+		// for (var k in response){
+		// 	console.log(response[k]);
+		// }
+		
+		// writeNewPost(); //TODO: move this somewhere else!
+
+		// pulling databse data
+		// var output = pullData();
+		// console.log("output: " + output);
+
+
+		// function pullData(){
+		// 	var temp = firebase.database().ref('/users/').once('value').then(function(snapshot){
+		// 		var out = snapshot.val();	
+		// 		for(var k in output){
+		// 			console.log("response: " + out[k].A_customizedName);
+		// 		}			
+		// 	});
+		// 	return out;
+		// }
 });	
 
 

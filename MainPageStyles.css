@@ -1064,7 +1064,7 @@ ________________________________________________________________________________
     position: absolute;
     left: 790px;
     z-index: 3;
-    top: 20px;
+    top: 160px;
 }
 .factbutton {
     width: 25px;
@@ -1226,7 +1226,7 @@ ________________________________________________________________________________
 
 #twentiethBubble {
     left: 817px;
-    top: 15px;
+    top: 150px;
 
 }
 
@@ -2386,7 +2386,7 @@ ________________________________________________________________________________
 
 .arrow-wrap2 {
   position:absolute;
-  z-index:0;
+/*  z-index:0;*/
   left: 52%;
   transform: translate(-50%, -50%);
   top:75em;
@@ -2399,6 +2399,7 @@ ________________________________________________________________________________
   font-size:0.5em;
   display:block;
   cursor: auto;
+  z-index: 2;
 }
 
 .arrow2 {
@@ -2466,9 +2467,12 @@ border-color: white transparent transparent transparent;
 #ReadingTitle  h3 {
     color: #559B98;
 }
-
+.sources {
+    z-index: 5;
+}
 .sources a {
     text-decoration: none;
+    
 }
 
 #Source1 {
@@ -2499,11 +2503,109 @@ border-color: white transparent transparent transparent;
 }
 .sourceTitle {
     color: #559B98;
+    cursor: pointer;
 }
 .sourceBody {
     position: absolute;
     width: 750px;
     left: 80px;
+}
+
+#SourceModal {
+    position: fixed;
+    z-index: 0;
+    height: 110%;
+    width: 100%;
+    opacity: 0;
+    transition: opacity .8s;
+}
+
+iframe {
+    border:none;
+}
+.darkBackgroundSources {
+    position: fixed;
+    height: 110%;
+    width: 100%;
+    background-color: #00131a;
+    opacity: .85;   
+}
+
+.lightBackgroundSources {
+    position: fixed;
+    width: 1300px;
+    height: 600px;
+    background-color: white;
+    box-shadow: 5px;
+   /* z-index: 102;*/
+    left: 50%;
+    top: 51%; 
+    transform:translate(-50%, -50%);
+    border-radius: 5px;
+    opacity: 1;
+}
+.circleXs2 {
+    position: absolute;
+    display: block;
+    right: 49px;
+    top: 56px;
+    width: 40px;
+    height: 40px;
+    border:2px solid #559B98; 
+    border-radius: 100%;
+    background-color: white;
+}
+
+.xs2 {
+    position: absolute;
+    display: block;
+    right: 58px;
+    top: 65px;
+    width: 25px;
+    height: 25px;
+    transition: transform .25s ease-in-out;
+    border-radius: 10px;
+    border: none;
+}
+.xs2:hover {
+    transform: rotate(180deg);
+}
+.xs2:before {
+    content: "";
+    position: absolute;
+    display: block;
+    margin: auto;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    width: 25px;
+    height: 0;
+    border-top: 2px solid #559B98;
+    transform: rotate(45deg);
+    transform-origin: center;
+    border-radius: 10px;
+}
+.xs2:after {
+    content: "";
+    position: absolute;
+    display: block;
+    margin: auto;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    width: 25px;
+    height: 0;
+    border-top: 2px solid #559B98;
+    transform: rotate(-45deg);
+    transform-origin: center;
+    border-radius: 10px;
+}
+
+.xs2:focus {
+  color: #467D7B;
+  outline: none;
 }
 
 /*________________________________________________________________________________________________________________________________________________________________________
@@ -2957,7 +3059,7 @@ border-color: white transparent transparent transparent;
 #SecondImg {
     position: absolute;
     height: 400px;
-    left: -160px;
+    left: -140px;
     top: -70px;
 }
 
@@ -3359,7 +3461,7 @@ border-color: white transparent transparent transparent;
 }
  
 #fineTuneSectionWrapper {
-    height: 400px;
+    height: 480px;
     width: 101%;
 }
 
@@ -3368,7 +3470,7 @@ border-color: white transparent transparent transparent;
     position: relative;
     display: inline-block;
     padding-top: 120px;
-    opacity: .8;
+    opacity: .4;
     width: 480px;
     height: 400px;
     margin: 0px;
@@ -3409,8 +3511,10 @@ border-color: white transparent transparent transparent;
  */
 
 #excercise_Priority {
+    position: absolute;
     width: 550px;
     height: 350px;
+    visibility: hidden;
 }
 
 #priority_Example_Wrapper {
@@ -3424,9 +3528,186 @@ border-color: white transparent transparent transparent;
     margin-top: 96px;
 }
 
-.c-1-color { background: red; }
-.c-2-color { background: yellow; }
-.c-3-color { background: green; }
+.c-1-color { background: #294948; }
+.c-2-color { background: #559b98; }
+.c-3-color { background: #6db7b4; }
+
+
+#excercise_Scale {
+    width: 550px;
+    height: 350px;
+    position: absolute;
+/*    visibility: hidden;*/
+
+}
+
+#excercise_Cost {
+    width: 550px;
+    height: 350px;
+    position: absolute;
+    visibility: hidden;
+
+}
+#scale_Example_Wrapper {
+    width: 500px;
+    position: absolute;
+    top: 75%;
+    left:-180px;
+
+}
+
+#totalSqft {
+    color: #559b98;
+    margin-bottom: 8px;
+}
+
+#totalSqftLine {
+    width: 400px;
+    height: 2px;
+    border-radius: 10px;
+    background-color: #559b98;
+    opacity: .3;
+    margin-top: 0px;
+    margin-bottom: 20px;
+}
+/*title for excercise2*/
+#excercise_Scale { 
+    margin-top: 0px;
+}
+
+#example1 {
+    display: inline-block;
+    width: 100px;
+}
+#example2 {
+    display: inline-block;
+    width: 100px;
+}
+#example3 {
+    display: block;
+    padding-left: 200px;
+    margin-bottom: 20px;
+}
+#slider-connectZ-Axis {
+    height: 150px;
+/*    width: 10px;*/
+}
+#slider-connectX-Axis {
+    transform: rotate(0deg);
+    display: inline-block;
+    width: 200px;
+    margin-left: 230px;
+/*    height: 10px;*/
+}
+#slider-connectY-Axis {
+    transform: rotate(-15deg);
+    display: inline-block;
+    width: 200px;
+    margin-right: 320px;
+
+}
+
+#upLevel {
+    position: absolute;
+    left: 500px;
+    bottom: 80px;
+    width: 130px;
+    height: 20px;
+
+}
+#downLevel {
+    position: absolute;
+    left: 500px;
+    bottom: 60px;
+    width: 130px;
+    height: 20px;
+    
+}
+#levelNumber {
+    position: absolute;
+    left: 555px;
+    bottom: 130px;
+    width: 130px;
+    height: 20px;
+}
+#Layout {
+    position: absolute;
+    left: 250px;
+    width: 180px;
+    height: 150px;
+    bottom: 40px;
+    background-color: #559b98;
+    border-radius: 15px;
+}
+#Layoutshadow {
+    position: absolute;
+    left: 253px;
+    width: 180px;
+    height: 150px;
+    bottom: 36px;
+    background-color: #6db7b4;
+    border-radius: 15px;
+}
+/*.noUi-handle {
+    width:20px;
+    height: 20px;
+    background-color: #294948;
+    border-radius: 100;
+}*/
+
+
+/*color picker css*/
+#SystemType {
+    text-transform: capitalize;
+}
+
+#red, #green, #blue {
+    margin: 10px;
+    display: inline-block;
+    height: 200px;
+}
+
+#colorpicker {
+    height: 240px;
+    width: 310px;
+    margin: 0 auto;
+    padding: 10px;
+    border: 1px solid #BFBFBF;
+}
+
+#result {
+    margin: 60px 26px;
+    height: 100px;
+    width: 100px;
+    display: inline-block;
+    vertical-align: top;
+    color: rgb(127, 127, 127);
+    background: rgb(127, 127, 127);
+    border: 1px solid #fff;
+    box-shadow: 0 0 10px;
+}
+
+#red .noUi-connect {
+    background: #c0392b;
+}
+
+#green .noUi-connect {
+    background: #27ae60;
+}
+
+#blue .noUi-connect {
+    background: #2980b9;
+}
+
+#example4{
+    display: inline-block;
+}
+#example5{
+    display: inline-block;
+}
+#example6{
+    display: inline-block;
+}
 /*________________________________________________________________________________________________________________________________________________________________________
 
 MissionStatement Styles
@@ -3713,31 +3994,121 @@ ________________________________________________________________________________
 Community Page Styles
 __________________________________________________________________________________________________________________________________________________________________________*/
 
-
+body {
+    height: 1050px;
+    overflow-x: hidden;
+}
 
 #community_Header_Wrapper {
+    position: fixed;
     top: 160px;
     left: 150px;
-    position: absolute;
     width: 650px;
+    z-index: 1;
 }
 
 #scroll_Hint_Wrapper {
     top: 500px;
     left: 165px;
     width: 70px;
-    position: absolute;
-    opacity: 0;
+    position: fixed;
+    opacity: .5;
     cursor: w-resize;
-    transition: opacity 6s;
+    z-index: 1;
 
 }
 
 #community_Illustrations_Wrapper {
+    position: fixed;
     top: 200px;
-    left: 1000px;
+    height: 540px;
+    width: 100%;
+/*    background-color: red;*/
+/*    overflow: hidden;*/
+    border-radius: 1px;
+    z-index: 0;
+}
+
+
+#IllustrationToppersGrass {
+    position: fixed;
+    width: 10000px;
+    height: 450px;
+    z-index: 2;
+    left: 1150px;
+}
+#IllustrationToppers {
+    position: fixed;
+    width: 100px;
+    height: 450px;
+    z-index: 3;
+}
+
+#IllustrationToppersBuildingsOdd {
+    position: fixed;
+    width: 10000px;
+    height: 300px;
+    z-index: 3;
+    bottom: 170px;
+/*    background-color: blue;*/
+}
+#IllustrationToppersBuildingsEven {
+    position: fixed;
+    width: 10000px;
+    height: 300px;
+    bottom: 250px;
+    z-index: 2;
+/*    background-color: red;*/
+}
+
+#firstGrass {
     position: absolute;
-    background-color: red;
+    height: 150px;
+    top: 270px;
+    left: 30px;
+    z-index: 3;
+}
+
+.grassSpecs {
+    position: relative;
+    margin-left: -100px;
+    display: inline-flex;
+    float: left;
+    height: 190px;
+    z-index: 0;
+    margin-top: 225px;
+}
+
+.appendedBuildingsEven {
+    position: relative;
+    margin-left: 130px;
+/*    padding-left: 170px;*/
+    display: inline-flex;
+/*    float: left;*/
+/*    height: 230px;*/
+    width: 74px;
+    z-index: 0;
+    margin-top: 90px;
+}
+.appendedBuildingsOdd {
+    position: relative;
+    margin-left: 150px;
+    width: 74px;
+/*    padding-left: 170px;*/
+    display: inline-flex;
+/*    float: left;*/
+    height: 230px;
+    z-index: 0;
+    margin-top: 90px;
+}
+#Platform {
+    position: fixed;
+    height: 230px;
+    top: 420px;
+    left: 900px;
+/*    transition: left 1s;*/
+/*    width: 10px;*/
+
 }
 
 #community_Arrow {
