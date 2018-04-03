@@ -61,7 +61,7 @@
 	>
 		<img src="Assets/Arrow_Community.png" id="community_Arrow">
 		<img src="Assets/Mouse_Community.png" id="mouse_Icon">
-		<h5 id="scroll_Text">Scroll Your Mouse</h5>
+		<!-- <h5 id="scroll_Text">Scroll Your Mouse</h5> -->
 	</div>
 	<div id="community_Illustrations_Wrapper">
 		<!-- <img class="factbutton" src="Assets/info_button3.png" alt="info_button"> -->
@@ -85,8 +85,19 @@
 		>
 			<!-- <img src="Assets/community_Pages/Asset_4.png" name="hedges" class="grassSpecs"> -->
 		</div>
-
 		<div id="IllustrationToppersBuildingsEven"
+			data-0="left: 870px;",
+			data-100p=" left: -170px;"
+		>
+		</div>
+
+		<div id="IllustrationToppersBuildingDotsOdd"
+			data-0="left: 980px;",
+			data-100p=" left: -60px;"
+		>
+			<!-- <img src="Assets/community_Pages/Asset_4.png" name="hedges" class="grassSpecs"> -->
+		</div>
+		<div id="IllustrationToppersBuildingDotsEven"
 			data-0="left: 870px;",
 			data-100p=" left: -170px;"
 		>
@@ -98,6 +109,15 @@
 		>
 
 	</div>
+
+	<hgroup class='speech-bubble2'>
+		<img src='Assets/PNG_72ppi/CAT.png' class = 'medallionImg'>
+		<h4 class='titleInfo2'> Jordan's Project</h4>
+		<div class='resultslittlebubble'>$400 of Produce/Year</div>
+		<div class='resultslittlebubble'>5000 Gallons of Water Saved/Year</div>
+		<div class='resultslittlebubble'>5000 Gallons of Gas Saved/Year</div>
+		<div class='resultslittlebubble'>5000 Meals Created/Year</div>
+	</hgroup>
 
 <script type="text/javascript">
 
@@ -130,7 +150,7 @@
 
 		var gardenData;
 
-		loadEverything(combinedCategories);
+		// loadEverything(combinedCategories);
 
 		console.log("This is garden data",gardenData);
 
@@ -175,10 +195,11 @@
 
 		//function that loads what's in the database
 		var data = [];
-		function loadDatabase(keys) {
+		function loadDatabase() {
 		    
 		    //array [ ] used for saving each 'post'
 		    // console.log('outer1')
+		    var keys = [];
 		    ref.on('value',function(snap) {
 
 		        snap.forEach(function(item) {
@@ -190,23 +211,11 @@
 		            keys.push(itemVal);
 		            // console.log(keys.length)
 		        });
-
-		        //displaying what's in keys [ ]		        
-		    });	
-		}
-
-		loadDatabase(data);
-		var dataLength;
-
-
-		
-		var manipData = {};
-		
-
-		setTimeout(function(){
-				// console.log(data)
+		        //displaying what's in keys [ ]	
+		    	data = keys;
 				dataLength = data.length;
 				var i = 0;
+				var manipData = {};
 				for(var k in data){
 					if(data.hasOwnProperty(k)){
 						manipData[i] = {
@@ -221,11 +230,13 @@
 
 						var buildingTypeStored = manipData[i].F_livingSpace;
 						var x = i + 1;
+						//defining values for results to pull
+						
 
 						console.log("type: " + buildingTypeStored + ", x: " + x);
 						
 						addBuildings(buildingTypeStored,x);
-
+						addDots(i, manipData);
 						i++;
 						
 					}
@@ -233,10 +244,15 @@
 
 				//@Jordan: all code involving data from database must go in here
 				// OR figure out how to wait for return of 
-
+				
 				addGrass();
-				console.log("building type" + buildingTypeStored);
-			}, 1000);
+				console.log("building type" + buildingTypeStored);	        
+		    });	
+		}
+
+		loadDatabase();
+
+		var dataLength;
 
 
 		function addGrass(){			
@@ -258,6 +274,50 @@
 				}
 			//}
 		}
+
+		function addDots(i, manipData){
+			var farmName = manipData[i].A_customizedName;
+			var vegetableValue = manipData[i].B_vegetableValue;
+			var waterUsage = manipData[i].C_waterUsage;
+			var gasValue = manipData[i].gasValue;
+			var mealsCreated = manipData[i].E_mealsCreatedValue;
+			var medallionImg = manipData[i].G_headerImage;
+			var appendHTMLEven = "<img src='Assets/info_button3.png' id='dot" +i +"' name='buildingInfo' class='appendedBuildingDotsEven '>"
+			var appendHTMLOdd= "<img src='Assets/info_button3.png' id='dot" +i +"' name='buildingInfo' class='appendedBuildingDotsOdd '>"
+
+			var x = i + 1;
+				if ((x%2) === 0) {
+					$("#IllustrationToppersBuildingDotsEven").append(appendHTMLEven);
+					//give dots
+						// var Bubble = $( "<hgroup class='speech-bubble2'><img src='Assets/PNG_72ppi/" + medallionImg + ".png' class = 'medallionImg'><div class='titleInfo'>" + farmName + "</div><div class='resultslittlebubble'>Vegetable Values: " + vegetableValue + "</div><div class='resultslittlebubble'>Water Saved: " + waterUsage + "</div><div class='resultslittlebubble'>Gallons of Gas Saved: " + gasValue +"</div><div class='resultslittlebubble'>Meals Created: " + mealsCreated + "</div></hgroup>" );
+
+					// $("#IllustrationToppersBuildingDotsEven").append(Bubble);
+				}
+				
+				else {
+					$("#IllustrationToppersBuildingDotsOdd").append(appendHTMLOdd);
+						// var Bubble = $( "<hgroup class='speech-bubble2'><img src='Assets/PNG_72ppi/" + medallionImg + ".png' class = 'medallionImg'><div class='titleInfo'>" + farmName + "</div><div class='resultslittlebubble'>Vegetable Values: " + vegetableValue + "</div><div class='resultslittlebubble'>Water Saved: " + waterUsage + "</div><div class='resultslittlebubble'>Gallons of Gas Saved: " + gasValue +"</div><div class='resultslittlebubble'>Meals Created: " + mealsCreated + "</div></hgroup>" );
+						// $("#IllustrationToppersBuildingDotsOdd").append(Bubble);
+				}
+		}
+
+		
+
+		// $(appendHTMLEven).mouseenter(function(){
+		// 		$(Bubble).css("opacity","1");
+		// });
+
+		// $(appendHTMLOdd).mouseenter(function(){
+		// 		$(Bubble).css("opacity","1");
+		// });
+
+		// $(appendHTMLEven).mouseleave(function(){
+		// 		$(Bubble).css("opacity","0");
+		// });
+
+		// $(appendHTMLOdd).mouseleave(function(){
+		// 		$(Bubble).css("opacity","0");
+		// });
 
 		// console.log(keys.length)
 		// console.log('jordan: ' + ref);

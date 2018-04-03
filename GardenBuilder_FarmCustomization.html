@@ -339,6 +339,12 @@
 				opacityBoolean.costImg = false;
 				//append excercise 1//
 				//if priority = 
+				$("#excercise_Priority").css("z-index", "5");
+				$("#excercise_Priority").css("visibility", "visible");
+				$("#excercise_Scale").css("z-index", "0");
+				$("#excercise_Scale").css("visibility", "hidden");
+
+
 			}
 
 			if(itemName =="scaleImg") {
@@ -347,6 +353,10 @@
 				opacityBoolean.scaleImg = true;
 				opacityBoolean.costImg = false;
 				//append excercise 2//
+				$("#excercise_Scale").css("z-index", "5");
+				$("#excercise_Scale").css("visibility", "visible");
+				$("#excercise_Priority").css("z-index", "0");
+				$("#excercise_Priority").css("visibility", "hidden");
 			}
 
 			if(itemName =="costImg") {
@@ -358,6 +368,7 @@
 			}
 			
 		});
+
 
 
 		// Excercise 3 color picker
@@ -414,9 +425,6 @@
 			// 		resultElement.style.color = color;
 			// 	});
 			// });
-
-
-		 //TODO: set this global variable to change the size of the 'farm'
 
 		// setting slider constants for sliderconnectAxis
 		var sliderconnectZ = document.getElementById('slider-connectZ-Axis');
