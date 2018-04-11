@@ -4,13 +4,17 @@
 	<title></title>
 	<link rel="stylesheet" type="text/css" href="MainPageStyles.css">
 	<link href="https://fonts.googleapis.com/css?family=Montserrat:300i,300,400,500,600,700|Open+Sans:300,400,400i" rel="stylesheet">
-	<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+<!-- 	<script src="https://code.jquery.com/jquery-1.10.2.js"></script> -->
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/skrollr/0.6.30/skrollr.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.4/TweenMax.min.js"></script>
+	<!-- <script type="text/javascript" src="typedJS/typed.js"></script> -->
 	<!--font-family: 'Open Sans', sans-serif;
 		font-family: 'Montserrat', sans-serif; -->
+	<meta name="viewport" content="width=device-width">
 </head>
 <body id = "Page">
-	<audio id="Intro_Herban" src="Assets/Intro_To_Herban.mp3"></audio>
+	<!-- <audio id="Intro_Herban" src="Assets/Intro_To_Herban.mp3"></audio> -->
 	<div id="FutureOfAgro">
 		<h3>The Future of Farming is Vertical</h3>
 		<h6>Explore the current problems with agriculture and move </br> our slider to uncover a future with <i>Herban</i>.</h6>
@@ -55,8 +59,13 @@
 
 	<div id="EntryTitle">
 		<h2> Welcome to</h2>
-		<h1> Herban</h1>
-		<h5> <i>The worlds first fully integrated communal & modular urban farming system</i></h5>
+		<h1 class="element"> Herban</h1>
+		<h5 class="rotatingText element2"> <i>The worlds first fully integrated communal & modular urban farming system</i></h5>
+		<h5 class="rotatingText element2"> <i>We blend our fully autonomous farming systems seamlessly into urban developments and link it to a digital marketplace to make room for a new kind of farming</i></h5>
+		<h5 class="rotatingText element2"> <i>Explore the problems with the current state of agricultural practices then swipe across the map to better understand the benefits of future state growing
+		</i></h5>
+		<h5 class="rotatingText element2"> <i>After you are finished exploring our map, continue to our Garden Builder section to customize your own Automated Herban Farming System
+		</i></h5>
 	</div>
 	<div id="EntryButton">
 		<img id="EntryButtonImg" src="Assets/StartButton.png" alt="Enter Here">
@@ -90,20 +99,21 @@
 	</div> -->
 	<script type="text/javascript">
 
-	
-// 	$(document).ready(function () {
-// 		var hoverClick = $('#EntryButtonImg');
-// 		var rightLine = $('#RightLine');
-// 		var leftLine = $('#LeftLine');
-// 		var RightLineWidth = $('#RightLine').css('width');
 
-//     	if (RightLineWidth == '30px'){
-// 		alert("runScript");
-// 	};
-// });
 
 	$(document).ready(function () {
-			$("#Intro_Herban").get(0).play();
+
+
+			tl = new TimelineMax();
+
+			var tl = new TimelineMax({repeat:0});
+
+			$(".rotatingText").each(function(index, element2){
+			  tl.to(element2, 1, {opacity:1})
+			    .to(element2, 3, {opacity:0}, "+=1")
+			});
+
+
 			var HoverOff;
 			// var HoverOff2;
 			var HoverOff3;
@@ -129,96 +139,15 @@
 		    	$('#infoWrapper').stop(true).fadeTo("slow", 1);
 
 		    }, 4500);
-
-		    // setTimeout(function(){
-		    // 	$('#Page').append($('#Navigation'));
-		    // 	$('#Navigation').stop(true).fadeTo("slow", 1);
-		    // }, 2100);
-		    
-		    
-		  //   HoverOff2 = setTimeout(function(){
-
-		    	
-		  //   	$('#EntryTitle').remove();
-		  // 		$('#EntryButton').remove();
-
-		  //   }, 2500);
 		 
 
 		  HoverOff3 = setTimeout(function(){
 		  		window.location.href='MainHomePage4.html'
-		    }, 6500);
-
-		   // });
-
-		  // $('#EntryButtonImg').mouseout(function(){
-
-		  // 	$('#RightLine').css("width", "0px");
-		  //   $('#LeftLine').css("width", "0px");
-		  //   clearTimeout(HoverOff);
-    //       	clearTimeout(HoverOff2);
-    //       	clearTimeout(HoverOff3);
-		   
-		  // });       
+		    }, 6500);      
 		  
 });
 
 
-		  // document.addEventListener('DOMContentLoaded', function() {
-				//     var parent = document.querySelector('.splitview'),
-				//         topPanel = parent.querySelector('.Maptop'),
-				//         handle = parent.querySelector('.handle'),
-				//         clickHack = 0,
-				//         delta = 0;
-
-				//     // If the parent has .skewed class, set the skewHack var.
-				//     if (parent.className.indexOf('.clicked') != -1) {
-				//         clickHack = 1000;
-				//     }
-
-				//     parent.addEventListener('mousemove', function(event) {
-				//         // Get the delta between the mouse position and center point.
-				//         delta = (event.clientX - window.innerWidth / 2) * 0.5;
-
-				//         // Move the handle.
-				//         handle.style.left = event.clientX + delta + 'px';
-
-				//         // Adjust the top panel width.
-				//         topPanel.style.width = event.clientX + clickHack + delta + 'px';
-				//     });
-				// });
-
-		  // document.addEventListener('DOMContentLoaded', function(){
-		  // 		let wrapper = document.querySelector('.splitview');
-		  // 		let toplayer = wrapper.querySelector('.Maptop');
-		  // 		let handle = wrapper.querySelector('.handle');
-		  // 		// let straight = 0;
-		  // 		// let delta = 0;
-
-		  // 		// if(wrapper.className.indexOf('clicked') != -1){
-		  // 		// 	clicked = 1000;
-		  // 		// }()
-		  		
-		  // 		$(".handle").on('mousedown', function(event){
-		  // 			// if (event.type == "mousedown"){
-		  // 				wrapper.addEventListener('mousemove', function(event){
-			 //  			// delta = (event.clientX - window.innerWidth / 2) * 0.5;
-				//   			handle.style.left = event.clientX - 20 + 'px';
-				//   			toplayer.style.width = event.clientX - 287 + 'px';
-		  // 				});
-		  // 			// }
-		  			
-
-		  // 		});
-
-		  // 		$(".handle").on("mouseup",function(event){
-
-		  // 			$(".handle")[0].releaseCapture();
-		  // 				// handle.style.left = event.clientX - 20 + 'px';
-				//   		// toplayer.style.width = event.clientX - 287 + 'px';
-				// 	});
-		  		
-		  // });
 
 	 $(function(){
 
@@ -250,24 +179,6 @@
 		})
 	});
 
-		  
-			// $(function() {
-
-			// 	$( "#handle" ).click(function(e) {
-
-			// 	  var offset = $(this).offset();
-			// 	  var relativeX = (e.pageX - offset.left);
-			// 	  // var relativeY = (e.pageY - offset.top);
-
-  	// 				$( "#handle" ).css('left', relativeX - "1000px");
-			// 	});
-
-			// 	// $(".splitview").click(function(e) {
-
-			// 	//   alert("X: " + relativeX + "  Y: " + relativeY);
-
-			// 	// });
-			// });
 
 		
 	

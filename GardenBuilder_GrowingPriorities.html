@@ -16,7 +16,7 @@
 			<div id="content2">
 				<img id="MissionStatementImg2" src="Assets/PNG_72ppi/Mission_Statement2.png">
 				<div id="MissionStatementWrapper2">
-					<h3 id="MissionStatementTitle2">Mission Statement</h3>
+					<h3 id="MissionStatementTitle2">Our Mission</h3>
 					<h5 id="MissionStatementBody2">
 					Herban is not just a company, we are a green-based lifestyle </br>brand. By taking advantage of a digital marketplace, autonomous gardening, and drone delivery system, Herban will sell and deliver locally sourced produce directly to and from our customers' doorsteps.  Our mission is to drive the change required for a sustainable future. By limiting the amount of traditional farmland needed to feed a growing population and by integrating green spaces into every facet of city life, our Green Breeze system will foster environmental rejuvination and healthier city ecosystems.
 					</h5>
@@ -56,8 +56,9 @@
 
 	<div id ="Environmental_Grower_PageWrapper">
 		<div id="EnvironmentalGrower_TextWrapper">
+			<div class="bigNumber"> 1</div>
 			<h3>Environmental Grower</h3>
-			<h5>Moving these crops away from farmlands and into Herban modular gardens can stop land degredation in its tracks.</h5>
+			<h5>Moving these crops away from open air farms and into Herban modular gardens can stop land degredation in its tracks.</h5>
 		</div>
 		<img id="Environmental_Grower_Img" src="Assets/PNG_72ppi/Environmental_Grower.png">
 		<div id="Expand_Stats_EnvironmentalGrowing">
@@ -91,8 +92,9 @@
 
 	<div id ="Profitability_Grower_PageWrapper">
 		<div id="ProfitabilityGrower_TextWrapper">
+			<div class="bigNumber"> 2</div>
 			<h3>Proftability Grower</h3>
-			<h5>Using our proprietary drone delivery system get access to thousands of potential grocery shoppers without ever leaving your doorstep.</h5>
+			<h5>Want a passive source of income? Grow high valued produce and sell it on our digital marketplace with any of our members in your city.</h5>
 		</div>
 		<img id="Profitability_Grower_Img" src="Assets/PNG_72ppi/Profitability_Grower.png">
 		<div id="Expand_Stats_ProfitabilityGrowing">
@@ -126,8 +128,9 @@
 
 	<div id ="Consumption_Grower_PageWrapper">
 			<div id="ConsumptionGrower_TextWrapper">
+				<div class="bigNumber"> 3</div>
 				<h3>Consumption Grower</h3>
-				<h5>We spend hundreds of dollars on "day old" grocery food. Growing for yourself and your community can solve that problem.</h5>
+				<h5>We spend hundreds of dollars on "day-old" groceries. Growing for yourself and your community can solve that problem.</h5>
 			</div>
 			<img id="Consumption_Grower_Img" src="Assets/PNG_72ppi/Consumption_Grower.png">
 			<div id="Expand_Stats_ConsumptionGrowing">
@@ -177,6 +180,7 @@
 				$("#Expand_Stats_ConsumptionGrowing").css("opacity", "");
 				$("#Extra_Stats_Consumption_Wrapper").css("opacity","");
 				$("#Extra_Stats_Consumption_Wrapper").css("top","");
+				$(".bigNumber").css("opacity","0");
 		});
 
 			$("#environmentalX").on("click", function(){
@@ -185,6 +189,7 @@
 				$("#Expand_Stats_EnvironmentalGrowing").css("opacity", "");
 				$("#Extra_Stats_Environmental_Wrapper").css("opacity","");
 				$("#Extra_Stats_Environmental_Wrapper").css("top","");
+				$(".bigNumber").css("opacity","");
 			});
 			// $("#EnvironmentalGrowingButtonX").click(function(){
 			
@@ -210,6 +215,7 @@
 				$("#Expand_Stats_ConsumptionGrowing").css("opacity", "");
 				$("#Extra_Stats_Consumption_Wrapper").css("opacity","");
 				$("#Extra_Stats_Consumption_Wrapper").css("top","");
+				$(".bigNumber").css("opacity","0");
 
 			});
 
@@ -219,6 +225,7 @@
 				$("#Expand_Stats_ProfitabilityGrowing").css("opacity", "");
 				$("#Extra_Stats_Profitability_Wrapper").css("opacity","");
 				$("#Extra_Stats_Profitability_Wrapper").css("top","");
+				$(".bigNumber").css("opacity","");
 			});
 
 			$("#Expand_Stats_ConsumptionGrowing h6").on("click", function(){
@@ -237,6 +244,7 @@
 				$("#Expand_Stats_ProfitabilityGrowing").css("opacity", "");
 				$("#Extra_Stats_Profitability_Wrapper").css("opacity","");
 				$("#Extra_Stats_Profitability_Wrapper").css("top","");
+				$(".bigNumber").css("opacity","0");
 			});
 
 			$("#consumptionX").on("click", function(){
@@ -245,6 +253,7 @@
 				$("#Expand_Stats_ConsumptionGrowing").css("opacity", "");
 				$("#Extra_Stats_Consumption_Wrapper").css("opacity","");
 				$("#Extra_Stats_Consumption_Wrapper").css("top","");
+				$(".bigNumber").css("opacity","");
 		});
 
 

@@ -4,27 +4,32 @@
 	<title></title>
 	<link rel="stylesheet" type="text/css" href="MainPageStyles.css">
 	<link rel="stylesheet" type="text/css" href="rangeslider.css">
+	<link rel="stylesheet" type="text/css" href="jssocials.css">
+	<link rel="stylesheet" type="text/css" href="jssocials-theme-minima.css">
 	<link href="https://fonts.googleapis.com/css?family=Montserrat:300i,300,400,500,600,700|Open+Sans:300,400,400i" rel="stylesheet">
 	<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/skrollr/0.6.30/skrollr.min.js"></script>
 	<script src='rangeslider.min.js'></script>
 	<script src="https://www.gstatic.com/firebasejs/4.9.1/firebase.js"></script>
+	<script defer src="https://use.fontawesome.com/releases/v5.0.9/js/all.js" integrity="sha384-8iPTk2s/jMVj81dnzb/iFR2sdA7u06vHJyyLlAd4snFpCl/SnyUjRrbdJsw1pGIl" crossorigin="anonymous"></script>
+	<script src='jssocials.min.js'></script>
 	<!--font-family: 'Open Sans', sans-serif;
 		font-family: 'Montserrat', sans-serif; -->
-</head>
+	</head>
 
-<body>
-	<div id="missionStatementContentWrapper">
-		<div id="darkBackground">
-			
-		</div>
-		<div id="modalBackground">
-			<div id="content2">
-				<img id="MissionStatementImg2" src="Assets/PNG_72ppi/Mission_Statement2.png">
-				<div id="MissionStatementWrapper2">
-					<h3 id="MissionStatementTitle2">Mission Statement</h3>
-					<h5 id="MissionStatementBody2">
-					Herban is not just a company, we are a green-based lifestyle </br>brand. By taking advantage of a digital marketplace, autonomous gardening, and drone delivery system, Herban will sell and deliver locally sourced produce directly to and from our customers' doorsteps.  Our mission is to drive the change required for a sustainable future. By limiting the amount of traditional farmland needed to feed a growing population and by integrating green spaces into every facet of city life, our Green Breeze system will foster environmental rejuvination and healthier city ecosystems.
+	<body class="communityBody">
+		<div id="scrollWrapper"></div>
+		<div id="missionStatementContentWrapper">
+			<div id="darkBackground">
+
+			</div>
+			<div id="modalBackground">
+				<div id="content2">
+					<img id="MissionStatementImg2" src="Assets/PNG_72ppi/Mission_Statement2.png">
+					<div id="MissionStatementWrapper2">
+						<h3 id="MissionStatementTitle2">Our Mission</h3>
+						<h5 id="MissionStatementBody2">
+						Herban is not just a company, we are a green-based lifestyle </br>brand. By taking advantage of a digital marketplace, autonomous gardening, and drone delivery system, Herban will sell and deliver locally sourced produce directly to and from our customers' doorsteps.  Our mission is to drive the change required for a sustainable future. By limiting the amount of traditional farmland needed to feed a growing population and by integrating green spaces into every facet of city life, our Green Breeze system will foster environmental rejuvination and healthier city ecosystems.
 					</h5>
 					<div class="circleXm2">
 					</div>
@@ -35,120 +40,174 @@
 		</div> 
 	</div>
 
+	<div id="TotalResultsWrapper">
+		<!-- <h4 class= "resultTitleOverall" id="TotalResultsTitle">Herban's Total Impact:</h4> -->
+		<div class="Acumwrapper">
+			<h4 class= "resultOverall" id="vegetableValueAcum"></h4>
+			<div class="resultsLine"></div>
+			<div class="bodyTitle2" id="bodyTextValueofCrop">Value of Crops Grown</div>
+		</div>
+		<div class="Acumwrapper">
+			<h4 class= "resultOverall" id="waterUsageAcum"></h4>
+			<div class="resultsLine"></div>
+			<div class="bodyTitle2" id="bodyTextGallonsofWater">Gallons of Water Saved</div>
+		</div>
+		<div class="Acumwrapper">
+			<h4 class= "resultOverall" id="gasValueAcum"></h4>
+			<div class="resultsLine"></div>
+			<div class="bodyTitle2" id="bodyTextGallonsofGas">Gallons of Gas Reduced</div>
+		</div>
+		<div class="Acumwrapper">
+			<h4 class= "resultOverall" id="mealsCreatedAcum"></h4>
+			<div class="resultsLine"></div>
+			<div class="bodyTitle2" id="bodyTextmealsCreated">Meals Created</div>
+		</div>
+		
+		
+		
+		
+	</div>
+
 	<div id="HighLevelNavigationTop">
-			<span id="Span1"> <a data-text="OUR MISSION" id="mission_Statement">OUR MISSION</a></span>
-		    <span id="Span2"><a href="MainHomePage4.html#introWrapper" data-text="GARDEN BUILDER" >GARDEN BUILDER</a></span>
-		    <span id="Span3"> <a href="MainHomePage4.html" data-text="HERBAN LOGO" id="HerbanLogo4"></a></span>
-		    <span id="Span4"><a href="Further_Reading.html" data-text="FURTHER READINGS" ">FURTHER READINGS</a></span>
-		    <span id="Span5"><a href="_____" data-text="THE COMMUNITY" id="SelectedNavItem">THE COMMUNITY</a></span>
+		<span id="Span1"> <a data-text="OUR MISSION" id="mission_Statement">OUR MISSION</a></span>
+		<span id="Span2"><a href="MainHomePage4.html#introWrapper" data-text="GARDEN BUILDER" >GARDEN BUILDER</a></span>
+		<span id="Span3"> <a href="MainHomePage4.html" data-text="HERBAN LOGO" id="HerbanLogo4"></a></span>
+		<span id="Span4"><a href="Further_Reading.html" data-text="FURTHER READINGS" ">FURTHER READINGS</a></span>
+		<span id="Span5"><a href="_____" data-text="THE COMMUNITY" id="SelectedNavItem">THE COMMUNITY</a></span>
 		    <!-- <a href="MainHomePage4.html#introWrapper" data-text="GARDEN BUILDER" id="SelectedNavItem">GARDEN BUILDER</a>
 		    <span> <a data-text="OUR MISSION" id="mission_Statement">OUR MISSION </a></span>
 		    <span> <a href="MainHomePage4.html" data-text="HERBAN LOGO" id="HerbanLogo4"></a></span>
 		    <span><a href="Further_Reading.html" data-text="FURTHER READINGS">FURTHER READINGS</a></span>
 		    <span><a href="_____" data-text="THE COMMUNITY" >THE COMMUNITY</a></span> -->
-	</div> 
-	<div id="community_Header_Wrapper"
+		</div> 
+
+		<div id="CommunityNavigationTop">
+
+		</div> 
+		<div id="community_Header_Wrapper"
 		data-0="opacity: 1; left: 150px;",
-		data-40p="opacity: 0; left: 30px;"
+		data-10p="opacity: 0; left: 30px;"
 		data-50p="left: 0px;"
-	>
+		>
 		<h3 id="welcome_To_Community">Welcome to The Community</h3>
 		<h5 id="welcome_To_Community_Body">Enjoy exploring our collection of member farms. See each member's farm preferences and how their custom grow plots are changing the world one crop at a time. You may even find your own! </h5>
 	</div>
-	<div id="scroll_Hint_Wrapper"
-		data-0="opacity: .5;",
-		data-8p="opacity: 0;"
+	<div class = "flicker2" id="scroll_Hint_Wrapper"
+	data-0="opacity: 0;",
+	data-2p="opacity: 0;",
 	>
-		<img src="Assets/Arrow_Community.png" id="community_Arrow">
-		<img src="Assets/Mouse_Community.png" id="mouse_Icon">
-		<!-- <h5 id="scroll_Text">Scroll Your Mouse</h5> -->
-	</div>
-	<div id="community_Illustrations_Wrapper">
-		<!-- <img class="factbutton" src="Assets/info_button3.png" alt="info_button"> -->
-		<!-- In this wrapper I will be appending: hedge cluster images after every 4 farms created, farms (saved on the server), purple dots towards the center left side of every farm, and a text bubble 10px above every dot (with the farm choices: name, choices, environmental effects) -->
+	<img src="Assets/Arrow_Community.png" id="community_Arrow">
+	<img src="Assets/Mouse_Community.png" id="mouse_Icon">
+	<!-- <h5 id="scroll_Text">Scroll Your Mouse</h5> -->
+</div>
+<div id="community_Illustrations_Wrapper">
+	<!-- <img class="factbutton" src="Assets/info_button3.png" alt="info_button"> -->
+	<!-- In this wrapper I will be appending: hedge cluster images after every 4 farms created, farms (saved on the server), purple dots towards the center left side of every farm, and a text bubble 10px above every dot (with the farm choices: name, choices, environmental effects) -->
 
-		<div id="IllustrationToppers"
-			data-0="left: 900px;",
-			data-100p=" left: -140px;"
-		>
-			<img src="Assets/community_Pages/Asset_6.png" name="frontRowHedge" id="firstGrass">
-		</div>
-		<div id="IllustrationToppersGrass"
-			data-0="left: 1150px;",
-			data-100p=" left: 110px;"
-		>
-			<!-- <img src="Assets/community_Pages/Asset_4.png" name="hedges" class="grassSpecs"> -->
-		</div>
-		<div id="IllustrationToppersBuildingsOdd"
-			data-0="left: 980px;",
-			data-100p=" left: -60px;"
-		>
-			<!-- <img src="Assets/community_Pages/Asset_4.png" name="hedges" class="grassSpecs"> -->
-		</div>
-		<div id="IllustrationToppersBuildingsEven"
-			data-0="left: 870px;",
-			data-100p=" left: -170px;"
-		>
-		</div>
+	<div id="IllustrationToppers"
+	data-0="left: 900px;"
+	data-end=" left: -140px;"
+	>
+	<img src="Assets/community_Pages/Asset_6.png" name="frontRowHedge" id="firstGrass">
+</div>
+<div id="IllustrationToppersGrass"
+data-0="left: 1150px;"
+data-end=" left: 110px;"
+>
+<!-- <img src="Assets/community_Pages/Asset_4.png" name="hedges" class="grassSpecs"> -->
+</div>
+<div id="IllustrationToppersBuildingsOdd"
+data-0="left: 980px;"
+data-end=" left: -60px;"
+>
+<!-- <img src="Assets/community_Pages/Asset_4.png" name="hedges" class="grassSpecs"> -->
+</div>
+<div id="IllustrationToppersBuildingsEven"
+data-0="left: 870px;"
+data-end="left:-170px;"
+>
+</div>
 
-		<div id="IllustrationToppersBuildingDotsOdd"
-			data-0="left: 980px;",
-			data-100p=" left: -60px;"
-		>
-			<!-- <img src="Assets/community_Pages/Asset_4.png" name="hedges" class="grassSpecs"> -->
-		</div>
-		<div id="IllustrationToppersBuildingDotsEven"
-			data-0="left: 870px;",
-			data-100p=" left: -170px;"
-		>
-		</div>
+<div id="IllustrationToppersBuildingDotsOdd"
+data-0="left: 980px;"
+data-end=" left: -60px;"
+>
+<!-- <img src="Assets/community_Pages/Asset_4.png" name="hedges" class="grassSpecs"> -->
+</div>
+<div id="IllustrationToppersBuildingDotsEven"
+data-0="left: 870px;"
+data-end=" left: -170px;"
+>
+</div>
+<div id="IllustrationToppersBubblesOdd"
+data-0="left: 980px;"
+data-end=" left: -60px;"
+>
+<!-- <img src="Assets/community_Pages/Asset_4.png" name="hedges" class="grassSpecs"> -->
+</div>
+<div id="IllustrationToppersBubblesEven"
+data-0="left: 870px;"
+data-end=" left: -170px;"
+>
+</div>
+<img id="Platform" src="Assets/community_Pages/Asset_5.png"
+data-0="left: 900px;"
+data-300="left: -140px;"
+>
 
-		<img id="Platform" src="Assets/community_Pages/Asset_5.png"
-			data-0="left: 900px;",
-		    data-100p="left: -140px;"
-		>
+</div>
 
-	</div>
+<a href="MainHomePage4.html"><button id="DoneButton">Home</button></a>
+<button id="ShareButton" class="shareButton">Share</button>
 
-	<hgroup class='speech-bubble2'>
+	<!-- <hgroup class='speech-bubble2'>
 		<img src='Assets/PNG_72ppi/CAT.png' class = 'medallionImg'>
 		<h4 class='titleInfo2'> Jordan's Project</h4>
 		<div class='resultslittlebubble'>$400 of Produce/Year</div>
 		<div class='resultslittlebubble'>5000 Gallons of Water Saved/Year</div>
 		<div class='resultslittlebubble'>5000 Gallons of Gas Saved/Year</div>
 		<div class='resultslittlebubble'>5000 Meals Created/Year</div>
-	</hgroup>
+	</hgroup> -->
 
-<script type="text/javascript">
+	<script type="text/javascript">
 
-	$( document ).ready(function() {
+		$( document ).ready(function() {
   //   
-  	var s = skrollr.init();
+  	// var s = skrollr.init()
+  	$(".shareButton").jsSocials({
+            shares: ["facebook"],
+            url: "https://jordansturner.github.io/Herban/MainHomePage4.html",
+    		text: "Check out this awesome design project on Urban Agriculture"
+        });
 
+  	$('#mission_Statement').click(function(){
+  		$("#missionStatementContentWrapper").css("z-index", "102");
+  		$("#missionStatementContentWrapper").css("opacity", "1");
 
-			$('#mission_Statement').click(function(){
-				$("#missionStatementContentWrapper").css("z-index", "102");
-				$("#missionStatementContentWrapper").css("opacity", "1");
+  	});
 
-			});
+  	$('.xm2').click(function(){
+  		$("#missionStatementContentWrapper").css("opacity", "");
+  		$("#missionStatementContentWrapper").delay(800).queue(function(next) {
+  			$(this).css("z-index", "");
+  			next();
+  		});
 
-			$('.xm2').click(function(){
-				$("#missionStatementContentWrapper").css("opacity", "");
-				$("#missionStatementContentWrapper").delay(800).queue(function(next) {
-					$(this).css("z-index", "");
-					next();
-				});
+  	});
 
-			});
+  	$(document).scroll(function(){
+  		$("#scroll_Hint_Wrapper").removeClass("flicker2");
+  	});
+  	
 
   	
 
 
-		var combinedCategories = localStorage.getItem("Priority") + localStorage.getItem("Scale") + localStorage.getItem("Cost");
+  	var combinedCategories = localStorage.getItem("Priority") + localStorage.getItem("Scale") + localStorage.getItem("Cost");
 
-		console.log(combinedCategories);
+  	console.log(combinedCategories);
 
-		var gardenData;
+  	var gardenData;
 
 		// loadEverything(combinedCategories);
 
@@ -162,48 +221,54 @@
 			var url = x + ".json";
 
 			var json = (function (){
-			var json = null;
-			$.ajax({
-				'async': false,
-				'global': false,
-				'url': url,
-				'dataType': "json",
-				'success': function(data){
-					console.log("This is jquery response",data);
-					gardenData = data;
-				}
-			});
-			console.log("Returned Value",json);
+				var json = null;
+				$.ajax({
+					'async': false,
+					'global': false,
+					'url': url,
+					'dataType': "json",
+					'success': function(data){
+						console.log("This is jquery response",data);
+						gardenData = data;
+					}
+				});
+				console.log("Returned Value",json);
 			// return json;
-			})();
-		}
+		})();
+	}
 
-		/* initializing firebase */
-		var config = {
-			apiKey: "AIzaSyCz8j_wouFYfrsdMHfw-Asx90Z0ujSZlNo",
-			authDomain: "herban-f14b6.firebaseapp.com",
-			databaseURL: "https://herban-f14b6.firebaseio.com/",
-			projectId: "herban-f14b6",
-			storageBucket: "herban-f14b6.appspot.com",
-			messagingSenderId: "577414616663" 
-		};
-		firebase.initializeApp(config);
+	/* initializing firebase */
+	var config = {
+		apiKey: "AIzaSyCz8j_wouFYfrsdMHfw-Asx90Z0ujSZlNo",
+		authDomain: "herban-f14b6.firebaseapp.com",
+		databaseURL: "https://herban-f14b6.firebaseio.com/",
+		projectId: "herban-f14b6",
+		storageBucket: "herban-f14b6.appspot.com",
+		messagingSenderId: "577414616663" 
+	};
+	firebase.initializeApp(config);
 
 
+	function getNumber(string){
+		var re = /[0-9]+[0-9]*/i;
+		var found = string.match(re);
+		return found
+	}
 
-		var ref = firebase.database().ref('/users/');
+	var ref = firebase.database().ref('/users/');
 
 		//function that loads what's in the database
 		var data = [];
 		function loadDatabase() {
-		    
+
 		    //array [ ] used for saving each 'post'
 		    // console.log('outer1')
 		    var keys = [];
+		    var i=0;
 		    ref.on('value',function(snap) {
 
-		        snap.forEach(function(item) {
-		            
+		    	snap.forEach(function(item) {
+
 		            //getting the post from database
 		            var itemVal = item.val();
 		            // console.log('allenLog: ' + itemVal);
@@ -212,51 +277,71 @@
 		            // console.log(keys.length)
 		        });
 		        //displaying what's in keys [ ]	
-		    	data = keys;
-				dataLength = data.length;
-				var i = 0;
-				var manipData = {};
-				for(var k in data){
-					if(data.hasOwnProperty(k)){
-						manipData[i] = {
-							A_customizedName : data[k].A_customizedName,
-							B_vegetableValue : data[k].B_vegetableValue,
-							C_waterUsage : data[k].C_waterUsage,
-							D_gasValue : data[k].D_gasValue,
-							E_mealsCreatedValue : data[k].E_mealsCreatedValue,
-							F_livingSpace : data[k].F_livingSpace,
-							G_headerImage : data[k].G_headerImage
-						};
+		        data = keys;
+		        dataLength = data.length;
 
-						var buildingTypeStored = manipData[i].F_livingSpace;
-						var x = i + 1;
+		        var manipData = {};
+		        var vegetableValueAcum = 0;
+		        var waterUsageAcum = 0;
+		        var gasValueAcum = 0;
+		        var mealsCreatedAcum = 0;
+
+		        for(var k in data){
+		        	if(data.hasOwnProperty(k)){
+		        		manipData[i] = {
+		        			A_customizedName : data[k].A_customizedName,
+		        			B_vegetableValue : data[k].B_vegetableValue,
+		        			C_waterUsage : data[k].C_waterUsage,
+		        			D_gasValue : data[k].D_gasValue,
+		        			E_mealsCreatedValue : data[k].E_mealsCreatedValue,
+		        			F_livingSpace : data[k].F_livingSpace,
+		        			G_headerImage : data[k].G_headerImage
+		        		};
+
+		        		var buildingTypeStored = manipData[i].F_livingSpace;
+		        		var x = i + 1;
+
 						//defining values for results to pull
-						
+						vegetableValueAcum += parseInt(getNumber(manipData[i].B_vegetableValue));
+						waterUsageAcum += parseInt(getNumber(manipData[i].C_waterUsage));
+						gasValueAcum += parseInt(getNumber(manipData[i].D_gasValue));
+						mealsCreatedAcum += parseInt(getNumber(manipData[i].E_mealsCreatedValue));
 
 						console.log("type: " + buildingTypeStored + ", x: " + x);
-						
+						console.log("vegetableData: " + vegetableValueAcum);
 						addBuildings(buildingTypeStored,x);
 						addDots(i, manipData);
 						i++;
 						
 					}
+
 				}
 
 				//@Jordan: all code involving data from database must go in here
 				// OR figure out how to wait for return of 
-				
+				addHover();
 				addGrass();
-				console.log("building type" + buildingTypeStored);	        
-		    });	
+				console.log($("body").height());
+				AlterSkrollr();
+				var s = skrollr.init();
+				console.log("building type" + buildingTypeStored);
+
+				document.getElementById("vegetableValueAcum").innerHTML = "$" + vegetableValueAcum + "<span class='valueYear'>/YR</span>";
+				document.getElementById("waterUsageAcum").innerHTML = waterUsageAcum + "<span class='valueYear'>/YR</span>";
+				document.getElementById("gasValueAcum").innerHTML = gasValueAcum + "<span class='valueYear'>/YR</span>";
+				document.getElementById("mealsCreatedAcum").innerHTML = mealsCreatedAcum + "<span class='valueYear'>/YR</span>";
+
+
+			});	
+
 		}
 
 		loadDatabase();
-
 		var dataLength;
 
 
 		function addGrass(){			
-			for(var i = 0; i <= (Math.round(dataLength/4)+1); i++) {
+			for(let i = 0; i <= (Math.round(dataLength/4)+1); i++) {
 				if (dataLength > 4*i) {
 					$("#IllustrationToppersGrass").append("<img src='Assets/community_Pages/Asset_4.png' name='hedges' class='grassSpecs'>");
 				}
@@ -275,113 +360,157 @@
 			//}
 		}
 
-		function addDots(i, manipData){
+		function AlterSkrollr(){
+			var Rails = [
+			{
+				DivId:"#IllustrationToppers",
+				Offset: -140
+			},
+			{
+				DivId:"#IllustrationToppersGrass",
+				Offset: 110
+			},
+			{
+				DivId:"#IllustrationToppersBuildingsOdd",
+				Offset: -60
+			},
+			{
+				DivId:"#IllustrationToppersBuildingsEven",
+				Offset: -170
+			},
+			{
+				DivId:"#IllustrationToppersBubblesOdd",
+				Offset: -60
+			},
+			{
+				DivId:"#IllustrationToppersBubblesEven",
+				Offset: -170
+			},
+			{
+				DivId:"#IllustrationToppersBuildingDotsOdd",
+				Offset: -60
+			},
+			{
+				DivId:"#IllustrationToppersBuildingDotsEven",
+				Offset: -170
+			}
+
+			]
+			for (let i = 0; i <Rails.length; i++){
+				var railItem = Rails[i];
+				var body = $("body").height();
+				var windowWidth = $(window).width();
+				var leftVal = railItem.Offset - body + windowWidth + 1480;
+
+				$(railItem.DivId).attr('data-end', 'left:'+ leftVal +'px;');
+				console.log(body);
+			}
+		}
+
+		function addDots(i, manipData){//i is the position in the database
 			var farmName = manipData[i].A_customizedName;
 			var vegetableValue = manipData[i].B_vegetableValue;
 			var waterUsage = manipData[i].C_waterUsage;
-			var gasValue = manipData[i].gasValue;
+			var gasValue = manipData[i].D_gasValue;
 			var mealsCreated = manipData[i].E_mealsCreatedValue;
 			var medallionImg = manipData[i].G_headerImage;
-			var appendHTMLEven = "<img src='Assets/info_button3.png' id='dot" +i +"' name='buildingInfo' class='appendedBuildingDotsEven '>"
-			var appendHTMLOdd= "<img src='Assets/info_button3.png' id='dot" +i +"' name='buildingInfo' class='appendedBuildingDotsOdd '>"
-
+			var Bubble;
+			// var i = 0;
 			var x = i + 1;
-				if ((x%2) === 0) {
-					$("#IllustrationToppersBuildingDotsEven").append(appendHTMLEven);
-					//give dots
-						// var Bubble = $( "<hgroup class='speech-bubble2'><img src='Assets/PNG_72ppi/" + medallionImg + ".png' class = 'medallionImg'><div class='titleInfo'>" + farmName + "</div><div class='resultslittlebubble'>Vegetable Values: " + vegetableValue + "</div><div class='resultslittlebubble'>Water Saved: " + waterUsage + "</div><div class='resultslittlebubble'>Gallons of Gas Saved: " + gasValue +"</div><div class='resultslittlebubble'>Meals Created: " + mealsCreated + "</div></hgroup>" );
+			
+			// var dot = "'dot" + i+ "'";
+			var invisibleDiv = "<div id='invisibleDiv'></div>";
+			var appendHTMLEven = "<img src='Assets/info_button3.png' id='dot" + x +"' name='buildingInfo' class='appendedBuildingDotsEven'>";
 
-					// $("#IllustrationToppersBuildingDotsEven").append(Bubble);
+			console.log("x: " + x);
+			var appendHTMLOdd= "<img src='Assets/info_button3.png' id='dot" + x +"' name='buildingInfo' class='appendedBuildingDotsOdd'>";
+
+			if ((x%2) === 0) {
+				$("#IllustrationToppersBuildingDotsEven").append(appendHTMLEven);
+				$(".communityBody").append(invisibleDiv);
+					//give dots
+					var Bubble = "<hgroup class='speech-bubble2 bubble" + x + "' id='bubbledot" + x + "'><img src='Assets/PNG_72ppi/" + medallionImg + ".png' class = 'medallionImg'><h4 class='titleInfo2'>" + farmName + "</h4><div class='resultslittlebubble'><b>Produce Value:</b> " + vegetableValue + "</div><div class='resultslittlebubble'><b>Water Conserved:</b> " + waterUsage + "</div><div class='resultslittlebubble'><b>CO2 Emissions Removed:</b> " + gasValue +"/Year</div><div class='resultslittlebubble'><b>Meals Created:</b> " + mealsCreated + "</div></hgroup>";
+
+					$("#IllustrationToppersBubblesEven").append(Bubble);
 				}
 				
 				else {
 					$("#IllustrationToppersBuildingDotsOdd").append(appendHTMLOdd);
-						// var Bubble = $( "<hgroup class='speech-bubble2'><img src='Assets/PNG_72ppi/" + medallionImg + ".png' class = 'medallionImg'><div class='titleInfo'>" + farmName + "</div><div class='resultslittlebubble'>Vegetable Values: " + vegetableValue + "</div><div class='resultslittlebubble'>Water Saved: " + waterUsage + "</div><div class='resultslittlebubble'>Gallons of Gas Saved: " + gasValue +"</div><div class='resultslittlebubble'>Meals Created: " + mealsCreated + "</div></hgroup>" );
-						// $("#IllustrationToppersBuildingDotsOdd").append(Bubble);
+					$(".communityBody").append(invisibleDiv);
+
+					var Bubble = "<hgroup class='speech-bubble2 bubble" + x + "' id='bubbledot" + x + "'><img src='Assets/PNG_72ppi/" + medallionImg + ".png' class = 'medallionImg'><h4 class='titleInfo2'>" + farmName + "</h4><div class='resultslittlebubble'><b>Produce Value:</b> " + vegetableValue + "</div><div class='resultslittlebubble'><b>Water Conserved:</b> " + waterUsage + "</div><div class='resultslittlebubble'><b>CO2 Emissions Removed:</b> " + gasValue +"/Year</div><div class='resultslittlebubble'><b>Meals Created:</b> " + mealsCreated + "</div></hgroup>";
+					$("#IllustrationToppersBubblesOdd").append(Bubble);
+
 				}
-		}
+			}
 
-		
 
-		// $(appendHTMLEven).mouseenter(function(){
-		// 		$(Bubble).css("opacity","1");
-		// });
+			function addHover() {
+				for (var j=1; j<=data.length; j++) {
+					var dotName = "dot" + j;
+					var dotNameId = "#dot" + j;
 
-		// $(appendHTMLOdd).mouseenter(function(){
-		// 		$(Bubble).css("opacity","1");
-		// });
+					$("#bubble"+ dotName).css('opacity',0);
+					$("#IllustrationToppersBuildingDotsEven").css('z-index',7);
+					$("#IllustrationToppersBuildingDotsOdd").css('z-index',4);
+					$("#bubble"+ dotName).css('z-index',0);
+					$("#IllustrationToppersBubblesEven").css('z-index',8);
+					$("#IllustrationToppersBubblesOdd").css('z-index',5);
 
-		// $(appendHTMLEven).mouseleave(function(){
-		// 		$(Bubble).css("opacity","0");
-		// });
+					if(j%2 === 0){ //evens
+						$(dotNameId).mouseenter(function(){
+						var bubbleName = this.id;
+						// if (dotNameId = {}
+						$("#bubble"+ bubbleName).css("opacity",1);
+						// $(dotNameId).css('z-index',5);
+						// $("#bubble"+ bubbleName).css('z-index',6);
+						$("#IllustrationToppersBubblesEven").css('z-index', 104);
+						$(".speech-bubble2").css('z-index', 104);
+						$("#community_Illustrations_Wrapper").css('z-index', 104);
+						// $("#IllustrationToppersBuildingDotsOdd").css('z-index',4);
+						// $("#IllustrationToppersBubblesOdd").css('z-index',5);
 
-		// $(appendHTMLOdd).mouseleave(function(){
-		// 		$(Bubble).css("opacity","0");
-		// });
+						});
 
-		// console.log(keys.length)
-		// console.log('jordan: ' + ref);
-		// var dataKeys = {
-		// 	A_customizedName:"A_customizedName",
-		// 	B_vegetableValue:"B_vegetableValue",
-		// 	C_waterUsage: "C_waterUsage",
-		// 	D_gasValue: "D_gasValue",
-		// 	E_mealsCreatedValue: "E_mealsCreatedValue",
-		// 	F_livingSpace: "F_livingSpace",
-		// 	G_headerImage: "G_headerImage"
-		// };
+						$(dotNameId).mouseleave(function(){
+						var bubbleName = this.id;
+						$("#bubble" + bubbleName).css("opacity",0);
+						// $("#bubble" + bubbleName).css('z-index', "");
+						$("#IllustrationToppersBubblesEven").css('z-index', 7);
+						$(".speech-bubble2").css('z-index', 0);
+						$("#community_Illustrations_Wrapper").css('z-index', 0);
 
-		// function pullData(ref, response){
-		// 	ref.once('value').then(function(snapshot){
-		// 		var out = snapshot.val();
-		// 		for(var k in out){
+						});
 
-		// 			if(out.hasOwnProperty(k)){
-		// 				// console.log(out[k].A_customizedName);
-		// 				// console.log('k: ' + k);
-		// 				for(var j in dataKeys){
-		// 					// console.log(k.A_customizedName);
-		// 					// console.log('j: ' + j);
-		// 					console.log("response: " + out[k].B_vegetableValue + "." + j);
-		// 					if(k.hasOwnProperty(j)){
-		// 						// console.log('j: ' + j);
-		// 						// console.log("response: " + out[k]);
-		// 					}							
-		// 				}
-		// 			}
+					} else { //odds
+						$(dotNameId).mouseenter(function(){
+						var bubbleName = this.id;
+						// if (dotNameId = {}
+						$("#bubble"+ bubbleName).css("opacity",1);
+						// $(dotNameId).css('z-index',5);
+						// $("#bubble"+ bubbleName).css('z-index',6);
+						// $("#bubble"+ bubbleName).css('z-index', 6);
+						$("#IllustrationToppersBubblesOdd").css('z-index',8);
+						// $("#IllustrationToppersBubblesOdd").css('z-index',5);
+
+						});
+
+						$(dotNameId).mouseleave(function(){
+							var bubbleName = this.id;
+							$("#bubble" + bubbleName).css("opacity",0);
+							$("#bubble" + bubbleName).css('z-index', "");
+							$("#IllustrationToppersBubblesOdd").css('z-index',5);
+						});
+					}
+
 					
-					
-		// 			response.push(({key: k, value: out[k]}))
-		// 		}			
-		// 	});
-		// }
-		// var response = [];
-		// pullData(ref, response);
-		// console.log("output: " + response);
-		// for (var k in response){
-		// 	console.log(response[k]);
-		// }
-		
-		// writeNewPost(); //TODO: move this somewhere else!
 
-		// pulling databse data
-		// var output = pullData();
-		// console.log("output: " + output);
+				}
+			}
+		});	
 
 
-		// function pullData(){
-		// 	var temp = firebase.database().ref('/users/').once('value').then(function(snapshot){
-		// 		var out = snapshot.val();	
-		// 		for(var k in output){
-		// 			console.log("response: " + out[k].A_customizedName);
-		// 		}			
-		// 	});
-		// 	return out;
-		// }
-});	
 
-
-		
-</script>
+	</script>
 </body>
 </html>

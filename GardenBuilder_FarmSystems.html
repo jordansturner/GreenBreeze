@@ -16,9 +16,9 @@
 			<div id="content2">
 				<img id="MissionStatementImg2" src="Assets/PNG_72ppi/Mission_Statement2.png">
 				<div id="MissionStatementWrapper2">
-					<h3 id="MissionStatementTitle2">Mission Statement</h3>
+					<h3 id="MissionStatementTitle2">Our Mission</h3>
 					<h5 id="MissionStatementBody2">
-					Herban is not just a company, we are a green-based lifestyle </br>brand. By taking advantage of a digital marketplace, autonomous gardening, and drone delivery system, Herban will sell and deliver locally sourced produce directly to and from our customers' doorsteps.  Our mission is to drive the change required for a sustainable future. By limiting the amount of traditional farmland needed to feed a growing population and by integrating green spaces into every facet of city life, our Green Breeze system will foster environmental rejuvination and healthier city ecosystems.
+					Herban is not just a company, we are a green-based lifestyle </br>brand. By taking advantage of a digital marketplace, autonomous gardening, and drone delivery system, Herban will sell and deliver locally sourced produce directly to and from our customers' doorsteps. Our mission is to drive the change required for a sustainable future. By limiting the amount of traditional farmland needed to feed a growing population and by integrating green spaces into every facet of city life, our Green Breeze system will foster environmental rejuvination and healthier city ecosystems.
 					</h5>
 					<div class="circleXm2">
 					</div>
@@ -62,8 +62,9 @@
 
 	<div id ="Grow_Shelves_PageWrapper">
 		<div id="GrowShelves_TextWrapper">
+			<div class="bigNumber"> 1</div>
 			<h3>Herban Grow Shelves</h3>
-			<h5>Ideal for growers with the luxury of a horizontal playing field. Easy to set up and can grow the most types of produce.</h5>
+			<h5>Ideal for members with a lot of horizontal space & limited vertical space. Ability to grow the most variety of different kinds of produce.</h5>
 		</div>
 		<img id="Grow_Shelves_Img" src="Assets/PNG_72ppi/Herban_Grow_Shelves.png">
 		<div id="Expand_Stats_GrowShelves">
@@ -77,7 +78,7 @@
 			<dl id="List_Vegetables">
 				<dt>Horizontal grow beds make for an easy set up</dt> 
 				<dt>Can be stacked vertically with other modular shelves</dt>
-				<dt>Due to its horizontal axis it can grow most types of produce</dt>
+				<dt>Due to its horizontal grow direction, the system can grow most types of produce</dt>
 			</dl>
 			<div class="Title_Extra_Stats" id="vegetables_Include">Product Features</div>
 			<div class="Line_Extra_Stats"></div>
@@ -97,6 +98,7 @@
 
 	<div id ="Grow_Towers_PageWrapper">
 		<div id="GrowTowers_TextWrapper">
+			<div class="bigNumber"> 2</div>
 			<h3>Herban Grow Towers</h3>
 			<h5>A gorgeous and harmoneous manifestation of urban garden culture. A sleek white exterior finish to highlight the tower's greenery.</h5>
 		</div>
@@ -132,6 +134,7 @@
 
 	<div id ="Grow_Walls_PageWrapper">
 			<div id="GrowWalls_TextWrapper">
+				<div class="bigNumber"> 3</div>
 				<h3>Herban Grow Walls</h3>
 				<h5>Can be stacked vertically or horizontally to make the most out of any wall space available.</h5>
 			</div>
@@ -222,6 +225,7 @@
 				$("#Expand_Stats_GrowWalls").css("opacity", "");
 				$("#Extra_Stats_GrowWalls_Wrapper").css("opacity","");
 				$("#Extra_Stats_GrowWalls_Wrapper").css("top","");
+				$(".bigNumber").css("opacity","0");
 			});
 
 			$("#shelvesX").on("click", function(){
@@ -230,6 +234,7 @@
 				$("#Expand_Stats_GrowShelves").css("opacity", "");
 				$("#Extra_Stats_GrowShelves_Wrapper").css("opacity","");
 				$("#Extra_Stats_GrowShelves_Wrapper").css("top","");
+				$(".bigNumber").css("opacity","");
 			});
 			// $("#EnvironmentalGrowingButtonX").click(function(){
 			
@@ -255,6 +260,7 @@
 				$("#Expand_Stats_GrowShelves").css("opacity", "");
 				$("#Extra_Stats_GrowShelves_Wrapper").css("opacity","");
 				$("#Extra_Stats_GrowShelves_Wrapper").css("top","");
+				$(".bigNumber").css("opacity","0");
 
 			});
 
@@ -264,6 +270,7 @@
 				$("#Expand_Stats_GrowTowers").css("opacity", "");
 				$("#Extra_Stats_GrowTowers_Wrapper").css("opacity","");
 				$("#Extra_Stats_GrowTowers_Wrapper").css("top","");
+				$(".bigNumber").css("opacity","");
 			});
 
 			$("#Expand_Stats_GrowWalls h6").on("click", function(){
@@ -282,6 +289,7 @@
 				$("#Expand_Stats_GrowShelves").css("opacity", "");
 				$("#Extra_Stats_GrowShelves_Wrapper").css("opacity","");
 				$("#Extra_Stats_GrowShelves_Wrapper").css("top","");
+				$(".bigNumber").css("opacity","0");
 
 			});
 
@@ -291,6 +299,7 @@
 				$("#Expand_Stats_GrowWalls").css("opacity", "");
 				$("#Extra_Stats_GrowWalls_Wrapper").css("opacity","");
 				$("#Extra_Stats_GrowWalls_Wrapper").css("top","");
+				$(".bigNumber").css("opacity","");
 			});
 	});
 	console.log(localStorage.getItem("Priority"));

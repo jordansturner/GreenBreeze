@@ -6,12 +6,14 @@
 	<link href="https://fonts.googleapis.com/css?family=Montserrat:300i,300,400,500,600,700|Open+Sans:300,400,400i" rel="stylesheet">
 	<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/skrollr/0.6.30/skrollr.min.js"></script>
+	<meta name="viewport" content="width=device-width">
 <!-- 	<script type="text/javascript" src="bppopup.js"></script> -->
 	<!--font-family: 'Open Sans', sans-serif;
 		font-family: 'Montserrat', sans-serif; -->
 </head>
 <body id = "Page4">
-	<audio id="Intro_Herban2" src="Assets/Intro_To_Herban2.mp3"></audio>
+	<!-- <audio id="Intro_Herban2" src="Assets/Intro_To_Herban2.mp3"></audio> -->
+
 	<div id="missionStatementContentWrapper">
 		<div id="darkBackground">
 			
@@ -20,7 +22,7 @@
 			<div id="content2">
 				<img id="MissionStatementImg2" src="Assets/PNG_72ppi/Mission_Statement2.png">
 				<div id="MissionStatementWrapper2">
-					<h3 id="MissionStatementTitle2">Mission Statement</h3>
+					<h3 id="MissionStatementTitle2">Our Mission</h3>
 					<h5 id="MissionStatementBody2">
 					Herban is not just a company, we are a green-based lifestyle </br>brand. By taking advantage of a digital marketplace, autonomous gardening, and drone delivery system, Herban will sell and deliver locally sourced produce directly to and from our customers' doorsteps.  Our mission is to drive the change required for a sustainable future. By limiting the amount of traditional farmland needed to feed a growing population and by integrating green spaces into every facet of city life, our Green Breeze system will foster environmental rejuvination and healthier city ecosystems.
 					</h5>
@@ -104,7 +106,7 @@
 		    <span><a href="Further_Reading.html" data-text="FURTHER READINGS">FURTHER READINGS</a></span>
 		    <span><a href="_____" data-text="THE COMMUNITY" >THE COMMUNITY</a></span> -->
 		    <span id="Span1"> <a data-text="OUR MISSION" id="mission_Statement">OUR MISSION</a></span>
-		    <span id="Span2"><a data-text="GARDEN BUILDER" id="gardenBuilder">GARDEN BUILDER</a></span>
+		    <span id="Span2"><a data-text="GARDEN BUILDER" id="gardenBuilder" class="flicker">GARDEN BUILDER</a></span>
 		    <span id="Span3"> <a data-text="HERBAN LOGO" id="HerbanLogo4" class="slideUp"></a></span>
 		    <span id="Span4"><a href="Further_Reading.html" data-text="FURTHER READINGS">FURTHER READINGS</a></span>
 		    <span id="Span5"><a href="GardenBuilder_Community.html" data-text="THE COMMUNITY" >THE COMMUNITY</a></span>
@@ -123,18 +125,21 @@
 				<img id="ChooseGardenIllustration" src="Assets/PNG_72ppi/Introduction_Choose_Garden.png">
 				
 				<div id="ChooseAGardenWrapper">
-					<h3>Choose a garden type from our <b>Growers collection</b></h3>
+					<div class="bigNumber"> STEP 1</div>
+					<h3>Choose a garden type from our <b>Growers Collection</b></h3>
 					<h5>Each piece of our gardening system has been carefully </br> crafted and curated for your convenience.</h5>
 				</div>
 
 				<img id="CustomizeGardenIllustration" src="Assets/PNG_72ppi/Introduction_Customize_Garden.png">
 				<div id="CustomizeDetailsWrapper">
+					<div class="bigNumber">STEP 2</div>
 					<h3>Personalization is</br>in the details</h3>
 					<h5>As one of our valued experience growers</br>you will get to customize your garden choices.</h5>
 				</div>
 
 				<img id="JoinCommunityIllustration" src="Assets/PNG_72ppi/Introduction_Join_Community.png">
 				<div id="JoinCommunityWrapper">
+					<div class="bigNumber">STEP 3</div>
 					<h3>Community is the most powerful catalyst of change</h3>
 					<h5>Once you have finalized your garden you will have the opportunity to spread awareness on social media and take a tour of our other customer gardens</h5>
 				</div>
@@ -161,7 +166,7 @@
 
 	$('#Page4').addClass('stop-scrolling');
 	$(document).ready(function(){
-		$("#Intro_Herban2").get(0).play();
+		// $("#Intro_Herban2").get(0).play();
 
 
 			//  drag functionality//
@@ -639,6 +644,8 @@
 		});
 	});
 
+
+
 	$("#gardenBuilder").on("click", function(){
 		$("#headerWrapper").css("top", "-680px");
 		$("#HighLevelNavigation4").css("position", "fixed");
@@ -647,6 +654,7 @@
 		$("#HighLevelNavigation4 span").css("margin-top", "-12px");
 		$("#gardenBuilder").css("font-weight", "700");
 		$("#Page4").removeClass("stop-scrolling");
+		$("#gardenBuilder").removeClass("flicker");
 
 	});
 

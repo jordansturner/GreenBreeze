@@ -11,6 +11,7 @@
 	<!-- <script src='rangeslider.min.js'></script> -->
 	<script src="https://www.gstatic.com/firebasejs/4.9.1/firebase.js"></script>
 	<script type="text/javascript" src="nouislider.js"></script>
+	<script src="wnumb.js"></script>
 
 	<!--font-family: 'Open Sans', sans-serif;
 		font-family: 'Montserrat', sans-serif; -->
@@ -28,7 +29,7 @@
 						
 					</div>
 					<h4 id="congratulations">Congratulations!</h4>
-					<h6 id="congratulationsText">Lorem ipsum dolor sit amet, consectetur adipiscing elit</h6>
+					<h6 id="congratulationsText">Join the community by adding a name to your farm of the future!</h6>
 					<form><input type="text" id="userid" name="user" placeholder="NAME YOUR FARM"></form>
 					<button id="SubmitNameButton">Join</button>
 					<div class="circleXm3">
@@ -47,7 +48,7 @@
 			<div id="content2">
 				<img id="MissionStatementImg2" src="Assets/PNG_72ppi/Mission_Statement2.png">
 				<div id="MissionStatementWrapper2">
-					<h3 id="MissionStatementTitle2">Mission Statement</h3>
+					<h3 id="MissionStatementTitle2">Our Mission</h3>
 					<h5 id="MissionStatementBody2">
 					Herban is not just a company, we are a green-based lifestyle </br>brand. By taking advantage of a digital marketplace, autonomous gardening, and drone delivery system, Herban will sell and deliver locally sourced produce directly to and from our customers' doorsteps.  Our mission is to drive the change required for a sustainable future. By limiting the amount of traditional farmland needed to feed a growing population and by integrating green spaces into every facet of city life, our Green Breeze system will foster environmental rejuvination and healthier city ecosystems.
 					</h5>
@@ -101,7 +102,7 @@
 	</a>
 	<div id="CustomFarmWrapper">
 		
-		<h3 id="choice_Catalog"> Personalize Your Choices</h3>
+		<h3 id="choice_Catalog"> Your Chosen Product Features</h3>
 		<div id="catalog_Wrapper" >
 			<div id="priorityWrapper" class="catalogItemWrap">
 				<div id="priorityHeader" class="titleHeader"></div>
@@ -114,55 +115,119 @@
 			</div>
 		</div>
 		<div id="fineTuneSectionWrapper">
+			<div id="chosenWrapper">
+				
+			</div>
 			<div id="excerciseWrapper">
 				
 			</div>
 			<div id="resultsHeader">
 				
 			</div>
-			<div id="resultsSectionWrapper">
+			<!-- <div id="resultsSectionWrapper">
 				<div id="resultsbackground">
 					
 				</div>
-				<table id="final_Results" border="0" cellpadding="12" cellspacing="0" style="border-collapse: collapse; width: 90%; margin: 1.5em; font-family: 'Open Sans', sans-serif;">
+				<table id="final_Results" border="0" cellpadding="12" cellspacing="0" style="border-collapse: collapse; width: 85%; margin: 1.5em; margin-left: 4.3em; font-family: 'Open Sans', sans-serif;">
 					
 				<tbody>
 					<th style="text-align: left; font-family: 'Montserrat', sans-serif; font-size: 20px; font-weight: 600; color: #559B98;border-spacing: 25px; padding-bottom: 30px;">Urban Farm Results</th>
 				    <tr style="border-bottom: 1px solid rgba(85, 155, 152, .4); border-top: 1px solid rgba(85, 155, 152, .4); line-height: 1.8em; font-size: 16px;">
 				    	
-				      <td style="width: 55%; color: #4A4A4A;">The Value of Crops Grown:</td>
-				      <td id="result1" style="width: 45%; font-weight: bold; text-align: right; color: #559B98;">result1</td></tr>
+				      <td style="width: 45%; color: #4A4A4A;">Value of Crops Grown:</td>
+				      <td id="result1" style="width: 55%; font-weight: bold; text-align: right; color: #559B98;">result1</td></tr>
 				    <tr style="border-bottom: 1px solid rgba(85, 155, 152, .4); line-height: 1.8em;font-size: 16px"">
-				      <td style="width: 55%;  color: #4A4A4A;">The Amount of Water Saved:</td>
-				      <td id="result2" style="width: 45%; font-weight: bold;text-align: right; color: #559B98;">result2</td></tr>
+				      <td style="width: 45%;  color: #4A4A4A;">Amount of Water Saved:</td>
+				      <td id="result2" style="width: 55%; font-weight: bold;text-align: right; color: #559B98;">result2</td></tr>
 				    <tr style="border-bottom: 1px solid rgba(85, 155, 152, .4); line-height: 1.8em;font-size: 16px"">
-				      <td style="width: 55%;  color: #4A4A4A;">CO2 Emissions Removed:</td>
-				      <td id="result3" style="width: 45%; text-align: right;font-weight: bold; color: #559B98;">result3</td>
+				      <td style="width: 45%;  color: #4A4A4A;">CO2 Emissions Removed:</td>
+				      <td id="result3" style="width: 55%; text-align: right;font-weight: bold; color: #559B98;">result3</td>
 				    </tr>
 				    <tr style="border-bottom: 1px solid rgba(85, 155, 152, .4); line-height: 1.8em;font-size: 16px"">
-				      <td style="width: 55%;  color: #4A4A4A;">Amount of Meals Created:</td>
-				      <td id="result4" style="width: 45%; text-align: right; font-weight: bold;color: #559B98;">result4</td>
+				      <td style="width: 45%;  color: #4A4A4A;">Amount of Meals Created:</td>
+				      <td id="result4" style="width: 55%; text-align: right; font-weight: bold;color: #559B98;">result4</td>
 				    </tr>
 				  </tbody>
 				</table>
+			</div> -->
+			<div id="resultsSectionWrapper">
+				<div id="resultsbackground">
+					<div id="ResultsTitle">
+						Urban Farm Results
+					</div>
+					<div id="resultsWrap">
+						<div class="wraps" id="valueofCropWrap">
+							<h3 id="actualValueCrop"></h3>
+							<div class="resultsLine"></div>
+							<div class="bodyTitle" id="bodyTextValueofCrop">Value of Crops Grown</div>
+						</div>
+						<div class="wraps" id="gallonsofWater">
+							<h3 id="actualGallonsWater"></h3>
+							<div class="resultsLine"></div>
+							<div class="bodyTitle" id="bodyTextGallonsofWater">Gallons of Water Saved</div>
+						</div>
+						<div class="wraps" id="gallonsofGas">
+							<h3 id="actualGallonsGas"></h3>
+							<div class="resultsLine"></div>
+							<div class="bodyTitle" id="bodyTextGallonsofGas">Gallons of Gas Reduced</div>
+						</div>
+						<div class="wraps" id="mealsCreated">
+							<h3 id="actualmealsCreated"></h3>
+							<div class="resultsLine"></div>
+							<div class="bodyTitle" id="bodyTextmealsCreated">Meals Created</div>
+						</div>
+					</div>
+				
+				</div>
+				
+				<!-- <table id="final_Results" border="0" cellpadding="12" cellspacing="0" style="border-collapse: collapse; width: 85%; margin: 1.5em; margin-left: 4.3em; font-family: 'Open Sans', sans-serif;">
+					
+				<tbody>
+					<th style="text-align: left; font-family: 'Montserrat', sans-serif; font-size: 20px; font-weight: 600; color: #559B98;border-spacing: 25px; padding-bottom: 30px;">Urban Farm Results</th>
+				    <tr style="border-bottom: 1px solid rgba(85, 155, 152, .4); border-top: 1px solid rgba(85, 155, 152, .4); line-height: 1.8em; font-size: 16px;">
+				    	
+				      <td style="width: 45%; color: #4A4A4A;">Value of Crops Grown:</td>
+				      <td id="result1" style="width: 55%; font-weight: bold; text-align: right; color: #559B98;">result1</td></tr>
+				    <tr style="border-bottom: 1px solid rgba(85, 155, 152, .4); line-height: 1.8em;font-size: 16px"">
+				      <td style="width: 45%;  color: #4A4A4A;">Amount of Water Saved:</td>
+				      <td id="result2" style="width: 55%; font-weight: bold;text-align: right; color: #559B98;">result2</td></tr>
+				    <tr style="border-bottom: 1px solid rgba(85, 155, 152, .4); line-height: 1.8em;font-size: 16px"">
+				      <td style="width: 45%;  color: #4A4A4A;">CO2 Emissions Removed:</td>
+				      <td id="result3" style="width: 55%; text-align: right;font-weight: bold; color: #559B98;">result3</td>
+				    </tr>
+				    <tr style="border-bottom: 1px solid rgba(85, 155, 152, .4); line-height: 1.8em;font-size: 16px"">
+				      <td style="width: 45%;  color: #4A4A4A;">Amount of Meals Created:</td>
+				      <td id="result4" style="width: 55%; text-align: right; font-weight: bold;color: #559B98;">result4</td>
+				    </tr>
+				  </tbody>
+				</table> -->
 			</div>
+
 			<div id="excerciseWrapper">
 				<div id="excercise_Priority">
-					<h3 id="priority_ExcerciseTitle">Customize Your Priorities</h3>
+					<h4 id="priority_ExcerciseTitle">Customize Your Priorities</h4>
 					<h5 id="priority_ExcerciseBody">Change the default settings for your farm choices to see how each shift influences your overall performance.</h5>
 					<div id="priority_Example_Wrapper">
 						<div id="example">
 							<div id="slider-connect2" class="noUi-target noUi-ltr noUi-horizontal">
 							</div>
-							<div class="Priority-Label">Environmental Priority:<span id="environmental-value"></span>%</div>
-							<div class="Priority-Label">Profitability Priority:<span id="profitability-value"></span>%</div>
-							<div class="Priority-Label">Consumability Priority:<span id="consumability-value"></span>%</div>
+							<div class="Priority-LabelWrapper">
+								<div class="Priority-Label">Environmental Priority: <span id="environmental-value"></span>%</div>
+								<div class="Priority-Label">Profitability Priority: <span id="profitability-value"></span>%</div>
+								<div class="Priority-Label">Consumability Priority: <span id="consumability-value"></span>%</div>
+							</div>
+							
 			
 						</div>
 					</div>
 				</div>
+				<div id="excercise_Default">
+					<h4 id="default_ExcerciseTitle">Select a Choice Above to Customize Your Growing Metrics</h4>
+					<h5 id="default_ExcerciseBody">Once you have selected your ideal growing situation, let us know you are finished so that you can name your farm and add it to the community.</h5>
+					<div id="greyBox"></div>
+				</div>
 				<div id="excercise_Scale">
-					<h3 id="scale_ExcerciseTitle">Tell Us How Large Your Ideal Farm Would Be</h3>
+					<h4 id="scale_ExcerciseTitle">Tell Us How Large Your Ideal Farm Would Be</h4>
 					<h5 id="scale_ExcerciseBody">Change the default settings for your farm choices to see how each shift influences your overall performance.</h5>
 					<h4 id="totalSqft">Total Square Footage:</h4>
 					<div id="totalSqftLine"></div>
@@ -191,30 +256,31 @@
 					</div>
 				</div>
 				<div id="excercise_Cost">
-					<h3 id="scale_ExcerciseTitle">Customize the Color of Your <span id="SystemType"></span></h3>
-					<h5 id="scale_ExcerciseBody">Drag the RGB sliders to create your own unique color. The color of your farm does not influence your results.</h5>
-					<div id="result"></div>
-					<div id="example4">
-						<div id="red" class="noUi-target noUi-ltr noUi-vertical sliders">
+					<h4 id="scale_ExcerciseTitle">Customize the Color of Your <span id="SystemType"></span></h4>
+					<h5 id="scale_ExcerciseBody">Drag the RGB sliders to create your own unique color.</br><span id="colorDoesntEffect"><i>The color of your farm does not influence your results.</i><span></h5>
+					<div >
+						<div id="result">
+						
+						</div>
+						<div id="red" class="sliders noUi-target noUi-ltr noUi-vertical">
+							
+						</div>
+						<div id="green" class="sliders noUi-target noUi-ltr noUi-vertical">
+							
+						</div>
+
+						<div id="blue" class="sliders noUi-target noUi-ltr noUi-vertical">
 							
 						</div>
 					</div>
-					<div id="example5">
-						<div id="green" class="noUi-target noUi-ltr noUi-vertical sliders">
-							
-						</div>
-					</div>
-					<div id="example6">
-						<div id="blue" class="noUi-target noUi-ltr noUi-vertical sliders">
-							
-						</div>
-					</div>
+					
 				</div>
 			</div>
 		</div>
 		<a><button id="EnterCommunityButton">
 		Finalize Garden
 		</button></a>
+		
 	</div>
 
 <script type="text/javascript">
@@ -295,12 +361,15 @@
 				$("#scaleWrapper").prepend("<img id='scaleImg' class='catalogItem' src='Assets/individual_Choices/" + b +".png'/>");
 				$("#costWrapper").prepend("<img id='costImg' class='catalogItem' src='Assets/individual_Choices/" + c +".png'/>");
 			}
-
-		document.getElementById("result1").innerHTML = gardenData.VegetableValue;
-		document.getElementById("result2").innerHTML = gardenData.WaterSavedValue;
-		document.getElementById("result3").innerHTML = gardenData.GasolineValue;
-		document.getElementById("result4").innerHTML = gardenData.MealsCreatedValue;
 		
+		// document.getElementById("result1").innerHTML = gardenData.VegetableValue;
+		// document.getElementById("result2").innerHTML = gardenData.WaterSavedValue;
+		// document.getElementById("result3").innerHTML = gardenData.GasolineValue;
+		// document.getElementById("result4").innerHTML = gardenData.MealsCreatedValue;
+		document.getElementById("actualValueCrop").innerHTML = gardenData.VegetableValue;
+		document.getElementById("actualGallonsWater").innerHTML = gardenData.WaterSavedValue;
+		document.getElementById("actualGallonsGas").innerHTML = gardenData.GasolineValue;
+		document.getElementById("actualmealsCreated").innerHTML = gardenData.MealsCreatedValue;
 
 		$(".catalogItem").mouseover(function(){
 			// console.log("Returned Value", gardenData);
@@ -324,13 +393,26 @@
 
 		// this is our global opacity boolean that will keep track of which image should stay opaque
 		var opacityBoolean = {priorityImg:false, scaleImg:false, costImg:false};
+		// appendChoicePriorityImg (priority);
+		// appendChoiceScaleImg (scale);
+		// appendChoiceCostImg (cost);
+
+		// function appendChoicePriorityImg (a) {
+		// 	$("#chosenWrapper").append("<img id='priorityImg2' class='chosenCatalogItem' src='Assets/individual_Choices/" + a +".png'/>");
+		// }
+		// function appendChoiceScaleImg (b) {
+		// 	$("#chosenWrapper").append("<img id='scaleImg2' class='chosenCatalogItem' src='Assets/individual_Choices/" + b +".png'/>");
+		// }
+		// function appendChoiceCostImg (c) {
+		// 	$("#chosenWrapper").append("<img id='costImg2' class='chosenCatalogItem' src='Assets/individual_Choices/" + c +".png'/>");
+		// }
 
 		$(".catalogItem").click(function(){
 			var itemName = this.id;
 			$("body,html").animate(
 		        {
-		            scrollTop : 1260                       // Scroll 500px from top of body
-		        }, 2000); 
+		            scrollTop : 960                       // Scroll 500px from top of body
+		        }, 600); 
 
 			if(itemName =="priorityImg") {
 				$("#priorityWrapper").css("opacity", "1");
@@ -343,6 +425,14 @@
 				$("#excercise_Priority").css("visibility", "visible");
 				$("#excercise_Scale").css("z-index", "0");
 				$("#excercise_Scale").css("visibility", "hidden");
+				$("#excercise_Cost").css("z-index", "0");
+				$("#excercise_Cost").css("visibility", "hidden");
+				$("#scaleImg2").remove();
+				$("#costImg2").remove();
+				$("#excercise_Default").css("z-index", "0");
+				$("#excercise_Default").css("visibility", "hidden");
+				// appendChoicePriorityImg (priority);
+				
 
 
 			}
@@ -357,6 +447,15 @@
 				$("#excercise_Scale").css("visibility", "visible");
 				$("#excercise_Priority").css("z-index", "0");
 				$("#excercise_Priority").css("visibility", "hidden");
+				$("#excercise_Cost").css("z-index", "0");
+				$("#excercise_Cost").css("visibility", "hidden");
+				$("#priorityImg2").remove();
+				$("#costImg2").remove();
+				$("#excercise_Default").css("z-index", "0");
+				$("#excercise_Default").css("visibility", "hidden");
+				// appendChoiceScaleImg (scale);
+				
+
 			}
 
 			if(itemName =="costImg") {
@@ -364,6 +463,20 @@
 				opacityBoolean.priorityImg = false;
 				opacityBoolean.scaleImg = false;
 				opacityBoolean.costImg = true;
+
+				$("#excercise_Cost").css("z-index", "5");
+				$("#excercise_Cost").css("visibility", "visible");
+				$("#excercise_Priority").css("z-index", "0");
+				$("#excercise_Priority").css("visibility", "hidden");
+				$("#excercise_Scale").css("z-index", "0");
+				$("#excercise_Scale").css("visibility", "hidden");
+				$("#priorityImg2").remove();
+				$("#scaleImg2").remove();
+				$("#excercise_Default").css("z-index", "0");
+				$("#excercise_Default").css("visibility", "hidden");
+				// appendChoiceCostImg (cost);
+				
+
 				//append excercise 3//
 			}
 			
@@ -385,13 +498,6 @@
 			}
 			
 
-
-
-			// var resultElement = document.getElementById('result');
-			// var sliders = document.getElementsByClassName('sliders');
-			// var colors = [0,0,0];
-
-
 			// var color_slider = sliders.querySelectorAll('.noUi-connect');
 			// var classes = ['c-2-color'];
 			// console.log(color_slider);
@@ -399,32 +505,39 @@
 			//     color_slider[i].classList.add(classes[i]);
 			// }
 
-			// [].slice.call(sliders).forEach(function( slider, index ){
+			
+			var resultElement = document.getElementById('result');
+			var sliders = document.getElementsByClassName('sliders');
+			var colors = [0,0,0];
 
-			// 	noUiSlider.create(slider, {
-			// 		start: 127,
-			// 		connect: [true, false],
-			// 		orientation: "vertical",
-			// 		range: {
-			// 			'min': 0,
-			// 			'max': 255
-			// 		},
-			// 		format: wNumb({
-			// 			decimals: 0
-			// 		})
-			// 	});
+			[].slice.call(sliders).forEach(function( slider, index ){
+
+				noUiSlider.create(slider, {
+					start: 127,
+					connect: [true, false],
+					orientation: "vertical",
+					range: {
+						'min': 0,
+						'max': 255
+					},
+					format: wNumb({
+						decimals: 0
+					})
+				});
 				
-			// 	// Bind the color changing function to the update event.
-			// 	slider.noUiSlider.on('update', function ( ) {
+				// Bind the color changing function to the update event.
+				slider.noUiSlider.on('update', function ( ) {
 					
-			// 		colors[index] = slider.noUiSlider.get();
+					colors[index] = slider.noUiSlider.get();
 					
-			// 		var color = 'rgb(' + colors.join(',') + ')';
+					var color = 'rgb(' + colors.join(',') + ')';
 
-			// 		resultElement.style.background = color;
-			// 		resultElement.style.color = color;
-			// 	});
-			// });
+					resultElement.style.background = color;
+					resultElement.style.color = color;
+				});
+			});
+
+
 
 		// setting slider constants for sliderconnectAxis
 		var sliderconnectZ = document.getElementById('slider-connectZ-Axis');
@@ -671,10 +784,14 @@
 			weightedCalcConst = calcAvgWeighted(calcConst, eConnect, pConnect, cConnect);
 			var tableValues = calcOutputValues(weightedCalcConst, calcConst);
 			
-			document.getElementById("result1").innerHTML = "$" + Math.round(tableValues.cropVal) + " /Year"; 
-			document.getElementById("result2").innerHTML = Math.round(tableValues.waterUse) + " Gallons/Year"; 
-			document.getElementById("result3").innerHTML = Math.round(tableValues.co2Emit) + " Gallons of Gas";
-			document.getElementById("result4").innerHTML = Math.round(tableValues.meals) + " Meals/Year";
+			// document.getElementById("result1").innerHTML = "$" + Math.round(tableValues.cropVal) + " /Year"; 
+			// document.getElementById("result2").innerHTML = Math.round(tableValues.waterUse) + " Gallons/Year"; 
+			// document.getElementById("result3").innerHTML = Math.round(tableValues.co2Emit) + " Gallons of Gas";
+			// document.getElementById("result4").innerHTML = Math.round(tableValues.meals) + " Meals/Year";
+			document.getElementById('actualValueCrop').innerHTML = "$" + Math.round(tableValues.cropVal) + "<span class='valueYear'>/YR</span>"; 
+			document.getElementById('actualGallonsWater').innerHTML = Math.round(tableValues.waterUse) + "<span class='valueYear'>/YR</span>"; 
+			document.getElementById('actualGallonsGas').innerHTML = Math.round(tableValues.co2Emit) + "<span class='valueYear'>/YR</span>";
+			document.getElementById('actualmealsCreated').innerHTML = Math.round(tableValues.meals) + "<span class='valueYear'>/YR</span>";
 		}
 
 
@@ -836,25 +953,35 @@
 			writeNewPost();
 			setTimeout(function(){
 				window.location.href = "GardenBuilder_Community.html";
-			}, 100);
+			}, 200);
 			// redirectCommunity();
 		});
 
 		function writeNewPost() {
 			// A post entry.
 
+			// var postData = {
+			// 	A_customizedName: $("#userid").val(),
+			// 	B_vegetableValue: document.getElementById("result1").innerHTML,
+			// 	C_waterUsage: document.getElementById("result2").innerHTML,
+			// 	D_gasValue: document.getElementById("result3").innerHTML,
+			// 	E_mealsCreatedValue: document.getElementById("result4").innerHTML,
+			// 	F_livingSpace: localStorage.getItem("Scale"),
+			// 	G_headerImage: combinedCategories
+			// };
+
 			var postData = {
 				A_customizedName: $("#userid").val(),
-				B_vegetableValue: document.getElementById("result1").innerHTML,
-				C_waterUsage: document.getElementById("result2").innerHTML,
-				D_gasValue: document.getElementById("result3").innerHTML,
-				E_mealsCreatedValue: document.getElementById("result4").innerHTML,
+				B_vegetableValue: document.getElementById("actualValueCrop").innerHTML,
+				C_waterUsage: document.getElementById("actualGallonsWater").innerHTML,
+				D_gasValue: document.getElementById("actualGallonsGas").innerHTML,
+				E_mealsCreatedValue: document.getElementById("actualmealsCreated").innerHTML,
 				F_livingSpace: localStorage.getItem("Scale"),
 				G_headerImage: combinedCategories
 			};
 		
 			// Get a key for a new Post.
-			var newPostKey = firebase.database().ref().child('users').push().key;			
+			var newPostKey = firebase.database().ref().child('/users/').push().key;			
 		
 			// Write the new post's data simultaneously in the posts list and the user's post list.
 			var updates = {};
