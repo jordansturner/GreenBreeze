@@ -207,6 +207,85 @@ ________________________________________________________________________________
     margin-bottom: -10px;
 }
 
+.element {
+    position: absolute;
+    top: 50px;
+    margin-top: 10px;
+    opacity: 1;
+    transition: opacity 1s;
+    left: 50%;
+    transform: translate(-50%);
+}
+.element2 {
+    position: absolute;
+    margin: 0px;
+    font-size: 25px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+/*  color: #349F91;*/
+    color: #559B98;
+    width: 700px;
+    left: 50%;
+    transform: translate(-50%);
+    top: -150px;
+    opacity: 0;
+    transition: opacity 1s;
+}
+
+.element3 {
+    position: absolute;
+    margin: 0px;
+    font-size: 25px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+/*  color: #349F91;*/
+    color: #559B98;
+    width: 700px;
+    left: 50%;
+    transform: translate(-50%);
+    top: -20px;
+    opacity: 0;
+    transition: opacity 1s;
+}
+
+.element4 {
+    position: absolute;
+    margin: 0px;
+    font-size: 25px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+/*  color: #349F91;*/
+    color: #559B98;
+    width: 700px;
+    left: 50%;
+    transform: translate(-50%);
+    top: 145px;
+    opacity: 0;
+    transition: opacity 1s;
+}
+
+.element5 {
+    position: absolute;
+    margin: 0px;
+    font-size: 25px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+/*  color: #349F91;*/
+    color: #559B98;
+    width: 700px;
+    left: 50%;
+    transform: translate(-50%);
+    top: 310px;
+    opacity: 0;
+    transition: opacity 1s;
+}
+
+
+#welcomeTo {
+    opacity: 1;
+    transition: opacity .6s;
+}
+
 #FutureOfAgro {
 	margin: auto;
 	text-align: center;
@@ -334,7 +413,7 @@ ________________________________________________________________________________
 }
 
 .Mapbottom {
-	opacity: .15;
+	opacity: .09;
 	transition: opacity 3s;
 	overflow: hidden;
 	z-index: 0;
@@ -389,11 +468,13 @@ ________________________________________________________________________________
 #EntryButtonImg {
 	width: 30px;
 	position: absolute;
-    top:490px;
+    top: 650px;
     left: 0;
     right: 0;
 	margin: auto;
     z-index: 105;
+    transition: opacity 1s;
+    opacity: 0;
 
 }
 
@@ -401,27 +482,28 @@ ________________________________________________________________________________
 	height: 2px;
 	width: 0px;
 	position: absolute;
-	top: 503px;
+	top: 664px;
 	right: 739px;
 	margin: 0px;
 	background-color: red;
 	border-radius: 100px;
-	transition: width 2s;
+	transition: opacity 1s, width 2s;
 	background-color: #559B98;
      z-index: 105;
+ 
 }
 #RightLine {
 	height: 2px;
 	width: 0px;
 	position: absolute;
-	top: 503px;
+	top: 664px;
 	left: 739px;
 	margin: 0px;
 	background-color: red;
 	border-radius: 100px;
-	transition: width 2s;
+	transition: opacity 1s, width 2s;
 	background-color: #559B98;
-     z-index: 105;
+    z-index: 105;
 
 }
 
@@ -941,6 +1023,15 @@ ________________________________________________________________________________
     animation-delay: 6s;
 }
 
+@keyframes growAnimation { /* flame pulses */
+  0%   { opacity:1; }
+  50%  { opacity:0; }
+  100% { opacity:1; }
+}
+.grow {
+    opacity:1;  
+    animation: growAnimation 3s infinite;
+}
 @keyframes flickerAnimationtwo { /* flame pulses */
     0%   { opacity:0; }
     50% { opacity:.5; }
@@ -2488,10 +2579,6 @@ border-style: solid;
 border-width: 2.8em 2.8em 0 2.8em;
 border-color: white transparent transparent transparent;
   -webkit-transform:rotate(360deg)
-}
-
-.rotatingText {
-    opacity: 0;
 }
 
 .hint2 {

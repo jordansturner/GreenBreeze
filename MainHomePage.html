@@ -59,17 +59,16 @@
 	</div>
 
 	<div id="EntryTitle">
-		<h2> Welcome to</h2>
+		<h2 id="welcomeTo"> Welcome to</h2>
 		<h1 class="element"> Herban</h1>
-		<h5 class="rotatingText element2"> <i>The worlds first fully integrated communal & modular urban farming system</i></h5>
-		<h5 class="rotatingText element2"> <i>We blend our fully autonomous farming systems seamlessly into urban developments and link it to a digital marketplace to make room for a new kind of farming</i></h5>
-		<h5 class="rotatingText element2"> <i>Explore the problems with the current state of agricultural practices then swipe across the map to better understand the benefits of future state growing
-		</i></h5>
-		<h5 class="rotatingText element2"> <i>After you are finished exploring our map, continue to our Garden Builder section to customize your own Automated Herban Farming System
-		</i></h5>
+		<h1 class="rotatingText element2"> The world's first vertically integrated, communal & modular urban farming system</h1>
+		<h1 class="rotatingText element3"> We blend our autonomous farms seamlessly into urban developments using our digital marketplace & drone delivery services</h1>
+		<h1 class="rotatingText element4"> In this digital experience you will learn about vertical farming and how Herban plans to use a non-invasive strategy to promote a more sustainable future
+		</h1>
+		<h1 class="rotatingText element5">After you finish exploring the map, continue to our Garden Builder experience to customize your own model Herban Farm</h1>
 	</div>
 	<div id="EntryButton">
-		<img id="EntryButtonImg" src="Assets/StartButton.png" alt="Enter Here">
+		<img id="EntryButtonImg"  src="Assets/StartButton.png" alt="Enter Here">
 		<div id="LeftLine"></div>
 		<div id="RightLine"></div>
 	</div>
@@ -105,27 +104,56 @@
 	$(document).ready(function () {
 
 
-			tl = new TimelineMax();
+			// tl = new TimelineMax();
 
-			var tl = new TimelineMax({repeat:0});
+			// var tl = new TimelineMax({repeat:0});
 
-			$(".rotatingText").each(function(index, element2){
-			  tl.to(element2, 1, {opacity:1})
-			    .to(element2, 3, {opacity:0}, "+=1")
-			});
+			// $(".rotatingText").each(function(index, element2){
+			//   tl.to(element2, 1, {opacity:1})
+			//     .to(element2, 3, {opacity:0}, "+=1")
+			// });
 
 
-			var HoverOff;
+			// var HoverOff;
 			// var HoverOff2;
+			// var HoverOff3;
+
+			setTimeout(function(){
+		    	$('#welcomeTo').css("opacity", 0);
+		    	$('.element').css("opacity", 0);
+
+		    }, 2500);
+		    setTimeout(function(){
+		    	$('.element2').css("opacity", 1);
+
+
+		    }, 4500);
+		    setTimeout(function(){
+		    	$('.element3').css("opacity", 1);
+
+		    }, 7500);
+		    setTimeout(function(){
+		    	$('.element4').css("opacity", 1);
+
+		    }, 10500);
+		    setTimeout(function(){
+		    	$('.element5').css("opacity", 1);
+		    	$('#EntryButtonImg').css("opacity", 1);
+		    	$('#EntryButtonImg').addClass("grow");
+
+		    }, 13500);
+
+		    $('#EntryButtonImg').hover(function(){
+		    	$('#EntryButtonImg').removeClass('grow');
+		    });
+
+		    var HoverOff;
+			var HoverOff2;
 			var HoverOff3;
 
-		setTimeout(function(){
-				$('#RightLine').css("width", "400px");
-		    	$('#LeftLine').css("width", "400px");
-		    }, 2500);
-		  // $('#EntryButtonImg').mouseover(function() {
-		  //   $('#RightLine').css("width", "400px");
-		  //   $('#LeftLine').css("width", "400px");
+		  $('#EntryButtonImg').mouseover(function() {
+		    $('#RightLine').css("width", "400px");
+		    $('#LeftLine').css("width", "400px");
 		    
 		    HoverOff = setTimeout(function(){
 		    	$('#EntryTitle, #EntryButton').stop(true).fadeTo("slow", 0);
@@ -138,15 +166,87 @@
 		    	$('#buttonContainer').stop(true).fadeTo("slow", 1);
 		    	$('.Maptop').stop(true).fadeTo("fast", 1);
 		    	$('#infoWrapper').stop(true).fadeTo("slow", 1);
-
-		    }, 4500);
+		    }, 2000);
+		    // setTimeout(function(){
+		    // 	$('#Page').append($('#Navigation'));
+		    // 	$('#Navigation').stop(true).fadeTo("slow", 1);
+		    // }, 2100);
+		    
+		    
+		    HoverOff2 = setTimeout(function(){
+		    	
+		    	$('#EntryTitle').remove();
+		  		$('#EntryButton').remove();
+		    }, 2500);
 		 
-
 		  HoverOff3 = setTimeout(function(){
 		  		window.location.href='MainHomePage4.html'
-		    }, 6500);      
+		    }, 4000);
+		   });
+		  $('#EntryButtonImg').mouseout(function(){
+		  	$('#RightLine').css("width", "0px");
+		    $('#LeftLine').css("width", "0px");
+		    clearTimeout(HoverOff);
+          	clearTimeout(HoverOff2);
+          	clearTimeout(HoverOff3);
+		   
+		  });       
+
+		  // $('#EntryButtonImg').mouseover(function() {
+		  //   $('#RightLine').css("width", "400px");
+		  //   $('#LeftLine').css("width", "400px");
+		    
+		  //   HoverOff = setTimeout(function(){
+		  //   	$('#EntryTitle, #EntryButton').stop(true).fadeTo("slow", 0);
+		  //   	$('.Mapbottom').stop(true).fadeTo("slow", 1);
+		  //   	$('.handle').stop(true).fadeTo("slow", 1);
+		  //   	$('#topbarhandle').stop(true).fadeTo("slow", 1);
+		  //   	$('#bottombarhandle').stop(true).fadeTo("slow", 1);
+		  //   	$('#FutureOfAgro').stop(true).fadeTo("slow", 1);
+		  //   	$('#HighLevelNavigationStart').stop(true).fadeTo("slow", 1);
+		  //   	$('#buttonContainer').stop(true).fadeTo("slow", 1);
+		  //   	$('.Maptop').stop(true).fadeTo("fast", 1);
+		  //   	$('#infoWrapper').stop(true).fadeTo("slow", 1);
+
+		  //   }, 14500);
+		 
+
+		  // HoverOff3 = setTimeout(function(){
+		  // 		window.location.href='MainHomePage4.html'
+		  //   }, 16500);
+
+		  //   });      
 		  
-});
+			});
+
+// 		setTimeout(function(){
+// 				$('#RightLine').css("width", "400px");
+// 		    	$('#LeftLine').css("width", "400px");
+// 		    }, 2500);
+// 		  // $('#EntryButtonImg').mouseover(function() {
+// 		  //   $('#RightLine').css("width", "400px");
+// 		  //   $('#LeftLine').css("width", "400px");
+		    
+// 		    HoverOff = setTimeout(function(){
+// 		    	$('#EntryTitle, #EntryButton').stop(true).fadeTo("slow", 0);
+// 		    	$('.Mapbottom').stop(true).fadeTo("slow", 1);
+// 		    	$('.handle').stop(true).fadeTo("slow", 1);
+// 		    	$('#topbarhandle').stop(true).fadeTo("slow", 1);
+// 		    	$('#bottombarhandle').stop(true).fadeTo("slow", 1);
+// 		    	$('#FutureOfAgro').stop(true).fadeTo("slow", 1);
+// 		    	$('#HighLevelNavigationStart').stop(true).fadeTo("slow", 1);
+// 		    	$('#buttonContainer').stop(true).fadeTo("slow", 1);
+// 		    	$('.Maptop').stop(true).fadeTo("fast", 1);
+// 		    	$('#infoWrapper').stop(true).fadeTo("slow", 1);
+
+// 		    }, 4500);
+		 
+
+// 		  HoverOff3 = setTimeout(function(){
+// 		  		window.location.href='MainHomePage4.html'
+// 		    }, 6500);      
+		  
+// });
 
 
 
