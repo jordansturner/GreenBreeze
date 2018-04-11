@@ -4235,26 +4235,51 @@ border-color: white transparent transparent transparent;
 
 #upLevel {
     position: absolute;
-    left: 500px;
-    bottom: 80px;
-    width: 130px;
-    height: 20px;
-
+    left: 538px;
+    bottom: 75px;
+    width: 40px;
+    height: 40px;
+    border-radius: 100px;
+    border: 2px solid rgba(85, 155, 152, .4);
+    font-size: 18px;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 700;
+    color: #559B98;
+    cursor: pointer;
+    outline: none;
 }
 #downLevel {
     position: absolute;
-    left: 500px;
-    bottom: 60px;
-    width: 130px;
-    height: 20px;
-    
+    left: 590px;
+    bottom: 75px;
+    width: 40px;
+    height: 40px;
+    border-radius: 100px;
+    border: 2px solid rgba(85, 155, 152, .4);
+    font-size: 18px;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 700;
+    color: #559B98;
+    cursor: pointer;
+    outline: none;
 }
 #levelNumber {
     position: absolute;
-    left: 555px;
+    left: 518px;
     bottom: 130px;
     width: 130px;
     height: 20px;
+    text-align: center;
+    color: #559B98;
+}
+#levelNumber2 {
+    position: absolute;
+    left: 518px;
+    bottom: 105px;
+    width: 130px;
+    height: 20px;
+    text-align: center;
+    color: #559B98;
 }
 #Layout {
     position: absolute;
