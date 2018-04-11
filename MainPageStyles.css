@@ -1032,6 +1032,7 @@ ________________________________________________________________________________
     opacity:1;  
     animation: growAnimation 3s infinite;
 }
+
 @keyframes flickerAnimationtwo { /* flame pulses */
     0%   { opacity:0; }
     50% { opacity:.5; }
@@ -3476,7 +3477,7 @@ border-color: white transparent transparent transparent;
 
 }
 #ShareButton {
-    width: 20px;
+    width: 50px;
     height: 50px;
     border-radius: 100px;
     position: fixed;
