@@ -13,6 +13,7 @@
 	<script src="https://www.gstatic.com/firebasejs/4.9.1/firebase.js"></script>
 	<script defer src="https://use.fontawesome.com/releases/v5.0.9/js/all.js" integrity="sha384-8iPTk2s/jMVj81dnzb/iFR2sdA7u06vHJyyLlAd4snFpCl/SnyUjRrbdJsw1pGIl" crossorigin="anonymous"></script>
 	<script src='jssocials.min.js'></script>
+	<meta name='og:image' content='Assets/Asset_2.3.png'>
 	<!--font-family: 'Open Sans', sans-serif;
 		font-family: 'Montserrat', sans-serif; -->
 	</head>
@@ -159,6 +160,7 @@ data-300="left: -140px;"
 
 <a href="MainHomePage4.html"><button id="DoneButton">Home</button></a>
 <button id="ShareButton" class="shareButton">Share</button>
+<button id="ShareButton2" class="shareButton">Share</button>
 
 	<!-- <hgroup class='speech-bubble2'>
 		<img src='Assets/PNG_72ppi/CAT.png' class = 'medallionImg'>
@@ -174,10 +176,14 @@ data-300="left: -140px;"
 		$( document ).ready(function() {
   //   
   	// var s = skrollr.init()
-  	$(".shareButton").jsSocials({
+  	$("#ShareButton").jsSocials({
             shares: ["facebook"],
-            url: "https://jordansturner.github.io/Herban/MainHomePage4.html",
-    		text: "Check out this awesome design project on Urban Agriculture"
+            url: "https://jordansturner.github.io/Herban/MainHomePage.html",
+    		css: ".shareButton",
+    		logo: "fa fa-facebook",
+    		showCount: false,
+    		showLabel: true,
+    		shareIn: "popup"
         });
 
   	$('#mission_Statement').click(function(){
