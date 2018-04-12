@@ -8,27 +8,44 @@ html {
     user-select: none;
 }
 
-
 body {
 	width: 100%;
 	margin: 0px;
     min-height: 100%;
     height: auto;
-    visibility: hidden;
+    visibility: visible;
 }
 
-@media screen and (max-width: 1441px) and (min-width: 1439px){
+/*@media screen and (max-width: 1441px) and (min-width: 1439px){
     body {
         visibility: visible;
     }
-}
-
-/*@media only screen and (max-height: 739px) and (min-height: 737) {
-    body {
-        visibility: visible;
-    }
-    (max-height: 739px) and (min-height: 737)
 }*/
+
+@media screen and (max-width: 1345px){
+
+    #HighLevelNavigationTop span {
+        margin-left: -50px;
+    }
+
+    .handle2 {
+        left: 1191px;
+    }
+
+    #topbarhandle2 {
+        left: 1206px;
+    }
+
+    #bottombarhandle2 {
+        left: 1206px;
+    }
+}
+@media screen and (min-height: 768px){
+
+    #HighLevelNavigation4 {
+        top: 708px;
+    }
+}
 
 a::after {
     display: block;
@@ -1563,14 +1580,14 @@ ________________________________________________________________________________
 
 
 #HighLevelNavigationTop span {
-    padding-left: 55px;
+    padding-left: 59px;
     text-decoration: none;
     font-size: 16px;
     color: #559B98;
     display: inline-block;
     text-align: center;
     margin-top: -13px;
-    margin-left: 4px;
+/*    margin-left: 4px;*/
     cursor: pointer;
 
 }
