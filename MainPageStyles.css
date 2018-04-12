@@ -3570,6 +3570,32 @@ border-color: white transparent transparent transparent;
     transition: opacity 1s;
 }
 
+.bigNumber2 {
+    position: absolute;
+    top: 245px;
+    left: 155px;
+    font-size: 40px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    color: #559B98;
+    opacity: .2;
+    z-index: 0;
+    transition: opacity 1s;
+}
+
+.bigNumber3 {
+    position: absolute;
+    top: -55px;
+    left: 0px;
+    font-size: 40px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    color: #559B98;
+    opacity: .2;
+    z-index: 0;
+    transition: opacity 1s;
+}
+
 #EnterCommunityButton:hover {
 	width: 200px;
 	height: 50px;
