@@ -1,0 +1,221 @@
+h1 {
+	margin: 0px;
+	font-size: 52px;
+	font-family: 'Montserrat', sans-serif;
+	font-weight: 700;
+	margin-top: -20px;
+	color: #559B98;
+	text-align: center;
+	margin-bottom: 20px;
+}
+
+h2 {
+	margin: 0px;
+	font-size: 42px;
+	font-family: 'Open Sans', sans-serif;
+	font-weight: 400;
+	color: #4A4A4A;
+	text-align: center;
+
+}
+h4 {
+	font-family: 'open sans', sans-serif;
+	font-weight: 600;
+	color: #4A4A4A;
+	font-size: 30px;
+	text-align: center;
+}
+
+#SiteArchitectureTitle {
+	margin-top: -10px;
+	margin-bottom: 50px;
+}
+
+#ResearchNotesTitle {
+	margin-top: -10px;
+	margin-bottom: 50px;
+}
+
+#IntroductionWrapper {
+	position: relative;
+	display: block;
+	width: 100%;
+	margin-bottom: 100px;
+
+}
+
+#CapstoneStatement {
+	margin: 0px;
+	font-size: 24px;
+	font-family: 'Open Sans', sans-serif;
+	font-weight: 400;
+	color: #4A4A4A;
+	text-align: center;
+	width: 65%;
+	margin: auto;
+	margin-top: 20px;
+
+}
+
+#ResearchPaperWorkWrapper {
+	position: relative;
+	display: block;
+	width: 100%;
+	margin-bottom: 100px;
+}
+
+.AllImages {
+	position: relative;
+	display: inline-block;
+	width: 300px;
+	margin:20px;
+	box-shadow: 0px 5px 5px rgba(152, 112, 75, 0.42);
+
+}
+
+.sitearchitecture {
+	position: relative;
+	display: inline-block;
+	width: 300px;
+	margin: 20px;
+	box-shadow: 0px 5px 5px rgba(152, 112, 75, 0.42);
+}
+
+.illustratedelements {
+	position: relative;
+	display: inline-block;
+	width: 300px;
+	margin: 20px;
+	box-shadow: 0px 5px 5px rgba(152, 112, 75, 0.42);
+}
+
+.HerbanLogo {
+	position: relative;
+    display: inherit;
+	width: 600px;
+	margin-right: auto;
+	margin-left: auto;
+	margin-top: 80px;
+	margin-bottom: 80px;
+}
+
+#WebsiteBreakdownTitle {
+	margin-top: 50px;
+	margin-bottom: 50px; 
+}
+
+#IntroductionStatement {
+	margin-top: 20px;
+	font-size: 24px;
+	font-family: 'Open Sans', sans-serif;
+	font-weight: 400;
+	color: #4A4A4A;
+	text-align: center;
+	width: 58%;
+	margin: auto;
+	margin-bottom: 50px;
+}
+.Videos {
+	width: 800px;
+	position: relative;
+	display: block;
+	margin: auto;
+}
+
+#GardenBuilderTitle {
+	margin-bottom: 20px;
+	margin-top: 50px;
+}
+
+#GardenBuilderStatement {
+	margin-top: 20px;
+	font-size: 24px;
+	font-family: 'Open Sans', sans-serif;
+	font-weight: 400;
+	color: #4A4A4A;
+	text-align: center;
+	width: 54%;
+	margin: auto;
+	margin-bottom: 50px;
+}
+
+#CustomizingTitle {
+	margin-bottom: 20px;
+	margin-top: 50px;
+}
+
+#CustomizingStatement {
+	margin-top: 20px;
+	font-size: 24px;
+	font-family: 'Open Sans', sans-serif;
+	font-weight: 400;
+	color: #4A4A4A;
+	text-align: center;
+	width: 54%;
+	margin: auto;
+	margin-bottom: 50px;
+}
+
+#CommunityTitle {
+	margin-bottom: 20px;
+	margin-top: 50px;
+}
+
+#CommunityStatement {
+	margin-top: 20px;
+	font-size: 24px;
+	font-family: 'Open Sans', sans-serif;
+	font-weight: 400;
+	color: #4A4A4A;
+	text-align: center;
+	width: 54%;
+	margin: auto;
+	margin-bottom: 50px;
+}
+
+#SiteArchitectureWrapper {
+	margin-bottom: 100px;
+}
+
+#ThumbnailsWrapper {
+	margin-bottom: 100px;
+}
+
+#LinkToSite {
+	color: #559B98;
+	text-decoration: none;
+}
+#websitebutton {
+	width: 200px;
+    height: 50px;
+    border-radius: 100px;
+    position: relative;
+    border-color: #559B98;
+    border-width: 2px;
+    outline-style: none;
+    font-size: 18px;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 700;
+    color: #559B98;
+    margin-bottom: 30px;
+    margin-top: 70px;
+    margin-left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+
+#StyleGuideImg {
+	width: 800px;
+	position: relative;
+	display: block;
+	margin: auto;
+	margin-top: 50px;
+	margin-bottom: 100px;
+}
+
+#StyleGuideTitle {
+	position: relative;
+	display: block;
+	margin-top: 50px;
+	margin-bottom: 50px; 
+}
